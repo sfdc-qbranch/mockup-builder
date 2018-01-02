@@ -1,0 +1,27 @@
+{
+  "name": "nodetrailimagetext",
+  "version": "1.0.0",
+  "description": "Editable Text overlay on a custom image",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ellyzz08/NodeTrail_ImageText.git"
+  },
+  "author": "EllyZhu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ellyzz08/NodeTrail_ImageText/issues"
+  },
+  "homepage": "https://github.com/Ellyzz08/NodeTrail_ImageText#readme",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "html2canvas": "^1.0.0-alpha.7"
+  },
+  "devDependencies": {
+    "eslint": "^4.14.0"
+  }
+}

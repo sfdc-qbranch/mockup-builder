@@ -1,0 +1,42 @@
+<!-- views/page3.ejs -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Page3</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <%- include('partials/header') %>
+        <div class="row">
+            <div class="col-2">
+                <%- include('partials/navbar') %>
+            </div>
+            <div class="col-5">
+                <div class="jumbotron">
+                    <h1>THIS IS COLUMN 1 in Page3</h1>
+                </div>
+            </div>
+
+            <div class="col-5">
+                <div class="jumbotron">
+                    <h1>THIS IS COLUMN 2 in Page3</h1>
+                </div>
+            </div>
+
+        </div>
+        <%- include('partials/footer') %>
+    </div>
+</body>
+
+</html>

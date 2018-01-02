@@ -1,0 +1,107 @@
+<!-- views/page1.ejs -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Page1</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .thumbnail {
+            position: relative;
+        }
+
+        .thumbnail img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+
+        #headline {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: black;
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <%- include('partials/header') %>
+            <div class="row">
+                <div class="col-2">
+                    <%- include('partials/navbar') %>
+                </div>
+                <div class="col-5">
+                    <form method="post" enctype="multipart/form-data">
+                        <!--Upload image-->
+                        <div>
+                            <label for="imageUpload">Choose file to upload</label>
+                            <input type="file" id="imageUpload" name="imageUpload" accept=".jpg, .jpeg, .png" />
+
+                        </div>
+
+                        <!--Headline-->
+                        <div>
+                            <label for="headlineInput">Headline:</label>
+                            <input type="text" id="headlineInput" placeholder="Please input..." />
+                        </div>
+
+                        <!--Save Button-->
+                        <div>
+                            <label for="saveButton">Save the preview image in your local space!</label><br>
+                            <button id="saveButton">Save</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-5">
+                    <div id="capture">
+                        <div class="thumbnail">
+                            <img id="uploadedImage" />
+                            <h1 id="headline" placeholder="Please input..."></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+    <%- include('partials/footer') %>
+        </div>
+
+
+        <script>
+            /*Upload Image*/
+            document.getElementById("imageUpload").onchange = function() {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    // get loaded data and render thumbnail.
+                    document.getElementById("uploadedImage").src = e.target.result;
+                };
+
+                // read the image file as a data URL.
+                reader.readAsDataURL(this.files[0]);
+            };
+
+            /*Input Headline*/
+            document.getElementById("headlineInput").onkeypress = function() {
+                document.getElementById("headline").innerHTML = document.getElementById("headlineInput").value;
+            };
+
+            /*Save Preview Image*/
+
+        </script>
+</body>
+
+</html>
