@@ -18,8 +18,7 @@
   "homepage": "https://github.com/Ellyzz08/NodeTrail_ImageText#readme",
   "dependencies": {
     "ejs": "^2.5.7",
-    "express": "^4.16.2",
-    "html2canvas": "^1.0.0-alpha.7"
+    "express": "^4.16.2"
   },
   "devDependencies": {
     "eslint": "^4.14.0"

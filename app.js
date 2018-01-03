@@ -10,7 +10,6 @@ var app = express();
 
 app.set('view engine', 'ejs');
 
-
 //Homepage
 app.get('/',function(req,res){
    res.render('home');
