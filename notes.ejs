@@ -1,0 +1,17 @@
+<script>
+    function displayText(srcElemId, destElemId) {
+        let elemSrc = document.getElementById(srcElemId).value;
+        let elemDest = document.getElementById(destElemId);
+        elemDest.innerHTML = elemSrc;
+    }
+
+    $(document).ready(function() {
+
+        // Display Message Text in Preview Panel 
+        $('.message').on('keyup', function() {
+            displayText(this.id, this.id + 'Text');
+        });
+
+    });
+
+</script>
