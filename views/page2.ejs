@@ -147,11 +147,11 @@
                 <div class="col-5">
                     <section id="chatPanelPreview">
                         <div class="from-me">
-                            Example From Me
+                            Example From Me 😄
                         </div>
 
                         <div class="from-them">
-                            Example From Them
+                            Example From Them 😄
                         </div>
 
                     </section>
@@ -162,11 +162,19 @@
     </div>
     <script>
         function addMessage(userClass, inputElementId) {
+            //Get Message From Input Text Box
             let messageDivNode = document.createElement("div");
-            let message = document.getElementById(inputElementId).value;
+            let inputElement = document.getElementById(inputElementId);
+            let message = inputElement.value;
+
+            //Create Chat Message In Preview Panel
             messageDivNode.setAttribute("class", userClass);
             messageDivNode.innerHTML = message;
+            console.log(message);
             document.getElementById("chatPanelPreview").appendChild(messageDivNode);
+
+            //Clear the input textbox
+            inputElement.value = "";
         }
 
         $(document).ready(function() {

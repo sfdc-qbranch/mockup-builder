@@ -12,3 +12,6 @@ To Do:
 /*Improve*/
 * When the user presses the Save button, if there was not any image selected, please show red text 'Please upload an image to proceed' and not allow user to save
 * Validate uploaded file, for example, if the uploaded file format is pdf, then show the error message and not allow user to save.
+* Adjustable font-size
+* Find ways to keep width and height universally defined.
+* Resizable image
