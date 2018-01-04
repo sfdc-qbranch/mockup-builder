@@ -10,6 +10,7 @@ var app = express();
 var bodyParser = require('body-parser');
 
 app.set('view engine', 'ejs');
+app.set("views", __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({
    extended: false
@@ -31,8 +32,8 @@ app.get('/page2',function(req,res){
 });
 
 
-app.get('/page3',function(req,res){
-    res.render('page3');
+app.get('/lockScreenNotifications',function(req,res){
+    res.render('lockScreenNotifications');
 });
 
 

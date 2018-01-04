@@ -1,0 +1,128 @@
+<!-- views/lockScreenNotificaitons.ejs -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <title>OurAwesomeApp</title>
+    <!--Bootstrap CSS, icons-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.2/css/all.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .lockscreen {
+            position: relative;
+            width: 375px;
+            height: 667px;
+            overflow: hidden;
+            background-image: url("http://cdn.osxdaily.com/wp-content/uploads/2016/06/ios-10-wallpaper.jpg");
+            background-size: cover;
+        }
+
+        .topbar {
+            width: 100%;
+            height: 20px;
+            color: white;
+        }
+
+        .unlock {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 30px;
+            opacity: 0.5;
+            color: white;
+        }
+
+
+        .lockscreenDateTime {
+            text-align: center;
+            position: absolute;
+            margin-top: 60px;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 200;
+            color: white;
+        }
+
+        .time {
+            font-size: 65px;
+        }
+
+        .date {
+            font-size: 20px;
+            margin-top: -12px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <%- include('partials/header') %>
+            <div class="row">
+                <div class="col-2">
+                    <%- include('partials/navbar') %>
+                </div>
+
+                <!--LEFT COLUMN-->
+                <div class="col-5">
+                    <div class="container settingPanel">
+                        <!--Date/Time-->
+                        <div class="setDateTime">
+                            <label for="example-datetime-local-input" class="col-2 col-form-label">Date and time</label>
+                            <div class="col">
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--RIGHT COLUMN-->
+                <div class="col-5">
+                    <!--Screen-->
+                    <div class="container lockscreen">
+                        <!--TopBar-->
+                        <div class="row topbar">
+                            <div class="col">
+                                <i class="fas fa-signal"></i>
+                            </div>
+                            <div class="col">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <div calss="col">
+                                <i class="fas fa-battery-three-quarters"></i>
+                            </div>
+                        </div>
+                        <!--Time + Date-->
+                        <div class="row">
+                            <div class="col lockscreenDateTime">
+                                <div class="time">
+                                    11:30
+                                </div>
+
+                                <div class="date">
+                                    Thursday, 4 January
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--Unlock Text-->
+                        <div class="row">
+                            <div class="col unlock">
+                                Press home to unlock
+                            </div>
+                        </div>
+                    </div>
+                    <!--End of lockscreen-->
+                </div>
+            </div>
+            <%- include('partials/footer') %>
+    </div>
+</body>
+
+</html>
