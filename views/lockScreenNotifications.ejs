@@ -6,9 +6,18 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
     <title>OurAwesomeApp</title>
-    <!--Bootstrap CSS, icons-->
+
+    <!--Bootstrap CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+    <!--Awesome Icons-->
     <link href="https://use.fontawesome.com/releases/v5.0.2/css/all.css" rel="stylesheet">
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--Date Picker-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.en-AU.min.js"></script>
+
     <style>
         body {
             padding-top: 20px;
@@ -28,6 +37,7 @@
             width: 100%;
             height: 20px;
             color: white;
+            padding-top: 5px;
         }
 
         .unlock {
@@ -73,10 +83,10 @@
                 <div class="col-5">
                     <div class="container settingPanel">
                         <!--Date/Time-->
-                        <div class="setDateTime">
-                            <label for="example-datetime-local-input" class="col-2 col-form-label">Date and time</label>
+                        <div id=s etDateTime class="setting">
+                            <label for="setDateTime">Date and time</label>
                             <div class="col">
-                                
+                                <input type="text" id="test" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -101,11 +111,11 @@
                         <!--Time + Date-->
                         <div class="row">
                             <div class="col lockscreenDateTime">
-                                <div class="time">
+                                <div id="displaytime" class="time">
                                     11:30
                                 </div>
 
-                                <div class="date">
+                                <div id="displaydate" class="date">
                                     Thursday, 4 January
                                 </div>
                             </div>
@@ -123,6 +133,21 @@
             </div>
             <%- include('partials/footer') %>
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#test').datepicker({
+                format: "DD, dd MM",
+                maxViewMode: 2,
+                todayHighlight: true
+            });
+            
+            $('#test').on('change',function(){
+               $('#displaydate').html($('#test').val()); 
+            });
+        });
+
+    </script>
 </body>
 
 </html>
