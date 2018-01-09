@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="js/saveImage.js"></script>
     <style>
         body {
             padding-top: 20px;
@@ -94,56 +95,13 @@
 
 
     <script>
+        
         var CAPTURE_WIDTH = '300';
         var CAPTURE_HEIGHT = '400';
-
-        function saveBase64AsFile(base64, fileName) {
-            var link = document.createElement("a");
-
-            link.setAttribute("href", base64);
-            link.setAttribute("download", fileName);
-            link.click();
-        }
-
-        function previewCaptured() {
-            let captured = document.getElementById("thumbnail");
-            html2canvas(captured, {
-                onrendered: function(canvas) {
-                    let extra_canvas = document.createElement("canvas");
-                    extra_canvas.setAttribute('width', CAPTURE_WIDTH);
-                    extra_canvas.setAttribute('height', CAPTURE_HEIGHT);
-                    let ctx = extra_canvas.getContext('2d');
-                    ctx.drawImage(canvas, 0, 0, canvas.width, canvas.height, 0, 0, CAPTURE_WIDTH, CAPTURE_HEIGHT);
-                    let dataURL = extra_canvas.toDataURL();
-                    let img = $(document.createElement('img'));
-                    img.attr('src', dataURL);
-                    // insert the thumbnail at the top of the page
-                    $('#previewImage').append(img);
-                }
-            });
-        }
-
-        function saveCaptured() {
-
-            let captured = document.getElementById('thumbnail');
-            html2canvas(captured, {
-                onrendered: function(canvas) {
-                    let extra_canvas = document.createElement("canvas");
-                    extra_canvas.setAttribute('width', CAPTURE_WIDTH);
-                    extra_canvas.setAttribute('height', CAPTURE_HEIGHT);
-                    let ctx = extra_canvas.getContext('2d');
-                    ctx.drawImage(canvas, 0, 0, canvas.width, canvas.height, 0, 0, CAPTURE_WIDTH, CAPTURE_HEIGHT);
-                    let dataURL = extra_canvas.toDataURL("image/png");
-                    let a = document.createElement('a');
-                    a.setAttribute("href", dataURL.replace("image/png", "image/octet-stream"));
-                    a.setAttribute("download", "capture.png");
-                    a.click();
-                }
-            });
-        }
-
+        
         $(document).ready(function() {
-
+            
+        
             /*Upload Image*/
             $("#imageUpload").change(function() {
                 let reader = new FileReader();
@@ -165,12 +123,12 @@
 
             /*Preview Image*/
             $('#previewButton').click(function() {
-                previewCaptured();
+                previewCaptured(CAPTURE_WIDTH,CAPTURE_HEIGHT);
             });
 
             /*Save Image*/
             $('#saveButton').click(function() {
-                saveCaptured();
+                saveCaptured(CAPTURE_WIDTH,CAPTURE_HEIGHT);
             });
 
 
