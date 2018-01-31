@@ -23,26 +23,26 @@ app.get('/',function(req,res){
 });
 
 //testImage - test upload image, add text, save as png
-app.get('/page1',function(req,res){
-    res.render('page1');
+app.get('/livechat',function(req,res){
+    res.render('livechat');
 });
 
-app.get('/page2',function(req,res){
-    res.render('page2');
-});
-
-
-app.get('/lockScreenNotifications',function(req,res){
-    res.render('lockScreenNotifications');
+app.get('/livemessage',function(req,res){
+    res.render('livemessage');
 });
 
 
-app.get('/page4',function(req,res){
-    res.render('page4');
+app.get('/notifications',function(req,res){
+    res.render('notifications');
 });
 
-app.get('/page5',function(req,res){
-    res.render('page5');
+
+app.get('/facebookstandardad',function(req,res){
+    res.render('facebookstandardad');
+});
+
+app.get('/email',function(req,res){
+    res.render('email');
 });
 
 

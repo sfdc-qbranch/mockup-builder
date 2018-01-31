@@ -1,0 +1,349 @@
+<!-- views/livemessage.ejs -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>LIVE MESSAGE MOCKUP</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="js/helper.js"></script>
+    <style>
+        body {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .uppercase {
+            text-transform: uppercase;
+        }
+
+        /*LEFT PANEL*/
+
+        /*RIGHT PANEL*/
+        
+        /*Time*/
+        div.div-timedisplay {
+            color:black;
+            position: absolute;
+            top: 0.2%;
+            left: 44.8%;
+            font-size:0.75rem;
+            letter-spacing:0.03rem;
+        }
+
+        /*Initials*/
+
+        div.div-initials {
+            color: white;
+            position: absolute;
+            top: 3.7%;
+            left: 46.8%;
+            font-size: 1.25rem;
+            text-align: center;
+            width: 6%;
+            height: 6%;
+        }
+
+        /* #chatPanelPreview */
+
+        #img-bg {
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+
+        div.ctn.ctn-mockupscreen {
+            position: relative;
+            height: 667px;
+            width: 375px;
+        }
+
+        div.ctn.ctn-section {
+            margin: 0px;
+            position: absolute;
+            top: 9%;
+            height: 667px;
+            width: 98%;
+            z-index: 999;
+
+        }
+
+        section {
+            max-width: 375px;
+            margin: 50px auto;
+        }
+
+        /* .from-me, .from-them */
+
+        section div {
+            max-width: 255px;
+            word-wrap: break-word;
+            margin-bottom: 10px;
+            line-height: 24px;
+            clear: both;
+        }
+
+
+        .from-me {
+            position: relative;
+            padding: 10px 20px;
+            color: white;
+            background: #0B93F6;
+            border-radius: 25px;
+            float: right;
+        }
+
+        .from-me:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            bottom: -2px;
+            right: -7px;
+            height: 20px;
+            border-right: 20px solid #0B93F6;
+            border-bottom-left-radius: 16px 14px;
+            -webkit-transform: translate(0, -2px);
+        }
+
+        .from-me:after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            bottom: -2px;
+            right: -56px;
+            width: 26px;
+            height: 20px;
+            background: white;
+            border-bottom-left-radius: 10px;
+            -webkit-transform: translate(-30px, -2px);
+        }
+
+
+        .from-them {
+            position: relative;
+            padding: 10px 20px;
+            background: #E5E5EA;
+            border-radius: 25px;
+            color: black;
+            float: left;
+        }
+
+        .from-them:before {
+            content: "";
+            position: absolute;
+            z-index: 2;
+            bottom: -2px;
+            left: -7px;
+            height: 20px;
+            border-left: 20px solid #E5E5EA;
+            border-bottom-right-radius: 16px 14px;
+            -webkit-transform: translate(0, -2px);
+        }
+
+        .from-them:after {
+            content: "";
+            position: absolute;
+            z-index: 3;
+            bottom: -2px;
+            left: 4px;
+            width: 26px;
+            height: 20px;
+            background: white;
+            border-bottom-right-radius: 10px;
+            -webkit-transform: translate(-30px, -2px);
+        }
+
+        /* other buttons */
+
+        .helperButton {
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <%- include('partials/header') %>
+            <div class="row">
+                <!--Nav Bar-->
+                <div class="col-2">
+                    <%- include('partials/navbar') %>
+                </div>
+                <!--LEFT COLUMN-->
+                <div class="col-5">
+                    <div class="convSetting">
+
+                        <div>
+                            <div class="form-group" id="timeInputGroup">
+                                <label for="setTime">Time:</label>
+                                <div class="row" id="setTime">
+                                    <!--Set Hour-->
+                                    <div class="col">
+                                        <select class="form-control setTimeSelectorGroup" id="setHourSelector">
+                                            <option>1</option>
+                                            <option selected="selected">2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                        </select>
+                                    </div>
+                                    <!--Set Minutes-->
+                                    <div class="col">
+                                        <select class="form-control setTimeSelectorGroup" id="setMinuteSelector">
+                                            <option selected="selected">00</option>
+                                            <option>15</option>
+                                            <option>30</option>
+                                            <option>45</option>
+                                        </select>
+                                    </div>
+                                    <!--Set AM/PM-->
+                                    <div class="col">
+                                        <select class="form-control setTimeSelectorGroup" id="setAMPMSelector">
+                                            <option>am</option>
+                                            <option selected="selected" >pm</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div>
+                            <label for="initialLetterInput">User Initials:</label><br>
+                            <input type="text" id="initialLetterInput" class="initialText uppercase" maxlength="2" />
+                        </div>
+                        <div>
+                            <label for="FromThem1">From Them Message:</label><br>
+                            <input type="text" id="FromThem1" class="message" />
+                            <button id="addFromThem">Add</button>
+                        </div>
+                        <div>
+                            <label for="FromMe1">From Me Message:</label><br>
+                            <input type="text" id="FromMe1" class="message" />
+                            <button id="addFromMe">Add</button>
+                        </div>
+
+                        <div>
+                            <button id="removeLast" class="helperButton">Remove Last Message</button>
+                        </div>
+
+                        <div>
+                            <button id="clear" class="helperButton">Clear</button>
+                        </div>
+
+                        <label for="previewButton">Preview the captured image!
+                            </label><br>
+                        <button id="previewButton">Preview</button>
+
+                        <div id="previewImage">
+                        </div>
+
+                    </div>
+                </div>
+                <!--RIGHT COLUMN-->
+                <div class="col-5">
+                    <div class="ctn ctn-mockupscreen" id="thumbnail">
+                        <img src="/img/Message_Screen_Background.png" alt="text screen background" id="img-bg">
+                        <div class="div-timedisplay" id="timedisplay">2:00 pm</div>
+                        <div class="div-initials uppercase" id="initialdisplay">SF</div>
+                        <div class="ctn ctn-section">
+                            <section id="chatPanelPreview">
+                                <div class="from-me">
+                                    Example From Me 😄
+                                </div>
+
+                                <div class="from-them">
+                                    Example From Them 😄
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <%- include('partials/footer') %>
+    </div>
+    <script>
+        function addMessage(userClass, inputElementId) {
+            //Get Message From Input Text Box
+            let messageDivNode = document.createElement("div");
+            let inputElement = document.getElementById(inputElementId);
+            let message = inputElement.value;
+
+            //Create Chat Message In Preview Panel
+            messageDivNode.setAttribute("class", userClass);
+            messageDivNode.innerHTML = message;
+            console.log(message);
+            document.getElementById("chatPanelPreview").appendChild(messageDivNode);
+
+            //Clear the input textbox
+            inputElement.value = "";
+        }
+        
+        function setupTimePicker_AMPM() {
+            $('.setTimeSelectorGroup').on('change', function() {
+                const selectedHour = $('#setHourSelector').val();
+                const selectedMin = $('#setMinuteSelector').val();
+                const selectedAMPM = $('#setAMPMSelector').val();
+                const d = selectedHour + ':' + selectedMin+" "+selectedAMPM;
+                $('#timedisplay').html(d);
+            });
+        }
+
+        var CAPTURE_WIDTH = '750';
+        var CAPTURE_HEIGHT = '1334';
+
+        $(document).ready(function() {
+            // FROM THEM ADD 
+            $('#addFromThem').on('click', function() {
+                addMessage('from-them', 'FromThem1');
+            });
+
+            //FROM ME ADD
+            $('#addFromMe').on('click', function() {
+                addMessage('from-me', 'FromMe1');
+            });
+
+            //CLEAR
+            $('#clear').on('click', function() {
+                $('#chatPanelPreview').empty();
+            });
+
+            //REMOVE LAST CHILD
+            $('#removeLast').on('click', function() {
+                $('#chatPanelPreview div:last-child()').remove();
+            });
+            
+            //ADD TIMES
+            setupTimePicker_AMPM();
+
+            //ADD INITIALS
+            $('#initialLetterInput').keyup(function() {
+                $('#initialdisplay').html($('#initialLetterInput').val());
+            });
+
+            /*Preview Image*/
+            $('#previewButton').click(function() {
+                previewCaptured(CAPTURE_WIDTH, CAPTURE_HEIGHT);
+            });
+
+        });
+
+    </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,11 +1,11 @@
-<!-- views/lockScreenNotificaitons.ejs -->
+<!-- views/notifications.ejs -->
 
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
-    <title>OurAwesomeApp</title>
+    <title>NOTIFICATION MOCKUP</title>
 
     <!--Bootstrap CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
@@ -20,9 +20,12 @@
     <!--Moment-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment-with-locales.min.js"></script>
-    <script src="js/saveImage.js"></script>
-    
+
+    <!--HTML2CANVAS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+    <!--LOCAL-->
+    <script src="js/helper.js"></script>
 
 
     <style>
@@ -32,30 +35,16 @@
         }
 
         .ctn--displaypanel {
+
             position: relative;
             width: 375px;
+            /** width: 750px; **/
             height: 667px;
+            /** height: 1334px; **/
             overflow: hidden;
-            background-image: url("http://cdn.osxdaily.com/wp-content/uploads/2016/06/ios-10-wallpaper.jpg");
+            background-image: url("img/Lock_Screen_Background.png");
             background-size: cover;
         }
-
-        .topbar {
-            width: 100%;
-            height: 20px;
-            color: white;
-            padding-top: 5px;
-        }
-
-        .unlock {
-            width: 100%;
-            text-align: center;
-            position: absolute;
-            bottom: 30px;
-            opacity: 0.5;
-            color: white;
-        }
-
 
         .dateTimeDisplay {
             text-align: center;
@@ -105,17 +94,20 @@
             vertical-align: middle;
         }
 
-        row#notificationHeadlineDisplay {
+         div#notificationAppLogo {
+            width: 25px;
             height: 25px;
+            display: block;
+            position: relative;
+            overflow: hidden;
+            padding: 0px;
         }
 
-        div#notificationAppLogo {
-            width: 25px;
-            height: inherit;
-            background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Vanamo_Logo.png/600px-Vanamo_Logo.png");
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
+        div#notificationAppLogo img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
         }
 
         div#notificationAppName {
@@ -147,48 +139,7 @@
                 <div class="col-5">
                     <div class="container ctn--settingpanel">
 
-                        <!--Date/Time Setting-->
-                        <div id=setDateTime class="container ctn--settingpanel--parts">
-                            <!--Date Setting-->
-                            <div class="form-group" id="dateInputGroup">
-                                <label for="setDate">Date</label>
-                                <input type="text" id="setDate" class="form-control" placeholder="Click to select...">
-                            </div>
-
-                            <!--Time Setting-->
-                            <div class="form-group" id="timeInputGroup">
-                                <label for="setTime">Time:</label>
-                                <div class="row" id="setTime">
-                                    <!--Set Hour-->
-                                    <div class="col">
-                                        <select class="form-control setTimeSelectorGroup" id="setHourSelector">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                            <option>6</option>
-                                            <option>7</option>
-                                            <option>8</option>
-                                            <option>9</option>
-                                            <option>10</option>
-                                            <option selected="selected">11</option>
-                                            <option>12</option>
-                                        </select>
-                                    </div>
-                                    <!--Set Minutes-->
-                                    <div class="col">
-                                        <select class="form-control setTimeSelectorGroup" id="setMinuteSelector">
-                                            <option>00</option>
-                                            <option>15</option>
-                                            <option selected="selected">30</option>
-                                            <option>45</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Date/Time Setting/-->
+                    <%- include('partials/timesetting') %>
 
 
                         <!--Notificaton Setting-->
@@ -219,18 +170,7 @@
                 <div class="col-5">
                     <!--Screen Display-->
                     <div class="container ctn--displaypanel">
-                        <!--TopBar Display-->
-                        <div class="row topbar">
-                            <div class="col">
-                                <i class="fas fa-signal"></i>
-                            </div>
-                            <div class="col">
-                                <i class="fas fa-lock"></i>
-                            </div>
-                            <div calss="col">
-                                <i class="fas fa-battery-three-quarters"></i>
-                            </div>
-                        </div>
+
                         <!--Time + Date Display-->
                         <div class="row">
                             <div class="col dateTimeDisplay">
@@ -250,7 +190,8 @@
                             <div class="notificatondisplay">
                                 <div class="col">
                                     <div class="row" id="notificationHeadlineDisplay">
-                                        <div class="col-1" id="notificationAppLogo">
+                                        <div id="notificationAppLogo">
+                                            <img id="appLogo" src="img/salesforce-logo.png"/>
                                         </div>
                                         <div class="col-1" id="notificationAppName">
                                             <span id="notificationTitleSpan" class="uppercase notificationBar">App name</span>
@@ -267,12 +208,6 @@
                             </div>
                         </div>
 
-                        <!--Unlock Text Display-->
-                        <div class="row">
-                            <div class="col unlock">
-                                Press home to unlock
-                            </div>
-                        </div>
                     </div>
                     <!--End of lockscreen-->
                 </div>
@@ -281,48 +216,50 @@
     </div>
 
     <script>
-        function displayDefaultToday() {
-            const momentTodayDate = moment().format('dddd, DD MMMM');
-            $('#datedisplay').html(momentTodayDate);
-        }
-
-        function setupDatePicker() {
-            $('#setDate').datepicker({
+        function setDatePicker(input, output) {
+            input.datepicker({
                 format: "DD, dd MM",
                 maxViewMode: 2,
                 autoclose: true
             });
 
-            $('#setDate').on('change', function() {
-                $('#datedisplay').html($('#setDate').val());
+            input.on('change', function() {
+                output.html(input.val());
             });
         }
 
-        function setupTimePicker() {
-            $('.setTimeSelectorGroup').on('change', function() {
-                const selectedHour = $('#setHourSelector').val();
-                const selectedMin = $('#setMinuteSelector').val();
-                const d = selectedHour + ':' + selectedMin;
-                $('#timedisplay').html(d);
-            });
+        function getTime(inputHour, inputMin) {
+            const selectedHour = inputHour.val();
+            const selectedMin = inputMin.val();
+            const d = selectedHour + ':' + selectedMin;
+            return d;
         }
 
 
         $(document).ready(function() {
-            displayDefaultToday();
-            setupDatePicker();
-            setupTimePicker();
 
-            $("#setLogo").on('change', function() {
-                uploadImage('setLogo','notificationAppLogo');
+            //DISPLAY TODAYS DATE - USING HELPER FUNCTION
+            displayTodayDate($('#datedisplay'));
+
+            //DISPLAY DYNAMIC SETTING DATE - USING LOCAL FUNC
+            setDatePicker($('#setDate'), $('#datedisplay'));
+
+            //DISPLAY DYNAMIC SETTING TIME - USING LOCAL FUNC
+            $('.setTimeSelectorGroup').on('change', function() {
+                $('#timedisplay').html(getTime($('#setHourSelector'), $('#setMinuteSelector')));
             });
 
-            /*Input App Name*/
+            //DISPLAY DYNAMIC SETTING APP NAME
             $("#setAppName").on('keyup', function() {
                 $("#notificationTitleSpan").html($("#setAppName").val());
             });
 
-            /*Input Notification Message*/
+            //DISPLAY DYNAMIC UPLOAD APP LOGO IMAGE
+            $("#setLogo").change(function() {
+                readURL(this, $('#appLogo'));
+            });
+
+            //DISPLAY DYNAMIC NOTIFICATION MESSAGE
             $("#setNotification").on('keyup', function() {
                 $("#notificationMessageSpan").html($("#setNotification").val().replace(/\r?\n/g, '<br/>'));
             });
