@@ -1,0 +1,19 @@
+<div class="slds-form-element">
+    <span class="slds-form-element__label" id="file-selector-primary-label">
+        <%= imageselectorlabel %>
+    </span>
+    <div class="slds-form-element__control">
+        <div class="slds-file-selector slds-file-selector_files">
+            <div class="slds-file-selector__dropzone">
+                <input type="file" class="slds-file-selector__input slds-assistive-text" accept="image/png" id="<%= imgInputId %>" aria-labelledby="file-selector-primary-label file-selector-secondary-label" />
+                <label class="slds-file-selector__body" for="<%= imgInputId %>" id="file-selector-secondary-label">
+                <span class="slds-file-selector__button slds-button slds-button_neutral">
+                <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#upload" />
+                </svg>Upload Files</span>
+                <span class="slds-file-selector__text slds-medium-show">or Drop Files</span>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>

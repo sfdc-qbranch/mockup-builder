@@ -176,48 +176,9 @@
                 <!--LEFT COLUMN-->
                 <div class="col-5">
                     <div class="convSetting">
-
-                        <div>
-                            <div class="form-group" id="timeInputGroup">
-                                <label for="setTime">Time:</label>
-                                <div class="row" id="setTime">
-                                    <!--Set Hour-->
-                                    <div class="col">
-                                        <select class="form-control setTimeSelectorGroup" id="setHourSelector">
-                                            <option>1</option>
-                                            <option selected="selected">2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                            <option>6</option>
-                                            <option>7</option>
-                                            <option>8</option>
-                                            <option>9</option>
-                                            <option>10</option>
-                                            <option>11</option>
-                                            <option>12</option>
-                                        </select>
-                                    </div>
-                                    <!--Set Minutes-->
-                                    <div class="col">
-                                        <select class="form-control setTimeSelectorGroup" id="setMinuteSelector">
-                                            <option selected="selected">00</option>
-                                            <option>15</option>
-                                            <option>30</option>
-                                            <option>45</option>
-                                        </select>
-                                    </div>
-                                    <!--Set AM/PM-->
-                                    <div class="col">
-                                        <select class="form-control setTimeSelectorGroup" id="setAMPMSelector">
-                                            <option>am</option>
-                                            <option selected="selected" >pm</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
+                        <!--Time Setting-->
+                        <%- include('helper/timesettingampm', {am:'false'}) %>
+                        
                         <div>
                             <label for="initialLetterInput">User Initials:</label><br>
                             <input type="text" id="initialLetterInput" class="initialText uppercase" maxlength="2" />

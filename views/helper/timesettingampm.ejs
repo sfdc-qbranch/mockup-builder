@@ -1,0 +1,41 @@
+<div>
+    <div class="form-group" id="timeInputGroup">
+        <label for="setTime">Time:</label>
+        <div class="row" id="setTime">
+            <!--Set Hour-->
+            <div class="col">
+                <select class="form-control setTimeSelectorGroup" id="setHourSelector">
+                    <option>1</option>
+                    <option selected="selected">2</option>
+                    <% for(var hr=3; hr<12; hr++) {%>
+                       <option><%= hr %></option>
+                    <% } %>
+                </select>
+            </div>
+            <!--Set Hour-->
+
+            <!--Set Minutes-->
+            <div class="col">
+                <select class="form-control setTimeSelectorGroup" id="setMinuteSelector">
+                        <option selected="selected">00</option>
+                        <% for(var min=10; min<60; min+=10) {%>
+                            <option><%= min %></option>
+                        <% } %>
+                    </select>
+            </div>
+            <!--Set Minutes-->
+
+            <%if (am=='true') {%>
+                <!--Set AM/PM-->
+                <div class="col">
+                    <select class="form-control setTimeSelectorGroup" id="setAMPMSelector">
+                        <option>am</option>
+                        <option selected="selected" >pm</option>
+                    </select>
+                    <!--Set AM/PM-->
+                </div>
+                <% } %>
+        </div>
+    </div>
+
+</div>

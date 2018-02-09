@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Ellyzz08/NodeTrail_ImageText#readme",
   "dependencies": {
+    "@salesforce-ux/design-system": "^2.5.0",
     "ejs": "^2.5.7",
     "express": "^4.16.2"
   },
