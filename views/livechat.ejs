@@ -6,97 +6,87 @@
 
 <head>
     <meta charset="utf-8">
-    <title>LIVE CHAT MOCKUP</title>
-    <!--JS-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-    <script src="js/helper.js"></script>
-    <script src="js/bootstrap-colorpicker.min.js"></script>
-    
-    <!--CSS-->
-    <link rel="stylesheet" type="text/css" href="/assets/styles/salesforce-lightning-design-system.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-colorpicker.css">
+    <title>LIVE CHAT MOCKUP</title>    
 </head>
 
 <body>
-    <div class="container">
+    <div>
         <%- include('partials/header') %>
             <div class="slds-grid">
-                <div class="slds-col slds-size_1-of-5">
+                <div class="slds-col slds-size_1-of-12">
                     <%- include('partials/navbar') %>
                 </div>
                 <!--LEFT COLUMN-->
-                <div class="slds-col slds-size_2-of-5">
-                    <div class="container">
-                        <!--Chat with Expert--->
-                        <%- include('helper/inputtext', {id:'lc_chatwithexpert', placeholder:'Input to overwrite..', label:'Desktop Chat Button'})%>
+                <div class="slds-col slds-size_6-of-12">
+                    <div class="slds-grid slds-p-around_small">
+                        <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                            <!--Chat with Expert--->
+                            <%- include('helper/inputtext', {id:'lc_chatwithexpert', placeholder:'Input to overwrite..', label:'Desktop Chat Button'})%>
 
-                        <!--CUSTOMER INFO-->
-                        <%- include('livechat/livechat-customerinfo') %>
+                            <!--CUSTOMER INFO-->
+                            <%- include('livechat/livechat-customerinfo') %>
 
-                        <!--Start Chatting Button--->
-                        <%- include('helper/inputtext', {id:'lc_startchatbtn', placeholder:'Input to overwrite..', label:'Start Chatting Button'})%>
+                            <!--Start Chatting Button--->
+                            <%- include('helper/inputtext', {id:'lc_startchatbtn', placeholder:'Input to overwrite..', label:'Start Chatting Button'})%>
 
-                        <!--Background Image-->
-                        <%- include('helper/imagefileselector', {imageselectorlabel:'Header Background Image',imgInputId:'lc_headerbgimage'}) %>
+                            <!--Background Image-->
+                            <%- include('helper/imagefileselector', {imageselectorlabel:'Header Background Image',imgInputId:'lc_headerbgimage'}) %>
 
-                        <!--Loading Page Headline-->
-                        <%- include('helper/inputtext', {id:'lc_loadingHeadline', placeholder:'Input to overwrite..', label:'Loading Page Headline'})%>
+                            <!--Loading Page Headline-->
+                            <%- include('helper/inputtext', {id:'lc_loadingHeadline', placeholder:'Input to overwrite..', label:'Loading Page Headline'})%>
 
 
-                        <!--Agent Name-->
-                        <%- include('helper/inputtext', {id:'lc_agentname', placeholder:'Please input..', label:'Agent Name'})%>
+                            <!--Agent Name-->
+                            <%- include('helper/inputtext', {id:'lc_agentname', placeholder:'Please input..', label:'Agent Name'})%>
 
                             <!--Agent Image-->
                             <%- include('helper/imagefileselector', {imageselectorlabel:'Agent Profile Image',imgInputId:'lc_agentimage'}) %>
-
-
-                        <!--Time Setting-->
-                        <%- include('helper/timesettingampm', {am:'true'})%>
-
-                        <!--Text Color-->
-                        <fieldset class="slds-form-element">
-                            <legend class="slds-form-element__legend slds-form-element__label">Text Color</legend>
-                            <div class="slds-form-element__control">
-                                <div class="slds-radio_button-group" style="border:none">
-                                    <span class="slds-radio">
-                                  <input type="radio" id="lc_textcolorblack" name="options" value="on" 
-                                         checked/>
-                                  <label class="slds-radio__label" for="lc_textcolorblack">
-                                    <span class="slds-radio_faux"></span>
-                                    <span class="slds-form-element__label">Black</span>
-                                    </label>
-                                    </span>
-                                    <span class="slds-radio">
-                                  <input type="radio" id="lc_textcolorwhite" name="options" value="on" />
-                                  <label class="slds-radio__label" for="lc_textcolorwhite">
-                                    <span class="slds-radio_faux"></span>
-                                    <span class="slds-form-element__label">White</span>
-                                    </label>
-                                    </span>
-                                </div>
-                            </div>
-                        </fieldset>
+                        </div>
                         
-                        <!--Button Color-->
-                        <div class="slds-form-element">
-                              <label class="slds-form-element__label" for="text-input-id-1">Action Color</label>
-                              <div class="slds-form-element__control input-group colorpicker-component" id="cp2">
-                                <input type="text" id="lc_actioncolorpicker" class="slds-input form-control" value="#87dEd0" />
-                                  <button class="input-group-addon">
-                                <i style="height:50px;width:50px"></i>
-                            </button>
-                              </div>
+                        <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                            <!--Time Setting-->
+                            <%- include('helper/timesettingampm', {am:'true'})%>
+
+                            <!--Text Color-->
+                            <fieldset class="slds-form-element">
+                                <legend class="slds-form-element__legend slds-form-element__label">Text Color</legend>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-radio_button-group" style="border:none">
+                                        <span class="slds-radio">
+                                      <input type="radio" id="lc_textcolorblack" name="options" value="on" 
+                                             checked/>
+                                      <label class="slds-radio__label" for="lc_textcolorblack">
+                                        <span class="slds-radio_faux"></span>
+                                        <span class="slds-form-element__label">Black</span>
+                                        </label>
+                                        </span>
+                                        <span class="slds-radio">
+                                      <input type="radio" id="lc_textcolorwhite" name="options" value="on" />
+                                      <label class="slds-radio__label" for="lc_textcolorwhite">
+                                        <span class="slds-radio_faux"></span>
+                                        <span class="slds-form-element__label">White</span>
+                                        </label>
+                                        </span>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <!--Button Color-->
+                            <div class="slds-form-element">
+                                  <label class="slds-form-element__label" for="text-input-id-1">Action Color</label>
+                                  <div class="slds-form-element__control input-group colorpicker-component" id="cp2">
+                                    <input type="text" id="lc_actioncolorpicker" class="slds-input form-control" value="#87dEd0" />
+                                      <button class="input-group-addon">
+                                    <i style="height:25px;width:25px"></i>
+                                </button>
+                                  </div>
+                            </div>
                         </div>
 
-    
-                                            
-                        
                     </div>
                 </div>
-                <!--RIGHT COLUMN-->
-                <div class="slds-col slds-size_2-of-5">
+                <!--PREIVEW COLUMN-->
+                <div class="slds-col slds-size_5-of-12">
                     <div id="capture">
                         <div id="thumbnail" class="thumbnail">
                             <img id="uploadedImage" />

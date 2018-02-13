@@ -7,28 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
     <title>NOTIFICATION MOCKUP</title>
 
-    <!--Bootstrap CSS-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="salesforce-lightning-design-system-2.5.0/assets/styles/salesforce-lightning-design-system.css" />
-    <!--Awesome Icons-->
-    <link href="https://use.fontawesome.com/releases/v5.0.2/css/all.css" rel="stylesheet">
-    <!--jQuery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!--Date Picker-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.en-AU.min.js"></script>
-    <!--Moment-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment-with-locales.min.js"></script>
-
-    <!--HTML2CANVAS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-
-    <!--LOCAL-->
-    <script src="js/helper.js"></script>
-
-
     <style>
         body {
             padding-top: 20px;
@@ -95,7 +73,7 @@
             vertical-align: middle;
         }
 
-         div#notificationAppLogo {
+        div#notificationAppLogo {
             width: 25px;
             height: 25px;
             display: block;
@@ -109,7 +87,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            border-radius:5px;
+            border-radius: 5px;
         }
 
         div#notificationAppName {
@@ -130,88 +108,21 @@
 </head>
 
 <body>
-    <div class="container">
+    <div>
         <%- include('partials/header') %>
-            <div class="row">
-                <div class="col-2">
+            <div class="slds-grid">
+                <div class="slds-col slds-size_1-of-12">
                     <%- include('partials/navbar') %>
                 </div>
 
                 <!--LEFT COLUMN-->
-                <div class="col-5">
-                    <div class="container ctn--settingpanel">
-
-                    <%- include('helper/timesettingampm', {am:'false'}) %>
-
-
-                        <!--Notificaton Setting-->
-                        <div class="container ctn--settingpanel--parts" id="NotificationInputGroup">
-
-                            <div class="form-group">
-                                <label for="setLogo">App Logo:</label>
-                                <input type="file" id="setLogo" accept=".jpg, .jpeg, .png" />
-                                <small id="setLogoHelp" class="form-text text-muted">100px * 100px (.jpg .jpeg .png)</small>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="setAppName">App Name:</label>
-                                <input type="text" class="form-control" id="setAppName" aria-describedby="setAppNameHelp" placeholder="Please input..." maxlength="25">
-                                <small id="setAppNameHelp" class="form-text text-muted">Max 25 characters</small>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="setNotification">Notification:</label>
-                                <textarea class="form-control" id="setNotification" aria-describedby="setNotificationHelp" rows="3" placeholder="Please input..." maxlength="300"></textarea>
-                                <small id="setNotificationHelp" class="form-text text-muted">Max 300 characters</small>
-                            </div>
-
-                        </div>
-                    </div>
+                <div class="slds-col slds-size_6-of-12">
+                    <%- include('notification/notificationSettings') %>
                 </div>
-                <!--RIGHT COLUMN (Display) -->
-                <div class="col-5">
-                    <!--Screen Display-->
-                    <div class="container ctn--displaypanel">
-
-                        <!--Time + Date Display-->
-                        <div class="row">
-                            <div class="col dateTimeDisplay">
-                                <div id="timedisplay" class="time">
-                                    11:30
-                                </div>
-
-                                <div id="datedisplay" class="date">
-                                    <!--jQuery Loading today's date using moment()-->
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- Notification Display-->
-                        <div class="row">
-                            <div class="notificatondisplay">
-                                <div class="col">
-                                    <div class="row" id="notificationHeadlineDisplay">
-                                        <div id="notificationAppLogo">
-                                            <img id="appLogo" src="img/salesforceinbox-logo.png"/>
-                                        </div>
-                                        <div class="col-1" id="notificationAppName">
-                                            <span id="notificationTitleSpan" class="uppercase notificationBar">App name</span>
-                                        </div>
-                                        <div class="col-8"></div>
-                                        <div class="col-offset-2" id="notificationTime">
-                                            <span id="notificationTimeSpan" class="notificationBar">2m ago</span>
-                                        </div>
-                                    </div>
-                                    <div class="row" id="notificationMessage">
-                                        <span id="notificationMessageSpan" class="wraptext">Example Notifications</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!--End of lockscreen-->
+                
+                <div class="slds-col slds-size_5-of-12">
+                    <!--RIGHT COLUMN (Display) -->
+                    <%- include('notification/notificationDisplay') %>
                 </div>
             </div>
             <%- include('partials/footer') %>
@@ -252,8 +163,8 @@
             });
 
             //DISPLAY DYNAMIC SETTING APP NAME
-            $("#setAppName").on('keyup', function() {
-                $("#notificationTitleSpan").html($("#setAppName").val());
+            $("#no_setAppName").on('keyup', function() {
+                $("#notificationTitleSpan").html($("#no_setAppName").val());
             });
 
             //DISPLAY DYNAMIC UPLOAD APP LOGO IMAGE
@@ -262,8 +173,8 @@
             });
 
             //DISPLAY DYNAMIC NOTIFICATION MESSAGE
-            $("#setNotification").on('keyup', function() {
-                $("#notificationMessageSpan").html($("#setNotification").val().replace(/\r?\n/g, '<br/>'));
+            $("#no_setNotification").on('keyup', function() {
+                $("#notificationMessageSpan").html($("#no_setNotification").val().replace(/\r?\n/g, '<br/>'));
             });
         });
 

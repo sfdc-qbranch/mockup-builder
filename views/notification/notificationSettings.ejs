@@ -1,0 +1,28 @@
+<div class="container">
+
+    <!--TIME SETTING-->
+    <%- include('../helper/timesettingampm', {am:'false'}) %>
+
+    
+    <!--APP LOGO SETTING-->
+    <div class="form-group">
+        <label for="setLogo">App Logo:</label>
+        <input type="file" id="setLogo" accept=".jpg, .jpeg, .png" />
+        <small id="setLogoHelp" class="form-text text-muted">100px * 100px (.jpg .jpeg .png)</small>
+    </div>
+
+    <!--APP NAME SETTING-->
+    <%- include('../helper/inputtext', {id:'no_setAppName', placeholder:'Please input...', label:'App Name:'})%>
+
+
+    <!--NOTIFICATION SETTING-->
+    <div class="slds-form-element">
+        <label class="slds-form-element__label" for="no_setNotification">Notification:</label>
+        <div class="slds-form-element__control">
+            <textarea id="no_setNotification" class="slds-textarea" placeholder="Please input..."></textarea>
+        </div>
+    </div>
+
+    
+    
+</div>
