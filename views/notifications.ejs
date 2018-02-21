@@ -13,41 +13,41 @@
             padding-bottom: 20px;
         }
 
-        .ctn--displaypanel {
-
-            position: relative;
-            width: 375px;
+        .n_displayMainContainer {
+            width: 750px;
             /** width: 750px; **/
-            height: 667px;
+            height: 1334px;
             /** height: 1334px; **/
-            overflow: hidden;
-            background-image: url("img/Lock_Screen_Background.png");
-            background-size: cover;
+            position:relative;
+        }
+        
+        #n_backGroundImage {
+            width:inherit;
+            height:inherit;
+            position: absolute;
         }
 
-        .dateTimeDisplay {
+        .n_TimeAndDateDisplay {
             text-align: center;
             position: absolute;
-            margin-top: 60px;
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
             font-weight: 200;
             color: white;
+            top:12.74%;
         }
 
         .time {
-            font-size: 65px;
+            font-size: 58px;
         }
 
         .date {
-            font-size: 20px;
-            margin-top: -12px;
+            font-size: 15px;
+            
         }
 
         .notificatondisplay {
             position: absolute;
-            margin-top: 190px;
-            margin-left: 10px;
-            width: calc(100% - 20px);
+            width: 80%;
             padding: 10px 10px;
             background-color: rgba(255, 255, 255, 0.8);
             border-radius: 12px;
@@ -108,6 +108,7 @@
 </head>
 
 <body>
+    
     <div>
         <%- include('partials/header') %>
             <div class="slds-grid">
@@ -115,18 +116,20 @@
                     <%- include('partials/navbar') %>
                 </div>
 
-                <!--LEFT COLUMN-->
+                <!--LEFT COLUMN (Settings)-->
                 <div class="slds-col slds-size_6-of-12">
                     <%- include('notification/notificationSettings') %>
                 </div>
                 
+                 <!--RIGHT COLUMN (Display) -->
                 <div class="slds-col slds-size_5-of-12">
-                    <!--RIGHT COLUMN (Display) -->
                     <%- include('notification/notificationDisplay') %>
                 </div>
             </div>
             <%- include('partials/footer') %>
     </div>
+
+
 
     <script>
         function setDatePicker(input, output) {
