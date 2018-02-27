@@ -29,7 +29,7 @@
     <!--NOTIFICATION TIME SETTING-->
     <div class="page-setting-element">
         <label class="slds-form-element__label" for="n_setTimeAgo">Notification Time Received:</label>
-        <select class="slds-select n_setTimeAgo">
+        <select class="slds-select" id="n_setTimeAgo">
                         <option selected="selected">now</option>
                         <% for(var min=5; min<60; min+=5) {%>
                            <option><%= min %>m ago</option>
@@ -43,9 +43,9 @@
     <!--NOTIFICATION MESSAGE SETTING-->
     <div class="page-setting-element">
         <div class="slds-form-element">
-            <label class="slds-form-element__label" for="no_setNotification">Notification:</label>
+            <label class="slds-form-element__label" for="n_setNotification">Notification:</label>
             <div class="slds-form-element__control">
-                <textarea id="no_setNotification" class="slds-textarea" placeholder="Please input..."></textarea>
+                <textarea id="n_setNotification" class="slds-textarea" placeholder="Please input..."></textarea>
             </div>
         </div>
     </div>

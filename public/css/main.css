@@ -77,6 +77,11 @@ div.page-setting-element {
     margin-bottom:2rem;
 }
 
+div.capture {
+    height:100%;
+    width:100%;
+}
+
 /*GENERAL PROPERTY*/
 
 span.uppercase {
@@ -108,6 +113,7 @@ select {
 
 .lock_screen-time {
     font-size: 58px;
+    line-height: 1.1;
 }
 
 .lock_screen-date {

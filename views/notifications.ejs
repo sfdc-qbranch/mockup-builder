@@ -69,14 +69,15 @@
         });
         
         //SET NOTIFICATION TIME AGO
-        $(".n_setTimeAgo").change(function() {
-            $('#notificationTimeSpan').html($(".n_setTimeAgo").val());
+        $("#n_setTimeAgo").change(function() {
+            $('#notificationTimeSpan').html($("#n_setTimeAgo").val());
         });
 
         //SET NOTIFICATION MESSAGE
-        $("#no_setNotification").on('keyup', function() {
-            $("#notificationMessageSpan").html($("#no_setNotification").val().replace(/\r?\n/g, '<br/>'));
+        $("#n_setNotification").on('keyup', function() {
+            $("#notificationMessageSpan").html($("#n_setNotification").val().replace(/\r?\n/g, '<br/>'));
         });
+        
     });
 
 </script>
