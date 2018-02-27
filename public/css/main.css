@@ -1,0 +1,118 @@
+/*PAGE HEADER*/
+
+div.page-header {
+    background: darkgray;
+    width: auto;
+    height: 4rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+}
+
+div.page-title > span {
+    color: white;
+    line-height: 4rem;
+}
+
+div.page-downloadmockup {
+    background: Gainsboro;
+    border-radius: 20px;
+    height: 50%;
+    padding: 0rem 3rem;
+    line-height: 2rem;
+}
+
+/*PAGE NAV BAR*/
+
+div.page-navbar {
+    background: Gainsboro;
+    height: 100%;
+}
+
+div.page-navbar-logo {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+a.nav-link {
+    font-size: 0.925rem;
+    color: black;
+}
+
+/*PAGE RIGHT BAR*/
+
+div.page-rightbar {
+    background: Gainsboro;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: auto;
+}
+
+/*PAGE SCREEN*/
+
+div.page-screen {
+    margin-top: 2rem;
+    width: 375px;
+    /** width: 750px; **/
+    height: 667px;
+    /** height: 1334px; **/
+    position: relative;
+}
+
+div.page-settings {
+    margin-top: 5rem;
+}
+
+div.page-setting-element {
+    margin-top:2rem;
+    margin-bottom:2rem;
+}
+
+/*GENERAL PROPERTY*/
+
+span.uppercase {
+    text-transform: uppercase;
+}
+
+span.wraptext {
+    overflow: break-word;
+    text-wrap: break-word;
+    white-space: initial;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+span.normal-inlineheight {
+    line-height: normal;
+}
+
+.border-round_small {
+    border-radius: 5px;
+}
+
+select {
+    text-align-last:center; 
+}
+
+/*Screen Element*/
+
+.lock_screen-time {
+    font-size: 58px;
+}
+
+.lock_screen-date {
+    font-size: 15px;
+
+}
+
+/*PARTIAL + HELPER*/

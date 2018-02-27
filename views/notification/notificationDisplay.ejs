@@ -1,16 +1,17 @@
 <!--Screen Display-->
-<div class="n_displayMainContainer">
+<div class="capture">
 
     <img src="img/Lock_Screen_Background.png" id="n_backGroundImage" />
 
     <!--Time + Date Display-->
     <div class="row slds-align_absolute-center">
         <div class="n_TimeAndDateDisplay">
-           <div id="timedisplay" class="time">
-                11:30
+         
+           <div id="timedisplay" class="lock_screen-time">
+                9:30
             </div>
 
-            <div id="datedisplay" class="date">
+            <div id="datedisplay" class="lock_screen-date">
                 <!--jQuery Loading today's date using moment()-->
                 Thursday, September 8
             </div>
@@ -30,8 +31,8 @@
                         <span id="notificationTitleSpan" class="uppercase notificationBar">App name</span>
                     </div>
                     <div class="col-8"></div>
-                    <div class="col-offset-2" id="notificationTime">
-                        <span id="notificationTimeSpan" class="notificationBar">2m ago</span>
+                    <div class="col-offset-2 n-timeAgo_pullright">
+                        <span id="notificationTimeSpan" class="notificationBar">now</span>
                     </div>
                 </div>
                 <div class="row" id="notificationMessage">

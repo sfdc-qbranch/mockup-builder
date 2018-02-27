@@ -1,0 +1,64 @@
+    #n_backGroundImage {
+        width: inherit;
+        height: inherit;
+        position: absolute;
+    }
+
+    .n_TimeAndDateDisplay {
+        text-align: center;
+        position: absolute;
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        font-weight: 200;
+        color: white;
+        top: 12.74%;
+    }
+
+    .notificatondisplay {
+        position: absolute;
+        top: 30.43%;
+        width: 95.47%;
+        padding: 10px 10px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 12px;
+        font-size: 0.825rem;
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        white-space: nowrap;
+
+    }
+
+    span.notificationBar {
+        color: rgba(0, 0, 0, 0.9);
+        vertical-align: middle;
+    }
+
+    div#notificationAppLogo {
+        width: 25px;
+        height: 25px;
+        display: block;
+        position: relative;
+        overflow: hidden;
+        padding: 0px;
+    }
+
+    div#notificationAppLogo img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    div#notificationAppName {
+        /* Reduce the default left/right padding on div 15px->5px */
+        padding: 0px 5px;
+    }
+
+    div.n-timeAgo_pullright {
+        width: 3rem;
+        text-align: right;
+    }
+
+    div#notificationMessage {
+        /* Add extra padding above notification message */
+        padding-top: 10px;
+    }

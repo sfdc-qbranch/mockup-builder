@@ -1,98 +1,17 @@
- 
-  <%- include('partials/header') %>
-<%- include('notification/notificationDisplay') %>
-
-  <style>
-
-        .n_displayMainContainer {
-            width: 750px;
-            /** width: 750px; **/
-            height: 1334px;
-            /** height: 1334px; **/
-            position:relative;
-        }
+<div class="slds-grid">
+    <div class="slds-col slds-size_1-of-7">
+        <%- include('partials/navbar') %>
+    </div>
+    
+    <div class="slds-col slds-size_4-of-7">
+        <%- include('partials/header') %>
+    </div>
+    
+     <div class="slds-col slds-size_2-of-7 page-rightbar">
         
-        #n_backGroundImage {
-            width:inherit;
-            height:inherit;
-            position: absolute;
-        }
+    </div>
+    
+    
+</div>
 
-        .n_TimeAndDateDisplay {
-            text-align: center;
-            position: absolute;
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-            font-weight: 200;
-            color: white;
-            top:12.74%;
-        }
-
-        .time {
-            font-size: 115px;
-        }
-
-        .date {
-            font-size: 30px;
-            
-        }
-
-        .notificatondisplay {
-            position: absolute;
-            width: 80%;
-            padding: 10px 10px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 12px;
-            font-size: 0.825rem;
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-            white-space: nowrap;
-
-        }
-
-        span.wraptext {
-            overflow: break-word;
-            text-wrap: break-word;
-            white-space: initial;
-            hyphens: auto;
-        }
-
-        span.uppercase {
-            text-transform: uppercase;
-        }
-
-        span.notificationBar {
-            color: rgba(0, 0, 0, 0.9);
-            vertical-align: middle;
-        }
-
-        div#notificationAppLogo {
-            width: 25px;
-            height: 25px;
-            display: block;
-            position: relative;
-            overflow: hidden;
-            padding: 0px;
-        }
-
-        div#notificationAppLogo img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            border-radius: 5px;
-        }
-
-        div#notificationAppName {
-            /* Reduce the default left/right padding on div 15px->5px */
-            padding: 0px 5px;
-        }
-
-        div#notificationTime {
-            text-align: right;
-        }
-
-        div#notificationMessage {
-            /* Add extra padding above notification message */
-            padding-top: 10px;
-        }
-
-    </style>
+ 

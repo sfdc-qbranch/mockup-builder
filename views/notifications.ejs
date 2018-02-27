@@ -1,187 +1,82 @@
 <!-- views/notifications.ejs -->
 
-<!DOCTYPE html>
-<html>
+<link rel="stylesheet" href="css/notification.css">
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
-    <title>NOTIFICATION MOCKUP</title>
-
-    <style>
-        body {
-            padding-top: 20px;
-            padding-bottom: 20px;
-        }
-
-        .n_displayMainContainer {
-            width: 750px;
-            /** width: 750px; **/
-            height: 1334px;
-            /** height: 1334px; **/
-            position:relative;
-        }
-        
-        #n_backGroundImage {
-            width:inherit;
-            height:inherit;
-            position: absolute;
-        }
-
-        .n_TimeAndDateDisplay {
-            text-align: center;
-            position: absolute;
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-            font-weight: 200;
-            color: white;
-            top:12.74%;
-        }
-
-        .time {
-            font-size: 58px;
-        }
-
-        .date {
-            font-size: 15px;
-            
-        }
-
-        .notificatondisplay {
-            position: absolute;
-            width: 80%;
-            padding: 10px 10px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 12px;
-            font-size: 0.825rem;
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-            white-space: nowrap;
-
-        }
-
-        span.wraptext {
-            overflow: break-word;
-            text-wrap: break-word;
-            white-space: initial;
-            hyphens: auto;
-        }
-
-        span.uppercase {
-            text-transform: uppercase;
-        }
-
-        span.notificationBar {
-            color: rgba(0, 0, 0, 0.9);
-            vertical-align: middle;
-        }
-
-        div#notificationAppLogo {
-            width: 25px;
-            height: 25px;
-            display: block;
-            position: relative;
-            overflow: hidden;
-            padding: 0px;
-        }
-
-        div#notificationAppLogo img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            border-radius: 5px;
-        }
-
-        div#notificationAppName {
-            /* Reduce the default left/right padding on div 15px->5px */
-            padding: 0px 5px;
-        }
-
-        div#notificationTime {
-            text-align: right;
-        }
-
-        div#notificationMessage {
-            /* Add extra padding above notification message */
-            padding-top: 10px;
-        }
-
-    </style>
-</head>
-
-<body>
-    
-    <div>
+<div class="slds-grid">
+    <div class="slds-col slds-size_1-of-7">
+        <%- include('partials/navbar') %>
+    </div>
+    <div class="slds-col slds-size_4-of-7 ">
         <%- include('partials/header') %>
-            <div class="slds-grid">
-                <div class="slds-col slds-size_1-of-12">
-                    <%- include('partials/navbar') %>
-                </div>
-
-                <!--LEFT COLUMN (Settings)-->
-                <div class="slds-col slds-size_6-of-12">
-                    <%- include('notification/notificationSettings') %>
-                </div>
-                
-                 <!--RIGHT COLUMN (Display) -->
-                <div class="slds-col slds-size_5-of-12">
+            <div class="slds-align_absolute-center">
+                <div class="page-screen">
                     <%- include('notification/notificationDisplay') %>
                 </div>
             </div>
-            <%- include('partials/footer') %>
+    </div>
+    <div class="slds-col slds-size_2-of-7 page-rightbar">
+        <%- include('notification/notificationSettings') %>
     </div>
 
+</div>
 
 
-    <script>
-        function setDatePicker(input, output) {
-            input.datepicker({
-                format: "DD, dd MM",
-                maxViewMode: 2,
-                autoclose: true
-            });
-
-            input.on('change', function() {
-                output.html(input.val());
-            });
-        }
-
-        function getTime(inputHour, inputMin) {
-            const selectedHour = inputHour.val();
-            const selectedMin = inputMin.val();
-            const d = selectedHour + ':' + selectedMin;
-            return d;
-        }
 
 
-        $(document).ready(function() {
 
-            //DISPLAY TODAYS DATE - USING HELPER FUNCTION
-            displayTodayDate($('#datedisplay'));
+<script>
+    $(document).ready(function() {
 
-            //DISPLAY DYNAMIC SETTING DATE - USING LOCAL FUNC
-            setDatePicker($('#setDate'), $('#datedisplay'));
+        //DISPLAY TODAYS DATE - USING HELPER FUNCTION
+        displayTodayDate($('#datedisplay'));
 
-            //DISPLAY DYNAMIC SETTING TIME - USING LOCAL FUNC
-            $('.setTimeSelectorGroup').on('change', function() {
-                $('#timedisplay').html(getTime($('#setHourSelector'), $('#setMinuteSelector')));
-            });
-
-            //DISPLAY DYNAMIC SETTING APP NAME
-            $("#no_setAppName").on('keyup', function() {
-                $("#notificationTitleSpan").html($("#no_setAppName").val());
-            });
-
-            //DISPLAY DYNAMIC UPLOAD APP LOGO IMAGE
-            $("#setLogo").change(function() {
-                readURL(this, $('#appLogo'));
-            });
-
-            //DISPLAY DYNAMIC NOTIFICATION MESSAGE
-            $("#no_setNotification").on('keyup', function() {
-                $("#notificationMessageSpan").html($("#no_setNotification").val().replace(/\r?\n/g, '<br/>'));
-            });
+        
+        //TIME PICKER
+        $('input.timepicker').timepicker({
+            timeFormat: 'H:mm',
+            interval: 30,
+            minTime: '0:00am',
+            maxTime: '23:59pm',
+            defaultTime: '9:30am',
+            startTime: '7:00',
+            dynamic: false,
+            dropdown: true,
+            scrollbar: true,
+            change: function() {
+                $('#timedisplay').html(this.val());
+            },
+        });
+        
+        //DATE PICKER
+        $('input.datepicker').datepicker({
+            format: "DD, dd MM",
+            maxViewMode: 2,
+            autoclose: true
         });
 
-    </script>
-</body>
+        $('input.datepicker').on('change', function() {
+            $("#datedisplay").html($('input.datepicker').val());
+        });
 
-</html>
+        //SET APP NAME
+        $("#n_setAppName").on('keyup', function() {
+            $("#notificationTitleSpan").html($("#n_setAppName").val());
+        });
+
+        //SET APP LOGO IMAGE
+        $("#n_setAppLogoImage").change(function() {
+            readURL(this, $('#appLogo'));
+        });
+        
+        //SET NOTIFICATION TIME AGO
+        $(".n_setTimeAgo").change(function() {
+            $('#notificationTimeSpan').html($(".n_setTimeAgo").val());
+        });
+
+        //SET NOTIFICATION MESSAGE
+        $("#no_setNotification").on('keyup', function() {
+            $("#notificationMessageSpan").html($("#no_setNotification").val().replace(/\r?\n/g, '<br/>'));
+        });
+    });
+
+</script>

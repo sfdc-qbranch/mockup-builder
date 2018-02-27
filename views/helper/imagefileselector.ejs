@@ -1,11 +1,11 @@
-<div class="slds-form-element">
-    <span class="slds-form-element__label" id="file-selector-primary-label">
+<div class="slds-form-element helper-imageselector">
+    <label class="slds-form-element__label" id="file-selector-primary-label">
         <%= imageselectorlabel %>
-    </span>
+    </label>
     <div class="slds-form-element__control">
         <div class="slds-file-selector slds-file-selector_files">
             <div class="slds-file-selector__dropzone">
-                <input type="file" class="slds-file-selector__input slds-assistive-text" accept="image/png" id="<%= imgInputId %>" aria-labelledby="file-selector-primary-label file-selector-secondary-label" />
+                <input type="file" class="slds-file-selector__input slds-assistive-text" accept=".jpg, .jpeg, .png" id="<%= imgInputId %>" aria-labelledby="file-selector-primary-label file-selector-secondary-label" />
                 <label class="slds-file-selector__body" for="<%= imgInputId %>" id="file-selector-secondary-label">
                 <span class="slds-file-selector__button slds-button slds-button_neutral">
                 <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
@@ -13,7 +13,10 @@
                 </svg>Upload Files</span>
                 <span class="slds-file-selector__text slds-medium-show">or Drop Files</span>
                 </label>
+                <small id="helptext" class="form-text text-muted"><%= helptext %></small>
+                
             </div>
         </div>
     </div>
 </div>
+
