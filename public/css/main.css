@@ -34,13 +34,17 @@ div.page-downloadmockup {
 /*PAGE NAV BAR*/
 
 div.page-navbar {
-    background: Gainsboro;
+    background: #F8F8F8;
     height: 100%;
 }
 
 div.page-navbar-logo {
     padding-top: 5rem;
     padding-bottom: 5rem;
+}
+
+div.page-navbar-logo img{
+    max-width:80%;
 }
 
 a.nav-link {
@@ -51,7 +55,7 @@ a.nav-link {
 /*PAGE RIGHT BAR*/
 
 div.page-rightbar {
-    background: Gainsboro;
+    background: #F8F8F8;
     height: 100%;
     overflow-y: scroll;
     overflow-x: auto;

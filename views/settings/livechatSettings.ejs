@@ -1,0 +1,67 @@
+<div class="container page-settings">
+
+
+    <!--Chat with Expert--->
+    <%- include('../helper/inputtext', {id:'lc_chatwithexpert', placeholder:'Input to overwrite..', label:'Desktop Chat Button'})%>
+
+        <!--CUSTOMER INFO-->
+        <%- include('../livechat/livechat-customerinfo') %>
+
+            <!--Start Chatting Button--->
+            <%- include('../helper/inputtext', {id:'lc_startchatbtn', placeholder:'Input to overwrite..', label:'Start Chatting Button'})%>
+
+                <!--Background Image-->
+                <%- include('../helper/imagefileselector', {imageselectorlabel:'Header Background Image',imgInputId:'lc_headerbgimage',helptext:''}) %>
+
+                    <!--Loading Page Headline-->
+                    <%- include('../helper/inputtext', {id:'lc_loadingHeadline', placeholder:'Input to overwrite..', label:'Loading Page Headline'})%>
+
+
+                        <!--Agent Name-->
+                        <%- include('../helper/inputtext', {id:'lc_agentname', placeholder:'Please input..', label:'Agent Name'})%>
+
+                            <!--Agent Image-->
+                            <%- include('../helper/imagefileselector', {imageselectorlabel:'Agent Profile Image',imgInputId:'lc_agentimage',helptext:''}) %>
+
+
+
+                                <!--Time Setting-->
+
+
+                                <!--Text Color-->
+                                <fieldset class="slds-form-element">
+                                    <legend class="slds-form-element__legend slds-form-element__label">Text Color</legend>
+                                    <div class="slds-form-element__control">
+                                        <div class="slds-radio_button-group" style="border:none">
+                                            <span class="slds-radio">
+                                      <input type="radio" id="lc_textcolorblack" name="options" value="on" 
+                                             checked/>
+                                      <label class="slds-radio__label" for="lc_textcolorblack">
+                                        <span class="slds-radio_faux"></span>
+                                            <span class="slds-form-element__label">Black</span>
+                                            </label>
+                                            </span>
+                                            <span class="slds-radio">
+                                      <input type="radio" id="lc_textcolorwhite" name="options" value="on" />
+                                      <label class="slds-radio__label" for="lc_textcolorwhite">
+                                        <span class="slds-radio_faux"></span>
+                                            <span class="slds-form-element__label">White</span>
+                                            </label>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <!--Button Color-->
+                                <div class="slds-form-element">
+                                    <label class="slds-form-element__label" for="text-input-id-1">Action Color</label>
+                                    <div class="slds-form-element__control input-group colorpicker-component" id="cp2">
+                                        <input type="text" id="lc_actioncolorpicker" class="slds-input form-control" value="#87dEd0" />
+                                        <button class="input-group-addon">
+                                    <i style="height:25px;width:25px"></i>
+                                </button>
+                                    </div>
+                                </div>
+</div>
+
+

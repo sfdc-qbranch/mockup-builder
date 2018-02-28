@@ -1,149 +1,40 @@
 <!-- views/livechat.ejs -->
 
 
-<!DOCTYPE html>
-<html>
-
 <head>
     <meta charset="utf-8">
-    <title>LIVE CHAT MOCKUP</title>    
+    <title>LIVE CHAT MOCKUP</title>
 </head>
 
-<body>
-    <div>
+
+<div class="slds-grid">
+    <div class="slds-col slds-size_1-of-7">
+        <%- include('partials/navbar') %>
+    </div>
+    <div class="slds-col slds-size_4-of-7 ">
         <%- include('partials/header') %>
-            <div class="slds-grid">
-                <div class="slds-col slds-size_1-of-12">
-                    <%- include('partials/navbar') %>
-                </div>
-                <!--LEFT COLUMN-->
-                <div class="slds-col slds-size_6-of-12">
-                    <div class="slds-grid slds-p-around_small">
-                        <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
-                            <!--Chat with Expert--->
-                            <%- include('helper/inputtext', {id:'lc_chatwithexpert', placeholder:'Input to overwrite..', label:'Desktop Chat Button'})%>
-
-                            <!--CUSTOMER INFO-->
-                            <%- include('livechat/livechat-customerinfo') %>
-
-                            <!--Start Chatting Button--->
-                            <%- include('helper/inputtext', {id:'lc_startchatbtn', placeholder:'Input to overwrite..', label:'Start Chatting Button'})%>
-
-                            <!--Background Image-->
-                            <%- include('helper/imagefileselector', {imageselectorlabel:'Header Background Image',imgInputId:'lc_headerbgimage',helptext:''}) %>
-
-                            <!--Loading Page Headline-->
-                            <%- include('helper/inputtext', {id:'lc_loadingHeadline', placeholder:'Input to overwrite..', label:'Loading Page Headline'})%>
-
-
-                            <!--Agent Name-->
-                            <%- include('helper/inputtext', {id:'lc_agentname', placeholder:'Please input..', label:'Agent Name'})%>
-
-                            <!--Agent Image-->
-                            <%- include('helper/imagefileselector', {imageselectorlabel:'Agent Profile Image',imgInputId:'lc_agentimage',helptext:''}) %>
-                        </div>
-                        
-                        <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
-                            <!--Time Setting-->
-                            <%- include('helper/timesettingampm', {am:'true'})%>
-
-                            <!--Text Color-->
-                            <fieldset class="slds-form-element">
-                                <legend class="slds-form-element__legend slds-form-element__label">Text Color</legend>
-                                <div class="slds-form-element__control">
-                                    <div class="slds-radio_button-group" style="border:none">
-                                        <span class="slds-radio">
-                                      <input type="radio" id="lc_textcolorblack" name="options" value="on" 
-                                             checked/>
-                                      <label class="slds-radio__label" for="lc_textcolorblack">
-                                        <span class="slds-radio_faux"></span>
-                                        <span class="slds-form-element__label">Black</span>
-                                        </label>
-                                        </span>
-                                        <span class="slds-radio">
-                                      <input type="radio" id="lc_textcolorwhite" name="options" value="on" />
-                                      <label class="slds-radio__label" for="lc_textcolorwhite">
-                                        <span class="slds-radio_faux"></span>
-                                        <span class="slds-form-element__label">White</span>
-                                        </label>
-                                        </span>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-                            <!--Button Color-->
-                            <div class="slds-form-element">
-                                  <label class="slds-form-element__label" for="text-input-id-1">Action Color</label>
-                                  <div class="slds-form-element__control input-group colorpicker-component" id="cp2">
-                                    <input type="text" id="lc_actioncolorpicker" class="slds-input form-control" value="#87dEd0" />
-                                      <button class="input-group-addon">
-                                    <i style="height:25px;width:25px"></i>
-                                </button>
-                                  </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <!--PREIVEW COLUMN-->
-                <div class="slds-col slds-size_5-of-12">
-                    <div id="capture">
-                        <div id="thumbnail" class="thumbnail">
-                            <img id="uploadedImage" />
-                            <h1 id="headline" placeholder="Please input..."></h1>
-                        </div>
-
-                    </div>
+            <div class="slds-align_absolute-center">
+                <div class="page-screen">
+                    <%- include('displays/livechatDisplay1') %>
                 </div>
             </div>
-
-            <%- include('partials/footer') %>
+    </div>
+    <div class="slds-col slds-size_2-of-7 page-rightbar">
+        <%- include('settings/livechatSettings') %>
     </div>
 
-
-    <script>
-        var CAPTURE_WIDTH = '300';
-        var CAPTURE_HEIGHT = '400';
-
-        
-        $(document).ready(function() {
-            
-            $('#cp2').colorpicker();
-            
-
-            /*Upload Image*/
-            $("#imageUpload").change(function() {
-                let reader = new FileReader();
-
-                reader.onload = function(e) {
-                    // get loaded data and render thumbnail.
-                    $("#uploadedImage").attr("src", e.target.result);
-                };
-
-                // read the image file as a data URL.
-                reader.readAsDataURL(this.files[0]);
-            });
-
-            /*Input Headline*/
-            $("#headlineInput").keypress(function() {
-                $("#headline").html($("#headlineInput").val());
-            });
+</div>
 
 
-            /*Preview Image*/
-            $('#previewButton').click(function() {
-                previewCaptured(CAPTURE_WIDTH, CAPTURE_HEIGHT);
-            });
+<script>
+    $(document).ready(function() {
 
-            /*Save Image*/
-            $('#saveButton').click(function() {
-                saveCaptured(CAPTURE_WIDTH, CAPTURE_HEIGHT);
-            });
+        $('#cp2').colorpicker();
 
+        /*Input Headline*/
+        $("#headlineInput").keypress(function() {
+            $("#headline").html($("#headlineInput").val());
+        });
+    });
 
-        }); //Document.Ready
-
-    </script>
-</body>
-
-</html>
+</script>
