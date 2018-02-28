@@ -84,7 +84,7 @@ div.capture {
 
 /*GENERAL PROPERTY*/
 
-span.uppercase {
+.uppercase {
     text-transform: uppercase;
 }
 

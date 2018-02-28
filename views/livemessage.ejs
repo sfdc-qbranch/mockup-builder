@@ -1,232 +1,253 @@
 <!-- views/livemessage.ejs -->
 
-    <meta charset="utf-8">
-    <title>LIVE MESSAGE MOCKUP</title>
-    <style>
-
-
-        /*Time*/
-
-        div.div-timedisplay {
-            color: black;
-            position: absolute;
-            top: 0.2%;
-            left: 44.8%;
-            font-size: 0.75rem;
-            letter-spacing: 0.03rem;
-        }
-
-        /*Initials*/
-
-        div.div-initials {
-            color: white;
-            position: absolute;
-            top: 3.7%;
-            left: 46.8%;
-            font-size: 1.25rem;
-            text-align: center;
-            width: 6%;
-            height: 6%;
-        }
-
-        /* #chatPanelPreview */
-
-        #img-bg {
-            display: block;
-            height: 100%;
-            width: 100%;
-        }
-
-        div.ctn.ctn-mockupscreen {
-            position: relative;
-            height: 667px;
-            width: 375px;
-        }
-
-        div.ctn.ctn-section {
-            margin: 0px;
-            position: absolute;
-            top: 9%;
-            height: 667px;
-            width: 98%;
-            z-index: 999;
-
-        }
-
-        section {
-            max-width: 375px;
-            margin: 50px auto;
-        }
-
-        /* .from-me, .from-them */
-
-        section div {
-            max-width: 255px;
-            word-wrap: break-word;
-            margin-bottom: 10px;
-            line-height: 24px;
-            clear: both;
-        }
-
-
-        .from-me {
-            position: relative;
-            padding: 10px 20px;
-            color: white;
-            background: #0B93F6;
-            border-radius: 25px;
-            float: right;
-        }
-
-        .from-me:before {
-            content: "";
-            position: absolute;
-            z-index: -1;
-            bottom: -2px;
-            right: -7px;
-            height: 20px;
-            border-right: 20px solid #0B93F6;
-            border-bottom-left-radius: 16px 14px;
-            -webkit-transform: translate(0, -2px);
-        }
-
-        .from-me:after {
-            content: "";
-            position: absolute;
-            z-index: 1;
-            bottom: -2px;
-            right: -56px;
-            width: 26px;
-            height: 20px;
-            background: white;
-            border-bottom-left-radius: 10px;
-            -webkit-transform: translate(-30px, -2px);
-        }
-
-
-        .from-them {
-            position: relative;
-            padding: 10px 20px;
-            background: #E5E5EA;
-            border-radius: 25px;
-            color: black;
-            float: left;
-        }
-
-        .from-them:before {
-            content: "";
-            position: absolute;
-            z-index: 2;
-            bottom: -2px;
-            left: -7px;
-            height: 20px;
-            border-left: 20px solid #E5E5EA;
-            border-bottom-right-radius: 16px 14px;
-            -webkit-transform: translate(0, -2px);
-        }
-
-        .from-them:after {
-            content: "";
-            position: absolute;
-            z-index: 3;
-            bottom: -2px;
-            left: 4px;
-            width: 26px;
-            height: 20px;
-            background: white;
-            border-bottom-right-radius: 10px;
-            -webkit-transform: translate(-30px, -2px);
-        }
-
-        /* other buttons */
-
-        .helperButton {
-            margin-top: 20px;
-        }
-
-    </style>
-
-    <div class="slds-grid">
-        <div class="slds-col slds-size_1-of-7">
-            <%- include('partials/navbar') %>
-        </div>
-        <div class="slds-col slds-size_4-of-7 ">
-            <%- include('partials/header') %>
-                <div class="slds-align_absolute-center">
-                    <div class="page-screen">
-                        <%- include('displays/livemessageDisplay') %>
-                    </div>
-                </div>
-        </div>
-        <div class="slds-col slds-size_2-of-7 page-rightbar">
-            <%- include('settings/livemessageSettings') %>
-        </div>
-
-    </div>
+<meta charset="utf-8">
+<title>LIVE MESSAGE MOCKUP</title>
+<style>
     
-    <script>
-        function addMessage(userClass, inputElementId) {
-            //Get Message From Input Text Box
-            let messageDivNode = document.createElement("div");
-            let inputElement = document.getElementById(inputElementId);
-            let message = inputElement.value;
+    /*TIME DISPLAY*/
+    div.lm_timedisplay {
+        color: black;
+        position: relative;
+        top:0.5%;
+        font-size: 1.2rem;
+        line-height:1.2rem;
+        letter-spacing: 0.03rem;
+    }
 
-            //Create Chat Message In Preview Panel
-            messageDivNode.setAttribute("class", userClass);
-            messageDivNode.innerHTML = message;
-            console.log(message);
-            document.getElementById("chatPanelPreview").appendChild(messageDivNode);
+    /*CONTACT INITIALS*/
+    div.lm_initials {
+        color: white;
+        position: relative;
+        top: 3.5%;
+        font-size: 2rem;
+        line-height:2rem;
+    }
+    
+    /*CONTACT NAME*/
+    div.lm_contactNameDisplay {
+        color: black;
+        position: relative;
+        top: 5.7%;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        font-weight: 300;
+    }
 
-            //Clear the input textbox
-            inputElement.value = "";
-        }
-        
+    
+    /*LIVE MESSAGE BACKGROUND IMAGE*/
+    #lm_backGroundImage {
+        position: absolute;
+        height: inherit;
+        width: inherit;
+    }
 
-        $(document).ready(function() {
-            // FROM THEM ADD 
-            $('#addFromThem').on('click', function() {
-                addMessage('from-them', 'lm_senderMessage');
-            });
+    /*LIVE MESSAGE CHAT MESSAGE CONTAINER*/
+    div.lm_chat-sectioncontainer {
+        position: relative;
+        top: 8%;
+        z-index: 999;
+        max-height:inherit;
+    }
 
-            //FROM ME ADD
-            $('#addFromMe').on('click', function() {
-                addMessage('from-me', 'lm_receiverMessage');
-            });
+    section {
+        max-width: 90%;
+        margin: 50px auto;
+    }
 
-            //CLEAR
-            $('#clear').on('click', function() {
-                $('#chatPanelPreview').empty();
-            });
-
-            //REMOVE LAST CHILD
-            $('#removeLast').on('click', function() {
-                $('#chatPanelPreview div:last-child()').remove();
-            });
-
-            /*TIME PICKER*/
-            $('input.timepicker').timepicker({
-                timeFormat: 'h:mm p',
-                interval: 30,
-                minTime: '0:00am',
-                maxTime: '23:59pm',
-                defaultTime: '9:30am',
-                startTime: '7:00',
-                dynamic: false,
-                dropdown: true,
-                scrollbar: true,
-                change: function() {
-                    $('#timedisplay').html(this.val());
-                },
-            });
-            
-
-            /*ADD CONTACT INITIALS*/
-            $('#lm_initialLetterInput').keyup(function() {
-                $('#lm_initialdisplay').html($('#lm_initialLetterInput').val());
-            });
+    /*LIVE MESSAGE CHAT MESSAGE INDIVIDUAL DIV*/
+    /* .from-me, .from-them */
+    section div {
+        max-width: 70%;
+        word-wrap: break-word;
+        margin-bottom: 10px;
+        line-height: 24px;
+        font-size:24px;
+        clear: both;
+    }
 
 
+    .from-me {
+        position: relative;
+        padding: 10px 20px;
+        color: white;
+        background: #0B93F6;
+        border-radius: 25px;
+        float: right;
+    }
+
+    .from-me:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        bottom: -2px;
+        right: -7px;
+        height: 20px;
+        border-right: 20px solid #0B93F6;
+        border-bottom-left-radius: 16px 14px;
+        -webkit-transform: translate(0, -2px);
+    }
+
+    .from-me:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        bottom: -2px;
+        right: -56px;
+        width: 26px;
+        height: 20px;
+        background: white;
+        border-bottom-left-radius: 10px;
+        -webkit-transform: translate(-30px, -2px);
+    }
+
+
+    .from-them {
+        position: relative;
+        padding: 10px 20px;
+        background: #E5E5EA;
+        border-radius: 25px;
+        color: black;
+        float: left;
+    }
+
+    .from-them:before {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        bottom: -2px;
+        left: -7px;
+        height: 20px;
+        border-left: 20px solid #E5E5EA;
+        border-bottom-right-radius: 16px 14px;
+        -webkit-transform: translate(0, -2px);
+    }
+
+    .from-them:after {
+        content: "";
+        position: absolute;
+        z-index: 3;
+        bottom: -2px;
+        left: 4px;
+        width: 26px;
+        height: 20px;
+        background: white;
+        border-bottom-right-radius: 10px;
+        -webkit-transform: translate(-30px, -2px);
+    }
+    
+    /*LIVE MESSAGE SETTING BUTTONS*/
+    .page-setting-element-message button {
+        margin-top:10px;
+        margin-bottom:10px;
+    }
+    
+    .lm_helperbutton {
+        color:black;
+        background: #F8F9F9  ;
+        border-radius:15px;
+        padding:5px;
+        width:80%;
+    }
+    
+    .lm_settings_helperbuttons {
+        margin-top:30%;
+    }
+    
+    .lm_settings_helperbuttons button {
+        margin:10px;
+    }
+
+
+
+</style>
+
+<div class="slds-grid">
+    <div class="slds-col slds-size_1-of-7">
+        <%- include('partials/navbar') %>
+    </div>
+    <div class="slds-col slds-size_4-of-7 ">
+        <%- include('partials/header') %>
+            <div class="slds-align_absolute-center">
+                <div class="page-screen">
+                    <%- include('displays/livemessageDisplay') %>
+                </div>
+            </div>
+    </div>
+    <div class="slds-col slds-size_2-of-7 page-rightbar">
+        <%- include('settings/livemessageSettings') %>
+    </div>
+
+</div>
+
+<script>
+    function addMessage(userClass, inputElementId) {
+        //Get Message From Input Text Box
+        let messageDivNode = document.createElement("div");
+        let inputElement = document.getElementById(inputElementId);
+        let message = inputElement.value;
+
+        //Create Chat Message In Preview Panel
+        messageDivNode.setAttribute("class", userClass);
+        messageDivNode.innerHTML = message;
+        console.log(message);
+        document.getElementById("chatPanelPreview").appendChild(messageDivNode);
+
+        //Clear the input textbox
+        inputElement.value = "";
+    }
+
+
+    $(document).ready(function() {
+        // FROM THEM ADD 
+        $('#addFromThem').on('click', function() {
+            addMessage('from-them', 'lm_senderMessage');
         });
 
-    </script>
+        //FROM ME ADD
+        $('#addFromMe').on('click', function() {
+            addMessage('from-me', 'lm_receiverMessage');
+        });
 
+        //CLEAR
+        $('#clear').on('click', function() {
+            $('#chatPanelPreview').empty();
+        });
+
+        //REMOVE LAST CHILD
+        $('#removeLast').on('click', function() {
+            $('#chatPanelPreview div:last-child()').remove();
+        });
+
+        /*TIME PICKER*/
+        $('input.timepicker').timepicker({
+            timeFormat: 'h:mm p',
+            interval: 30,
+            minTime: '0:00am',
+            maxTime: '23:59pm',
+            defaultTime: '9:30am',
+            startTime: '7:00',
+            dynamic: false,
+            dropdown: true,
+            scrollbar: true,
+            change: function() {
+                $('#timedisplay').html(this.val());
+            },
+        });
+
+        
+        /*ADD CONTACT NAME*/ + /*ADD CONTACT INITIALS*/
+        $('#lm_contactNameInput').keyup(function() {
+            var contactname  = $('#lm_contactNameInput').val();
+            $('#lm_contactNameDisplay').html(contactname);
+            var matches = contactname.match(/\b(\w)/g);              
+            var acronym = matches.join('').substring(0,2) || '';          
+            $('#lm_initialdisplay').html(acronym);
+        })
+
+        
+        activeDownloadButton();
+
+
+    });
+
+</script>

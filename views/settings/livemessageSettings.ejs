@@ -5,47 +5,41 @@
         <%- include('../helper/timeselector') %>
     </div>
 
-    <!--INITIALS SETTING-->
-    <div class="slds-form-element page-setting-element">
-        <label class="slds-form-element__label" for="lm_initialLetterInput">
-        Contact Personas Initials
-    </label>
-        <div class="slds-form-element__control">
-            <input type="text" class="slds-input" placeholder="" id="lm_contactInitials" maxlength="2" />
-        </div>
-    </div>
 
     <!--CONTACT NAME SETTING-->
     <div class="page-setting-element">
-        <%- include('../helper/inputtext', {id:'lm_contactName', placeholder:'', label:'Contact Persona Name:'})%>
+        <%- include('../helper/inputtext', {id:'lm_contactNameInput', placeholder:'', label:'Contact Persona Name:'})%>
     </div>
 
     <!--MESSAGE FROM SENDER-->
-    <div class="slds-form-element page-setting-element">
+    <div class="slds-form-element page-setting-element page-setting-element-message">
         <label class="slds-form-element__label" for="lm_senderMessage">Message From Sender:</label>
         <div class="slds-form-element__control">
             <textarea id="lm_senderMessage" class="slds-textarea" placeholder=""></textarea>
         </div>
-        <button id="addFromThem">Add</button>
+        <button id="addFromThem" class="slds-float_right slds-button slds-button_brand">Add</button>
     </div>
-    
+
     <!--MESSAGE FROM RECEIVER-->
-    <div class="slds-form-element page-setting-element">
+    <div class="slds-form-element page-setting-element page-setting-element-message">
         <label class="slds-form-element__label" for="lm_receiverMessage">Message From Receiver:</label>
         <div class="slds-form-element__control">
             <textarea id="lm_receiverMessage" class="slds-textarea" placeholder=""></textarea>
         </div>
-        <button id="addFromMe">Add</button>
+        <button id="addFromMe" class="slds-float_right slds-button slds-button_brand">Add</button>
     </div>
 
 
+    <!--CHAT MESSAGE HELPER BUTTONS-->
 
-    <div>
-        <button id="removeLast" class="helperButton">Remove Last Message</button>
-    </div>
+    <div class="lm_settings_helperbuttons slds-text-align--center" >
+        <div>
+            <button id="removeLast" class="lm_helperbutton">Remove Last Message</button>
+        </div>
 
-    <div>
-        <button id="clear" class="helperButton">Clear</button>
+        <div>
+            <button id="clear" class="lm_helperbutton">Clear</button>
+        </div>
     </div>
 
 
