@@ -61,9 +61,9 @@ div.page-rightbar {
 
 div.page-screen {
     margin-top: 2rem;
-    width: 375px;
+    width: 750px;
     /** width: 750px; **/
-    height: 667px;
+    height: 1334px;
     /** height: 1334px; **/
     position: relative;
 }
@@ -112,12 +112,12 @@ select {
 /*Screen Element*/
 
 .lock_screen-time {
-    font-size: 58px;
+    font-size: 115px;
     line-height: 1.1;
 }
 
 .lock_screen-date {
-    font-size: 15px;
+    font-size: 30px;
 
 }
 

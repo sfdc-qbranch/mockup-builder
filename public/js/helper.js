@@ -26,7 +26,7 @@ function previewCaptured(capturedwidth, capturedheight) {
 
 function saveCaptured(capturedwidth, capturedheight) {
 
-    let captured = document.getElementById('thumbnail');
+    let captured = document.getElementById('capture');
     html2canvas(captured, {
         onrendered: function (canvas) {
             let extra_canvas = document.createElement("canvas");
@@ -70,6 +70,13 @@ function readURL(input,output) {
 }
 
 
+function activeDownloadButton(){
+            $("#pagebutton-downloadmockup").on('click', function() {
+            html2canvas(document.querySelector("#capture")).then(canvas => {
+                document.body.appendChild(canvas)
+            });
+        });
+}
 
 
 /*Valid File Type*/
@@ -90,8 +97,4 @@ function validFileType(file) {
 }
 
 
-/*DISPLAY TODAY DATE VALUE IN THE TARGET ELEMENT - NOTIFICATION PAGE*/
-function displayTodayDate(targetElement) {
-    const momentTodayDate = moment().format('dddd, DD MMMM');
-    targetElement.html(momentTodayDate);
-}
+

@@ -1,33 +1,19 @@
 <!-- views/livemessage.ejs -->
 
-<!DOCTYPE html>
-<html>
-
-<head>
     <meta charset="utf-8">
     <title>LIVE MESSAGE MOCKUP</title>
     <style>
-        body {
-            padding-top: 20px;
-            padding-bottom: 20px;
-        }
 
-        .uppercase {
-            text-transform: uppercase;
-        }
 
-        /*LEFT PANEL*/
-
-        /*RIGHT PANEL*/
-        
         /*Time*/
+
         div.div-timedisplay {
-            color:black;
+            color: black;
             position: absolute;
             top: 0.2%;
             left: 44.8%;
-            font-size:0.75rem;
-            letter-spacing:0.03rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.03rem;
         }
 
         /*Initials*/
@@ -159,77 +145,25 @@
         }
 
     </style>
-</head>
 
-<body>
-    <div class="container">
-        <%- include('partials/header') %>
-            <div class="row">
-                <!--Nav Bar-->
-                <div class="col-2">
-                    <%- include('partials/navbar') %>
-                </div>
-                <!--LEFT COLUMN-->
-                <div class="col-5">
-                    <div class="convSetting">
-                        <!--Time Setting-->
-                        <%- include('helper/timesettingampm', {am:'false'}) %>
-                        
-                        <div>
-                            <label for="initialLetterInput">User Initials:</label><br>
-                            <input type="text" id="initialLetterInput" class="initialText uppercase" maxlength="2" />
-                        </div>
-                        <div>
-                            <label for="FromThem1">From Them Message:</label><br>
-                            <input type="text" id="FromThem1" class="message" />
-                            <button id="addFromThem">Add</button>
-                        </div>
-                        <div>
-                            <label for="FromMe1">From Me Message:</label><br>
-                            <input type="text" id="FromMe1" class="message" />
-                            <button id="addFromMe">Add</button>
-                        </div>
-
-                        <div>
-                            <button id="removeLast" class="helperButton">Remove Last Message</button>
-                        </div>
-
-                        <div>
-                            <button id="clear" class="helperButton">Clear</button>
-                        </div>
-
-                        <label for="previewButton">Preview the captured image!
-                            </label><br>
-                        <button id="previewButton">Preview</button>
-
-                        <div id="previewImage">
-                        </div>
-
+    <div class="slds-grid">
+        <div class="slds-col slds-size_1-of-7">
+            <%- include('partials/navbar') %>
+        </div>
+        <div class="slds-col slds-size_4-of-7 ">
+            <%- include('partials/header') %>
+                <div class="slds-align_absolute-center">
+                    <div class="page-screen">
+                        <%- include('displays/livemessageDisplay') %>
                     </div>
                 </div>
-                <!--RIGHT COLUMN-->
-                <div class="col-5">
-                    <div class="ctn ctn-mockupscreen" id="thumbnail">
-                        <img src="/img/Message_Screen_Background.png" alt="text screen background" id="img-bg">
-                        <div class="div-timedisplay" id="timedisplay">2:00 pm</div>
-                        <div class="div-initials uppercase" id="initialdisplay">SF</div>
-                        <div class="ctn ctn-section">
-                            <section id="chatPanelPreview">
-                                <div class="from-me">
-                                    Example From Me 😄
-                                </div>
+        </div>
+        <div class="slds-col slds-size_2-of-7 page-rightbar">
+            <%- include('settings/livemessageSettings') %>
+        </div>
 
-                                <div class="from-them">
-                                    Example From Them 😄
-                                </div>
-                            </section>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <%- include('partials/footer') %>
     </div>
+    
     <script>
         function addMessage(userClass, inputElementId) {
             //Get Message From Input Text Box
@@ -247,28 +181,16 @@
             inputElement.value = "";
         }
         
-        function setupTimePicker_AMPM() {
-            $('.setTimeSelectorGroup').on('change', function() {
-                const selectedHour = $('#setHourSelector').val();
-                const selectedMin = $('#setMinuteSelector').val();
-                const selectedAMPM = $('#setAMPMSelector').val();
-                const d = selectedHour + ':' + selectedMin+" "+selectedAMPM;
-                $('#timedisplay').html(d);
-            });
-        }
-
-        var CAPTURE_WIDTH = '750';
-        var CAPTURE_HEIGHT = '1334';
 
         $(document).ready(function() {
             // FROM THEM ADD 
             $('#addFromThem').on('click', function() {
-                addMessage('from-them', 'FromThem1');
+                addMessage('from-them', 'lm_senderMessage');
             });
 
             //FROM ME ADD
             $('#addFromMe').on('click', function() {
-                addMessage('from-me', 'FromMe1');
+                addMessage('from-me', 'lm_receiverMessage');
             });
 
             //CLEAR
@@ -280,27 +202,31 @@
             $('#removeLast').on('click', function() {
                 $('#chatPanelPreview div:last-child()').remove();
             });
+
+            /*TIME PICKER*/
+            $('input.timepicker').timepicker({
+                timeFormat: 'h:mm p',
+                interval: 30,
+                minTime: '0:00am',
+                maxTime: '23:59pm',
+                defaultTime: '9:30am',
+                startTime: '7:00',
+                dynamic: false,
+                dropdown: true,
+                scrollbar: true,
+                change: function() {
+                    $('#timedisplay').html(this.val());
+                },
+            });
             
-            //ADD TIMES
-            setupTimePicker_AMPM();
 
-            //ADD INITIALS
-            $('#initialLetterInput').keyup(function() {
-                $('#initialdisplay').html($('#initialLetterInput').val());
+            /*ADD CONTACT INITIALS*/
+            $('#lm_initialLetterInput').keyup(function() {
+                $('#lm_initialdisplay').html($('#lm_initialLetterInput').val());
             });
 
-            /*Preview Image*/
-            $('#previewButton').click(function() {
-                previewCaptured(CAPTURE_WIDTH, CAPTURE_HEIGHT);
-            });
 
         });
 
     </script>
 
-
-
-
-</body>
-
-</html>

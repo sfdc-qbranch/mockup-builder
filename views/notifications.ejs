@@ -10,12 +10,12 @@
         <%- include('partials/header') %>
             <div class="slds-align_absolute-center">
                 <div class="page-screen">
-                    <%- include('notification/notificationDisplay') %>
+                    <%- include('displays/notificationDisplay') %>
                 </div>
             </div>
     </div>
     <div class="slds-col slds-size_2-of-7 page-rightbar">
-        <%- include('notification/notificationSettings') %>
+        <%- include('settings/notificationSettings') %>
     </div>
 
 </div>
@@ -28,9 +28,9 @@
     $(document).ready(function() {
 
         //DISPLAY TODAYS DATE - USING HELPER FUNCTION
-        displayTodayDate($('#datedisplay'));
+        $("#datedisplay").html(moment().format('dddd, DD MMMM'));
 
-        
+
         //TIME PICKER
         $('input.timepicker').timepicker({
             timeFormat: 'H:mm',
@@ -46,7 +46,7 @@
                 $('#timedisplay').html(this.val());
             },
         });
-        
+
         //DATE PICKER
         $('input.datepicker').datepicker({
             format: "DD, dd MM",
@@ -67,7 +67,7 @@
         $("#n_setAppLogoImage").change(function() {
             readURL(this, $('#appLogo'));
         });
-        
+
         //SET NOTIFICATION TIME AGO
         $("#n_setTimeAgo").change(function() {
             $('#notificationTimeSpan').html($("#n_setTimeAgo").val());
@@ -78,6 +78,8 @@
             $("#notificationMessageSpan").html($("#n_setNotification").val().replace(/\r?\n/g, '<br/>'));
         });
         
+        activeDownloadButton();
+
     });
 
 </script>
