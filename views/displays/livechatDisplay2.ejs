@@ -3,7 +3,9 @@
     <div class="lc_chatuserscreen slds-align_absolute-center">
         
         <!--SMALL HEADBAR-->
-        <div class="lc_smallheaderbar slds-align_absolute-center">
+        <div class="lc_smallheaderbar defaultbackground slds-align_absolute-center">
+            <!--:Small Header Icons--->
+            <img class="lc_smallHeaderImage" src="img/LiveChat_HeaderIcon_Black.png"/>
             <span class="slds-text-heading_large">Live Chat</span>
         </div>
 
@@ -42,7 +44,7 @@
         </div>
         
         <!--START CHAT BUTTON-->
-        <div class="lc_bottombutton slds-align_absolute-center" id="lc_startchatbutton">
+        <div class="lc_bottombutton slds-align_absolute-center defaultbackground" id="lc_startchatbutton">
             Start Chatting
         </div>
 
@@ -51,51 +53,7 @@
 </div>
 
 <style>
-    div.lc_smallheaderbar {
-        position: absolute;
-        height: 9%;
-        width: 100%;
-        top: 0%;
-        background: lightgray;
-        background-image: url("img/LiveChat_HeaderIcon_Black.png");
-        background-position: center;
-        background-repeat: no-repeat;
-        border-radius: 10px 10px 0px 0px;
-    }
 
-    div.lc_smallheaderbar>span {
-        font-weight: 600;
-    }
-
-    div.lc_userinputgroup {
-        position: absolute;
-        top:11%;
-        width: 100%;
-        padding: 2% 5%;
-    }
-    div.lc_userinputgroup .slds-form-element {
-        padding: 15px;
-    }
-    
-    div.lc_userinputgroup .slds-form-element__label {
-        font-size:1.5rem;
-    }
-    
-    div.lc_userinputgroup .slds-input{
-       line-height: 4rem;
-       font-size: 2rem;
-    }
-    
-    div.lc_bottombutton {
-        position:absolute;
-        background:lightgray;
-        bottom:5%;
-        width:90%;
-        height:8.5%;
-        border-radius:10px;
-        font-size:1.6rem;
-        font-weight:600;
-    }
 
 
 </style>

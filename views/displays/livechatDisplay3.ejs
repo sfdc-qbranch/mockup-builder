@@ -3,21 +3,33 @@
     <div class="lc_chatuserscreen slds-align_absolute-center">
         
         <!--LARGE HEADBAR-->
-        <div class="lc_largeheaderbar slds-align_absolute-center">
+        <div class="lc_largeheaderbar slds-align_absolute-center defaultbackground">
+            <!--child:Small Header Icons--->
+            <img class="lc_smallHeaderImage" src="img/LiveChat_HeaderIcon_Black.png"/>
+            
+            <!--child:Users Greeting--->
+            <div class="slds-text-heading_large lc_headerGreetingTitle" id="lc_userGreetingrInput">
+                Hello John!
+            </div>
+            
+            <!--child:Users Profile Image--->
+            <div class="lc_headerProfilePhoto" >
+               <img src="img/salesforce-logo.png" id="lc_headerProfileImageInput"/>
+            </div>
             
         </div>
 
 
 
-        <!--input:Dots-->
+        <!--DOTS-->
         <div class="lc_loadingdots slds-align_absolute-center">
-            <div class="circle circle-md"></div>
-            <div class="circle circle-sm"></div>
-            <div class="circle circle-sm"></div>
+            <div class="circle lc_circle-md activebackground"></div>
+            <div class="circle lc_circle-sm activebackground"></div>
+            <div class="circle lc_circle-sm activebackground"></div>
         </div>
 
-        <!--START CHAT BUTTON-->
-        <div class="lc_bottombutton slds-align_absolute-center" id="lc_startchatbutton">
+        <!--CANCEL CHAT BUTTON-->
+        <div class="lc_bottombutton slds-align_absolute-center defaultbackground" id="lc_startchatbutton">
             Cancel
         </div>
 
@@ -26,68 +38,64 @@
 </div>
 
 <style>
+    div.lc_chatuserscreen {
+        height:100%;
+        width:100%;
+    }
     div.lc_largeheaderbar {
         position: absolute;
         height: 40%;
         width: 100%;
         top: 0%;
-        background: lightgray;
         border-radius: 10px 10px 0px 0px;
     }
 
-    div.lc_smallheaderbar>span {
-        font-weight: 600;
-    }
 
-    div.lc_userinputgroup {
-        position: absolute;
-        top:11%;
-        width: 100%;
-        padding: 2% 5%;
-    }
-    div.lc_userinputgroup .slds-form-element {
-        padding: 15px;
-    }
-    
-    div.lc_userinputgroup .slds-form-element__label {
-        font-size:1.5rem;
-    }
-    
-    div.lc_userinputgroup .slds-input{
-       line-height: 4rem;
-       font-size: 2rem;
-    }
-    
-     div.lc_bottombutton {
-        position:absolute;
-        background:lightgray;
-        bottom:5%;
-        width:90%;
-        height:8.5%;
-        border-radius:10px;
-        font-size:1.6rem;
-        font-weight:600;
-    }
-    
     div.lc_loadingdots {
-        
+        position:absolute;
+        top:63.5%;
     }
     
     div.circle {
         border-radius:50%;
-        background:#85dde8;
         margin:5px;
     }
     
-    .circle-md {
+    div.lc_circle-md {
         width:25px;
         height:25px;
     }
     
-    .circle-sm {
+    div.lc_circle-sm {
         width:18px;
         height:18px;
     }
+    
+    div.lc_headerGreetingTitle {
+        font-family: "Arial", Gadget, sans-serif;
+        font-weight:600;
+        font-size:2rem;
+        position:absolute;
+        top:110px;
+    }
+    
+    div.lc_headerProfilePhoto {
+        position:relative;
+        margin-top:35px;
+        height:85px;
+        width:85px;  
+    }
+    
+    div.lc_headerProfilePhoto > img {
+        position:absolute;
+        top:0%;
+        left:0%;
+        width:contain;
+        border-radius:50%;
+    }
+    
+    
+
 
 
 </style>
