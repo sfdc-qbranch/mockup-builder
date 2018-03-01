@@ -9,9 +9,7 @@
     <div class="slds-col slds-size_4-of-7 ">
         <%- include('partials/header') %>
             <div class="slds-align_absolute-center">
-                <div class="page-screen">
-                    <%- include('displays/notificationDisplay') %>
-                </div>
+                <%- include('displays/notificationDisplay') %>
             </div>
     </div>
     <div class="slds-col slds-size_2-of-7 page-rightbar">
@@ -19,8 +17,6 @@
     </div>
 
 </div>
-
-
 
 
 
@@ -77,7 +73,7 @@
         $("#n_setNotification").on('keyup', function() {
             $("#notificationMessageSpan").html($("#n_setNotification").val().replace(/\r?\n/g, '<br/>'));
         });
-        
+
         activeDownloadButton();
 
     });

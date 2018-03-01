@@ -1,0 +1,93 @@
+<div class="page-livechatscreen slds-align_absolute-center" id="capture">
+
+    <div class="lc_chatuserscreen slds-align_absolute-center">
+        
+        <!--LARGE HEADBAR-->
+        <div class="lc_largeheaderbar slds-align_absolute-center">
+            
+        </div>
+
+
+
+        <!--input:Dots-->
+        <div class="lc_loadingdots slds-align_absolute-center">
+            <div class="circle circle-md"></div>
+            <div class="circle circle-sm"></div>
+            <div class="circle circle-sm"></div>
+        </div>
+
+        <!--START CHAT BUTTON-->
+        <div class="lc_bottombutton slds-align_absolute-center" id="lc_startchatbutton">
+            Cancel
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+    div.lc_largeheaderbar {
+        position: absolute;
+        height: 40%;
+        width: 100%;
+        top: 0%;
+        background: lightgray;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    div.lc_smallheaderbar>span {
+        font-weight: 600;
+    }
+
+    div.lc_userinputgroup {
+        position: absolute;
+        top:11%;
+        width: 100%;
+        padding: 2% 5%;
+    }
+    div.lc_userinputgroup .slds-form-element {
+        padding: 15px;
+    }
+    
+    div.lc_userinputgroup .slds-form-element__label {
+        font-size:1.5rem;
+    }
+    
+    div.lc_userinputgroup .slds-input{
+       line-height: 4rem;
+       font-size: 2rem;
+    }
+    
+     div.lc_bottombutton {
+        position:absolute;
+        background:lightgray;
+        bottom:5%;
+        width:90%;
+        height:8.5%;
+        border-radius:10px;
+        font-size:1.6rem;
+        font-weight:600;
+    }
+    
+    div.lc_loadingdots {
+        
+    }
+    
+    div.circle {
+        border-radius:50%;
+        background:#85dde8;
+        margin:5px;
+    }
+    
+    .circle-md {
+        width:25px;
+        height:25px;
+    }
+    
+    .circle-sm {
+        width:18px;
+        height:18px;
+    }
+
+
+</style>

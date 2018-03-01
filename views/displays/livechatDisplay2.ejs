@@ -1,0 +1,101 @@
+<div class="page-livechatscreen slds-align_absolute-center" id="capture">
+
+    <div class="lc_chatuserscreen slds-align_absolute-center">
+        
+        <!--SMALL HEADBAR-->
+        <div class="lc_smallheaderbar slds-align_absolute-center">
+            <span class="slds-text-heading_large">Live Chat</span>
+        </div>
+
+        <!--USER INPUT GROUP-->
+        <div class="lc_userinputgroup">
+            
+            <!--input:FIRST NAME LAST NAME-->
+            <div class="slds-grid">
+                <div class="slds-col">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="lc_firstnameInput">
+                        <abbr class="slds-required" >*</abbr> First Name</label>
+                        <div class="slds-form-element__control">
+                            <input type="text" required="" id="lc_firstnameInput" class="slds-input" placeholder="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-col">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="lc_lastnameInput">
+                        <abbr class="slds-required">*</abbr>Last Name</label>
+                        <div class="slds-form-element__control">
+                            <input type="text" required="" id="lc_lastnameInput" class="slds-input" placeholder="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!--input:EMAIL-->
+            <%- include('../helper/inputtext', {id:'lc_emailInput', placeholder:'', label:'Email'})%>
+
+            <!--input:SUBJECT-->
+            <%- include('../helper/inputtext', {id:'lc_subjectInput', placeholder:'', label:'Subject'})%>
+
+
+        </div>
+        
+        <!--START CHAT BUTTON-->
+        <div class="lc_bottombutton slds-align_absolute-center" id="lc_startchatbutton">
+            Start Chatting
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+    div.lc_smallheaderbar {
+        position: absolute;
+        height: 9%;
+        width: 100%;
+        top: 0%;
+        background: lightgray;
+        background-image: url("img/LiveChat_HeaderIcon_Black.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    div.lc_smallheaderbar>span {
+        font-weight: 600;
+    }
+
+    div.lc_userinputgroup {
+        position: absolute;
+        top:11%;
+        width: 100%;
+        padding: 2% 5%;
+    }
+    div.lc_userinputgroup .slds-form-element {
+        padding: 15px;
+    }
+    
+    div.lc_userinputgroup .slds-form-element__label {
+        font-size:1.5rem;
+    }
+    
+    div.lc_userinputgroup .slds-input{
+       line-height: 4rem;
+       font-size: 2rem;
+    }
+    
+    div.lc_bottombutton {
+        position:absolute;
+        background:lightgray;
+        bottom:5%;
+        width:90%;
+        height:8.5%;
+        border-radius:10px;
+        font-size:1.6rem;
+        font-weight:600;
+    }
+
+
+</style>

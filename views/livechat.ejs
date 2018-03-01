@@ -14,9 +14,15 @@
     <div class="slds-col slds-size_4-of-7 ">
         <%- include('partials/header') %>
             <div class="slds-align_absolute-center">
-                <div class="page-screen">
-                    <%- include('displays/livechatDisplay1') %>
-                </div>
+                <%- include('displays/livechatDisplay1') %>
+            </div>
+
+            <div class="slds-align_absolute-center">
+                <%- include('displays/livechatDisplay2') %>
+            </div>
+        
+            <div class="slds-align_absolute-center">
+                <%- include('displays/livechatDisplay3') %>
             </div>
     </div>
     <div class="slds-col slds-size_2-of-7 page-rightbar">
@@ -38,3 +44,25 @@
     });
 
 </script>
+
+<style>
+    div.lc_chatbutton {
+        position: absolute;
+        bottom: 0%;
+        height: 12%;
+        width: 64%;
+        background: #85DDE8;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    div.lc_chatbutton>span {
+        padding-left: 4%;
+        font-size: 1.3rem;
+        font-family: "Arial Black", Gadget, sans-serif;
+    }
+
+    div.page-livechatscreen {
+        border: 1px solid black;
+    }
+
+</style>
