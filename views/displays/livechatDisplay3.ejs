@@ -1,27 +1,27 @@
 <div class="page-livechatscreen slds-align_absolute-center" id="capture">
 
     <div class="lc_chatuserscreen slds-align_absolute-center">
-        
+
         <!--LARGE HEADBAR-->
         <div class="lc_largeheaderbar slds-align_absolute-center defaultbackground">
             <!--child:Small Header Icons--->
-            <img class="lc_smallHeaderImage" src="img/LiveChat_HeaderIcon_Black.png"/>
-            
+            <img class="lc_smallHeaderImage" src="img/LiveChat_HeaderIcon_Black.png" />
+
             <!--child:Users Greeting Title--->
             <div class="slds-text-heading_large lc_headerGreetingTitle" id="lc_userGreetingTitleInput">
                 Hello John!
             </div>
-            
+
             <!--child:Users Profile Image--->
-            <div class="lc_headerProfilePhoto" >
-               <img src="img/salesforce-logo.png" id="lc_headerProfileImageInput"/>
+            <div class="lc_headerProfilePhoto">
+                <img src="img/salesforce-logo.png" name="lc_profilePhotoDisplay"/>
             </div>
-            
+
             <!--child:Users Greeting Message--->
             <div class="slds-text-heading_large lc_headerGreetingMessage" id="lc_userGreetingMessageInput">
-               An agent is on the way.
+                An agent is on the way.
             </div>
-            
+
         </div>
 
 
@@ -41,73 +41,3 @@
     </div>
 
 </div>
-
-<style>
-    div.lc_chatuserscreen {
-        height:100%;
-        width:100%;
-    }
-    div.lc_largeheaderbar {
-        position: absolute;
-        height: 40%;
-        width: 100%;
-        top: 0%;
-        border-radius: 10px 10px 0px 0px;
-    }
-
-
-    div.lc_loadingdots {
-        position:absolute;
-        top:63.5%;
-    }
-    
-    div.circle {
-        border-radius:50%;
-        margin:5px;
-    }
-    
-    div.lc_circle-md {
-        width:25px;
-        height:25px;
-    }
-    
-    div.lc_circle-sm {
-        width:18px;
-        height:18px;
-    }
-    
-    div.lc_headerGreetingTitle {
-        font-family: "Arial", Gadget, sans-serif;
-        font-weight:600;
-        font-size:2rem;
-        position:absolute;
-        top:110px;
-    }
-    
-    div.lc_headerGreetingMessage {
-        font-family: "Arial", Gadget, sans-serif;
-        font-size:1.5rem;
-        position:absolute;
-        top:300px;
-    }
-    
-    div.lc_headerProfilePhoto {
-        position:relative;
-        margin-top:35px;
-        height:85px;
-        width:85px;  
-    }
-    
-    div.lc_headerProfilePhoto > img {
-        position:absolute;
-        top:0%;
-        left:0%;
-        width:contain;
-        border-radius:50%;
-    }
-    
-    
-
-
-
-</style>

@@ -13,16 +13,10 @@
     </div>
     <div class="slds-col slds-size_4-of-7 ">
         <%- include('partials/header') %>
-            <div class="slds-align_absolute-center">
-                <%- include('displays/livechatDisplay1') %>
-            </div>
-
-            <div class="slds-align_absolute-center">
-                <%- include('displays/livechatDisplay2') %>
-            </div>
         
+       
             <div class="slds-align_absolute-center">
-                <%- include('displays/livechatDisplay3') %>
+                <%- include('displays/livechatDisplay4') %>
             </div>
     </div>
     <div class="slds-col slds-size_2-of-7 page-rightbar">
@@ -46,13 +40,12 @@
 </script>
 
 <style>
-    
-
     div.page-livechatscreen {
         border: 1px solid black;
     }
-    
+
     /**SMALL HEADER ICONS**/
+
     div.lc_smallheaderbar {
         position: absolute;
         height: 9%;
@@ -60,49 +53,53 @@
         top: 0%;
         border-radius: 10px 10px 0px 0px;
     }
-    
+
     img.lc_smallHeaderImage {
-        position:absolute;
-        top:30px;
+        position: absolute;
+        top: 15px;
+        width: 90%;
     }
 
     /**SCREEN 2**/
+
     div.lc_smallheaderbar>span {
-        font-weight: 600;
+        font-weight: 700;
     }
-    
+
     div.lc_userinputgroup {
         position: absolute;
-        top:11%;
+        top: 10%;
         width: 100%;
         padding: 2% 5%;
     }
+
     div.lc_userinputgroup .slds-form-element {
-        padding: 15px;
+        padding: 10px;
     }
-    
+
     div.lc_userinputgroup .slds-form-element__label {
-        font-size:1.5rem;
+        font-size: 16px;
     }
-    
-    div.lc_userinputgroup .slds-input{
-       line-height: 4rem;
-       font-size: 2rem;
+
+    div.lc_userinputgroup .slds-input {
+        line-height: 3rem;
+        font-size: 1.5rem;
     }
-    
+
     /**BUTTONS**/
-    
+
     div.lc_bottombutton {
-        position:absolute;
-        bottom:5%;
-        width:90%;
-        height:8.5%;
-        border-radius:10px;
-        font-size:1.6rem;
-        font-weight:600;
+        position: absolute;
+        bottom: 5%;
+        width: 90%;
+        height: 8.5%;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 800;
     }
-    
+
     /**SCREEN 1**/
+
     div.lc_chatbutton {
         position: absolute;
         bottom: 0%;
@@ -113,22 +110,90 @@
     }
 
     div.lc_chatbutton>span {
-        padding-left: 4%;
-        font-size: 1.3rem;
+        padding-left: 2%;
+        font-size: 12px;
         font-family: "Arial Black", Gadget, sans-serif;
     }
-    
-    
+
+
     /*--BACKGROUND COLORS--*/
+
     div.defaultbackground {
-        background-color:lightgray;
+        background-color: lightgray;
     }
-    
+
     .activebackground {
-        background-color:#85dde8;
-    }   
-    
+        background-color: #85dde8;
+    }
+
     /**SCREEN 3**/
-    
+
+    div.lc_chatuserscreen {
+        height: 100%;
+        width: 100%;
+    }
+
+    div.lc_largeheaderbar {
+        position: absolute;
+        height: 40%;
+        width: 100%;
+        top: 0%;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+
+    div.lc_loadingdots {
+        position: absolute;
+        top: 63.5%;
+    }
+
+    div.circle {
+        border-radius: 50%;
+        margin: 2px;
+    }
+
+    div.lc_circle-md {
+        width: 15px;
+        height: 15px;
+    }
+
+    div.lc_circle-sm {
+        width: 10px;
+        height: 10px;
+    }
+
+    div.lc_headerGreetingTitle {
+        font-family: "Arial", Gadget, sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        position: absolute;
+        top: 50px;
+    }
+
+    div.lc_headerGreetingMessage {
+        font-family: "Arial", Gadget, sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        position: absolute;
+        top: 140px;
+    }
+
+    div.lc_headerProfilePhoto {
+        position: relative;
+        margin-top: 15px;
+        height: 45px;
+        width: 45px;
+        background:white;
+        border-radius: 50%;
+    }
+
+    div.lc_headerProfilePhoto>img {
+        position: absolute;
+        height:inherit;
+        width:inherit;
+        top: 0%;
+        left: 0%;
+        border-radius: inherit;
+    }
 
 </style>
