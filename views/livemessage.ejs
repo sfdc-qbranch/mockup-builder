@@ -98,8 +98,8 @@
         position: absolute;
         z-index: 1;
         bottom: -2px;
-        right: -56px;
-        width: 26px;
+        right: -48px;
+        width: 19px;
         height: 30px;
         background: white;
         border-bottom-left-radius: 10px;
@@ -133,8 +133,8 @@
         position: absolute;
         z-index: 3;
         bottom: -2px;
-        left: 4px;
-        width: 26px;
+        left: 12px;
+        width: 18px;
         height: 20px;
         background: white;
         border-bottom-right-radius: 10px;
@@ -172,9 +172,11 @@
     </div>
     <div class="slds-col slds-size_4-of-7 ">
         <%- include('partials/header') %>
+        <div class="page-content">
             <div class="slds-align_absolute-center">
                 <%- include('displays/livemessageDisplay') %>
             </div>
+        </div>
     </div>
     <div class="slds-col slds-size_2-of-7 page-rightbar">
         <%- include('settings/livemessageSettings') %>
@@ -248,7 +250,7 @@
         })
 
 
-        activeDownloadButton();
+        download_mockup_active();
 
 
     });

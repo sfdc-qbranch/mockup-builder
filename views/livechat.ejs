@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>LIVE CHAT MOCKUP</title>
+    <title>Mockup Toolkit: Live Chat</title>
 </head>
 
 
@@ -13,20 +13,23 @@
     </div>
     <div class="slds-col slds-size_4-of-7 ">
         <%- include('partials/header') %>
-        
-            <div class="slds-align_absolute-center">
-                <%- include('displays/livechatDisplay1') %>
+            <div class="page-content">
+            <div class="slds-align_absolute-center slds-grid">
+                    <div class="slds-col slds-size--2-of-12" style="text-align:right;"> 
+                            <i class="fas fa-arrow-left"></i>
+                    </div>
+                    <div class="slds-col slds-size--8-of-12">
+                        <div class="slds-align_absolute-center">
+                            <%- include('displays/livechatDisplay') %>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size--2-of-12" sytle="text-align:left;">
+                        <i class="fas fa-arrow-right" ></i>
+                    </div>
+                </div>
             </div>
-        <div class="slds-align_absolute-center">
-                <%- include('displays/livechatDisplay2') %>
-            </div>
-        <div class="slds-align_absolute-center">
-                <%- include('displays/livechatDisplay3') %>
-            </div>
-            <div class="slds-align_absolute-center">
-                <%- include('displays/livechatDisplay4') %>
-            </div>
-    </div>
+        </div>
+
     <div class="slds-col slds-size_2-of-7 page-rightbar">
         <%- include('settings/livechatSettings') %>
     </div>
@@ -37,6 +40,8 @@
 <script>
     $(document).ready(function() {
 
+        $('[name="livechatDisplay"]').hide();
+        $('[data="1"]').show();
         $('#cp2').colorpicker();
 
         /*Input Headline*/
@@ -107,7 +112,6 @@
     }
     
 
-
     /**SCREEN 1**/
 
     div.lc_chatbutton {
@@ -117,6 +121,9 @@
         width: 64%;
         background: #85DDE8;
         border-radius: 10px 10px 0px 0px;
+        left:0;
+        right:0;
+        margin:auto;
     }
 
     div.lc_chatbutton>span {
@@ -193,17 +200,37 @@
         margin-top: 15px;
         height: 45px;
         width: 45px;
-        background:white;
+        background: white;
         border-radius: 50%;
     }
 
     div.lc_headerProfilePhoto>img {
         position: absolute;
-        height:inherit;
-        width:inherit;
+        height: inherit;
+        width: inherit;
         top: 0%;
         left: 0%;
         border-radius: inherit;
     }
+    
+    .screenholder {
+        min-width:560px;
+        overflow:hidden;
+    }
+    
+
 
 </style>
+
+<script>
+    
+    
+        $(document).ready(function() {
+           
+    
+             activeDownloadButton();
+    
+    
+        });
+    
+    </script>

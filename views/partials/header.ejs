@@ -1,5 +1,5 @@
 <!-- views/partials/header.ejs -->
-
+<!DOCTYPE html>
 <head>
     <!--Stylesheet-->
     <link rel="stylesheet" type="text/css" href="/assets/styles/salesforce-lightning-design-system.css" />
@@ -17,6 +17,7 @@
     <script src="js/bootstrap-colorpicker.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.en-AU.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment-with-locales.min.js"></script>
@@ -32,12 +33,10 @@
 
 <div class="page-header">
     <div class="page-title">
-        <span>Push Notification</span>
+        <span id="page-header-title"></span>
     </div>
 
     <div class="page-downloadmockup" >
         <a id="pagebutton-downloadmockup">DownLoad Mockup</a>
     </div>
 </div>
-
-

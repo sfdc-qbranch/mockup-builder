@@ -6,20 +6,28 @@
 "use strict";
 
 var express = require('express');
-var app = express();
+var path = require('path');
 var bodyParser = require('body-parser');
+var morgan = require('morgan');
+var app = express();
 
+
+app.use(morgan('dev'));
 app.set('view engine', 'ejs');
-app.set("views", __dirname + '/views');
-app.use(express.static(__dirname + '/public'));
+app.set("views", path.join(__dirname,'views'));
+app.use(express.static(path.join(__dirname,'public')));
+
+
+
 app.use(bodyParser.urlencoded({
    extended: false
 }));
 
 
+
 //Homepage
 app.get('/',function(req,res){
-   res.render('home');
+    res.render('notifications');
 });
 
 //testImage - test upload image, add text, save as png
@@ -50,6 +58,8 @@ app.get('/test',function(req,res){
     res.render('test');
 });
 
-app.listen(3000);
-console.log('listen on port 3000');
+app.listen(3000, function(){
+    console.log('listen on port 3000');
+});
+
 

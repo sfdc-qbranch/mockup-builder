@@ -33,13 +33,19 @@ function readURL(input,output) {
 }
 
 
-function activeDownloadButton(){
+function download_mockup_active(){
             $("#pagebutton-downloadmockup").on('click', function() {
+                $("html").addClass("hide-scrollbar");
             html2canvas(document.querySelector("#capture"),{"scale":2}).then(canvas => {
-                document.body.appendChild(canvas)
+                var a = document.createElement('a');
+                a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+                a.download = 'download.jpg';
+                a.click();
             });
+            $("html").removeClass("hide-scrollbar");
         });
 }
+
 
 
 /*Valid File Type*/
@@ -58,6 +64,8 @@ function validFileType(file) {
     }
     return false;
 }
+
+/* Change Page-header span */
 
 
 

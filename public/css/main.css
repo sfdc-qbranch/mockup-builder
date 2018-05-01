@@ -1,7 +1,14 @@
+body {
+    min-width:800px;
+}
+
+
+
 /*PAGE HEADER*/
 
 div.page-header {
-    background: darkgray;
+    background: #1C3359 !important;
+    color:white;
     width: auto;
     height: 4rem;
     display: -webkit-box;
@@ -24,7 +31,7 @@ div.page-title > span {
 }
 
 div.page-downloadmockup {
-    background: Gainsboro;
+    background: black;
     border-radius: 20px;
     height: 50%;
     padding: 0rem 3rem;
@@ -34,31 +41,42 @@ div.page-downloadmockup {
 /*PAGE NAV BAR*/
 
 div.page-navbar {
-    background: #F8F8F8;
-    height: 100%;
+    background:white;
+    height: 100vh;
+    overflow:auto;
+    margin:auto;
+    max-width:170px;
+    min-width:170px;
+
 }
 
 div.page-navbar-logo {
     padding-top: 5rem;
-    padding-bottom: 5rem;
-}
-
-div.page-navbar-logo img {
-    max-width: 80%;
+    padding-bottom: 1rem;
 }
 
 a.nav-link {
     font-size: 0.925rem;
     color: black;
+    text-align: center;
 }
 
 /*PAGE RIGHT BAR*/
 
 div.page-rightbar {
-    background: #F8F8F8;
-    height: 100%;
+    background: white;
+    height: 100vh;
     overflow-y: scroll;
     overflow-x: auto;
+    width:380px;
+    
+}
+
+div.page-content {
+    box-shadow: inset 0 0 10px #0000008f;
+    height:calc(100% - 4rem);
+    background-color: #B3C4DD;
+    min-height:700px;
 }
 
 /*PAGE SCREEN*/
@@ -79,6 +97,7 @@ div.page-livechatscreen {
     height: 500px;
     /** height: 1000px; **/
     position: relative;
+    display:none;
 }
 
 div.page-settings {
@@ -103,7 +122,6 @@ div.capture {
 
 span.wraptext {
     overflow: break-word;
-    text-wrap: break-word;
     white-space: initial;
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
@@ -122,10 +140,8 @@ select {
     text-align-last: center;
 }
 
-/*Screen Element*/
-
-
-
-
-
-/*PARTIAL + HELPER*/
+/*Work around for white left margin in html2canvas*/
+.hide-scrollbar {
+	overflow: -moz-hidden-unscrollable;
+	overflow: hidden;
+}
