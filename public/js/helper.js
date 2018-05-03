@@ -1,3 +1,4 @@
+
 function saveBase64AsFile(base64, fileName) {
     var link = document.createElement("a");
 
@@ -33,10 +34,13 @@ function readURL(input,output) {
 }
 
 
-function download_mockup_active(){
+function download_mockup_active(scale){
+    if (typeof scale === 'undefined' || !scale){
+        scale = 2;
+    }
             $("#pagebutton-downloadmockup").on('click', function() {
                 $("html").addClass("hide-scrollbar");
-            html2canvas(document.querySelector("#capture"),{"scale":2}).then(canvas => {
+            html2canvas(document.querySelector("#capture"),{"scale":scale}).then(canvas => {
                 var a = document.createElement('a');
                 a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
                 a.download = 'download.jpg';

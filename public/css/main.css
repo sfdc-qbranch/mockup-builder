@@ -45,8 +45,8 @@ div.page-navbar {
     height: 100vh;
     overflow:auto;
     margin:auto;
-    max-width:170px;
-    min-width:170px;
+    max-width:180px;
+    min-width:180px;
 
 }
 
@@ -82,7 +82,7 @@ div.page-content {
 /*PAGE SCREEN*/
 
 div.page-screen {
-    margin-top: 2rem;
+    margin-top: 5rem;
     width: 375px;
     /** width: 750px; **/
     height: 667px;
@@ -91,7 +91,7 @@ div.page-screen {
 }
 
 div.page-livechatscreen {
-    margin-top: 2rem;
+    margin-top: 5rem;
     width: 320px;
     /** width: 640px; **/
     height: 500px;
@@ -99,6 +99,9 @@ div.page-livechatscreen {
     position: relative;
     display:none;
 }
+
+
+
 
 div.page-settings {
     margin-top: 5rem;

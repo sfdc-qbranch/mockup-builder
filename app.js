@@ -45,8 +45,8 @@ app.get('/notifications',function(req,res){
 });
 
 
-app.get('/facebookstandardad',function(req,res){
-    res.render('facebookstandardad');
+app.get('/facebook',function(req,res){
+    res.render('facebook');
 });
 
 app.get('/email',function(req,res){

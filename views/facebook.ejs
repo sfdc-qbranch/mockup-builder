@@ -1,0 +1,24 @@
+<!-- views/facebook.ejs -->
+
+
+<div class="slds-grid">
+    <div class="slds-col slds-size_1-of-7">
+        <%- include('partials/navbar') %>
+    </div>
+    <div class="slds-col slds-size_4-of-7 ">
+        <%- include('partials/header') %>
+            <div class="page-content">
+                <div class="slds-align_absolute-center">
+                    <%- include('displays/facebookDisplay') %>
+                </div>
+            </div>
+    </div>
+    <div class="slds-col slds-size_2-of-7 page-rightbar">
+        <%- include('settings/facebookSettings') %>
+    </div>
+
+</div>
+
+<script>
+    download_mockup_active();
+</script>
