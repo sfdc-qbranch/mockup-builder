@@ -1,4 +1,11 @@
 <!--Screen Display-->
+<!--
+    https://www.facebook.com/business/help/908491205873167
+    Facebook Lead Ad Specs
+    Text: 125 characters
+    Headline: 25 characters
+    Link description: 30 characters
+-->
 <style>
 .page-facebookleadad-mobilescreen{
     border-radius:4px;
@@ -6,8 +13,8 @@
 
 .fb_lead_ad-content_container{
     width:100%;
-    height:358.23px;
-    padding:10px;
+    min-height:358.23px;
+    padding:5px;
     line-height: 18px;
     font-family: helvetica, arial, sans-serif;
     font-size: 14px;
@@ -39,6 +46,7 @@
     background: #fff;
     display: block;
     margin: 8px 0;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.20);
 }
 
 .page-facebookleadad-mobilescreen {
@@ -67,9 +75,52 @@
     display:block;
 }
 
+/* <!--FB Lead Ad Spec Text (Max 90 Chars)--> */
+#facebook_leadad_mobile-Ad-Text {
+    max-width: 125ch;
+}
+
+#facebook_leadad_mobile-Ad-Headline {
+    max-width: 25ch;
+    font-size: 1.15rem;
+    font-weight: 500;
+    font-family: San Francisco;
+}
+
+#facebook_leadad_mobile-Ad-LinkDescription{
+    font-size: 0.75rem;
+}
+
+#fb_lead_ad-CTA-container{
+    display:flex;
+    justify-content: space-between;
+}
+
+#fb_lead_ad-CTA-container span{
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    color: #b0adab;
+    font-weight: 300;
+}
+
+#fb_lead_ad-CTA-container button{
+    font-size: 0.75rem;
+    color:black;
+    font-weight: 400;
+    float:right;
+}
 
 
 </style>
+
+<!--
+    https://www.facebook.com/business/help/908491205873167
+    Facebook Lead Ad Specs
+    Text: 125 characters
+    Headline: 25 characters
+    Link description: 30 characters
+-->
+
 <div class="page-facebookleadad-mobilescreen"  id="capture">
     <div class="fb_lead_ad-content_container">
         <div class="fb_lead_ad-topbar">
@@ -80,15 +131,39 @@
             </div>
         </div>
         <div class="fb_lead_ad-adcontent">
-            <p class="slds-m-top_small" id="facebook_leadad_mobile-contect_post">Your Message Here</p>
+            <p class="slds-m-vertical_xx-small" id="facebook_leadad_mobile-Ad-Text">
+                <!--FB Lead Ad Spec Text (Max 90 Chars)-->
+                Your Text Here
+            </p>
             <div class="fb_lead_ad-adcontent-adframe">
                 <img src="img/image-placeholder_1200x628.jpg"/>
+                <p class="slds-m-vertical_xx-small slds-p-left_small" id="facebook_leadad_mobile-Ad-Headline">
+                    <!--FB Lead Ad Spec Headline (Max 25 Chars)-->
+                    Your Headline Here
+                </p>
+                <p class="slds-m-vertical_xx-small slds-p-left_small " id="facebook_leadad_mobile-Ad-LinkDescription">
+                    <!--FB Lead Ad Spec Link Description (Max 30 Chars)-->
+                    Your Link Description Here
+                </p>
+                <div class="slds-m-top_x-small slds-p-left_small" id="fb_lead_ad-CTA-container" >
+                    <span id="facebook_leadad_mobile-Ad-Caption">
+                            <!--FB Lead Ad Spec Caption (Max 25 Chars)-->  
+                            Your Caption Here
+                    </span>
+                    <button type="button" class="slds-m-bottom_xx-small slds-m-right_xx-small" id="fb_lead_ad-CTA-button">Learn More</button>
+                </div>
             </div>
         </div>
 
-        <div class="fb_lead_ad-feedbackbar"
-        
-        ></div>
+        <div class="slds-grid" id="fb_lead_ad-feedbackbar">
+         <div class="slds-col slds-size_1-of-3">
+            <span><i class="fas fa-thumbs-up" style="color:#3b5998"></i></span>
+         </div>
+         <div class="slds-col slds-size_2-of-3">
+
+        </div>
+
+        </div>
 
     </div>
     <div class="fb_lead_ad-buttons_group">
