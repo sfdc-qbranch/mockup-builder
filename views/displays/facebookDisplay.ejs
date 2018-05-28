@@ -110,6 +110,25 @@
     float:right;
 }
 
+#fb-likes_container{
+    display:inline-flex;
+}
+
+.fb-icon_like{
+    background-color: #3266ff;
+    padding-top: 4px;
+    padding-left: 4px;
+    border-radius: 50%;
+    color: white;
+    font-size: 8px;
+    width: 16px;
+    height: 16px;
+}
+
+#fb-likes_number {
+    color:#29438a;
+    font-weight: 300;
+}
 
 </style>
 
@@ -156,12 +175,14 @@
         </div>
 
         <div class="slds-grid" id="fb_lead_ad-feedbackbar">
-         <div class="slds-col slds-size_1-of-3">
-            <span><i class="fas fa-thumbs-up" style="color:#3b5998"></i></span>
+         <div class="slds-col slds-size_1-of-3" id="fb-likes_container">
+                <span><i class="fas fa-thumbs-up fa-xs fb-icon_like"></i></span>
+                <span><i class="fas fa-thumbs-up fa-xs fb-icon_like"></i></span>
+                <span><i class="fas fa-thumbs-up fa-xs fb-icon_like"></i></span> 
+                <span id="fb-likes_number" class="slds-m-left_x-small">2</span>
+            </div>
          </div>
          <div class="slds-col slds-size_2-of-3">
-
-        </div>
 
         </div>
 
