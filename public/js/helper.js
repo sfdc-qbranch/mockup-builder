@@ -69,7 +69,6 @@ function validFileType(file) {
     return false;
 }
 
-/* Change Page-header span */
 
 
 
