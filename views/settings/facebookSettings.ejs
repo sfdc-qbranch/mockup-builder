@@ -5,12 +5,22 @@
     <!--AdvertiserName-->
     <%- include('../helper/inputtext', {id:'fb-leadad-pagename', placeholder:'', label:'Page Name'})%>
 
+    <!--LOGO IMAGE SETTING-->
+    <div class="page-setting-element">
+        <%- include('../helper/imagefileselector', {imageselectorlabel:'Page Logo:',imgInputId:'fb_setPageLogoImage', helptext:'100 * 100 (.png .jpg .jpeg)'}) %>
+    </div>
+
     <!--Ad Text-->
     <div class="slds-form-element">
         <label class="slds-form-element__label" for="fb-leadad-text">Text</label>
         <div class="slds-form-element__control">
         <textarea id="fb-leadad-text" class="slds-textarea" placeholder="Your Text Here"></textarea>
         </div>
+    </div>
+
+    <!--POST IMAGE SETTING-->
+    <div class="page-setting-element">
+        <%- include('../helper/imagefileselector', {imageselectorlabel:'Post Image:',imgInputId:'fb_setPostImage', helptext:'1200 * 628 (.png .jpg .jpeg)'}) %>
     </div>
 
     <!--Ad Headline-->
@@ -57,6 +67,69 @@
             <input type="number" id="fb-leadad-numberofshares" class="slds-input" placeholder="" />
         </div>
     </div>
+
+    <!--Likes-->
+    <fieldset class="slds-form-element">
+        <legend class="slds-form-element__legend slds-form-element__label">Reactions</legend>
+        <div class="slds-form-element__control">
+            <div class="slds-grid">
+                <div class="slds-col">
+                    <span class="slds-checkbox">
+                        <input type="checkbox" name="options" id="checkbox-3" value="checkbox-3" />
+                        <label class="slds-checkbox__label" for="checkbox-3">
+                            <span class="slds-checkbox_faux"></span>
+                            <span class="slds-form-element__label"><img class="fb-likes_icons" src="img/fb_reaction_like.png"/></span>
+                        </label>
+                    </span>
+                    <span class="slds-checkbox">
+                        <input type="checkbox" name="options" id="checkbox-4" value="checkbox-4" />
+                        <label class="slds-checkbox__label" for="checkbox-4">
+                            <span class="slds-checkbox_faux"></span>
+                            <span class="slds-form-element__label"><img  class="fb-likes_icons" src="img/fb_reaction_haha.png"/></span>
+                        </label>
+                    </span>
+
+                </div>
+
+                <div class="slds-col">
+                        <span class="slds-checkbox">
+                            <input type="checkbox" name="options" id="checkbox-3" value="checkbox-3" />
+                            <label class="slds-checkbox__label" for="checkbox-3">
+                                <span class="slds-checkbox_faux"></span>
+                                <span class="slds-form-element__label"><img  class="fb-likes_icons" src="img/fb_reaction_love.png"/></span>
+                            </label>
+                        </span>
+                        <span class="slds-checkbox">
+                            <input type="checkbox" name="options" id="checkbox-4" value="checkbox-4" />
+                            <label class="slds-checkbox__label" for="checkbox-4">
+                                <span class="slds-checkbox_faux"></span>
+                                <span class="slds-form-element__label"><img  class="fb-likes_icons" src="img/fb_reaction_sad.png"/></span>
+                            </label>
+                        </span>
+
+                    </div>
+
+                <div class="slds-col">
+                    <span class="slds-checkbox">
+                        <input type="checkbox" name="options" id="checkbox-3" value="checkbox-3" />
+                        <label class="slds-checkbox__label" for="checkbox-3">
+                            <span class="slds-checkbox_faux"></span>
+                            <span class="slds-form-element__label"><img  class="fb-likes_icons" src="img/fb_reaction_wow.png"/></span>
+                        </label>
+                    </span>
+                    <span class="slds-checkbox">
+                        <input type="checkbox" name="options" id="checkbox-4" value="checkbox-4" />
+                        <label class="slds-checkbox__label" for="checkbox-4">
+                            <span class="slds-checkbox_faux"></span>
+                            <span class="slds-form-element__label"><img class="fb-likes_icons" src="img/fb_reaction_angry.png"/></span>
+                        </label>
+                    </span>
+
+                </div>
+            </div>
+            
+        </div>
+    </fieldset>
 
 
 </div>
