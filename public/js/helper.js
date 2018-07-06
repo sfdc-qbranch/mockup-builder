@@ -50,6 +50,17 @@ function download_mockup_active(scale){
         });
 }
 
+function bindSettingAndDisplayTextField(settingElementId, displayElementId){
+    var placeholder = $("#" + settingElementId).attr('placeholder');
+    $("#" + settingElementId).on('keyup', function() {
+        if($("#" + settingElementId).val().length == 0 &&  placeholder !== undefined){
+            $("#" + displayElementId).html(placeholder);
+        }else{
+            $("#" + displayElementId).html($("#" + settingElementId).val());
+        }
+    });
+}
+
 
 
 /*Valid File Type*/
