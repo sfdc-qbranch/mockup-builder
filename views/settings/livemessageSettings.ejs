@@ -15,33 +15,34 @@
     </div>
 
     <!--MESSAGE FROM SENDER-->
-    <div class="slds-form-element page-setting-element page-setting-element-message">
+    <div class="slds-form-element slds-m-bottom_xx-large">
         <label class="slds-form-element__label" for="lm_senderMessage">Message From Sender:</label>
         <div class="slds-form-element__control">
-            <textarea id="lm_senderMessage" class="slds-textarea" placeholder=""></textarea>
+            <textarea id="lm_senderMessage" class="slds-textarea slds-m-bottom_xx-small" placeholder=""></textarea>
+            <button id="addFromThem" class="slds-float_right slds-button slds-button_brand">Add</button>
         </div>
-        <button id="addFromThem" class="slds-float_right slds-button slds-button_brand">Add</button>
+        
     </div>
 
     <!--MESSAGE FROM RECEIVER-->
-    <div class="slds-form-element page-setting-element page-setting-element-message">
+    <div class="slds-form-element slds-m-bottom_xx-large">
         <label class="slds-form-element__label" for="lm_receiverMessage">Message From Receiver:</label>
         <div class="slds-form-element__control">
-            <textarea id="lm_receiverMessage" class="slds-textarea" placeholder=""></textarea>
+            <textarea id="lm_receiverMessage" class="slds-textarea slds-m-bottom_xx-small" placeholder=""></textarea>
+            <button id="addFromMe" class="slds-float_right slds-button slds-button_brand">Add</button>
         </div>
-        <button id="addFromMe" class="slds-float_right slds-button slds-button_brand">Add</button>
     </div>
 
 
     <!--CHAT MESSAGE HELPER BUTTONS-->
 
     <div class="lm_settings_helperbuttons slds-text-align--center" >
-        <div>
-            <button id="removeLast" class="lm_helperbutton">Remove Last Message</button>
+        <div class="slds-m-around_small">
+            <button id="removeLast" class="slds-button slds-button_outline-brand">Remove Last Message</button>
         </div>
 
-        <div>
-            <button id="clear" class="lm_helperbutton">Clear</button>
+        <div class="slds-m-around_small">
+            <button id="clear" class="slds-button slds-button_brand">Clear All</button>
         </div>
     </div>
 
