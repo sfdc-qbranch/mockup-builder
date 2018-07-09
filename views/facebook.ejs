@@ -62,19 +62,39 @@
         //SET NUMBER OF SHARES
         bindSettingAndDisplayTextField('fb-leadad-numberofshares','fb-shares_number');
 
-        //SET REACTION ICONS
-        var reactionIconsContainer =  $('#fb-likes_icons_container');
-        var selectedReactions = $('.fb-likes_checkboxes:checked');
-
-        for(var i = 0; i < selectedReactions.length; i++){
-            if(i === 3){
-                break;
-            }
-            
-        } 
+        
+        //SET CALL TO ACTION
+        $(".fb-likes_checkboxes").change(function() {
+            getCurrentSelectReactions();
+        });
         
         download_mockup_active();
 
+        function getCurrentSelectedReactions(){
+            let i = 0;
+            const MAX_REACTION_NUMBERS = 3;
+            let reactionIterationNumbers = 0;
+
+            //GET SELECTED REACTION ICONS
+            var reactionIconsContainer =  $('#fb-likes_icons_container');
+            var selectedReactionsElements = $('.fb-likes_checkboxes:checked');
+            var selectedReactionsValues = [];
+            
+            for(i = 0; i < selectedReactionsElements.length; i++){
+                selectedReactionsValues.push(selectedReactionsElements[i].value);
+            }
+            if(selectedReactionsValues.length > MAX_REACTION_NUMBERS){
+                reactionIterationNumbers = MAX_REACTION_NUMBERS;
+            }else{
+                reactionIterationNumbers = selectedReactionsValues.length;
+            }
+
+            // DISPLAY SELECTED REACTION ICONS
+            reactionIconsContainer.empty();
+            for(i = 0; i < reactionIterationNumbers; i++){
+                reactionIconsContainer.append('<img class="fb-likes_icons" src="img/' + selectedReactionsValues[i] + '.png"/>');
+            }
+        }
     });
 
 
