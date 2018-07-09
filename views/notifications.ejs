@@ -1,23 +1,25 @@
 <!-- views/notifications.ejs -->
 
-
 <div class="slds-grid">
-    <div class="slds-col slds-size_1-of-7">
-        <%- include('partials/navbar') %>
-    </div>
-    <div class="slds-col slds-size_4-of-7 ">
-        <%- include('partials/header') %>
-            <div class="page-content">
-                <div class="slds-align_absolute-center">
-                    <%- include('displays/notificationDisplay') %>
-                </div>
+        <div class="slds-col slds-size_1-of-7">
+            <%- include('partials/navbar') %>
+        </div>
+        <div class="slds-col slds-size_6-of-7 ">
+            <%- include('partials/header') %>
+            <div class="slds-grid">
+                    <div class="slds-col slds-size_4-of-6 ">
+                        <div class="page-content">
+                                <div class="slds-align_absolute-center">
+                                        <%- include('displays/notificationDisplay') %>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_2-of-6 page-rightbar">
+                            <%- include('settings/notificationSettings') %>
+                    </div>
             </div>
+        </div>
     </div>
-    <div class="slds-col slds-size_2-of-7 page-rightbar">
-        <%- include('settings/notificationSettings') %>
-    </div>
-
-</div>
 
 <style>
 

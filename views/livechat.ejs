@@ -6,35 +6,39 @@
     <title>Mockup Toolkit: Live Chat</title>
 </head>
 
-
 <div class="slds-grid">
-    <div class="slds-col slds-size_1-of-7">
-        <%- include('partials/navbar') %>
-    </div>
-    <div class="slds-col slds-size_4-of-7 ">
-        <%- include('partials/header') %>
-            <div class="page-content">
-            <div class="slds-align_absolute-center slds-grid">
-                    <div class="slds-col slds-size--2-of-12" style="text-align:right;"> 
-                            <i id="prevArrow"class="fas fa-arrow-left"></i>
-                    </div>
-                    <div class="slds-col slds-size--8-of-12">
-                        <div class="slds-align_absolute-center">
-                            <%- include('displays/livechatDisplay') %>
+        <div class="slds-col slds-size_1-of-7">
+            <%- include('partials/navbar') %>
+        </div>
+        <div class="slds-col slds-size_6-of-7 ">
+            <%- include('partials/header') %>
+            <div class="slds-grid">
+                    <div class="slds-col slds-size_4-of-6 ">
+                        <div class="page-content">
+                                <div class="slds-align_absolute-center slds-grid">
+                                        <div class="slds-col slds-size--2-of-12" style="text-align:right;"> 
+                                                <i id="prevArrow"class="fas fa-arrow-left"></i>
+                                        </div>
+                                        <div class="slds-col slds-size--8-of-12">
+                                            <div class="slds-align_absolute-center">
+                                                <%- include('displays/livechatDisplay') %>
+                                            </div>
+                                        </div>
+                                        <div class="slds-col slds-size--2-of-12" sytle="text-align:left;">
+                                            <i id="nextArrow" class="fas fa-arrow-right" ></i>
+                                        </div>
+                                    </div>
                         </div>
                     </div>
-                    <div class="slds-col slds-size--2-of-12" sytle="text-align:left;">
-                        <i id="nextArrow" class="fas fa-arrow-right" ></i>
+                    <div class="slds-col slds-size_2-of-6 page-rightbar">
+                            <%- include('settings/livechatSettings') %>
                     </div>
-                </div>
             </div>
         </div>
-
-    <div class="slds-col slds-size_2-of-7 page-rightbar">
-        <%- include('settings/livechatSettings') %>
     </div>
 
-</div>
+
+
 
 
 <script>

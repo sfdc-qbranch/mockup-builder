@@ -7,7 +7,7 @@ body {
 /*PAGE HEADER*/
 
 div.page-header {
-    background: #1C3359 !important;
+    background: #4285F4 !important;
     color:white;
     width: auto;
     height: 4rem;
@@ -31,7 +31,8 @@ div.page-title > span {
 }
 
 div.page-downloadmockup {
-    background: black;
+    background: #ffffff;
+    color:#333333;
     border-radius: 20px;
     height: 50%;
     padding: 0rem 3rem;
@@ -68,14 +69,14 @@ div.page-rightbar {
     height: 100vh;
     overflow-y: scroll;
     overflow-x: auto;
-    width:380px;
+    min-width:380px;
     
 }
 
 div.page-content {
-    box-shadow: inset 0 0 10px #0000008f;
+    /*box-shadow: inset 0 0 10px #0000008f;*/
     height:calc(100% - 4rem);
-    background-color: #B3C4DD;
+    background-color: #ecf0f1;
     min-height:700px;
 }
 
@@ -132,8 +133,9 @@ span.normal-inlineheight {
     line-height: normal;
 }
 
-.border-round_small {
-    border-radius: 5px;
+.border-round {
+    border-radius: 0.25rem;
+    border:1px solid #dddbda;
 }
 
 select {

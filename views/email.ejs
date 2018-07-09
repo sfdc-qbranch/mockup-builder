@@ -1,42 +1,22 @@
 <!-- views/email.ejs -->
 
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <title>EMAIL MOCKUP</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-    <style>
-        body {
-            padding-top: 20px;
-            padding-bottom: 20px;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container">
-        <%- include('partials/header') %>
-        <div class="row">
-            <div class="col-2">
-                <%- include('partials/navbar') %>
-            </div>
-            <div class="col-5">
-                <div class="jumbotron">
-                    <h1>THIS IS COLUMN 1 in Page5</h1>
-                </div>
-            </div>
-
-            <div class="col-5">
-                <div class="jumbotron">
-                    <h1>THIS IS COLUMN 2 in Page5</h1>
-                </div>
-            </div>
-
+<div class="slds-grid">
+        <div class="slds-col slds-size_1-of-7">
+            <%- include('partials/navbar') %>
         </div>
-        <%- include('partials/footer') %>
+        <div class="slds-col slds-size_6-of-7 ">
+            <%- include('partials/header') %>
+            <div class="slds-grid">
+                    <div class="slds-col slds-size_4-of-6 ">
+                        <div class="page-content">
+                                <div class="slds-align_absolute-center">
+                                    <%- include('displays/facebookDisplay') %>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_2-of-6 page-rightbar">
+                        <%- include('settings/facebookSettings') %>
+                    </div>
+            </div>
+        </div>
     </div>
-</body>
-
-</html>

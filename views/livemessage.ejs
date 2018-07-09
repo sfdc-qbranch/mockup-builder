@@ -148,35 +148,37 @@
         margin-bottom: 10px;
     }
 
-    .lm_settings_helperbuttons button {
-        border-radius: 15px;
-        width: 80%;
-        border: 1px solid #0070d2;
-    }
-
     .slds-textarea {
         min-height: 100px;
     }
 
+    .lm_settings_helperbuttons button {
+        width: 80%;
+    } 
+
 </style>
 
 <div class="slds-grid">
-    <div class="slds-col slds-size_1-of-7">
-        <%- include('partials/navbar') %>
-    </div>
-    <div class="slds-col slds-size_4-of-7 ">
-        <%- include('partials/header') %>
-        <div class="page-content">
-            <div class="slds-align_absolute-center">
-                <%- include('displays/livemessageDisplay') %>
+        <div class="slds-col slds-size_1-of-7">
+            <%- include('partials/navbar') %>
+        </div>
+        <div class="slds-col slds-size_6-of-7 ">
+            <%- include('partials/header') %>
+            <div class="slds-grid">
+                    <div class="slds-col slds-size_4-of-6 ">
+                        <div class="page-content">
+                                <div class="slds-align_absolute-center">
+                                        <%- include('displays/livemessageDisplay') %>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_2-of-6 page-rightbar">
+                            <%- include('settings/livemessageSettings') %>
+                    </div>
             </div>
         </div>
     </div>
-    <div class="slds-col slds-size_2-of-7 page-rightbar">
-        <%- include('settings/livemessageSettings') %>
-    </div>
 
-</div>
 
 <script>
     function addMessage(userClass, inputElementId) {
