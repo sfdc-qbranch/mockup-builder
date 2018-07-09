@@ -16,7 +16,7 @@
             <div class="page-content">
             <div class="slds-align_absolute-center slds-grid">
                     <div class="slds-col slds-size--2-of-12" style="text-align:right;"> 
-                            <i class="fas fa-arrow-left"></i>
+                            <i id="prevArrow"class="fas fa-arrow-left"></i>
                     </div>
                     <div class="slds-col slds-size--8-of-12">
                         <div class="slds-align_absolute-center">
@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="slds-col slds-size--2-of-12" sytle="text-align:left;">
-                        <i class="fas fa-arrow-right" ></i>
+                        <i id="nextArrow" class="fas fa-arrow-right" ></i>
                     </div>
                 </div>
             </div>
@@ -40,14 +40,47 @@
 <script>
     $(document).ready(function() {
 
+        const MAX_LIVECHAT_SCREENS = 4;
+
         $('[name="livechatDisplay"]').hide();
-        $('[data="1"]').show();
+        $('[data="1"]').show(); // Screen 1
         $('#cp2').colorpicker();
 
         /*Input Headline*/
         $("#headlineInput").keypress(function() {
             $("#headline").html($("#headlineInput").val());
         });
+
+        $('#nextArrow').click(function(){
+            var currentPageId = $('#capture').attr('data');
+            var currentPageIdIdx = parseInt(currentPageId);
+            var nextPageIdIdx = currentPageIdIdx + 1;
+            if(currentPageIdIdx === MAX_LIVECHAT_SCREENS){
+                nextPageIdIdx = 1;
+            }
+            console.log( 'current page idx: ' + currentPageIdIdx + ' next page idx: ' + nextPageIdIdx );
+            showThisPage(nextPageIdIdx);
+        });
+
+        $('#prevArrow').click(function(){
+            var currentPageId = $('#capture').attr('data');
+            var currentPageIdIdx = parseInt(currentPageId);
+            var prevPageIdIdx = currentPageIdIdx - 1;
+            if(currentPageIdIdx === 1){
+                prevPageIdIdx = 4;
+            }
+            console.log( 'current page idx: ' + currentPageIdIdx + ' prev page idx: ' + prevPageIdIdx );
+            showThisPage(prevPageIdIdx);
+        });
+
+        function showThisPage(pageIdx){
+            for(var i = 1; i <= MAX_LIVECHAT_SCREENS; i++){
+                $('[data="'+i+'"]').attr("id","captureNotActive");
+                $('[data="'+i+'"]').hide();
+            }
+            $('[data="'+pageIdx+'"]').attr("id","capture");            
+            $('[data="'+pageIdx+'"]').show();
+        }
     });
 
 </script>
@@ -222,15 +255,3 @@
 
 </style>
 
-<script>
-    
-    
-        $(document).ready(function() {
-           
-    
-             activeDownloadButton();
-    
-    
-        });
-    
-    </script>
