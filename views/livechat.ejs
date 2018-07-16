@@ -77,6 +77,8 @@
             showThisPage(prevPageIdIdx);
         });
 
+        download_mockup_active();
+
         function showThisPage(pageIdx){
             for(var i = 1; i <= MAX_LIVECHAT_SCREENS; i++){
                 $('[data="'+i+'"]').attr("id","captureNotActive");

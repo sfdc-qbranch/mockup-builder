@@ -3,25 +3,40 @@
 
 <div class="page-navbar">
     <div class="page-navbar-logo slds-text-align--center">
-        <img src="img/salesforce-logo.png" style="width:120px;"/>
+        <img src="img/salesforce-logo.png" style="width:120px;" />
     </div>
-    <ul class="nav flex-column">
-        <li class="nav-item">
-            <a class="nav-link" href="/livechat">LIVE CHAT</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/livemessage">LIVE MESSAGE</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/notifications">NOTIFICATIONS</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/facebook">FACEBOOK LEAD AD</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/email">EMAIL</a></li>
-    </ul>
-
+        <nav class="slds-nav-vertical" aria-label="nav-bar">
+            <div class="slds-nav-vertical__section">
+                <ul>
+                    <li class="slds-nav-vertical__item slds-is-active" name="livemessage">
+                        <a href="/livemessage" class="slds-nav-vertical__action" aria-describedby="entity-header" aria-current="page">Live Message</a>
+                    </li>
+                    <li class="slds-nav-vertical__item" name="livechat">
+                        <a href="/livechat" class="slds-nav-vertical__action" aria-describedby="entity-header">Live Chat</a>
+                    </li>
+                    <li class="slds-nav-vertical__item" name="notifications">
+                        <a href="/notifications" class="slds-nav-vertical__action" aria-describedby="entity-header">Push Notifications</a>
+                    </li>
+                    <li class="slds-nav-vertical__item" name="facebook">
+                        <a href="/facebook" class="slds-nav-vertical__action" aria-describedby="entity-header">Facebook Lead Ad</a>
+                    </li>
+                    <!--
+                    <li class="slds-nav-vertical__item">
+                        <a href="/email" class="slds-nav-vertical__action" aria-describedby="entity-header">Email</a>
+                    </li>
+                    -->
+                </ul>
+            </div>
+        </nav>
 </div>
 
+<script>
+    $(document).ready(function() {
+        var page = window.location.href.split('/').slice(-1)[0];
+        $("div.page-navbar li").removeClass("slds-is-active");
+        $("div.page-navbar li[name='"+page+"'").addClass("slds-is-active");
 
+    });
+    
+
+</script>

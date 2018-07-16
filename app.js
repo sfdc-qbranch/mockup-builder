@@ -27,8 +27,11 @@ app.use(bodyParser.urlencoded({
 
 //Homepage
 app.get('/',function(req,res){
-    res.render('notifications');
+    res.render('livemessage');
+    //res.render('home');
 });
+
+
 
 //testImage - test upload image, add text, save as png
 app.get('/livechat',function(req,res){
@@ -51,15 +54,31 @@ app.get('/facebook',function(req,res){
 
 app.get('/email',function(req,res){
     res.render('email');
-});
+}); 
 
 
-app.get('/test',function(req,res){
-    res.render('test');
-});
 
 app.listen(3000, function(){
     console.log('listen on port 3000');
 });
 
+var pages = {
+    'facebook':{
+        mainFile:'facebook',
+        settingFile:'settings/facebookSettings',
+        displayFile:'displays/facebookDisplay'
+    }
+}
+
+var findPageByPagename = function (pagename, callback) {
+    // Perform database query that calls callback when it's done
+    // This is our fake database
+    if (!pages[pagename])
+      return callback(new Error(
+        'No page found '
+         + pagename
+        )
+      );
+    return callback(null, pages[pagename]);
+  };
 
