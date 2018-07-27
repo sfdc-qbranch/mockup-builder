@@ -61,6 +61,17 @@ function bindSettingAndDisplayTextField(settingElementId, displayElementId){
     });
 }
 
+function bindSettingAndDisplayInputField(settingElementId, displayElementId){
+    var placeholder = $("#" + settingElementId).attr('placeholder');
+    $("#" + settingElementId).on('keyup', function() {
+        if($("#" + settingElementId).val().length == 0 &&  placeholder !== undefined){
+            $("#" + displayElementId).val(placeholder);
+        }else{
+            $("#" + displayElementId).val($("#" + settingElementId).val());
+        }
+    });
+}
+
 
 
 /*Valid File Type*/

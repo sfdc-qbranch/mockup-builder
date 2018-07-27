@@ -2,53 +2,44 @@
 
 
     <!--Chat with Expert--->
-    <%- include('../helper/inputtext', {id:'lc_chatwithexpert', placeholder:'Input to overwrite..', label:'Desktop Chat Button'})%>
+        <%- include('../helper/inputtext', {id:'lc_chatwithexpertInput', placeholder:'Chat with an expert', label:'Desktop Chat Button'})%>
 
         <!--CUSTOMER INFO-->
         <!--First Name--->
-        <%- include('../helper/inputtext', {id:'lc_custfirstname', placeholder:'Please input..', label:'Customer\'s Firstname'})%>
+        <%- include('../helper/inputtext', {id:'lc_fnameInput', placeholder:'Lauren', label:'Customer\'s Firstname'})%>
 
+        <!--Last Name--->
+        <%- include('../helper/inputtext', {id:'lc_lnameInput', placeholder:'Bailey', label:'Customer\'s Lastname'})%>
 
-            <!--Last Name--->
-            <%- include('../helper/inputtext', {id:'lc_custlastname', placeholder:'Please input..', label:'Customer\'s Lastname'})%>
+        <!--Email--->
+        <%- include('../helper/inputtext', {id:'lc_emailInput', placeholder:'lbailey@example.com', label:'Customer\'s Email'})%>
 
+        <!--Subject--->
+        <%- include('../helper/inputtext', {id:'lc_subjectInput', placeholder:'Hello', label:'Customer\'s Subject'})%>
 
-                <!--Email--->
-                <%- include('../helper/inputtext', {id:'lc_custemail', placeholder:'Please input..', label:'Customer\'s Email'})%>
-                    <!--EOF Email--->
+        <!--Start Chatting Button--->
+        <%- include('../helper/inputtext', {id:'lc_startchatbtnInput', placeholder:'Start Chatting', label:'Start Chatting Button'})%>
 
-                    <!--Subject--->
-                    <%- include('../helper/inputtext', {id:'lc_custsubject', placeholder:'Please input..', label:'Customer\'s Subject'})%>
+        <!--Background Image-->
+        <%- include('../helper/imagefileselector', {imageselectorlabel:'Header Background Image',imgInputId:'lc_headerbgimageInput',helptext:''}) %>
 
+        <!--Loading Page Headline-->
+        <%- include('../helper/inputtext', {id:'lc_loadingHeadlineInput', placeholder:'Input to overwrite..', label:'Loading Page Headline'})%>
 
+        <!--Agent Name-->
+        <%- include('../helper/inputtext', {id:'lc_agentnameInput', placeholder:'Tim', label:'Agent Name'})%>
 
-                        <!--Start Chatting Button--->
-                        <%- include('../helper/inputtext', {id:'lc_startchatbtn', placeholder:'Input to overwrite..', label:'Start Chatting Button'})%>
+        <!--Agent Image-->
+        <%- include('../helper/imagefileselector', {imageselectorlabel:'Agent Profile Image',imgInputId:'lc_agentimageInput',helptext:''}) %>
 
-                            <!--Background Image-->
-                            <%- include('../helper/imagefileselector', {imageselectorlabel:'Header Background Image',imgInputId:'lc_headerbgimage',helptext:''}) %>
+        <!--Time Setting-->
 
-                                <!--Loading Page Headline-->
-                                <%- include('../helper/inputtext', {id:'lc_loadingHeadline', placeholder:'Input to overwrite..', label:'Loading Page Headline'})%>
-
-
-                                    <!--Agent Name-->
-                                    <%- include('../helper/inputtext', {id:'lc_agentname', placeholder:'Please input..', label:'Agent Name'})%>
-
-                                        <!--Agent Image-->
-                                        <%- include('../helper/imagefileselector', {imageselectorlabel:'Agent Profile Image',imgInputId:'lc_agentimage',helptext:''}) %>
-
-
-
-                                            <!--Time Setting-->
-
-
-                                            <!--Text Color-->
-                                            <fieldset class="slds-form-element">
-                                                <legend class="slds-form-element__legend slds-form-element__label">Text Color</legend>
-                                                <div class="slds-form-element__control">
-                                                    <div class="slds-radio_button-group" style="border:none">
-                                                        <span class="slds-radio">
+        <!--Text Color-->
+        <fieldset class="slds-form-element">
+            <legend class="slds-form-element__legend slds-form-element__label">Text Color</legend>
+            <div class="slds-form-element__control">
+                <div class="slds-radio_button-group" style="border:none">
+                    <span class="slds-radio">
           <input type="radio" id="lc_textcolorblack" name="options" value="on" 
                  checked/>
           <label class="slds-radio__label" for="lc_textcolorblack">

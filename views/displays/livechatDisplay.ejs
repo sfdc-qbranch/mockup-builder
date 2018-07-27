@@ -3,7 +3,7 @@
 
         <div class="lc_chatbutton slds-align_absolute-center">
             <img src="img/LiveChat_Message_Icon_Black.png" />
-            <span class="uppercase">CHAT WITH AN EXPERT</span>
+            <span class="uppercase" id="lc_chatwithexpertDisplay">CHAT WITH AN EXPERT</span>
         </div>
 
     </div>
@@ -27,35 +27,46 @@
             <div class="slds-grid">
                 <div class="slds-col">
                     <div class="slds-form-element">
-                        <label class="slds-form-element__label" for="lc_firstnameInput">
+                        <label class="slds-form-element__label" for="lc_fnameDisplay">
                         <abbr class="slds-required" >*</abbr> First Name</label>
                         <div class="slds-form-element__control">
-                            <input type="text" required="" id="lc_firstnameInput" class="slds-input" placeholder="" />
+                            <input type="text" required="" id="lc_fnameDisplay" class="slds-input" placeholder="" value="Lauren"/>
                         </div>
                     </div>
                 </div>
                 <div class="slds-col">
                     <div class="slds-form-element">
-                        <label class="slds-form-element__label" for="lc_lastnameInput">
+                        <label class="slds-form-element__label" for="lc_lnameDisplay">
                         <abbr class="slds-required">*</abbr>Last Name</label>
                         <div class="slds-form-element__control">
-                            <input type="text" required="" id="lc_lastnameInput" class="slds-input" placeholder="" />
+                            <input type="text" required="" id="lc_lnameDisplay" class="slds-input" placeholder="" value="Bailey"/>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!--input:EMAIL-->
-            <%- include('../helper/inputtext', {id:'lc_emailInput', placeholder:'', label:'Email'})%>
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="lc_emailDisplay">Email</label>
+                <div class="slds-form-element__control">
+                    <input type="text" required="" id="lc_emailDisplay" class="slds-input" placeholder="" value="lbailey@example.com"/>
+                </div>
+            </div>
 
-                <!--input:SUBJECT-->
-                <%- include('../helper/inputtext', {id:'lc_subjectInput', placeholder:'', label:'Subject'})%>
+
+            <!--input:SUBJECT-->
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="lc_subjectDisplay">Email</label>
+                <div class="slds-form-element__control">
+                    <input type="text" required="" id="lc_subjectDisplay" class="slds-input" placeholder="" value="Hello"/>
+                </div>
+            </div>
 
 
         </div>
 
         <!--START CHAT BUTTON-->
-        <div class="lc_bottombutton slds-align_absolute-center defaultbackground" id="lc_startchatbutton">
+        <div class="lc_bottombutton slds-align_absolute-center defaultbackground" id="lc_startchatbuttonDisplay">
             Start Chatting
         </div>
 
@@ -236,6 +247,11 @@
     
     div.lc_chatContainer .slds-chat-message__text {
         white-space: normal;
+    }
+
+    #lc_chatwithexpertDisplay {
+        width: 170px;
+        overflow-x: hidden;
     }
 
 

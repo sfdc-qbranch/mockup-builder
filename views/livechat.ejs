@@ -50,10 +50,27 @@
         $('[data="1"]').show(); // Screen 1
         $('#cp2').colorpicker();
 
-        /*Input Headline*/
-        $("#headlineInput").keypress(function() {
-            $("#headline").html($("#headlineInput").val());
-        });
+        /*Input Binding Fields*/
+
+        //SET CHAT BUTTON NAME (Screen1)
+        bindSettingAndDisplayTextField('lc_chatwithexpertInput','lc_chatwithexpertDisplay');
+
+        //SET CUSTOMER FIRSTNAME (Screen2)
+        bindSettingAndDisplayInputField('lc_fnameInput','lc_fnameDisplay');
+
+        //SET CUSTOMER LASTNAME (Screen2)
+        bindSettingAndDisplayInputField('lc_lnameInput','lc_lnameDisplay');
+
+        //SET CUSTOMER EMAIL (Screen2)
+        bindSettingAndDisplayInputField('lc_emailInput','lc_emailDisplay');
+
+        //SET CUSTOMER SUBJECT (Screen2)
+        bindSettingAndDisplayInputField('lc_subjectInput','lc_subjectDisplay');
+
+        //SET CUSTOMER START CHATTING BUTTON (Screen2)
+        bindSettingAndDisplayTextField('lc_startchatbtnInput','lc_startchatbuttonDisplay');
+
+
 
         $('#nextArrow').click(function(){
             var currentPageId = $('#capture').attr('data');
@@ -77,8 +94,8 @@
             showThisPage(prevPageIdIdx);
         });
 
-        download_mockup_active();
 
+        download_mockup_active();
         function showThisPage(pageIdx){
             for(var i = 1; i <= MAX_LIVECHAT_SCREENS; i++){
                 $('[data="'+i+'"]').attr("id","captureNotActive");
@@ -86,7 +103,8 @@
             }
             $('[data="'+pageIdx+'"]').attr("id","capture");            
             $('[data="'+pageIdx+'"]').show();
-        }
+        };
+
     });
 
 </script>
