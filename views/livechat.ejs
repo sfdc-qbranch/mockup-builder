@@ -46,12 +46,24 @@
 
         const MAX_LIVECHAT_SCREENS = 4;
 
+        /* Display the 1st Screen */
         $('[name="livechatDisplay"]').hide();
         $('[data="1"]').show(); // Screen 1
-        $('#cp2').colorpicker();
+        
+        /* Setup the color picker */
+        $('#lc_colorInput').change(function(event){
+            console.log('>> Live Chat: lc_colorInput onchange handling..');
+            $('#lc_colorInputCode').attr('value',event.target.value);
+            changeActionColor('.lc_actionColorElement',event.target.value);
+        });
+        $('#lc_colorInputCode').keyup(function(event){
+            console.log('>> Live Chat: lc_colorInputCode onchange handling..');
+            $('#lc_colorInput').attr('value',event.target.value);
+            changeActionColor('.lc_actionColorElement',event.target.value);
+        });
+
 
         /*Input Binding Fields*/
-
         //SET CHAT BUTTON NAME (Screen1)
         bindSettingAndDisplayTextField('lc_chatwithexpertInput','#lc_chatwithexpertDisplay');
 
@@ -99,8 +111,9 @@
             showThisPage(prevPageIdIdx);
         });
 
-
         download_mockup_active();
+
+        
         function showThisPage(pageIdx){
             for(var i = 1; i <= MAX_LIVECHAT_SCREENS; i++){
                 $('[data="'+i+'"]').attr("id","captureNotActive");
@@ -108,6 +121,10 @@
             }
             $('[data="'+pageIdx+'"]').attr("id","capture");            
             $('[data="'+pageIdx+'"]').show();
+        };
+
+        function changeActionColor(elementSelector, colorCode){
+           $(elementSelector).css('cssText','background:' + colorCode + ' !important');
         };
 
     });
@@ -193,6 +210,11 @@
         padding-left: 2%;
         font-size: 12px;
         font-family: "Arial Black", Gadget, sans-serif;
+    }
+
+    #lc_colorInput {
+        width: 35px;
+        height: 35px;
     }
 
 
