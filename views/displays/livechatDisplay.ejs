@@ -56,7 +56,7 @@
 
             <!--input:SUBJECT-->
             <div class="slds-form-element">
-                <label class="slds-form-element__label" for="lc_subjectDisplay">Email</label>
+                <label class="slds-form-element__label" for="lc_subjectDisplay">Subject</label>
                 <div class="slds-form-element__control">
                     <input type="text" required="" id="lc_subjectDisplay" class="slds-input" placeholder="" value="Hello"/>
                 </div>
@@ -86,7 +86,7 @@
 
             <!--child:Users Greeting Title--->
             <div class="slds-text-heading_large lc_headerGreetingTitle" id="lc_userGreetingTitleInput">
-                Hello John!
+                Hello <span name="lc_fnameDisplaySpan">John</span>!
             </div>
 
             <!--child:Users Profile Image--->
@@ -129,7 +129,7 @@
             <img class="lc_groupHeaderImage putfront" src="img/LiveChat_HeaderGroup_Black.png" />
 
             <!--child:Header Agent Name--->
-            <span class="lc_headerAgentName putfront" id="lc_headerAgentNameDisplay">Agent Name</span>
+            <span class="lc_headerAgentName putfront" id="lc_headerAgentNameDisplay">Tim</span>
 
         </div>
 
@@ -233,6 +233,10 @@
         height: 40%;
         overflow-y:scroll;
    
+    }
+
+    div.lc_bottombutton {
+        overflow: hidden;
     }
 
     /**HIDE THE SCROLL BAR**/

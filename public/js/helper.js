@@ -50,27 +50,28 @@ function download_mockup_active(scale){
         });
 }
 
-function bindSettingAndDisplayTextField(settingElementId, displayElementId){
+function bindSettingAndDisplayTextField(settingElementId, displayElementSelector){
     var placeholder = $("#" + settingElementId).attr('placeholder');
     $("#" + settingElementId).on('keyup', function() {
         if($("#" + settingElementId).val().length == 0 &&  placeholder !== undefined){
-            $("#" + displayElementId).html(placeholder);
+            $(displayElementSelector).html(placeholder);
         }else{
-            $("#" + displayElementId).html($("#" + settingElementId).val());
+            $(displayElementSelector).html($("#" + settingElementId).val());
         }
     });
 }
 
-function bindSettingAndDisplayInputField(settingElementId, displayElementId){
+function bindSettingAndDisplayInputField(settingElementId, displayElementSelector){
     var placeholder = $("#" + settingElementId).attr('placeholder');
     $("#" + settingElementId).on('keyup', function() {
         if($("#" + settingElementId).val().length == 0 &&  placeholder !== undefined){
-            $("#" + displayElementId).val(placeholder);
+            $(displayElementSelector).val(placeholder);
         }else{
-            $("#" + displayElementId).val($("#" + settingElementId).val());
+            $(displayElementSelector).val($("#" + settingElementId).val());
         }
     });
 }
+
 
 
 

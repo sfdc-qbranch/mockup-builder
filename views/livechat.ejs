@@ -53,23 +53,28 @@
         /*Input Binding Fields*/
 
         //SET CHAT BUTTON NAME (Screen1)
-        bindSettingAndDisplayTextField('lc_chatwithexpertInput','lc_chatwithexpertDisplay');
+        bindSettingAndDisplayTextField('lc_chatwithexpertInput','#lc_chatwithexpertDisplay');
 
         //SET CUSTOMER FIRSTNAME (Screen2)
-        bindSettingAndDisplayInputField('lc_fnameInput','lc_fnameDisplay');
+        bindSettingAndDisplayInputField('lc_fnameInput','#lc_fnameDisplay');
 
         //SET CUSTOMER LASTNAME (Screen2)
-        bindSettingAndDisplayInputField('lc_lnameInput','lc_lnameDisplay');
+        bindSettingAndDisplayInputField('lc_lnameInput','#lc_lnameDisplay');
 
         //SET CUSTOMER EMAIL (Screen2)
-        bindSettingAndDisplayInputField('lc_emailInput','lc_emailDisplay');
+        bindSettingAndDisplayInputField('lc_emailInput','#lc_emailDisplay');
 
         //SET CUSTOMER SUBJECT (Screen2)
-        bindSettingAndDisplayInputField('lc_subjectInput','lc_subjectDisplay');
+        bindSettingAndDisplayInputField('lc_subjectInput','#lc_subjectDisplay');
 
         //SET CUSTOMER START CHATTING BUTTON (Screen2)
-        bindSettingAndDisplayTextField('lc_startchatbtnInput','lc_startchatbuttonDisplay');
+        bindSettingAndDisplayTextField('lc_startchatbtnInput','#lc_startchatbuttonDisplay');
 
+        //SET CUSTOMER FIRSTNAME (Screen3)
+        bindSettingAndDisplayTextField('lc_fnameInput','span[name="lc_fnameDisplaySpan"]');
+
+        //SET AGENT NAME (Screen4)
+        bindSettingAndDisplayTextField('lc_agentnameInput','#lc_headerAgentNameDisplay');
 
 
         $('#nextArrow').click(function(){

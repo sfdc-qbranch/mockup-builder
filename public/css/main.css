@@ -83,7 +83,7 @@ div.page-content {
 /*PAGE SCREEN*/
 
 div.page-screen {
-    margin-top: 5rem;
+    margin-top: 2rem;
     width: 375px;
     /** width: 750px; **/
     height: 667px;
@@ -102,7 +102,7 @@ div.page-livechatscreen {
 }
 
 div.page-settings {
-    margin-top: 5rem;
+    margin-top: 2rem;
 }
 
 div.page-setting-element {
