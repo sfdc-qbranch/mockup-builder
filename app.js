@@ -10,13 +10,14 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var app = express();
-const port = process.env.PORT || 3000;
+
 
 
 app.use(morgan('dev'));
 app.set('view engine', 'ejs');
 app.set("views", path.join(__dirname,'views'));
 app.use(express.static(path.join(__dirname,'public')));
+app.set('port', process.env.PORT || 3000);
 
 
 
@@ -59,7 +60,7 @@ app.get('/email',function(req,res){
 
 
 
-app.listen( port, function(){
+app.listen( app.get('port') , function(){
     console.log('listen on port 3000');
 });
 
