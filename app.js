@@ -10,6 +10,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var app = express();
+const port = process.env.PORT || 3000;
 
 
 app.use(morgan('dev'));
@@ -58,7 +59,7 @@ app.get('/email',function(req,res){
 
 
 
-app.listen(3000, function(){
+app.listen( port, function(){
     console.log('listen on port 3000');
 });
 
