@@ -879,6 +879,16 @@
         "background",
         "background-color"
       ],
+      "value": "rgb(0, 112, 210)",
+      "name": "actionScript"
+    },
+    {
+      "category": "background-color",
+      "type": "color",
+      "cssProperties": [
+        "background",
+        "background-color"
+      ],
       "value": "rgb(230, 113, 124)",
       "name": "actionDelete"
     },

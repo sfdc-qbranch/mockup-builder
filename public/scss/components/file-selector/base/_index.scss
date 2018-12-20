@@ -1,4 +1,4 @@
-// Lightning Design System 2.5.0
+// Lightning Design System 2.7.5
 // Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
@@ -138,13 +138,7 @@
 
   .slds-file-selector__dropzone {
     @include absolute-center;
-
-    // Maintains a 1:1 ratio based on the width
-    &:after {
-      content: '';
-      padding-top: 100%;
-      display: table; // FF issue
-    }
+    padding: $spacing-medium;
   }
 
   .slds-file-selector__body {
@@ -152,7 +146,7 @@
   }
 
   .slds-file-selector__text {
-    margin-top: $spacing-small;
+    margin-top: $var-spacing-horizontal-small;
   }
 }
 

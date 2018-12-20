@@ -1,24 +1,26 @@
-// Lightning Design System 2.5.0
+// Lightning Design System 2.7.5
 // Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
+@import 'deprecate';
+
+// Animation for `slds-is-active` state
+@keyframes shadow {
+
+  0% {
+    box-shadow: inset 0 0 $brand-light;
+  }
+
+  50% {
+    box-shadow: inset 0 rem(-30px) $brand-primary-transparent-40;
+  }
+
+  100% {
+    box-shadow: inset 0 rem(-40px) $brand-light;
+  }
+}
+
 /**
- * The default tab set style encapsulates everything that is underneath it
- * without enclosing it visually. Initialize a default tab set by applying the
- * `.slds-tab_default` class to the containing `<div>` around the tab list and
- * tab panels. The `<ul>` element also requires the class `.slds-tab_default__nav`
- * to prevent styles from bleeding into nested tabs.
- *
- * The overflow tab style is provided as a tab item type that acts as a menu
- * component and appears as a tab item. It could contain those tab items that
- * don't all fit in a horizontal orientation. Initialize a default tab set and
- * in the last tab item of the set, apply the additional classes `slds-dropdown-trigger`
- * and `.slds-tabs__item_overflow`. Include an `<a>` element to contain the
- * tab item label like the other tab items. After the `<a>` element, the
- * `.slds-dropdown` segment of a search overflow menu component is used. The
- * `slds-dropdown__list` element also then requires a `slds-dropdown_length-X`
- * class, where X is the number of items to show in it.
- *
  * @summary Initializes a default tablist
  *
  * @name base
@@ -32,61 +34,6 @@
   background-color: $color-foreground-primary;
 
   /**
-   * @summary Creates the container for the default tabs
-   * @selector .slds-tabs_default__nav
-   * @restrict .slds-tabs_default ul
-   */
-  &__nav {
-    @include tabs-nav;
-    border-bottom: $border-width-thick solid $color-border;
-  }
-
-  @include deprecate('4.0.0') {
-
-    .slds-tabs__item {
-
-      + .slds-tabs__item {
-        @include mq-medium-min {
-          margin-left: $spacing-large;
-        }
-      }
-
-      > a {
-        @include tabs-link;
-        height: $line-height-tab;
-        line-height: $line-height-tab;
-        border-bottom: $border-width-thick solid transparent;
-        padding: 0 $spacing-x-small;
-        color: $color-text-action-label;
-
-        @include mq-medium-min {
-          padding: 0 $spacing-medium;
-        }
-
-        &:hover,
-        &:focus {
-          text-decoration: none;
-          border-color: $color-border-tab-selected;
-          color: $color-text-action-label-active;
-        }
-      }
-
-      &.slds-active a {
-        border-color: $brand-primary;
-        color: $color-text-action-label-active;
-
-        &:focus {
-          color: $color-text-tab-label-selected;
-        }
-      }
-    }
-
-    > .slds-tabs__content {
-      @include tabs-content;
-    }
-  }
-
-  /**
    * @summary A tab item that has an overflow menu
    * @selector .slds-tabs__item_overflow
    * @restrict .slds-tabs_default__item
@@ -98,6 +45,18 @@
 }
 
 /**
+ * @summary Creates the container for the default tabs
+ * @selector .slds-tabs_default__nav
+ * @restrict .slds-tabs_default ul
+ */
+.slds-tabs_default__nav,
+.slds-tabs--default__nav {
+  @include tabs-nav;
+  border-bottom: $border-width-thin solid $color-border;
+}
+
+
+/**
  * @summary Styles each list item as a single tab
  * @selector .slds-tabs_default__item
  * @restrict .slds-tabs_default ul li
@@ -107,9 +66,7 @@
   color: $color-text-action-label;
   position: relative;
   padding: 0 $spacing-small;
-  margin-bottom: ($border-width-thick * -1);
-  text-transform: uppercase;
-  letter-spacing: 0.0625em;
+  margin-bottom: ($border-width-thin * -1);
 
   &:after {
     display: block;
@@ -117,8 +74,8 @@
     bottom: 0;
     left: 0;
     right: 0;
+    height: 0;
     position: absolute;
-    height: $border-width-thick;
   }
 
   /**
@@ -131,9 +88,11 @@
   &.slds-active,
   &.slds-is-active {
     color: $color-text-action-label-active;
+    animation: shadow 300ms;
 
     &:after {
       background-color: $brand-primary;
+      height: rem(3px);
     }
 
     .slds-tabs_default__link,
@@ -141,16 +100,15 @@
       font-weight: $tabs-font-weight;
 
       &:hover {
-        color: $brand-accessible-active;
+        color: currentColor;
       }
     }
   }
 
-  &:hover {
-
-    &:after {
-      background-color: $brand-primary-active;
-    }
+  &:hover:after {
+    height: rem(2px);
+    background-color: $brand-primary-active;
+    transition: height 300ms;
   }
 
   /**
@@ -162,7 +120,6 @@
   &:focus,
   &.slds-has-focus {
     outline: 0;
-    color: $brand-accessible;
 
     &:after {
       height: ($border-width-thick + 1);
@@ -237,11 +194,38 @@
   line-height: $line-height-tab;
   color: currentColor;
   border: 0;
+  text-transform: inherit; // For button menu to inherit the parents text-transform
 
   &:hover,
   &:focus {
     text-decoration: none;
     box-shadow: none;
+    color: currentColor;
+  }
+
+  &[tabindex="0"]:focus {
+    text-decoration: underline;
+  }
+}
+
+/**
+ * @summary List item containing the overflow button menu
+ * @selector .slds-tabs_default__overflow-button
+ * @restrict .slds-tabs_default__item
+ */
+.slds-tabs_default__overflow-button {
+  display: inline-flex;
+  height: $line-height-tab;
+  line-height: $line-height-tab;
+
+  .slds-button {
+    line-height: inherit;
+    color: $color-text-action-label;
+    box-shadow: none;
+
+    &:focus {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -253,4 +237,34 @@
 .slds-tabs_default__content,
 .slds-tabs--default__content {
   @include tabs-content;
+}
+
+/**
+ * @name medium
+ * @summary Medium sized tabs
+ * @selector .slds-tabs_medium
+ * @restrict .slds-tabs_default
+ * @modifier
+ * @group size
+ */
+.slds-tabs_medium {
+
+  .slds-tabs_default__item {
+    font-size: $var-font-size-5;
+  }
+}
+
+/**
+ * @name large
+ * @summary Large sized tabs
+ * @selector .slds-tabs_large
+ * @restrict .slds-tabs_default
+ * @modifier
+ * @group size
+ */
+.slds-tabs_large {
+
+  .slds-tabs_default__item {
+    font-size: $var-font-size-7;
+  }
 }

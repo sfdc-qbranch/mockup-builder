@@ -3,7 +3,6 @@
   <aura:token name="widthStageLeft" property="*width,*height,*flex*,top,right,bottom,left,margin*,padding*,transform" value="88%"/>
   <aura:token name="squareTooltip" property="*width,*height,*flex*,top,right,bottom,left,margin*,padding*,transform" value="1.25rem"/>
   <aura:token name="heightHeader" property="*width,*height,*flex*,top,right,bottom,left,margin*,padding*,transform" value="2.75rem"/>
-  <aura:token name="durationSlide" property="animation*,transition*" value="0.25s"/>
   <aura:token name="maxWidthActionOverflowMenu" property="*width,*height,*flex*,top,right,bottom,left,margin*,padding*,transform" value="512px"/>
   <aura:token name="maxWidthHeaderBrand" property="*width,*height,*flex*,top,right,bottom,left,margin*,padding*,transform" value="156px"/>
   <aura:token name="squareTappable" property="*width,*height,*flex*,top,right,bottom,left,margin*,padding*,transform" value="2.75rem"/>
@@ -17,4 +16,5 @@
   <aura:token name="maxWidthActionBarWithLabels" property="*width,*height,*flex*,top,right,bottom,left,margin*,padding*,transform" value="320px"/>
   <aura:token name="flexDetailPanel" property="*width,*height,*flex*,top,right,bottom,left,margin*,padding*,transform" value="3"/>
   <aura:token name="heightOverflowStart" property="*width,*height,*flex*,top,right,bottom,left,margin*,padding*,transform" value="144px"/>
+  <aura:token name="durationSlide" property="animation*,transition*" value="0.25s"/>
 </aura:tokens>

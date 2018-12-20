@@ -1,4 +1,4 @@
-// Lightning Design System 2.5.0
+// Lightning Design System 2.7.5
 // Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
@@ -8,7 +8,6 @@
  * can be added with a modifier class on the link elements.
  *
  * @summary Renders a vertical tablist.
- *
  * @name base
  * @selector .slds-vertical-tabs
  * @restrict div, section
@@ -23,7 +22,6 @@
 
 /**
  * @summary Tab navigation container element
- *
  * @selector .slds-vertical-tabs__nav
  * @restrict .slds-vertical-tabs > ul
  */
@@ -35,7 +33,6 @@
 
 /**
  * @summary Tab navigation item
- *
  * @selector .slds-vertical-tabs__nav-item
  * @restrict .slds-vertical-tabs__nav li
  */
@@ -51,7 +48,6 @@
 
 /**
  * @summary Tab Navigation Link
- *
  * @selector .slds-vertical-tabs__link
  * @restrict .slds-vertical-tabs__nav-item a
  */
@@ -65,11 +61,14 @@
     color: $color-text-action-label-active;
     text-decoration: none;
   }
+
+  &:focus {
+    outline: 0;
+  }
 }
 
 /**
  * @summary Tab Content Container
- *
  * @selector .slds-vertical-tabs__content
  * @restrict .slds-vertical-tabs div
  */
@@ -80,12 +79,13 @@
 }
 
 /**
+ * @name item-active
  * @summary Active state for a tab navigation item
- *
  * @selector .slds-is-active
  * @restrict .slds-vertical-tabs__nav-item
  * @notes Required on the `<li>` element that is associated with the current active tab
  * @modifier
+ * @group interactions
  */
 .slds-vertical-tabs__nav-item.slds-is-active {
   margin-right: -1px;
@@ -100,11 +100,12 @@
 }
 
 /**
+ * @name item-focus
  * @summary Focus state for a tab navigation item
- *
  * @selector .slds-has-focus
  * @restrict .slds-vertical-tabs__nav-item
  * @modifier
+ * @group interactions
  */
 .slds-vertical-tabs__nav-item.slds-has-focus {
   text-decoration: underline;

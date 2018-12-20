@@ -2,14 +2,15 @@
 # Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
 global:
+  scope: component
   type: color
   category: border-color
   cssProperties:
   - 'border*'
   - box-shadow
 imports:
-- "../../../../design-tokens/force-base/aliases/color.yml"
-- "../../../../design-tokens/color-palettes.yml"
+- "../../../../design-tokens/aliases/colors.yml"
+- "../../../../design-tokens/aliases/color-palettes.yml"
 props:
   PAGE_HEADER_COLOR_BORDER:
     value: 'transparent'

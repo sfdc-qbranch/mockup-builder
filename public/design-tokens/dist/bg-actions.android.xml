@@ -87,6 +87,7 @@
   <property name="ACTION_NEW_CUSTOM83" category="background-color" value="#ffe7806f"/>
   <property name="ACTION_NEW_CUSTOM94" category="background-color" value="#ff439cba"/>
   <property name="ACTION_CLONE" category="background-color" value="#ff6ca1e9"/>
+  <property name="ACTION_SCRIPT" category="background-color" value="#ff0070d2"/>
   <property name="ACTION_DELETE" category="background-color" value="#ffe6717c"/>
   <property name="ACTION_NEW_CUSTOM40" category="background-color" value="#ff83c75e"/>
   <property name="ACTION_NEW_CUSTOM51" category="background-color" value="#ffd8c760"/>

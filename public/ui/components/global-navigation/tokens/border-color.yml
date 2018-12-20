@@ -1,12 +1,13 @@
 global:
+  scope: component
   type: color
   category: border-color
   cssProperties:
   - 'border*'
   - box-shadow
 imports:
-- "../../../../design-tokens/force-base/aliases/color.yml"
-- "../../../../design-tokens/color-palettes.yml"
+- "../../../../design-tokens/aliases/colors.yml"
+- "../../../../design-tokens/aliases/color-palettes.yml"
 props:
   COLOR_BORDER_CONTEXT_BAR_DIVIDER:
     value: '{!WHITE_TRANSPARENT_20}'

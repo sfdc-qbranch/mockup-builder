@@ -86,6 +86,7 @@
   <aura:token name="actionNewCustom83" property="background,background-color" value="rgb(231, 128, 111)"/>
   <aura:token name="actionNewCustom94" property="background,background-color" value="rgb(67, 156, 186)"/>
   <aura:token name="actionClone" property="background,background-color" value="rgb(108, 161, 233)"/>
+  <aura:token name="actionScript" property="background,background-color" value="rgb(0, 112, 210)"/>
   <aura:token name="actionDelete" property="background,background-color" value="rgb(230, 113, 124)"/>
   <aura:token name="actionNewCustom40" property="background,background-color" value="rgb(131, 199, 94)"/>
   <aura:token name="actionNewCustom51" property="background,background-color" value="rgb(216, 199, 96)"/>

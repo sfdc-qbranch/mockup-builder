@@ -58,16 +58,6 @@
       "name": "heightHeader"
     },
     {
-      "type": "time",
-      "category": "time",
-      "cssProperties": [
-        "animation*",
-        "transition*"
-      ],
-      "value": "0.25s",
-      "name": "durationSlide"
-    },
-    {
       "type": "size",
       "category": "sizing",
       "cssProperties": [
@@ -317,6 +307,16 @@
       "value": "144px",
       "comment": "Space above overflow menu before scrolling.",
       "name": "heightOverflowStart"
+    },
+    {
+      "type": "time",
+      "category": "time",
+      "cssProperties": [
+        "animation*",
+        "transition*"
+      ],
+      "value": "0.25s",
+      "name": "durationSlide"
     }
   ]
 }

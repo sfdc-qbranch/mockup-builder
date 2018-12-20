@@ -1,4 +1,4 @@
-// Lightning Design System 2.5.0
+// Lightning Design System 2.7.5
 // Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
@@ -9,7 +9,6 @@
  * @selector .slds-accordion
  * @restrict ul
  * @variant
- * @required
  * @support dev-ready
  */
 .slds-accordion {
@@ -17,11 +16,9 @@
 }
 
 /**
- * List item for each accordion section
- *
+ * @summary List item for each accordion section
  * @selector .slds-accordion__list-item
  * @restrict .slds-accordion li
- * @required
  */
 .slds-accordion__list-item {
   border-top: $border-width-thin solid $color-border;
@@ -32,26 +29,24 @@
 }
 
 /**
- * Summary title for each expandable panel inside of an accordion
- *
+ * @summary Summary title for each expandable panel inside of an accordion
  * @selector .slds-accordion__summary
  * @restrict .slds-accordion__section div
- * @required
  */
 .slds-accordion__summary {
   display: flex;
 }
 
 /**
- * Summary title for each expandable panel inside of an accordion
- *
+ * @summary Summary title for each expandable panel inside of an accordion
  * @selector .slds-accordion__summary-heading
  * @restrict .slds-accordion__section h3
- * @required
  */
 .slds-accordion__summary-heading {
   display: flex;
   flex-grow: 1;
+  font-size: $font-size-5;
+  line-height: $line-height-heading;
 
   .slds-button:focus {
     text-decoration: underline;
@@ -60,11 +55,9 @@
 }
 
 /**
- * Actionable button inside of accordion summary that would toggle the visibility of each section
- *
+ * @summary Actionable button inside of accordion summary that would toggle the visibility of each section
  * @selector .slds-accordion__summary-action
  * @restrict .slds-accordion__summary button
- * @required
  */
 .slds-accordion__summary-action {
   display: inline-flex;
@@ -74,11 +67,9 @@
 }
 
 /**
- * Icon inside of actionable button within an accordion section
- *
+ * @summary Icon inside of actionable button within an accordion section
  * @selector .slds-accordion__summary-action-icon
  * @restrict .slds-accordion__summary-action svg
- * @required
  */
 .slds-accordion__summary-action-icon {
   flex-shrink: 0;
@@ -86,22 +77,18 @@
 }
 
 /**
- * Each expandable panel inside of an accordion
- *
+ * @summary Each expandable panel inside of an accordion
  * @selector .slds-accordion__section
  * @restrict .slds-accordion section
- * @required
  */
 .slds-accordion__section {
   padding: $spacing-small;
 }
 
 /**
- * Each expandable panel inside of an accordion
- *
+ * @summary Each expandable panel inside of an accordion
  * @selector .slds-accordion__content
  * @restrict .slds-accordion__section div
- * @required
  */
 .slds-accordion__content {
   overflow: hidden;
@@ -111,11 +98,12 @@
 }
 
 /**
- * Toggle visibility of accordion section + rotate icon
- *
+ * @name toggle section
+ * @summary Toggle visibility of accordion section + rotate icon
  * @selector .slds-is-open
  * @restrict .slds-accordion__section
  * @modifier
+ * @group visibility
  */
 .slds-is-open {
 

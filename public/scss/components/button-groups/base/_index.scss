@@ -1,4 +1,4 @@
-// Lightning Design System 2.5.0
+// Lightning Design System 2.7.5
 // Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
@@ -31,6 +31,13 @@
   margin-left: (-1 * $border-width-thin);
 }
 
+// Add space when a brand button is next to a brand icon button dropdown
+.slds-button-group .slds-button_brand + .slds-button_last .slds-button_icon-brand,
+.slds-button-group .slds-button_brand + .slds-button--last .slds-button_icon-brand,
+.slds-button-group-list li:last-child .slds-button_icon-brand {
+  box-shadow: inset 1px 0 0 $button-icon-color-border-primary;
+}
+
 // These selectors must remain in long hand in order to zero out borders that we don't want on last-child buttons
 .slds-button-group-list li:first-child .slds-button,
 .slds-button-group .slds-button:first-child {
@@ -38,9 +45,7 @@
 }
 
 /**
- * These selectors must remain in long hand in order to zero out borders that
- * we don't want on last-child or :only-child wrapped buttons
- *
+ * @summary If the last button in the group is required to be wrapped in a div, apply this class to the div
  * @selector .slds-button_last
  * @restrict .slds-button-group div, .slds-button-group-list div
  */

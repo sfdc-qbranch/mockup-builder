@@ -4,6 +4,7 @@ imports:
 - ../ui/components/brand-band/tokens/background-color.yml
 - ../ui/components/brand-band/tokens/sizing.yml
 - ../ui/components/brand-band/tokens/spacing.yml
+- ../ui/components/button-icons/tokens/border-color.yml
 - ../ui/components/buttons/tokens/border-color.yml
 - ../ui/components/buttons/tokens/border-radius.yml
 - ../ui/components/buttons/tokens/color.yml
@@ -22,6 +23,7 @@ imports:
 - ../ui/components/checkbox-toggle/tokens/sizing.yml
 - ../ui/components/color-picker/tokens/background-color.yml
 - ../ui/components/color-picker/tokens/border-color.yml
+- ../ui/components/color-picker/tokens/box-shadow.yml
 - ../ui/components/color-picker/tokens/font-size.yml
 - ../ui/components/color-picker/tokens/sizing.yml
 - ../ui/components/data-tables/tokens/background-color.yml
@@ -31,6 +33,7 @@ imports:
 - ../ui/components/docked-composer/tokens/color.yml
 - ../ui/components/docked-composer/tokens/sizing.yml
 - ../ui/components/docked-utility-bar/tokens/background-color.yml
+- ../ui/components/drop-zone/tokens/sizing.yml
 - ../ui/components/dynamic-icons/tokens/background-color.yml
 - ../ui/components/dynamic-icons/tokens/fill.yml
 - ../ui/components/dynamic-icons/tokens/size.yml
@@ -43,6 +46,7 @@ imports:
 - ../ui/components/global-navigation/tokens/border-color.yml
 - ../ui/components/global-navigation/tokens/sizing.yml
 - ../ui/components/global-navigation/tokens/text-color.yml
+- ../ui/components/illustration/tokens/stroke-color.yml
 - ../ui/components/input/tokens/font-size.yml
 - ../ui/components/input/tokens/font-weight.yml
 - ../ui/components/input/tokens/text-color.yml
@@ -52,11 +56,14 @@ imports:
 - ../ui/components/page-headers/tokens/box-shadow.yml
 - ../ui/components/page-headers/tokens/font-size.yml
 - ../ui/components/page-headers/tokens/font-weight.yml
+- ../ui/components/page-headers/tokens/sizing.yml
 - ../ui/components/page-headers/tokens/spacing.yml
+- ../ui/components/panels/tokens/box-shadow.yml
 - ../ui/components/path/tokens/background-color.yml
 - ../ui/components/path/tokens/border-color.yml
 - ../ui/components/path/tokens/line-height.yml
 - ../ui/components/path/tokens/sizing.yml
+- ../ui/components/path/tokens/text-color.yml
 - ../ui/components/popovers/tokens/background-color.yml
 - ../ui/components/popovers/tokens/text-color.yml
 - ../ui/components/progress-indicator/tokens/background-color.yml
@@ -73,3 +80,7 @@ imports:
 - ../ui/components/split-view/tokens/sizing.yml
 - ../ui/components/tabs/tokens/font-weight.yml
 - ../ui/components/vertical-navigation/tokens/background-color.yml
+- ../ui/components/welcome-mat/tokens/color.yml
+- ../ui/components/welcome-mat/tokens/font-size.yml
+- ../ui/components/welcome-mat/tokens/sizing.yml
+- ../ui/components/welcome-mat/tokens/spacing.yml

@@ -1,6 +1,8 @@
-// Lightning Design System 2.5.0
+// Lightning Design System 2.7.5
 // Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
+
+@import 'deprecate';
 
 /* stylelint-disable declaration-no-important */
 
@@ -57,29 +59,15 @@
   overflow: hidden;
 }
 
-.slds-collapsed {
-  @include deprecate('4.0.0') {
-    height: 0;
-    overflow: hidden;
-  }
-}
-
 /**
  * @summary Shows the elements inside the parent
  *
- * @selector .slds-is-collapsed
+ * @selector .slds-is-expanded
  * @modifier
  */
 .slds-is-expanded {
   height: auto;
   overflow: visible;
-}
-
-.slds-expanded {
-  @include deprecate('4.0.0') {
-    height: auto;
-    overflow: visible;
-  }
 }
 
 /**
@@ -90,7 +78,7 @@
  * @modifier
  */
 .slds-hidden {
-  visibility: hidden;
+  visibility: hidden !important;
 }
 
 /**
@@ -101,7 +89,7 @@
  * @modifier
  */
 .slds-visible {
-  visibility: visible; // @TODO - This may need !important;
+  visibility: visible;
 }
 
 /**
@@ -112,7 +100,7 @@
  * @modifier
  */
 .slds-hide {
-  display: none;
+  display: none !important;
 }
 
 /**
@@ -214,4 +202,14 @@
       display: none !important;
     }
   }
+}
+
+/**
+ * @summary Hides element and removes width
+ * @selector .slds-is-visually-empty
+ * @modifier
+ */
+.slds-is-visually-empty {
+  visibility: hidden !important;
+  width: 0;
 }

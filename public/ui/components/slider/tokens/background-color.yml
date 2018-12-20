@@ -2,6 +2,7 @@
 # Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
 global:
+  scope: component
   type: color
   category: background-color
   cssProperties:
@@ -9,8 +10,8 @@ global:
   - 'border*'
   - box-shadow
 imports:
-- "../../../../design-tokens/force-base/aliases/color.yml"
-- "../../../../design-tokens/color-palettes.yml"
+- "../../../../design-tokens/aliases/colors.yml"
+- "../../../../design-tokens/aliases/color-palettes.yml"
 props:
   SLIDER_HANDLE_COLOR_BACKGROUND:
     value: '{!AZURE}'

@@ -66,6 +66,16 @@
       ],
       "value": "400",
       "name": "cardFontWeight"
+    },
+    {
+      "category": "sizing",
+      "type": "size",
+      "cssProperties": [
+        "line-height"
+      ],
+      "value": "38",
+      "comment": "Text input height for mobile",
+      "name": "heightInput"
     }
   ]
 }

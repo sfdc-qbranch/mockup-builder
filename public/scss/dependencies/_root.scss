@@ -1,4 +1,4 @@
-// Lightning Design System 2.5.0
+// Lightning Design System 2.7.5
 // Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
@@ -7,7 +7,7 @@
   #{$root} {
     font-family: $font-family;
     font-size: 100%;
-    line-height: $line-height-text;
+    line-height: $var-line-height-text;
     background: $brand-background-primary;
     color: $color-text-primary;
     -webkit: {

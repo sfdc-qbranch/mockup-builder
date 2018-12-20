@@ -1,6 +1,8 @@
-// Lightning Design System 2.5.0
+// Lightning Design System 2.7.5
 // Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
+
+@import 'deprecate';
 
 /**
  * @summary Container for a expandable section
@@ -25,7 +27,7 @@
   &__title {
     display: flex;
     align-items: center;
-    font-size: $font-size-large;
+    font-size: $font-size-5;
     line-height: $line-height-button; // Same height as title-action
     border: $border-width-thin solid transparent;
     border-radius: $border-radius-medium;
@@ -89,7 +91,7 @@
     }
 
     .slds-section__content {
-      padding-top: $spacing-small;
+      padding-top: $spacing-x-small;
       overflow: visible;
       visibility: visible;
       opacity: 1;
@@ -98,44 +100,9 @@
   }
 }
 
-@include deprecate('4.0.0', 'Use .slds-section__title instead') {
-
-  .slds-section-title {
-    font-size: $font-size-large;
-
-    > a {
-      display: inline-block;
-      color: $color-text-default;
-
-      &:hover,
-      &:focus {
-        color: $color-text-link-hover;
-      }
-
-      &:focus {
-        box-shadow: $shadow-button-focus;
-      }
-
-      &:active {
-        color: $color-text-default;
-      }
-    }
-
-    .slds-icon {
-      @include square($square-icon-medium-content);
-      fill: currentColor;
-    }
-
-    .slds-section-group_is-closed .slds-icon,
-    .slds-section-group--is-closed .slds-icon {
-      transform: rotate(-90deg);
-    }
-  }
-}
-
 .slds-section-title_divider,
 .slds-section-title--divider {
   @include text-heading--label;
-  padding: $spacing-small $spacing-medium;
+  padding: $spacing-x-small $spacing-medium;
   background: $color-background;
 }

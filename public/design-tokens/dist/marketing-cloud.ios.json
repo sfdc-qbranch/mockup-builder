@@ -1,6 +1,39 @@
 {
   "properties": [
     {
+      "category": "font",
+      "type": "font-weight",
+      "cssProperties": [
+        "font",
+        "font-weight"
+      ],
+      "value": "300",
+      "comment": "Use for large headings only.",
+      "name": "fontWeightLight"
+    },
+    {
+      "category": "font",
+      "type": "font-weight",
+      "cssProperties": [
+        "font",
+        "font-weight"
+      ],
+      "value": "400",
+      "comment": "Most all body copy.",
+      "name": "fontWeightRegular"
+    },
+    {
+      "category": "font",
+      "type": "font-weight",
+      "cssProperties": [
+        "font",
+        "font-weight"
+      ],
+      "value": "700",
+      "comment": "Used sparingly for emphasized text within regular body copy.",
+      "name": "fontWeightBold"
+    },
+    {
       "category": "font-size",
       "type": "font-size",
       "cssProperties": [
@@ -9,18 +42,8 @@
       ],
       "value": "18",
       "comment": "Medium headings.",
+      "deprecated": true,
       "name": "fontSizeHeadingMedium"
-    },
-    {
-      "category": "line-height",
-      "type": "number",
-      "cssProperties": [
-        "font",
-        "*height"
-      ],
-      "value": "1",
-      "comment": "Remove extra leading. Unitless line-heights for reusability",
-      "name": "lineHeightReset"
     },
     {
       "category": "font-size",
@@ -42,6 +65,7 @@
       ],
       "value": "13",
       "comment": "Small body text.",
+      "deprecated": true,
       "name": "fontSizeTextSmall"
     },
     {
@@ -56,17 +80,6 @@
       "name": "fontSizeMediumA"
     },
     {
-      "category": "font",
-      "type": "font-weight",
-      "cssProperties": [
-        "font",
-        "font-weight"
-      ],
-      "value": "400",
-      "comment": "Most all body copy.",
-      "name": "fontWeightRegular"
-    },
-    {
       "category": "font-size",
       "type": "font-size",
       "cssProperties": [
@@ -76,17 +89,6 @@
       "value": "24",
       "deprecated": true,
       "name": "fontSizeXLarge"
-    },
-    {
-      "category": "line-height",
-      "type": "number",
-      "cssProperties": [
-        "font",
-        "*height"
-      ],
-      "value": "40",
-      "comment": "Line heights for tabs",
-      "name": "lineHeightTab"
     },
     {
       "category": "font-size",
@@ -108,6 +110,7 @@
       ],
       "value": "32",
       "comment": "Extra large headings.",
+      "deprecated": true,
       "name": "fontSizeHeadingXLarge"
     },
     {
@@ -130,6 +133,7 @@
       ],
       "value": "10",
       "comment": "Extra extra small text.",
+      "deprecated": true,
       "name": "fontSizeTextXxSmall"
     },
     {
@@ -152,6 +156,7 @@
       ],
       "value": "24",
       "comment": "Large headings.",
+      "deprecated": true,
       "name": "fontSizeHeadingLarge"
     },
     {
@@ -163,6 +168,7 @@
       ],
       "value": "20",
       "comment": "Extra large body text.",
+      "deprecated": true,
       "name": "fontSizeTextXLarge"
     },
     {
@@ -185,30 +191,8 @@
       ],
       "value": "10",
       "comment": "Extra Extra small headings.",
-      "name": "fontSizeHeadingXxSmall"
-    },
-    {
-      "category": "font",
-      "type": "font",
-      "cssProperties": [
-        "font",
-        "font-family"
-      ],
-      "value": "'Salesforce Sans', Arial, sans-serif",
       "deprecated": true,
-      "comment": "Deprecated: use FONT_FAMILY_TEXT instead for regular body text and FONT_FAMILY_HEADING for headings.",
-      "name": "fontFamily"
-    },
-    {
-      "category": "line-height",
-      "type": "number",
-      "cssProperties": [
-        "font",
-        "*height"
-      ],
-      "value": "1.25",
-      "comment": "Unitless line-heights for reusability",
-      "name": "lineHeightHeading"
+      "name": "fontSizeHeadingXxSmall"
     },
     {
       "category": "font-size",
@@ -219,6 +203,7 @@
       ],
       "value": "12",
       "comment": "Extra small headings.",
+      "deprecated": true,
       "name": "fontSizeHeadingXSmall"
     },
     {
@@ -230,27 +215,8 @@
       ],
       "value": "18",
       "comment": "Large body text.",
+      "deprecated": true,
       "name": "fontSizeTextLarge"
-    },
-    {
-      "category": "font",
-      "type": "font",
-      "cssProperties": [
-        "font",
-        "font-family"
-      ],
-      "value": "'Salesforce Sans', Arial, sans-serif",
-      "name": "fontFamilyHeading"
-    },
-    {
-      "category": "font",
-      "type": "font",
-      "cssProperties": [
-        "font",
-        "font-family"
-      ],
-      "value": "'Salesforce Sans', Arial, sans-serif",
-      "name": "fontFamilyText"
     },
     {
       "category": "font-size",
@@ -272,18 +238,8 @@
       ],
       "value": "16",
       "comment": "Medium body text.",
+      "deprecated": true,
       "name": "fontSizeTextMedium"
-    },
-    {
-      "category": "line-height",
-      "type": "number",
-      "cssProperties": [
-        "font",
-        "*height"
-      ],
-      "value": "1.375",
-      "comment": "Unitless line-heights for reusability",
-      "name": "lineHeightText"
     },
     {
       "category": "font-size",
@@ -294,6 +250,7 @@
       ],
       "value": "12",
       "comment": "Extra small body text.",
+      "deprecated": true,
       "name": "fontSizeTextXSmall"
     },
     {
@@ -305,29 +262,109 @@
       ],
       "value": "14",
       "comment": "Small headings.",
+      "deprecated": true,
       "name": "fontSizeHeadingSmall"
     },
     {
-      "category": "font",
-      "type": "font-weight",
+      "category": "line-height",
+      "type": "number",
       "cssProperties": [
         "font",
-        "font-weight"
+        "*height"
       ],
-      "value": "700",
-      "comment": "Used sparingly for emphasized text within regular body copy.",
-      "name": "fontWeightBold"
+      "value": "1.25",
+      "comment": "Unitless line-heights for reusability",
+      "access": "global",
+      "name": "lineHeightHeading"
+    },
+    {
+      "category": "line-height",
+      "type": "number",
+      "cssProperties": [
+        "font",
+        "*height"
+      ],
+      "value": "1.5",
+      "comment": "Unitless line-heights for reusability",
+      "access": "global",
+      "name": "lineHeightText"
+    },
+    {
+      "category": "line-height",
+      "type": "number",
+      "cssProperties": [
+        "font",
+        "*height"
+      ],
+      "value": "1",
+      "comment": "Remove extra leading. Unitless line-heights for reusability",
+      "access": "global",
+      "name": "lineHeightReset"
+    },
+    {
+      "category": "line-height",
+      "type": "number",
+      "cssProperties": [
+        "font",
+        "*height"
+      ],
+      "value": "40",
+      "comment": "Line heights for tabs",
+      "access": "global",
+      "name": "lineHeightTab"
+    },
+    {
+      "category": "line-height",
+      "type": "number",
+      "cssProperties": [
+        "font",
+        "*height"
+      ],
+      "value": "1.5",
+      "comment": "Variable unitless line-heights for reusability",
+      "name": "varLineHeightText"
     },
     {
       "category": "font",
-      "type": "font-weight",
+      "type": "font",
       "cssProperties": [
         "font",
-        "font-weight"
+        "font-family"
       ],
-      "value": "300",
-      "comment": "Use for large headings only.",
-      "name": "fontWeightLight"
+      "value": "'Salesforce Sans', Arial, sans-serif",
+      "deprecated": true,
+      "comment": "Deprecated: use FONT_FAMILY_TEXT instead for regular body text and FONT_FAMILY_HEADING for headings.",
+      "name": "fontFamily"
+    },
+    {
+      "category": "font",
+      "type": "font",
+      "cssProperties": [
+        "font",
+        "font-family"
+      ],
+      "value": "'Salesforce Sans', Arial, sans-serif",
+      "name": "fontFamilyText"
+    },
+    {
+      "category": "font",
+      "type": "font",
+      "cssProperties": [
+        "font",
+        "font-family"
+      ],
+      "value": "'Salesforce Sans', Arial, sans-serif",
+      "name": "fontFamilyHeading"
+    },
+    {
+      "category": "font",
+      "type": "font",
+      "cssProperties": [
+        "font",
+        "font-family"
+      ],
+      "value": "Consolas, Menlo, Monaco, Courier, monospace",
+      "name": "fontFamilyMonospace"
     }
   ]
 }

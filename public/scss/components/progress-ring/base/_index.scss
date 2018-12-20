@@ -1,4 +1,4 @@
-// Lightning Design System 2.5.0
+// Lightning Design System 2.7.5
 // Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
@@ -129,5 +129,37 @@
 
   .slds-progress-ring__content {
     background: $color-background-success;
+  }
+}
+
+/**
+ * @summary Larger ring size
+ *
+ * @selector .slds-progress-ring_large
+ * @restrict .slds-progress-ring
+ * @modifier
+ * @group size
+ */
+.slds-progress-ring_large {
+  height: $square-icon-large-content;
+  width: $square-icon-large-content;
+
+  .slds-icon {
+    width: $square-icon-medium-content;
+  }
+}
+
+/**
+ * @summary Blue progress ring
+ *
+ * @selector .slds-progress-ring_active-step
+ * @restrict .slds-progress-ring
+ * @modifier
+ * @group color
+ */
+.slds-progress-ring_active-step {
+
+  .slds-progress-ring__path {
+    fill: $progress-color-border-active;
   }
 }

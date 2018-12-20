@@ -1,4 +1,4 @@
-// Lightning Design System 2.5.0
+// Lightning Design System 2.7.5
 // Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
@@ -49,17 +49,20 @@
   }
 
   /**
+   * @name cover
    * @summary Changes background image to be set to cover rather than contain
    * @selector .slds-brand-band_cover
    * @restrict .slds-brand-band
    * @modifier
+   * @group position
    */
-  &.slds-brand-band_cover {
+  &.slds-brand-band_cover:before {
     background-repeat: no-repeat;
     background-size: cover;
   }
 
   /**
+   * @name small
    * @summary Sets height of brand band to
    * @selector .slds-brand-band_small
    * @restrict .slds-brand-band
@@ -79,6 +82,7 @@
   }
 
   /**
+   * @name medium
    * @summary Sets height of brand band to
    * @selector .slds-brand-band_medium
    * @restrict .slds-brand-band
@@ -98,6 +102,7 @@
   }
 
   /**
+   * @name large
    * @summary Sets height of brand band to
    * @selector .slds-brand-band_large
    * @restrict .slds-brand-band
@@ -130,13 +135,39 @@
   }
 
   /**
+   * @name no background
    * @summary Removes image but keeps page background
    * @selector .slds-brand-band_none
    * @restrict .slds-brand-band
    * @modifier
+   * @group visibility
    */
   &.slds-brand-band_none:before {
     height: 0;
+  }
+
+  /**
+   * @name Group background
+   * @summary Uses the group banner image as the page background image
+   * @selector .slds-brand-band_group
+   * @restrict .slds-brand-band
+   * @modifier
+   * @group image
+   */
+  &.slds-brand-band_group:before {
+    background-image: url($banner-group-default-image);
+  }
+
+  /**
+   * @name User profile background
+   * @summary Uses the user profile banner image as the page background image
+   * @selector .slds-brand-band_user
+   * @restrict .slds-brand-band
+   * @modifier
+   * @group image
+   */
+  &.slds-brand-band_user:before {
+    background-image: url($banner-user-default-image);
   }
 
   // White page for iframes

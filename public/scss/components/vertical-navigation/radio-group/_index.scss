@@ -1,4 +1,4 @@
-// Lightning Design System 2.5.0
+// Lightning Design System 2.7.5
 // Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
@@ -10,7 +10,6 @@
  * @variant
  * @release 2.5.0
  */
-
 .slds-nav-vertical__item {
 
   [type="radio"] {
@@ -25,8 +24,7 @@
 
     &:focus + .slds-nav-vertical__action {
       /**
-       * Used for styling the radio button
-       *
+       * @summary Used for styling the radio button
        * @selector .slds-nav-vertical_radio-faux
        * @restrict .slds-nav-vertical__action span
        */
@@ -37,7 +35,7 @@
 
     &:checked + .slds-nav-vertical__action {
 
-      background-color: $brand-primary-transparent;
+      background-color: $brand-primary-transparent-10;
 
       &:before {
         content: '';
@@ -55,7 +53,7 @@
 .slds-nav-vertical_shade {
 
   .slds-nav-vertical__item [type="radio"]:checked + .slds-nav-vertical__action {
-    background-color: $brand-primary-transparent;
+    background-color: $brand-primary-transparent-10;
     border-color: $color-border;
   }
 }

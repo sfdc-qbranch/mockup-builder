@@ -1,4 +1,4 @@
-// Lightning Design System 2.5.0
+// Lightning Design System 2.7.5
 // Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
@@ -88,7 +88,7 @@
     &.slds-is-active {
       outline: 0;
       border-radius: 0;
-      background-color: $brand-primary-transparent;
+      background-color: $brand-primary-transparent-10;
       text-decoration: none;
       cursor: pointer;
     }
@@ -120,7 +120,7 @@
         }
 
         100% {
-          background-color: $brand-primary-transparent;
+          background-color: $brand-primary-transparent-10;
         }
       }
 
@@ -157,7 +157,7 @@
       }
 
       &:hover {
-        border-bottom-color: $brand-primary-transparent;
+        border-bottom-color: $brand-primary-transparent-10;
       }
     }
 
@@ -179,7 +179,7 @@
 
     // Enforce background on items that have a notification
     &.slds-has-notification {
-      background: $brand-primary-transparent;
+      background: $brand-primary-transparent-10;
     }
 
     /**
@@ -404,7 +404,7 @@
 
     .slds-indicator_unsaved,
     .slds-indicator--unsaved {
-      top: rem(-6px);
+      top: rem(-4px);
     }
   }
 }
@@ -472,8 +472,7 @@
  */
 .slds-context-bar__app-name {
   padding: 0 $spacing-large 0 0;
-  font-size: rem(18px); // @todo tokenize
-  font-weight: $font-weight-light;
+  font-size: $font-size-6;
   line-height: $line-height-heading;
 }
 
@@ -508,5 +507,20 @@
     &:before {
       background: #f59331;
     }
+  }
+}
+
+/**
+ * @summary Used to reserve spacing for tab indicators
+ *
+ * @selector .slds-indicator-container
+ * @restrict .slds-context-bar__item span, .slds-sub-tabs__item span
+ */
+.slds-indicator-container {
+  display: inline;
+  margin-right: $spacing-xx-small;
+
+  &:empty {
+    margin-right: 0;
   }
 }

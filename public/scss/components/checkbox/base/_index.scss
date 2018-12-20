@@ -1,4 +1,4 @@
-// Lightning Design System 2.5.0
+// Lightning Design System 2.7.5
 // Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
@@ -7,39 +7,52 @@
  *
  * @name base
  * @selector .slds-checkbox
- * @restrict span, label
+ * @restrict span, label, div
  * @required
  * @variant
  */
 .slds-checkbox {
   display: inline-block;
+  position: relative;
 
   /**
+   * @name stacked
    * @summary stacks label over checkbox
-   *
    * @selector .slds-checkbox_stacked
    * @restrict .slds-checkbox
    * @modifier
    * @group layout
    */
   &.slds-checkbox_stacked {
-
+    /**
+     * @summary Container for faux checkbox element
+     * @selector .slds-checkbox__label
+     * @restrict .slds-checkbox label
+     */
     .slds-checkbox__label {
       display: flex;
       flex-direction: column;
     }
 
+    .slds-form-element__label {
+      margin-bottom: $spacing-xx-small;
+      font-size: $font-size-2;
+    }
+
     .slds-checkbox_faux {
       order: 1;
+      margin-bottom: 1px;
+    }
+
+    .slds-required {
+      float: left;
     }
   }
 
   /**
-   * Creates a custom styled checkbox
-   *
+   * @summary Creates a custom styled checkbox
    * @selector .slds-checkbox_faux
-   * @restrict [class*='slds-checkbox'] span, [class*='slds-checkbox'] label
-   * @required
+   * @restrict .slds-checkbox span
    */
   .slds-checkbox_faux,
   .slds-checkbox--faux {
@@ -56,7 +69,7 @@
   .slds-form-element__label {
     display: inline;
     vertical-align: middle;
-    font-size: $font-size-medium;
+    font-size: $font-size-3;
   }
 
   [type="checkbox"] {
@@ -67,6 +80,7 @@
     overflow: hidden;
     padding: 0;
     position: absolute;
+    pointer-events: auto;
 
     &:checked + .slds-checkbox_faux,
     &:checked + .slds-checkbox--faux,
@@ -143,7 +157,7 @@
         border-color: $color-border-input-disabled;
 
         &:after {
-          border-color: $color-background-input;
+          border-color: $color-gray-8;
         }
       }
     }
@@ -177,6 +191,7 @@
   }
 }
 
+// What is happening here? - BF
 .slds-form-element .slds-checkbox [type="checkbox"] + .slds-checkbox_faux,
 .slds-form-element .slds-checkbox [type="checkbox"] + .slds-checkbox--faux,
 .slds-form-element .slds-checkbox [type="checkbox"] ~ .slds-checkbox_faux,

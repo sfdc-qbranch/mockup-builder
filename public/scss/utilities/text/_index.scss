@@ -1,4 +1,4 @@
-// Lightning Design System 2.5.0
+// Lightning Design System 2.7.5
 // Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
@@ -101,6 +101,17 @@
   letter-spacing: 0.0625rem;
 }
 
+/**
+ * @summary Bold 14px heading
+ * @selector .slds-text-title_bold
+ * @notes Usually labels small content areas like form and listbox
+ * @modifier
+ */
+.slds-text-title_bold {
+  font-size: $font-size-4;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-reset;
+}
 
 /**
  * @summary Resets line-height to browser default
@@ -145,6 +156,16 @@
 .slds-text-color_error,
 .slds-text-color--error {
   color: $color-text-error;
+}
+
+/**
+ * @summary Color of text for destructive actions
+ *
+ * @selector .slds-text-color_destructive
+ * @modifier
+ */
+.slds-text-color_destructive {
+  color: $color-text-destructive;
 }
 
 /**
@@ -271,4 +292,14 @@
       margin: 0 0 0 auto;
     }
   }
+}
+
+/**
+* @summary Monospace font family
+*
+* @selector .slds-text-font_monospace
+* @modifier
+*/
+.slds-text-font_monospace {
+  font-family: $font-family-monospace;
 }

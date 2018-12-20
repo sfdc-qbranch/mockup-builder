@@ -3,7 +3,6 @@
   <property name="WIDTH_STAGE_LEFT" category="sizing" value="0.88"/>
   <property name="SQUARE_TOOLTIP" category="sizing" value="20"/>
   <property name="HEIGHT_HEADER" category="sizing" value="44"/>
-  <property name="DURATION_SLIDE" category="time" value="0.25s"/>
   <property name="MAX_WIDTH_ACTION_OVERFLOW_MENU" category="sizing" value="512px"/>
   <property name="MAX_WIDTH_HEADER_BRAND" category="sizing" value="156px"/>
   <property name="SQUARE_TAPPABLE" category="sizing" value="44"/>
@@ -17,4 +16,5 @@
   <property name="MAX_WIDTH_ACTION_BAR_WITH_LABELS" category="sizing" value="320px"/>
   <property name="FLEX_DETAIL_PANEL" category="sizing" value="3"/>
   <property name="HEIGHT_OVERFLOW_START" category="sizing" value="144px"/>
+  <property name="DURATION_SLIDE" category="time" value="0.25s"/>
 </resources>

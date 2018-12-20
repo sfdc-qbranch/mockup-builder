@@ -1,5 +1,3 @@
-
 module.exports = {
-    
-    widthStageLeft: "250px",
+  widthStageLeft: "250px",
 };

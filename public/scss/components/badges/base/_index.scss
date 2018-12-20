@@ -1,4 +1,4 @@
-// Lightning Design System 2.5.0
+// Lightning Design System 2.7.5
 // Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
@@ -33,14 +33,20 @@
   .slds-icon_container {
     vertical-align: middle;
   }
+
+  // Only inline or inline-block are supported as children of a badge
+  > * {
+    vertical-align: bottom;
+  }
 }
 
 /**
- * @summary Inverse badge component
- *
+ * @summary Change badge color to a dark with light text
  * @name inverse
  * @selector .slds-badge_inverse
  * @restrict .slds-badge
+ * @modifier
+ * @group color
  */
 .slds-badge_inverse {
   background-color: $badge-color-background-inverse;
@@ -48,11 +54,12 @@
 }
 
 /**
- * @summary Light badge with icon
- *
+ * @summary Change badge color to white with normal text
  * @name lightest
  * @selector .slds-badge_lightest
  * @restrict .slds-badge
+ * @modifier
+ * @group color
  */
 .slds-badge_lightest {
   border: $border-width-thin solid $color-border;

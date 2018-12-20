@@ -7,4 +7,5 @@
   <property name="INPUT_STATIC_FONT_SIZE" category="font-size" value="16"/>
   <property name="INPUT_STATIC_FONT_WEIGHT" category="font" value="400"/>
   <property name="CARD_FONT_WEIGHT" category="font" value="400"/>
+  <property name="HEIGHT_INPUT" category="sizing" value="38"/>
 </resources>

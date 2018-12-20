@@ -1,4 +1,4 @@
-// Lightning Design System 2.5.0
+// Lightning Design System 2.7.5
 // Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
@@ -35,6 +35,28 @@
 }
 
 /**
+ * @summary Container for Rich Text Editor Toolbar
+ * @selector .slds-rich-text-editor__col
+ * @restrict .slds-rich-text-editor__toolbar div
+ */
+.slds-rich-text-editor__col {
+  align-self: center;
+
+  + .slds-rich-text-editor__col {
+    margin-left: $spacing-x-small;
+  }
+}
+
+/**
+ * @summary Container for Rich Text Editor Toolbar
+ * @selector .slds-rich-text-editor__col_grow
+ * @restrict .slds-rich-text-editor__toolbar div
+ */
+.slds-rich-text-editor__col_grow {
+  flex-grow: 1;
+}
+
+/**
  * Container for Rich Text Editor Bottom Toolbar
  *
  * @selector .slds-rich-text-editor__toolbar-bottom
@@ -65,6 +87,7 @@
  */
 .slds-rich-text-editor__select {
   margin-right: $spacing-xx-small;
+  margin-bottom: $spacing-xx-small;
 }
 
 // This class should be placed on a containing div when RTE toolbar is in a small space
@@ -72,10 +95,6 @@
 
   .slds-combobox {
     max-width: 11rem;
-  }
-
-  .slds-rich-text-editor__spacing-wrapper {
-    margin-bottom: $spacing-xx-small;
   }
 }
 
@@ -100,6 +119,17 @@
  */
 .slds-rich-text-editor.slds-has-error {
   border: $border-width-thick solid $color-border-error;
+
+  .slds-input {
+    border-color: $color-border-input;
+    box-shadow: none;
+  }
+
+  .slds-form-element__help {
+    background: $color-background-alt;
+    margin-top: 0;
+    border-radius: 0 0 $border-radius-small $border-radius-small;
+  }
 }
 
 /**
@@ -113,7 +143,6 @@
   min-height: $size-xx-small;
   max-height: $size-small;
   padding: $spacing-medium;
-  border-radius: $border-radius-medium;
   background-color: $color-background-input;
 }
 
@@ -131,6 +160,21 @@
  */
 
 .slds-rich-text-editor__textarea {
+
+  &:last-child {
+
+    .slds-rich-text-area__content {
+      border-radius: 0 0 $border-radius-medium $border-radius-medium;
+    }
+  }
+
+  &:first-child {
+
+    .slds-rich-text-area__content {
+      border-radius: $border-radius-medium $border-radius-medium 0 0;
+    }
+  }
+
   // stylelint-disable selector-class-pattern
   .ql-editor {
     white-space: pre-wrap;
@@ -168,137 +212,6 @@
     overflow: hidden !important;
     clip: rect(0 0 0 0) !important;
   }
-}
-
-.slds-rich-text-editor__textarea,
-.slds-rich-text-editor__output {
-  line-height: $line-height-text;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  hyphens: manual;
-
-  h1 {
-    font-size: $font-size-heading-large;
-  }
-
-  h2 {
-    font-size: $font-size-heading-medium;
-    font-weight: $font-weight-bold;
-  }
-
-  h3 {
-    font-size: $font-size-heading-medium;
-  }
-
-  h4 {
-    font-size: $font-size-heading-small;
-    font-weight: $font-weight-bold;
-  }
-
-  h5 {
-    font-size: $font-size-heading-small;
-  }
-
-  h6 {
-    font-size: $font-size-heading-x-small;
-    font-weight: $font-weight-bold;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  ul,
-  ol,
-  dl,
-  img {
-    margin-bottom: $spacing-small;
-  }
-
-  blockquote {
-    margin: $spacing-x-large $spacing-large;
-  }
-
-  ul {
-    @include list-has-bullets;
-
-    ul {
-      list-style: circle;
-
-      ul {
-        list-style: square;
-      }
-    }
-
-    ol {
-      @include list-has-numbers;
-    }
-  }
-
-  ol {
-    @include list-has-numbers;
-
-    ol {
-      list-style: lower-alpha;
-
-      ol {
-        list-style: lower-roman;
-      }
-    }
-
-    ul {
-      @include list-has-bullets;
-    }
-  }
-
-  dd {
-    margin-left: 2.5rem;
-  }
-
-  abbr[title],
-  acronym[title] {
-    border-bottom: 1px dotted;
-    cursor: help;
-  }
-
-  table {
-    width: auto;
-
-    caption {
-      text-align: center;
-    }
-  }
-
-  th,
-  td {
-    padding: $spacing-x-small;
-  }
-
-  .sans-serif {
-    font-family: sans-serif;
-  }
-
-  .courier {
-    font-family: courier;
-  }
-
-  .verdana {
-    font-family: verdana;
-  }
-
-  .tahoma {
-    font-family: tahoma;
-  }
-
-  .garamond {
-    font-family: garamond;
-  }
-
-  .serif {
-    font-family: serif;
-  }
 
   p,
   ol,
@@ -332,7 +245,6 @@
 
       &:before {
         content: '\2022';
-        font-size: 1.4em;
         vertical-align: middle;
         display: inline-block;
         line-height: normal;
@@ -527,147 +439,283 @@
     }
   }
 
-  .ql-indent-1:not(.ql-direction-rtl) {
-    padding-left: 3em;
-  }
-
   li.ql-indent-1:not(.ql-direction-rtl) {
     padding-left: 4.5em;
-  }
-
-  .ql-indent-1.ql-direction-rtl.ql-align-right {
-    padding-right: 3em;
   }
 
   li.ql-indent-1.ql-direction-rtl.ql-align-right {
     padding-right: 4.5em;
   }
 
-  .ql-indent-2:not(.ql-direction-rtl) {
-    padding-left: 6em;
-  }
-
   li.ql-indent-2:not(.ql-direction-rtl) {
     padding-left: 7.5em;
-  }
-
-  .ql-indent-2.ql-direction-rtl.ql-align-right {
-    padding-right: 6em;
   }
 
   li.ql-indent-2.ql-direction-rtl.ql-align-right {
     padding-right: 7.5em;
   }
 
-  .ql-indent-3:not(.ql-direction-rtl) {
-    padding-left: 9em;
-  }
-
   li.ql-indent-3:not(.ql-direction-rtl) {
     padding-left: 10.5em;
-  }
-
-  .ql-indent-3.ql-direction-rtl.ql-align-right {
-    padding-right: 9em;
   }
 
   li.ql-indent-3.ql-direction-rtl.ql-align-right {
     padding-right: 10.5em;
   }
 
-  .ql-indent-4:not(.ql-direction-rtl) {
-    padding-left: 12em;
-  }
-
   li.ql-indent-4:not(.ql-direction-rtl) {
     padding-left: 13.5em;
-  }
-
-  .ql-indent-4.ql-direction-rtl.ql-align-right {
-    padding-right: 12em;
   }
 
   li.ql-indent-4.ql-direction-rtl.ql-align-right {
     padding-right: 13.5em;
   }
 
-  .ql-indent-5:not(.ql-direction-rtl) {
-    padding-left: 15em;
-  }
-
   li.ql-indent-5:not(.ql-direction-rtl) {
     padding-left: 16.5em;
-  }
-
-  .ql-indent-5.ql-direction-rtl.ql-align-right {
-    padding-right: 15em;
   }
 
   li.ql-indent-5.ql-direction-rtl.ql-align-right {
     padding-right: 16.5em;
   }
 
-  .ql-indent-6:not(.ql-direction-rtl) {
-    padding-left: 18em;
-  }
-
   li.ql-indent-6:not(.ql-direction-rtl) {
     padding-left: 19.5em;
-  }
-
-  .ql-indent-6.ql-direction-rtl.ql-align-right {
-    padding-right: 18em;
   }
 
   li.ql-indent-6.ql-direction-rtl.ql-align-right {
     padding-right: 19.5em;
   }
 
-  .ql-indent-7:not(.ql-direction-rtl) {
-    padding-left: 21em;
-  }
-
   li.ql-indent-7:not(.ql-direction-rtl) {
     padding-left: 22.5em;
-  }
-
-  .ql-indent-7.ql-direction-rtl.ql-align-right {
-    padding-right: 21em;
   }
 
   li.ql-indent-7.ql-direction-rtl.ql-align-right {
     padding-right: 22.5em;
   }
 
-  .ql-indent-8:not(.ql-direction-rtl) {
-    padding-left: 24em;
-  }
-
   li.ql-indent-8:not(.ql-direction-rtl) {
     padding-left: 25.5em;
-  }
-
-  .ql-indent-8.ql-direction-rtl.ql-align-right {
-    padding-right: 24em;
   }
 
   li.ql-indent-8.ql-direction-rtl.ql-align-right {
     padding-right: 25.5em;
   }
 
-  .ql-indent-9:not(.ql-direction-rtl) {
-    padding-left: 27em;
-  }
-
   li.ql-indent-9:not(.ql-direction-rtl) {
     padding-left: 28.5em;
   }
 
-  .ql-indent-9.ql-direction-rtl.ql-align-right {
-    padding-right: 27em;
-  }
-
   li.ql-indent-9.ql-direction-rtl.ql-align-right {
     padding-right: 28.5em;
+  }
+}
+
+.slds-rich-text-editor__textarea,
+.slds-rich-text-editor__output {
+  line-height: $line-height-text;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: manual;
+
+  h1 {
+    font-size: $font-size-heading-large;
+  }
+
+  h2 {
+    font-size: $font-size-heading-medium;
+    font-weight: $font-weight-bold;
+  }
+
+  h3 {
+    font-size: $font-size-heading-medium;
+  }
+
+  h4 {
+    font-size: $font-size-heading-small;
+    font-weight: $font-weight-bold;
+  }
+
+  h5 {
+    font-size: $font-size-heading-small;
+  }
+
+  h6 {
+    font-size: $font-size-heading-x-small;
+    font-weight: $font-weight-bold;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  ol,
+  dl,
+  img {
+    margin-bottom: $spacing-small;
+  }
+
+  blockquote {
+    margin: $spacing-x-large $spacing-large;
+  }
+
+  ul {
+    @include list-has-bullets;
+
+    ul {
+      list-style: circle;
+      margin-bottom: 0;
+
+      ul {
+        list-style: square;
+      }
+    }
+
+    ol {
+      @include list-has-numbers;
+      margin-bottom: 0;
+    }
+  }
+
+  ol {
+    @include list-has-numbers;
+
+    ol {
+      list-style: lower-alpha;
+      margin-bottom: 0;
+
+      ol {
+        list-style: lower-roman;
+      }
+    }
+
+    ul {
+      @include list-has-bullets;
+      margin-bottom: 0;
+    }
+  }
+
+  dd {
+    margin-left: 2.5rem;
+  }
+
+  abbr[title],
+  acronym[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+  }
+
+  table {
+    @include normal-wrap;
+    width: auto;
+
+    caption {
+      text-align: center;
+    }
+  }
+
+  th,
+  td {
+    padding: $spacing-x-small;
+  }
+
+  .sans-serif {
+    font-family: sans-serif;
+  }
+
+  .courier {
+    font-family: courier;
+  }
+
+  .verdana {
+    font-family: verdana;
+  }
+
+  .tahoma {
+    font-family: tahoma;
+  }
+
+  .garamond {
+    font-family: garamond;
+  }
+
+  .serif {
+    font-family: serif;
+  }
+
+  .ql-indent-1:not(.ql-direction-rtl) {
+    padding-left: 3em;
+  }
+
+  .ql-indent-1.ql-direction-rtl.ql-align-right {
+    padding-right: 3em;
+  }
+
+  .ql-indent-2:not(.ql-direction-rtl) {
+    padding-left: 6em;
+  }
+
+  .ql-indent-2.ql-direction-rtl.ql-align-right {
+    padding-right: 6em;
+  }
+
+  .ql-indent-3:not(.ql-direction-rtl) {
+    padding-left: 9em;
+  }
+
+  .ql-indent-3.ql-direction-rtl.ql-align-right {
+    padding-right: 9em;
+  }
+
+  .ql-indent-4:not(.ql-direction-rtl) {
+    padding-left: 12em;
+  }
+
+  .ql-indent-4.ql-direction-rtl.ql-align-right {
+    padding-right: 12em;
+  }
+
+  .ql-indent-5:not(.ql-direction-rtl) {
+    padding-left: 15em;
+  }
+
+  .ql-indent-5.ql-direction-rtl.ql-align-right {
+    padding-right: 15em;
+  }
+
+  .ql-indent-6:not(.ql-direction-rtl) {
+    padding-left: 18em;
+  }
+
+  .ql-indent-6.ql-direction-rtl.ql-align-right {
+    padding-right: 18em;
+  }
+
+  .ql-indent-7:not(.ql-direction-rtl) {
+    padding-left: 21em;
+  }
+
+  .ql-indent-7.ql-direction-rtl.ql-align-right {
+    padding-right: 21em;
+  }
+
+  .ql-indent-8:not(.ql-direction-rtl) {
+    padding-left: 24em;
+  }
+
+  .ql-indent-8.ql-direction-rtl.ql-align-right {
+    padding-right: 24em;
+  }
+
+  .ql-indent-9:not(.ql-direction-rtl) {
+    padding-left: 27em;
+  }
+
+  .ql-indent-9.ql-direction-rtl.ql-align-right {
+    padding-right: 27em;
   }
 }

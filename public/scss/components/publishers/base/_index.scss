@@ -1,4 +1,4 @@
-// Lightning Design System 2.5.0
+// Lightning Design System 2.7.5
 // Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
@@ -40,6 +40,9 @@
 
     .slds-publisher__toggle-visibility {
       display: inherit;
+      height: auto;
+      overflow: visible;
+      width: auto;
     }
 
     .slds-publisher__input {
@@ -89,6 +92,9 @@
    * @required
    */
   .slds-publisher__toggle-visibility {
-    display: none;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    width: 0;
   }
 }

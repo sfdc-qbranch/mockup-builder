@@ -1,4 +1,4 @@
-// Lightning Design System 2.5.0
+// Lightning Design System 2.7.5
 // Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
@@ -26,7 +26,8 @@
 .slds-button--icon-container.slds-is-selected,
 .slds-button_icon-border.slds-is-selected,
 .slds-button--icon-border.slds-is-selected,
-.slds-button_icon-border-filled.slds-is-selected {
+.slds-button_icon-border-filled.slds-is-selected,
+.slds-button_icon-border-inverse.slds-is-selected {
   @include button-brand;
 
   .slds-button__icon {

@@ -1,4 +1,4 @@
-// Lightning Design System 2.5.0
+// Lightning Design System 2.7.5
 // Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
@@ -20,11 +20,9 @@
 }
 
 /**
- * Initializes checkbox inside a button group
- *
+ * @summary Initializes checkbox inside a button group
  * @selector .slds-checkbox_button
  * @restrict .slds-checkbox_button-group span
- * @required
  */
 .slds-checkbox_button,
 .slds-checkbox--button {
@@ -34,11 +32,9 @@
   background-clip: padding-box;
 
   /**
-   * Creates a custom styled checkbox
-   *
+   * @summary Creates a custom styled checkbox
    * @selector .slds-checkbox_faux
-   * @restrict .slds-checkbox__label span, .slds-checkbox_button__label span
-   * @required
+   * @restrict .slds-checkbox_button-group span
    */
   .slds-checkbox_faux,
   .slds-checkbox--faux {
@@ -58,11 +54,9 @@
   }
 
   /**
-   * Creates a custom styled checkbox
-   *
+   * @summary Creates a custom styled checkbox
    * @selector .slds-checkbox_button__label
    * @restrict .slds-checkbox_button label
-   * @required
    */
   .slds-checkbox_button__label .slds-checkbox_faux,
   .slds-checkbox--button__label .slds-checkbox--faux,
@@ -97,7 +91,6 @@
     border-radius: 0 $border-radius-medium $border-radius-medium 0;
   }
 
-  // Hide input and style checkbox--faux
   [type="checkbox"] {
     @include square(1px);
     border: 0;
@@ -153,8 +146,8 @@
     &[disabled]:checked ~ .slds-checkbox--faux,
     &[disabled]:checked + .slds-checkbox_button__label,
     &[disabled]:checked + .slds-checkbox--button__label {
-      background-color: $color-background-button-default-disabled;
-      color: $color-text-button-default-disabled;
+      background-color: $brand-disabled;
+      color: $color-text-button-brand-disabled;
       cursor: default;
     }
   }

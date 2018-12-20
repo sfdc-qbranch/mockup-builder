@@ -1,19 +1,14 @@
-// Lightning Design System 2.5.0
+// Lightning Design System 2.7.5
 // Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
+@import 'deprecate';
+
 /**
-* The base card is used primarily on desktop within a &ldquo;wide&rdquo; column
-* or &ldquo;main content area&rdquo;, which uses two-thirds of the viewport.
-* In addition, the `.slds-card` class is used for layout purposes
-* when a card has an adjacent card, those proceeding the initial will provide margin
-* to give the cards spacing between each other.
-*
 * @summary Initializes card
-*
 * @name base
 * @selector .slds-card
-* @restrict article, div
+* @restrict article, div, section
 * @variant
 */
 .slds-card {
@@ -27,79 +22,98 @@
 
   // Adds spacing between cards
   + .slds-card {
-    margin-top: $card-spacing-margin;
-  }
-
-  &__body_inner,
-  &__body--inner {
-    padding: $card-body-padding;
-  }
-
-  /**
-   * Initializes card header
-   *
-   * @selector .slds-card__header
-   * @restrict .slds-card div
-   */
-  &__header {
-    padding: $card-header-padding;
-    margin: $card-header-margin;
-  }
-
-  &__header-link {
-    color: inherit;
-    font-weight: $card-font-weight;
-  }
-
-  /**
-   * Initializes card body
-   *
-   * @selector .slds-card__body
-   * @restrict .slds-card div
-   */
-  &__body {
-    margin-bottom: $spacing-small;
-  }
-
-  &__body:empty,
-  &__footer:empty {
-    display: none;
-  }
-
-  /**
-   * Initializes card footer
-   *
-   * @selector .slds-card__footer
-   * @restrict .slds-card footer
-   */
-  &__footer {
-    padding: $card-footer-padding;
-    margin-top: $card-footer-margin;
-    text-align: $card-footer-text-align;
-    font-size: $font-size-text-small;
-    border-top: $border-width-thin solid $card-footer-color-border;
-  }
-
-  @include deprecate('4.0.0', 'Use a text-align--center utility class instead') {
-
-    .slds-card_empty .slds-card__body,
-    .slds-card--empty .slds-card__body {
-      text-align: center;
-    }
+    margin-top: $var-spacing-vertical-medium;
   }
 }
 
 /**
- * Use class if card consumes any form of a tile
- *
+ * @summary Apply the same spacing found on the card header to the card body
+ * @selector .slds-card__body_inner
+ * @restrict .slds-card__body
+ */
+.slds-card__body_inner,
+.slds-card__body--inner {
+  padding: 0 $var-spacing-horizontal-medium;
+}
+
+/**
+ * @summary Initializes card header
+ * @selector .slds-card__header
+ * @restrict .slds-card div
+ */
+.slds-card__header {
+  padding: $var-spacing-vertical-small $var-spacing-horizontal-medium 0;
+  margin: 0 0 $var-spacing-vertical-small;
+}
+
+/**
+ * @summary Title element within card header
+ * @selector .slds-card__header-title
+ * @restrict .slds-card__header h2
+ */
+.slds-card__header-title {
+  font-size: $var-font-size-5;
+  line-height: $line-height-heading;
+}
+
+/**
+ * @summary Actionable element within the card header title
+ * @selector .slds-card__header-link
+ * @restrict .slds-card__header h2 a
+ */
+.slds-card__header-link {
+  color: inherit;
+  font-weight: $card-font-weight;
+}
+
+/**
+ * @summary Initializes card body
+ * @selector .slds-card__body
+ * @restrict .slds-card div
+ */
+.slds-card__body {
+  margin-bottom: $var-spacing-vertical-small;
+}
+
+.slds-card__body:empty,
+.slds-card__footer:empty {
+  display: none;
+}
+
+/**
+ * @summary Initializes card footer
+ * @selector .slds-card__footer
+ * @restrict .slds-card footer
+ */
+.slds-card__footer {
+  padding: $var-spacing-vertical-small $var-spacing-horizontal-medium;
+  margin-top: $var-spacing-vertical-small;
+  text-align: $card-footer-text-align;
+  font-size: $font-size-text-small;
+  border-top: $border-width-thin solid $card-footer-color-border;
+}
+
+/**
+* @summary Actionable element within card footer
+* @selector .slds-card__footer-action
+* @restrict .slds-card__footer a
+*/
+.slds-card__footer-action {
+  display: block;
+}
+
+/**
+ * @summary Use class if card consumes any form of a tile
  * @selector .slds-card__tile
  * @restrict .slds-tile
  */
 .slds-card__tile {
-  margin-top: $spacing-x-small;
+  margin-top: $var-spacing-vertical-small;
 }
 
-.slds-region__pinned-left {
+// Internal
+.slds-region__pinned-left,
+.slds-region__pinned-right {
 
   .slds-card,
   .slds-card-wrapper,
@@ -113,6 +127,34 @@
     &:last-child {
       border-bottom: 0;
     }
+  }
+}
+
+// These .slds-card-wrapper classes all give us the ability to add a class
+// that doesn't exist in Communities to add a card look in different
+// circumstances. It can also be used to combine several cards into a one
+// card look. This class does not react to the .slds-card_boundary.
+
+/**
+ * @name wrapper
+ * @summary Removes the card look from nested cards and pulls them to the boundary of the card wrapper, making the nested cards look like they are inside of one card
+ * @selector .slds-card-wrapper
+ * @restrict div
+ * @variant
+ */
+.slds-card-wrapper {
+  padding: $var-spacing-medium;
+  background: $card-color-background;
+  border: $border-width-thin solid $card-color-border;
+  border-radius: $border-radius-medium;
+  background-clip: padding-box;
+  box-shadow: $card-shadow;
+
+  .slds-card__header,
+  .slds-card__body,
+  .slds-card__footer {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 

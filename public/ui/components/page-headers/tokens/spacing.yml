@@ -2,6 +2,7 @@
 # Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
 global:
+  scope: component
   category: spacing
   type: size
   comment: ''
@@ -17,11 +18,14 @@ global:
   - '*height'
   - box-shadow
 imports:
-- "../../../../design-tokens/force-base/aliases/spacing.yml"
+- "../../../../design-tokens/aliases/spacing.yml"
 props:
   PAGE_HEADER_SPACING_MARGIN:
     value: '0'
+    deprecated: true
   PAGE_HEADER_SPACING_PADDING:
     value: '{!SPACING_MEDIUM}'
+    deprecated: true
   PAGE_HEADER_SPACING_ROW:
     value: '{!SPACING_SMALL} {!SPACING_MEDIUM}'
+    deprecated: true

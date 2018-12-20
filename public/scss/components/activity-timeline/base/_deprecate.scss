@@ -1,4 +1,4 @@
-// Lightning Design System 2.5.0
+// Lightning Design System 2.7.5
 // Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
@@ -7,7 +7,7 @@
  *
  * @selector .slds-timeline__media
  * @restrict .slds-media
- * @support dev-ready
+ * @deprecated
  */
 .slds-timeline__media,
 .slds-media_timeline,
@@ -55,6 +55,7 @@
  * @name call
  * @selector .slds-timeline__media_call
  * @restrict .slds-timeline__media
+ * @deprecated
  */
 .slds-timeline__media_call:before,
 .slds-timeline__media--call:before {
@@ -65,6 +66,7 @@
  * @name email
  * @selector .slds-timeline__media_email
  * @restrict .slds-timeline__media
+ * @deprecated
  */
 .slds-timeline__media_email:before,
 .slds-timeline__media--email:before {
@@ -75,6 +77,7 @@
  * @name event
  * @selector .slds-timeline__media_event
  * @restrict .slds-timeline__media
+ * @deprecated
  */
 .slds-timeline__media_event:before,
 .slds-timeline__media--event:before {
@@ -85,6 +88,7 @@
  * @name task
  * @selector .slds-timeline__media_task
  * @restrict .slds-timeline__media
+ * @deprecated
  */
 .slds-timeline__media_task:before,
 .slds-timeline__media--task:before {

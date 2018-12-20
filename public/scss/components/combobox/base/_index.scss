@@ -1,4 +1,4 @@
-// Lightning Design System 2.5.0
+// Lightning Design System 2.7.5
 // Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
@@ -24,6 +24,39 @@
    */
   &.slds-is-open .slds-dropdown {
     display: block;
+  }
+
+  /**
+   * @summary Apply when a combobox has a selection
+   * @selector .slds-has-selection
+   * @restrict .slds-combobox_container
+   */
+  &.slds-has-selection {
+
+    .slds-combobox__input-value,
+    .slds-combobox__input-value:focus {
+      box-shadow: 0 0 0 2px #fff inset, 0 0 0 3px $color-border inset;
+    }
+  }
+
+  /**
+   * @summary Icon only variant of a combobox
+   * @selector .slds-has-icon-only
+   * @restrict .slds-combobox_container
+   */
+  &.slds-has-icon-only {
+
+    .slds-combobox__input,
+    .slds-combobox__input:focus,
+    .slds-combobox__input.slds-has-focus {
+      width: 0;
+      pointer-events: auto;
+    }
+
+    .slds-input__icon {
+      z-index: 2;
+      pointer-events: none;
+    }
   }
 }
 
@@ -57,8 +90,10 @@
   font-size: inherit;
   font-weight: $font-weight-regular;
 
-  &:focus {
+  &:focus,
+  &.slds-has-focus {
     border-color: $color-border-brand-primary;
+    box-shadow: $shadow-button-focus;
   }
 
   &[disabled] {
@@ -69,9 +104,10 @@
 
 /**
  * Listbox container
- *
+ * @name listbox
  * @selector .slds-listbox
  * @restrict ul
+ * @variant
  */
 .slds-listbox {
   font-size: $font-size-medium;
@@ -115,6 +151,10 @@
   flex-wrap: wrap;
   align-items: center;
 
+  li {
+    display: flex;
+  }
+
   li + li {
     padding-left: $spacing-xxx-small;
   }
@@ -140,6 +180,20 @@
     display: inline-block;
     vertical-align: middle;
   }
+}
+
+/**
+ * @summary Container for listbox option icon
+ * @selector .slds-listbox__option-icon
+ * @restrict .slds-listbox__option span
+ */
+.slds-listbox__option-icon {
+  width: $square-icon-small-boundary;
+  display: inline-flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  color: $color-text-icon-default;
 }
 
 /**
@@ -171,17 +225,6 @@
   }
 
   /**
-   * Modifies the listbox option if it contains an plain object or string
-   *
-   * @selector .slds-listbox__option_plain
-   * @restrict .slds-listbox__option
-   */
-  .slds-listbox__option_plain,
-  .slds-listbox__option--plain {
-    padding: $spacing-x-small $spacing-small;
-  }
-
-  /**
    * Modifies the listbox option if it contains an entity object
    *
    * @selector .slds-listbox__option_entity
@@ -194,6 +237,21 @@
     .slds-media__figure {
       margin-right: $spacing-x-small;
     }
+  }
+
+  /**
+   * Modifies the listbox option if it contains an plain object or string
+   *
+   * @selector .slds-listbox__option_plain
+   * @restrict .slds-listbox__option
+   */
+  .slds-listbox__option_plain,
+  .slds-listbox__option--plain {
+    padding: $spacing-x-small $spacing-small;
+  }
+
+  .slds-listbox__option_term {
+    padding: $spacing-x-small $spacing-small;
   }
 
   /**
@@ -236,6 +294,7 @@
   top: 50%;
   left: calc(#{$spacing-xx-small} + 1px);
   transform: translateY(-50%);
+  z-index: 2;
 
   .slds-icon {
     @include square($square-icon-x-small-boundary);
@@ -275,6 +334,10 @@
   .slds-listbox__icon-selected {
     opacity: 1;
   }
+
+  .slds-listbox__option-icon {
+    color: $brand-accessible;
+  }
 }
 
 /**
@@ -293,11 +356,11 @@
 /**
  * The metadata or secondary text of an entity listbox
  *
- * @selector .slds-listbox__option-meta_entity
+ * @selector .slds-listbox__option-meta
  * @restrict .slds-listbox__option span
  */
-.slds-listbox__option-meta_entity,
-.slds-listbox__option-meta--entity {
+.slds-listbox__option-meta,
+.slds-listbox__option-meta {
   display: block;
   margin-top: ($spacing-xx-small * -1); // Offset $line-height-text from result-text
   color: $color-text-label;
@@ -307,6 +370,181 @@
 .slds-listbox--object-switcher {
   flex-shrink: 0;
   padding: $spacing-xxx-small;
+}
+
+/**
+ * @summary Modifier that identifies the combobox as the object switcher, applies specific interactions for its context
+ * @selector .slds-combobox_object-switcher
+ * @restrict .slds-combobox-group div
+ */
+.slds-combobox_object-switcher {
+  flex-shrink: 0;
+
+  .slds-combobox__input {
+    width: rem(120px);
+    transition: width 80ms linear;
+    font-size: $font-size-text-x-small;
+    color: $color-text-placeholder;
+
+    &:focus,
+    &.slds-has-focus {
+      width: rem(160px);
+    }
+  }
+
+  .slds-icon {
+    width: $square-icon-small-content;
+    height: $square-icon-small-content;
+  }
+}
+
+/**
+ * @summary Input field within a combobox
+ *
+ * @selector .slds-combobox__input
+ * @restrict .slds-combobox input
+ */
+.slds-combobox__input {
+  /**
+   * @summary Force focus state of the input
+   *
+   * @selector .slds-has-focus
+   * @restrict .slds-combobox__input
+   */
+  &:focus,
+  &.slds-has-focus {
+    border-color: $color-border-input-active;
+    box-shadow: $shadow-button-focus;
+  }
+}
+
+/**
+ * @summary Container for a combobox group
+ * @name grouped
+ * @selector .slds-combobox-group
+ * @restrict div
+ * @variant
+ */
+.slds-combobox-group {
+  display: flex;
+  flex-direction: row;
+
+  .slds-combobox_container {
+    flex: 1 1 auto;
+  }
+
+  .slds-combobox__input,
+  .slds-combobox_object-switcher__button {
+    border-radius: 0;
+    margin-left: -1px;
+    margin-right: -1px;
+    // fixes Firefox issue where click event wasn't firing on inputs. Pos rel fixes that.
+    position: relative;
+
+
+    &:focus,
+    &.slds-has-focus {
+      z-index: 1;
+    }
+  }
+
+  /**
+   * @summary Modifier that notifies the combobox group that a selection has been made
+   *
+   * @selector .slds-has-selection
+   * @restrict .slds-combobox-group, .slds-combobox_container
+   */
+  &.slds-has-selection {
+
+    .slds-combobox-addon_start .slds-combobox__input {
+      border-bottom-left-radius: 0;
+    }
+
+    .slds-combobox-addon_end .slds-combobox__input {
+      border-bottom-right-radius: 0;
+    }
+
+    ~ .slds-listbox_selection-group {
+      display: flex;
+      position: relative;
+      border: 1px solid $color-border;
+      border-top: 0;
+      border-bottom-left-radius: $border-radius-medium;
+      border-bottom-right-radius: $border-radius-medium;
+      left: -1px;
+    }
+  }
+
+  .slds-listbox_horizontal li + li {
+    padding: $spacing-xxx-small;
+  }
+}
+
+/**
+ * @summary The container of pill selections found inside of a combobox group
+ * @selector .slds-listbox_selection-group
+ * @restrict .slds-combobox-group ~ div, .slds-combobox_container ~ div
+ */
+.slds-listbox_selection-group {
+  position: relative;
+  padding: 0;
+  padding-right: 3.75rem;
+  height: calc(#{$height-input} + #{$border-width-thin});
+  overflow: hidden;
+
+  /**
+   * @summary Expanded state of a selection group
+   * @selector .slds-is-expanded
+   * @restrict .slds-listbox_selection-group
+   */
+  &.slds-is-expanded {
+    height: auto;
+    padding: 0;
+  }
+
+  .slds-listbox-item {
+    padding: $spacing-xxx-small;
+    line-height: 1;
+  }
+
+  /**
+   * @summary Toggle button to show all of the pill selections
+   * @selector .slds-listbox-toggle
+   * @restrict .slds-listbox_selection-group > span
+   */
+  .slds-listbox-toggle {
+    position: absolute;
+    right: $spacing-x-small;
+    top: $spacing-x-small;
+
+    .slds-button {
+      line-height: 1;
+    }
+  }
+}
+
+/**
+ * @summary The first combobox in the combobox group
+ * @selector .slds-combobox-addon_start
+ * @restrict .slds-combobox-group div
+ */
+.slds-combobox-addon_start .slds-combobox__input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+/**
+ * @summary The last combobox in the combobox group
+ * @selector .slds-combobox-addon_end
+ * @restrict .slds-combobox-group div
+ */
+.slds-combobox-addon_end .slds-combobox__input {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 /**
@@ -323,12 +561,6 @@
   border: $border-width-thin solid $color-border;
   border-radius: $border-radius-medium;
 
-  /**
-   * Input field within a combobox
-   *
-   * @selector .slds-combobox__input
-   * @restrict .slds-combobox input
-   */
   .slds-combobox__input {
     min-height: $height-pill;
     line-height: $height-pill;
@@ -379,6 +611,7 @@
 
   [role="listbox"] {
     display: inline-flex;
+    padding: 0;
   }
 
   .slds-combobox__input[value],

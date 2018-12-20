@@ -1,4 +1,4 @@
-// Lightning Design System 2.5.0
+// Lightning Design System 2.7.5
 // Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
@@ -186,7 +186,12 @@
   word-break: break-word;
 }
 
-
+// normal-wrap
+@mixin normal-wrap {
+  overflow-wrap: normal;
+  word-wrap: normal;
+  word-break: normal;
+}
 
 // Clearfix
 @mixin clearfix {
@@ -198,74 +203,6 @@
   }
 }
 
-
-
-// Spacing
-@mixin spacing($property) {
-  $prop-prefix: null;
-  $positions: top right bottom left;
-
-  @if $property == margin {
-    $prop-prefix: 'm';
-  }
-
-  @else if $property == padding {
-    $prop-prefix: 'p';
-  }
-
-  @each $token, $size in $force-base-map {
-    // Analyze tokens from map
-    $token-string: inspect($token);
-    // Remove component specific spacing tokens
-    $spacing-token: unquote(str-replace($token-string, '-spacing-', ''));
-    // Loop through index that matches the substring of "spacing" to all tokens
-    // minus the component specific tokens
-    @if str-index($spacing-token, spacing) {
-      // Strip "spacing" from the matched token names
-      $spacing: unquote(str-replace($token, 'spacing-', ''));
-
-      // scss-lint:disable ImportantRule
-      @each $position in $positions {
-        // Only apply !important to spacing--none utilities
-        @if $size == 0 {
-
-          // stylelint-disable max-nesting-depth,declaration-no-important
-          .slds-#{$prop-prefix}-#{$position}_#{$spacing},
-          .slds-#{$prop-prefix}-#{$position}--#{$spacing} {
-            // stylelint-disable
-            #{$property}-#{$position}: 0 !important;
-          }
-          // stylelint-enable max-nesting-depth,declaration-no-important
-        }
-        // Generate directional spacing utilities
-        @else {
-          .slds-#{$prop-prefix}-#{$position}_#{$spacing},
-          .slds-#{$prop-prefix}-#{$position}--#{$spacing} {
-            #{$property}-#{$position}: $size;
-          }
-        }
-      }
-
-      // Generate vertical spacing utilities
-      .slds-#{$prop-prefix}-vertical_#{$spacing},
-      .slds-#{$prop-prefix}-vertical--#{$spacing} {
-        #{$property}-top: $size;
-        #{$property}-bottom: $size;
-      }
-      // Generate horizontal spacing utilities
-      .slds-#{$prop-prefix}-horizontal_#{$spacing},
-      .slds-#{$prop-prefix}-horizontal--#{$spacing} {
-        #{$property}-right: $size;
-        #{$property}-left: $size;
-      }
-      // Generate vertical + horizontal spacing utilities
-      .slds-#{$prop-prefix}-around_#{$spacing},
-      .slds-#{$prop-prefix}-around--#{$spacing} {
-        #{$property}: $size;
-      }
-    }
-  }
-}
 
 @mixin square($size) {
   width: $size;
@@ -289,6 +226,7 @@
           &--inline-block {
             display: inline-block;
           }
+
           &_inline,
           &--inline {
             display: inline;
@@ -309,6 +247,7 @@
           &--inline-block {
             display: inline-block;
           }
+
           &_inline,
           &--inline {
             display: inline;

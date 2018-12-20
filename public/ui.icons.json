@@ -273,6 +273,10 @@
       },
       {
         "sprite": "action",
+        "symbol": "script"
+      },
+      {
+        "sprite": "action",
         "symbol": "share"
       },
       {
@@ -967,7 +971,15 @@
       },
       {
         "sprite": "standard",
+        "symbol": "action_list_component"
+      },
+      {
+        "sprite": "standard",
         "symbol": "address"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "all"
       },
       {
         "sprite": "standard",
@@ -984,6 +996,14 @@
       {
         "sprite": "standard",
         "symbol": "answer_public"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "apex"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "apex_plugin"
       },
       {
         "sprite": "standard",
@@ -1011,6 +1031,10 @@
       },
       {
         "sprite": "standard",
+        "symbol": "assignment"
+      },
+      {
+        "sprite": "standard",
         "symbol": "avatar"
       },
       {
@@ -1020,6 +1044,14 @@
       {
         "sprite": "standard",
         "symbol": "bot"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "bot_training"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "brand"
       },
       {
         "sprite": "standard",
@@ -1099,6 +1131,10 @@
       },
       {
         "sprite": "standard",
+        "symbol": "choice"
+      },
+      {
+        "sprite": "standard",
         "symbol": "client"
       },
       {
@@ -1111,7 +1147,15 @@
       },
       {
         "sprite": "standard",
+        "symbol": "collection_variable"
+      },
+      {
+        "sprite": "standard",
         "symbol": "connected_apps"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "constant"
       },
       {
         "sprite": "standard",
@@ -1123,11 +1167,23 @@
       },
       {
         "sprite": "standard",
+        "symbol": "contact_request"
+      },
+      {
+        "sprite": "standard",
         "symbol": "contract"
       },
       {
         "sprite": "standard",
         "symbol": "contract_line_item"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "currency"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "currency_input"
       },
       {
         "sprite": "standard",
@@ -1139,6 +1195,10 @@
       },
       {
         "sprite": "standard",
+        "symbol": "customer_portal_users"
+      },
+      {
+        "sprite": "standard",
         "symbol": "customers"
       },
       {
@@ -1147,11 +1207,35 @@
       },
       {
         "sprite": "standard",
+        "symbol": "data_integration_hub"
+      },
+      {
+        "sprite": "standard",
         "symbol": "datadotcom"
       },
       {
         "sprite": "standard",
+        "symbol": "date_input"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "date_time"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "decision"
+      },
+      {
+        "sprite": "standard",
         "symbol": "default"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "display_rich_text"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "display_text"
       },
       {
         "sprite": "standard",
@@ -1160,6 +1244,10 @@
       {
         "sprite": "standard",
         "symbol": "drafts"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "dynamic_record_choice"
       },
       {
         "sprite": "standard",
@@ -1231,7 +1319,15 @@
       },
       {
         "sprite": "standard",
+        "symbol": "formula"
+      },
+      {
+        "sprite": "standard",
         "symbol": "generic_loading"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "global_constant"
       },
       {
         "sprite": "standard",
@@ -1259,6 +1355,10 @@
       },
       {
         "sprite": "standard",
+        "symbol": "individual"
+      },
+      {
+        "sprite": "standard",
         "symbol": "insights"
       },
       {
@@ -1267,7 +1367,19 @@
       },
       {
         "sprite": "standard",
+        "symbol": "iot_context"
+      },
+      {
+        "sprite": "standard",
         "symbol": "iot_orchestrations"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "kanban"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "knowledge"
       },
       {
         "sprite": "standard",
@@ -1283,6 +1395,14 @@
       },
       {
         "sprite": "standard",
+        "symbol": "lightning_component"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "lightning_usage"
+      },
+      {
+        "sprite": "standard",
         "symbol": "link"
       },
       {
@@ -1295,11 +1415,23 @@
       },
       {
         "sprite": "standard",
+        "symbol": "live_chat_visitor"
+      },
+      {
+        "sprite": "standard",
         "symbol": "location"
       },
       {
         "sprite": "standard",
         "symbol": "log_a_call"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "logging"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "loop"
       },
       {
         "sprite": "standard",
@@ -1339,11 +1471,23 @@
       },
       {
         "sprite": "standard",
+        "symbol": "multi_picklist"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "multi_select_checkbox"
+      },
+      {
+        "sprite": "standard",
         "symbol": "news"
       },
       {
         "sprite": "standard",
         "symbol": "note"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "number_input"
       },
       {
         "sprite": "standard",
@@ -1367,6 +1511,10 @@
       },
       {
         "sprite": "standard",
+        "symbol": "outcome"
+      },
+      {
+        "sprite": "standard",
         "symbol": "partner_fund_allocation"
       },
       {
@@ -1384,6 +1532,10 @@
       {
         "sprite": "standard",
         "symbol": "partners"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "password"
       },
       {
         "sprite": "standard",
@@ -1407,11 +1559,27 @@
       },
       {
         "sprite": "standard",
+        "symbol": "picklist_choice"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "picklist_type"
+      },
+      {
+        "sprite": "standard",
         "symbol": "poll"
       },
       {
         "sprite": "standard",
         "symbol": "portal"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "portal_roles"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "portal_roles_and_subordinates"
       },
       {
         "sprite": "standard",
@@ -1459,11 +1627,19 @@
       },
       {
         "sprite": "standard",
+        "symbol": "proposition"
+      },
+      {
+        "sprite": "standard",
         "symbol": "question_best"
       },
       {
         "sprite": "standard",
         "symbol": "question_feed"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "queue"
       },
       {
         "sprite": "standard",
@@ -1483,11 +1659,35 @@
       },
       {
         "sprite": "standard",
+        "symbol": "radio_button"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "read_receipts"
+      },
+      {
+        "sprite": "standard",
         "symbol": "recent"
       },
       {
         "sprite": "standard",
         "symbol": "record"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "record_create"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "record_delete"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "record_lookup"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "record_update"
       },
       {
         "sprite": "standard",
@@ -1543,11 +1743,19 @@
       },
       {
         "sprite": "standard",
+        "symbol": "screen"
+      },
+      {
+        "sprite": "standard",
         "symbol": "search"
       },
       {
         "sprite": "standard",
         "symbol": "service_appointment"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "service_appointment_capacity_usage"
       },
       {
         "sprite": "standard",
@@ -1599,6 +1807,22 @@
       },
       {
         "sprite": "standard",
+        "symbol": "sms"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "snippet"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "sobject"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "sobject_collection"
+      },
+      {
+        "sprite": "standard",
         "symbol": "social"
       },
       {
@@ -1611,7 +1835,27 @@
       },
       {
         "sprite": "standard",
+        "symbol": "stage"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "stage_collection"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "steps"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "strategy"
+      },
+      {
+        "sprite": "standard",
         "symbol": "survey"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "system_and_global_variable"
       },
       {
         "sprite": "standard",
@@ -1628,6 +1872,22 @@
       {
         "sprite": "standard",
         "symbol": "template"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "text"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "text_template"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "textarea"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "textbox"
       },
       {
         "sprite": "standard",
@@ -1663,11 +1923,31 @@
       },
       {
         "sprite": "standard",
+        "symbol": "trailhead"
+      },
+      {
+        "sprite": "standard",
         "symbol": "unmatched"
       },
       {
         "sprite": "standard",
         "symbol": "user"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "variable"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "waits"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "work_capacity_limit"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "work_capacity_usage"
       },
       {
         "sprite": "standard",
@@ -1679,7 +1959,15 @@
       },
       {
         "sprite": "standard",
+        "symbol": "work_queue"
+      },
+      {
+        "sprite": "standard",
         "symbol": "work_type"
+      },
+      {
+        "sprite": "standard",
+        "symbol": "work_type_group"
       }
     ]
   },
@@ -1702,6 +1990,18 @@
       {
         "sprite": "utility",
         "symbol": "adduser"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "advanced_function"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "advertising"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "all"
       },
       {
         "sprite": "utility",
@@ -1729,6 +2029,10 @@
       },
       {
         "sprite": "utility",
+        "symbol": "apex_plugin"
+      },
+      {
+        "sprite": "utility",
         "symbol": "approval"
       },
       {
@@ -1737,11 +2041,19 @@
       },
       {
         "sprite": "utility",
+        "symbol": "archive"
+      },
+      {
+        "sprite": "utility",
         "symbol": "arrowdown"
       },
       {
         "sprite": "utility",
         "symbol": "arrowup"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "assignment"
       },
       {
         "sprite": "utility",
@@ -1813,6 +2125,10 @@
       },
       {
         "sprite": "utility",
+        "symbol": "cart"
+      },
+      {
+        "sprite": "utility",
         "symbol": "case"
       },
       {
@@ -1865,6 +2181,10 @@
       },
       {
         "sprite": "utility",
+        "symbol": "choice"
+      },
+      {
+        "sprite": "utility",
         "symbol": "classic_interface"
       },
       {
@@ -1885,6 +2205,10 @@
       },
       {
         "sprite": "utility",
+        "symbol": "collection_variable"
+      },
+      {
+        "sprite": "utility",
         "symbol": "color_swatch"
       },
       {
@@ -1898,6 +2222,14 @@
       {
         "sprite": "utility",
         "symbol": "connected_apps"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "constant"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "contact_request"
       },
       {
         "sprite": "utility",
@@ -1921,6 +2253,14 @@
       },
       {
         "sprite": "utility",
+        "symbol": "currency"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "currency_input"
+      },
+      {
+        "sprite": "utility",
         "symbol": "custom_apps"
       },
       {
@@ -1938,6 +2278,14 @@
       {
         "sprite": "utility",
         "symbol": "datadotcom"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "date_input"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "date_time"
       },
       {
         "sprite": "utility",
@@ -1965,7 +2313,19 @@
       },
       {
         "sprite": "utility",
+        "symbol": "dialing"
+      },
+      {
+        "sprite": "utility",
         "symbol": "dislike"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "display_rich_text"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "display_text"
       },
       {
         "sprite": "utility",
@@ -1981,6 +2341,18 @@
       },
       {
         "sprite": "utility",
+        "symbol": "drag"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "drag_and_drop"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "dynamic_record_choice"
+      },
+      {
+        "sprite": "utility",
         "symbol": "edit"
       },
       {
@@ -1989,7 +2361,15 @@
       },
       {
         "sprite": "utility",
+        "symbol": "einstein"
+      },
+      {
+        "sprite": "utility",
         "symbol": "email"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "email_open"
       },
       {
         "sprite": "utility",
@@ -2005,6 +2385,10 @@
       },
       {
         "sprite": "utility",
+        "symbol": "end_messaging_session"
+      },
+      {
+        "sprite": "utility",
         "symbol": "erect_window"
       },
       {
@@ -2014,6 +2398,10 @@
       {
         "sprite": "utility",
         "symbol": "event"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "events"
       },
       {
         "sprite": "utility",
@@ -2061,7 +2449,15 @@
       },
       {
         "sprite": "utility",
+        "symbol": "formula"
+      },
+      {
+        "sprite": "utility",
         "symbol": "forward"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "forward_up"
       },
       {
         "sprite": "utility",
@@ -2070,6 +2466,10 @@
       {
         "sprite": "utility",
         "symbol": "full_width_view"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "global_constant"
       },
       {
         "sprite": "utility",
@@ -2082,6 +2482,10 @@
       {
         "sprite": "utility",
         "symbol": "help"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "help_center"
       },
       {
         "sprite": "utility",
@@ -2109,6 +2513,10 @@
       },
       {
         "sprite": "utility",
+        "symbol": "incoming_call"
+      },
+      {
+        "sprite": "utility",
         "symbol": "info"
       },
       {
@@ -2122,6 +2530,10 @@
       {
         "sprite": "utility",
         "symbol": "insert_template"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "inspector_panel"
       },
       {
         "sprite": "utility",
@@ -2165,11 +2577,19 @@
       },
       {
         "sprite": "utility",
+        "symbol": "leave_conference"
+      },
+      {
+        "sprite": "utility",
         "symbol": "left"
       },
       {
         "sprite": "utility",
         "symbol": "left_align_text"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "level_down"
       },
       {
         "sprite": "utility",
@@ -2189,11 +2609,19 @@
       },
       {
         "sprite": "utility",
+        "symbol": "linked"
+      },
+      {
+        "sprite": "utility",
         "symbol": "list"
       },
       {
         "sprite": "utility",
         "symbol": "listen"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "live_message"
       },
       {
         "sprite": "utility",
@@ -2210,6 +2638,10 @@
       {
         "sprite": "utility",
         "symbol": "logout"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "loop"
       },
       {
         "sprite": "utility",
@@ -2253,6 +2685,10 @@
       },
       {
         "sprite": "utility",
+        "symbol": "money"
+      },
+      {
+        "sprite": "utility",
         "symbol": "moneybag"
       },
       {
@@ -2262,6 +2698,14 @@
       {
         "sprite": "utility",
         "symbol": "move"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "multi_picklist"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "multi_select_checkbox"
       },
       {
         "sprite": "utility",
@@ -2297,6 +2741,10 @@
       },
       {
         "sprite": "utility",
+        "symbol": "number_input"
+      },
+      {
+        "sprite": "utility",
         "symbol": "office365"
       },
       {
@@ -2329,6 +2777,10 @@
       },
       {
         "sprite": "utility",
+        "symbol": "outcome"
+      },
+      {
+        "sprite": "utility",
         "symbol": "overflow"
       },
       {
@@ -2350,6 +2802,10 @@
       {
         "sprite": "utility",
         "symbol": "palette"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "password"
       },
       {
         "sprite": "utility",
@@ -2381,6 +2837,14 @@
       },
       {
         "sprite": "utility",
+        "symbol": "picklist_choice"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "picklist_type"
+      },
+      {
+        "sprite": "utility",
         "symbol": "pin"
       },
       {
@@ -2389,11 +2853,27 @@
       },
       {
         "sprite": "utility",
+        "symbol": "play"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "podcast_webinar"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "pop_in"
+      },
+      {
+        "sprite": "utility",
         "symbol": "power"
       },
       {
         "sprite": "utility",
         "symbol": "preview"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "print"
       },
       {
         "sprite": "utility",
@@ -2437,7 +2917,15 @@
       },
       {
         "sprite": "utility",
+        "symbol": "radio_button"
+      },
+      {
+        "sprite": "utility",
         "symbol": "rating"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "reassign"
       },
       {
         "sprite": "utility",
@@ -2446,6 +2934,22 @@
       {
         "sprite": "utility",
         "symbol": "record_create"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "record_delete"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "record_lookup"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "record_update"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "recurring_exception"
       },
       {
         "sprite": "utility",
@@ -2549,7 +3053,15 @@
       },
       {
         "sprite": "utility",
+        "symbol": "screen"
+      },
+      {
+        "sprite": "utility",
         "symbol": "search"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "send"
       },
       {
         "sprite": "utility",
@@ -2597,6 +3109,10 @@
       },
       {
         "sprite": "utility",
+        "symbol": "shortcuts"
+      },
+      {
+        "sprite": "utility",
         "symbol": "side_list"
       },
       {
@@ -2617,6 +3133,14 @@
       },
       {
         "sprite": "utility",
+        "symbol": "sobject"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "sobject_collection"
+      },
+      {
+        "sprite": "utility",
         "symbol": "socialshare"
       },
       {
@@ -2629,11 +3153,27 @@
       },
       {
         "sprite": "utility",
+        "symbol": "stage"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "stage_collection"
+      },
+      {
+        "sprite": "utility",
         "symbol": "standard_objects"
       },
       {
         "sprite": "utility",
+        "symbol": "steps"
+      },
+      {
+        "sprite": "utility",
         "symbol": "stop"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "strategy"
       },
       {
         "sprite": "utility",
@@ -2669,6 +3209,10 @@
       },
       {
         "sprite": "utility",
+        "symbol": "system_and_global_variable"
+      },
+      {
+        "sprite": "utility",
         "symbol": "table"
       },
       {
@@ -2689,11 +3233,27 @@
       },
       {
         "sprite": "utility",
+        "symbol": "text"
+      },
+      {
+        "sprite": "utility",
         "symbol": "text_background_color"
       },
       {
         "sprite": "utility",
         "symbol": "text_color"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "text_template"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "textarea"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "textbox"
       },
       {
         "sprite": "utility",
@@ -2713,7 +3273,27 @@
       },
       {
         "sprite": "utility",
+        "symbol": "toggle_panel_bottom"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "toggle_panel_left"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "toggle_panel_right"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "toggle_panel_top"
+      },
+      {
+        "sprite": "utility",
         "symbol": "topic"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "topic2"
       },
       {
         "sprite": "utility",
@@ -2721,7 +3301,15 @@
       },
       {
         "sprite": "utility",
+        "symbol": "tracker"
+      },
+      {
+        "sprite": "utility",
         "symbol": "trail"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "trailhead"
       },
       {
         "sprite": "utility",
@@ -2734,6 +3322,10 @@
       {
         "sprite": "utility",
         "symbol": "turn_off_notifications"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "type"
       },
       {
         "sprite": "utility",
@@ -2754,6 +3346,10 @@
       {
         "sprite": "utility",
         "symbol": "undo"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "unlinked"
       },
       {
         "sprite": "utility",
@@ -2781,6 +3377,10 @@
       },
       {
         "sprite": "utility",
+        "symbol": "variable"
+      },
+      {
+        "sprite": "utility",
         "symbol": "video"
       },
       {
@@ -2798,6 +3398,10 @@
       {
         "sprite": "utility",
         "symbol": "volume_off"
+      },
+      {
+        "sprite": "utility",
+        "symbol": "waits"
       },
       {
         "sprite": "utility",

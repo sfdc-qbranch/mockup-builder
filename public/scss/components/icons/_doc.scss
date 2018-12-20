@@ -1,4 +1,4 @@
-// Lightning Design System 2.5.0
+// Lightning Design System 2.7.5
 // Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
@@ -49,6 +49,10 @@
  * - [Doctype](/components/icons?variant=doctype) icons have no background color.
  * - [Standard](/components/icons?variant=standard) and [Custom](/components/icons?variant=custom) icons have a rounded square shape and use a class on the container for the background color.
  * - [Utility](/components/icons?variant=base) icons have no background color.
+ *
+ * #### Changing the fill of an icon using currentColor
+ *
+ * To change the fill of an icon to match the current color of it's parent, add the `slds-current-color` class to the icon's container. This class utilizes the css currentColor value.
  *
  * #### Accessibility
  *

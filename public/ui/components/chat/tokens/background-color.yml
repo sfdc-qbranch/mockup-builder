@@ -1,4 +1,5 @@
 global:
+  scope: component
   type: color
   category: background-color
   cssProperties:
@@ -6,8 +7,8 @@ global:
   - 'border*'
   - box-shadow
 imports:
-- "../../../../design-tokens/force-base/aliases/color.yml"
-- "../../../../design-tokens/color-palettes.yml"
+- "../../../../design-tokens/aliases/colors.yml"
+- "../../../../design-tokens/aliases/color-palettes.yml"
 props:
   CHAT_MESSAGE_COLOR_BACKGROUND_INBOUND:
     value: '{!PALETTE_COOL_GRAY_3}'
@@ -18,3 +19,6 @@ props:
   CHAT_MESSAGE_COLOR_BACKGROUND_OUTBOUND_AGENT:
     value: '{!PALETTE_COOL_GRAY_9}'
     comment: Outbound agent chat message background color.
+  CHAT_MESSAGE_COLOR_BACKGROUND_STATUS:
+    value: '{!PALETTE_COOL_GRAY_1}'
+    comment: Status chat message background color.
