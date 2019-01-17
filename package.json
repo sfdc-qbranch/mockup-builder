@@ -9,20 +9,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ellyzz08/NodeTrail_ImageText.git"
+    "url": "git+https://github.com/Ellyzz08/mockup-builder.git"
   },
   "author": "EllyZhu",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Ellyzz08/NodeTrail_ImageText/issues"
+    "url": "https://github.com/Ellyzz08/mockup-builder/issues"
   },
-  "homepage": "https://github.com/Ellyzz08/NodeTrail_ImageText#readme",
+  "homepage": "https://github.com/Ellyzz08/mockup-builder#readme",
   "dependencies": {
-    "@salesforce-ux/design-system": "^2.5.0",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
-    "morgan": "^1.9.0",
-    "nodemon": "^1.17.3"
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.9"
   },
   "devDependencies": {
     "eslint": "^4.14.0"
