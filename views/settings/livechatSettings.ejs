@@ -16,7 +16,7 @@
 
         <!--Subject-->
         <%- include('../helper/inputtext', {id:'lc_subjectInput', placeholder:'Hello', label:'Customer\'s Subject'})%>
-
+  
         <!--Start Chatting Button-->
         <%- include('../helper/inputtext', {id:'lc_startchatbtnInput', placeholder:'Start Chatting', label:'Start Chatting Button'})%>
 
@@ -35,20 +35,21 @@
         <!--Time Setting-->
 
         <!--Text Color-->
+        <!--TODO:-->
         <fieldset class="slds-form-element">
             <legend class="slds-form-element__legend slds-form-element__label">Text Color</legend>
             <div class="slds-form-element__control">
                 <div class="slds-radio_button-group" style="border:none">
                     <span class="slds-radio">
-                        <input type="radio" id="lc_textcolorblack" name="options" value="on" checked/>
-                        <label class="slds-radio__label" for="lc_textcolorblack">
+                        <input type="radio" name="themeOption" value="Black" checked/>
+                        <label class="slds-radio__label">
                             <span class="slds-radio_faux"></span>
                             <span class="slds-form-element__label">Black</span>
                         </label>
                     </span>
                     <span class="slds-radio">
-                        <input type="radio" id="lc_textcolorwhite" name="options" value="on" />
-                        <label class="slds-radio__label" for="lc_textcolorwhite">
+                        <input type="radio" name="themeOption" value="White"/>
+                        <label class="slds-radio__label">
                             <span class="slds-radio_faux"></span>
                             <span class="slds-form-element__label">White</span>
                         </label>
