@@ -88,8 +88,11 @@
         //SET AGENT NAME (Screen4)
         bindSettingAndDisplayTextField('lc_agentnameInput','#lc_headerAgentNameDisplay');
 
-        
 
+       //SET APP LOGO IMAGE
+        $("#lc_agentImageInput").change(function() {
+            readURL(this, $('#lc_agentImageDisplay'));
+        });
 
         $('#nextArrow').click(function(){
             var currentPageId = $('#capture').attr('data');
