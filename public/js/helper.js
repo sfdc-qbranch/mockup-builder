@@ -51,6 +51,7 @@ function download_mockup_active(scale){
 }
 
 function bindSettingAndDisplayTextField(settingElementId, displayElementSelector){
+    
     var placeholder = $("#" + settingElementId).attr('placeholder');
     $("#" + settingElementId).on('keyup', function() {
         if($("#" + settingElementId).val().length == 0 &&  placeholder !== undefined){
@@ -59,9 +60,12 @@ function bindSettingAndDisplayTextField(settingElementId, displayElementSelector
             $(displayElementSelector).html($("#" + settingElementId).val());
         }
     });
+
+    console.log('bindSettingAndDisplayTextField:' + settingElementId,displayElementSelector);
 }
 
 function bindSettingAndDisplayInputField(settingElementId, displayElementSelector){
+
     var placeholder = $("#" + settingElementId).attr('placeholder');
     $("#" + settingElementId).on('keyup', function() {
         if($("#" + settingElementId).val().length == 0 &&  placeholder !== undefined){

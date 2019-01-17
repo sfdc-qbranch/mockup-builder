@@ -30,7 +30,6 @@ app.use(bodyParser.urlencoded({
 //Homepage
 app.get('/',function(req,res){
     res.render('livemessage');
-    //res.render('home');
 });
 
 
