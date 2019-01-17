@@ -89,9 +89,14 @@
         bindSettingAndDisplayTextField('lc_agentnameInput','#lc_headerAgentNameDisplay');
 
 
-       //SET APP LOGO IMAGE
+       //SET AGENT IMAGE
         $("#lc_agentImageInput").change(function() {
             readURL(this, $('#lc_agentImageDisplay'));
+        });
+
+        //SET BACKGROUND IMAGE
+        $("#lc_headerbgimageInput").change(function() {
+            readURLAsBackground(this, $('.lc_largeheaderbar'));
         });
 
         $('#nextArrow').click(function(){

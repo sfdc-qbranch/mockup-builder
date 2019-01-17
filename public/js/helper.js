@@ -22,6 +22,7 @@ function uploadImage(inputElemId, previewElemId) {
 };
 
 function readURL(input,output) {
+
     if (input.files && input.files[0]) {
         var reader = new FileReader();
         reader.onload = function (e) {
@@ -32,6 +33,22 @@ function readURL(input,output) {
         reader.readAsDataURL(input.files[0]);
     }
 }
+
+function readURLAsBackground(input,output) {
+    console.log(input,output);
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            output.css('background-repeat','no-repeat');
+            output.css('background-position','top center');
+            output.css('background-image','url("' + e.target.result + '")');
+            output.hide();
+            output.fadeIn(350);
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
 
 
 function download_mockup_active(scale){
