@@ -1,27 +1,27 @@
 <div class="container page-settings">
 
 
-    <!--Chat with Expert--->
+    <!--Chat with Expert-->
         <%- include('../helper/inputtext', {id:'lc_chatwithexpertInput', placeholder:'Chat with an expert', label:'Desktop Chat Button'})%>
 
         <!--CUSTOMER INFO-->
-        <!--First Name--->
+        <!--First Name-->
         <%- include('../helper/inputtext', {id:'lc_fnameInput', placeholder:'Lauren', label:'Customer\'s Firstname'})%>
 
-        <!--Last Name--->
+        <!--Last Name-->
         <%- include('../helper/inputtext', {id:'lc_lnameInput', placeholder:'Bailey', label:'Customer\'s Lastname'})%>
 
-        <!--Email--->
+        <!--Email-->
         <%- include('../helper/inputtext', {id:'lc_emailInput', placeholder:'lbailey@example.com', label:'Customer\'s Email'})%>
 
-        <!--Subject--->
+        <!--Subject-->
         <%- include('../helper/inputtext', {id:'lc_subjectInput', placeholder:'Hello', label:'Customer\'s Subject'})%>
-
-        <!--Start Chatting Button--->
+  
+        <!--Start Chatting Button-->
         <%- include('../helper/inputtext', {id:'lc_startchatbtnInput', placeholder:'Start Chatting', label:'Start Chatting Button'})%>
 
         <!--Background Image-->
-        <%- include('../helper/imagefileselector', {imageselectorlabel:'Header Background Image',imgInputId:'lc_headerbgimageInput',helptext:''}) %>
+        <%- include('../helper/imagefileselector', {imageselectorlabel:'Header Background Image',imgInputId:'lc_headerbgimageInput',helptext:'(.png .jpg .jpeg)'}) %>
 
         <!--Loading Page Headline-->
         <%- include('../helper/inputtext', {id:'lc_loadingHeadlineInput', placeholder:'Input to overwrite..', label:'Loading Page Headline'})%>
@@ -30,25 +30,26 @@
         <%- include('../helper/inputtext', {id:'lc_agentnameInput', placeholder:'Tim', label:'Agent Name'})%>
 
         <!--Agent Image-->
-        <%- include('../helper/imagefileselector', {imageselectorlabel:'Agent Profile Image',imgInputId:'lc_agentimageInput',helptext:''}) %>
+        <%- include('../helper/imagefileselector', {imageselectorlabel:'Agent Profile Image',imgInputId:'lc_agentImageInput', helptext:'100 * 100 (.png .jpg .jpeg)'}) %>
 
         <!--Time Setting-->
 
         <!--Text Color-->
+        <!--TODO:-->
         <fieldset class="slds-form-element">
             <legend class="slds-form-element__legend slds-form-element__label">Text Color</legend>
             <div class="slds-form-element__control">
                 <div class="slds-radio_button-group" style="border:none">
                     <span class="slds-radio">
-                        <input type="radio" id="lc_textcolorblack" name="options" value="on" checked/>
-                        <label class="slds-radio__label" for="lc_textcolorblack">
+                        <input type="radio" name="themeOption" value="Black" checked/>
+                        <label class="slds-radio__label">
                             <span class="slds-radio_faux"></span>
                             <span class="slds-form-element__label">Black</span>
                         </label>
                     </span>
                     <span class="slds-radio">
-                        <input type="radio" id="lc_textcolorwhite" name="options" value="on" />
-                        <label class="slds-radio__label" for="lc_textcolorwhite">
+                        <input type="radio" name="themeOption" value="White"/>
+                        <label class="slds-radio__label">
                             <span class="slds-radio_faux"></span>
                             <span class="slds-form-element__label">White</span>
                         </label>

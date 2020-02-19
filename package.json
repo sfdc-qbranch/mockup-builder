@@ -1,5 +1,5 @@
 {
-  "name": "nodetrailimagetext",
+  "name": "mockup-builder",
   "version": "1.0.0",
   "description": "Editable Text overlay on a custom image",
   "main": "app.js",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/Ellyzz08/mockup-builder.git"
   },
-  "author": "EllyZhu",
+  "author": "Elly Yijun Zhu",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Ellyzz08/mockup-builder/issues"

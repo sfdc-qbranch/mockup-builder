@@ -22,6 +22,7 @@ function uploadImage(inputElemId, previewElemId) {
 };
 
 function readURL(input,output) {
+
     if (input.files && input.files[0]) {
         var reader = new FileReader();
         reader.onload = function (e) {
@@ -32,6 +33,22 @@ function readURL(input,output) {
         reader.readAsDataURL(input.files[0]);
     }
 }
+
+function readURLAsBackground(input,output) {
+    console.log(input,output);
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            output.css('background-repeat','no-repeat');
+            output.css('background-position','top center');
+            output.css('background-image','url("' + e.target.result + '")');
+            output.hide();
+            output.fadeIn(350);
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
 
 
 function download_mockup_active(scale){
@@ -51,6 +68,7 @@ function download_mockup_active(scale){
 }
 
 function bindSettingAndDisplayTextField(settingElementId, displayElementSelector){
+    
     var placeholder = $("#" + settingElementId).attr('placeholder');
     $("#" + settingElementId).on('keyup', function() {
         if($("#" + settingElementId).val().length == 0 &&  placeholder !== undefined){
@@ -59,9 +77,12 @@ function bindSettingAndDisplayTextField(settingElementId, displayElementSelector
             $(displayElementSelector).html($("#" + settingElementId).val());
         }
     });
+
+    console.log('bindSettingAndDisplayTextField:' + settingElementId,displayElementSelector);
 }
 
 function bindSettingAndDisplayInputField(settingElementId, displayElementSelector){
+
     var placeholder = $("#" + settingElementId).attr('placeholder');
     $("#" + settingElementId).on('keyup', function() {
         if($("#" + settingElementId).val().length == 0 &&  placeholder !== undefined){
@@ -70,6 +91,35 @@ function bindSettingAndDisplayInputField(settingElementId, displayElementSelecto
             $(displayElementSelector).val($("#" + settingElementId).val());
         }
     });
+}
+
+//bw: If only returns black and white as contrast color
+function getInvertColor(hex, bw) {
+    if (hex.indexOf('#') === 0) {
+        hex = hex.slice(1);
+    }
+    // convert 3-digit hex to 6-digits.
+    if (hex.length === 3) {
+        hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+    }
+    if (hex.length !== 6) {
+        throw new Error('Invalid HEX color.');
+    }
+    var r = parseInt(hex.slice(0, 2), 16),
+        g = parseInt(hex.slice(2, 4), 16),
+        b = parseInt(hex.slice(4, 6), 16);
+    if (bw) {
+        // http://stackoverflow.com/a/3943023/112731
+        return (r * 0.299 + g * 0.587 + b * 0.114) > 186
+            ? '#000000'
+            : '#FFFFFF';
+    }
+    // invert color components
+    r = (255 - r).toString(16);
+    g = (255 - g).toString(16);
+    b = (255 - b).toString(16);
+    // pad each with zeros and return
+    return "#" + padZero(r) + padZero(g) + padZero(b);
 }
 
 

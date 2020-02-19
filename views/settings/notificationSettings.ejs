@@ -1,23 +1,27 @@
 <div class="container page-settings">
-    
-    
+
+
     <!--MOCKUP TEXT SETTING-->
     <%- include('../partials/designYourMockupText') %>
-    
+
     <!--TIME SETTING-->
     <div class="page-setting-element">
         <%- include('../helper/timeselector') %>
     </div>
-    
+
     <!--DATE SETTING-->
     <div class="page-setting-element">
         <%- include('../helper/dateselector') %>
     </div>
-    
-    
+
+
     <!--APP LOGO IMAGE SETTING-->
     <div class="page-setting-element">
         <%- include('../helper/imagefileselector', {imageselectorlabel:'Push Notification Icon:',imgInputId:'n_setAppLogoImage', helptext:'100 * 100 (.png .jpg .jpeg)'}) %>
+    </div>
+
+    <div class="page-setting-element">
+        <%- include('../helper/imagefileselector', {imageselectorlabel:'Background Image:',imgInputId:'n_setScreenBackgroundImage', helptext:'375 * 667 (.png .jpg .jpeg)'}) %>
     </div>
 
     <!--APP NAME SETTING-->
@@ -30,16 +34,16 @@
     <div class="page-setting-element">
         <label class="slds-form-element__label" for="n_setTimeAgo">Notification Time Received:</label>
         <select class="slds-select" id="n_setTimeAgo">
-                        <option selected="selected">now</option>
-                        <% for(var min=5; min<60; min+=5) {%>
-                           <option><%= min %>m ago</option>
-                        <% } %>
-                        <% for(var hr=1; hr<12; hr+=1) {%>
-                           <option><%= hr %>h ago</option>
-                        <% } %>
+            <option selected="selected">now</option>
+            <% for(var min=5; min<60; min+=5) {%>
+            <option><%= min %>m ago</option>
+            <% } %>
+            <% for(var hr=1; hr<12; hr+=1) {%>
+            <option><%= hr %>h ago</option>
+            <% } %>
         </select>
     </div>
-    
+
     <!--NOTIFICATION MESSAGE SETTING-->
     <div class="page-setting-element">
         <div class="slds-form-element">
@@ -50,5 +54,5 @@
         </div>
     </div>
 
-    
+
 </div>

@@ -14,10 +14,10 @@
     <div class="lc_chatuserscreen slds-align_absolute-center">
 
         <!--SMALL HEADBAR-->
-        <div class="lc_smallheaderbar defaultbackground slds-align_absolute-center">
-            <!--:Small Header Icons--->
-            <img class="lc_smallHeaderImage" src="img/LiveChat_HeaderIcon_Black.png" />
-            <span class="slds-text-heading_small">Live Chat</span>
+        <div class="lc_smallheaderbar defaultBlackBg slds-align_absolute-center">
+            <!--:Small Header Icons-->
+            <img class="lc_smallHeaderImage" src="img/LiveChat_HeaderIcon_White.png" />
+            <span id="smallHeaderBarText" class="slds-text-heading_small">Live Chat</span>
         </div>
 
         <!--USER INPUT GROUP-->
@@ -66,7 +66,7 @@
         </div>
 
         <!--START CHAT BUTTON-->
-        <div class="lc_bottombutton slds-align_absolute-center defaultbackground" id="lc_startchatbuttonDisplay">
+        <div class="lc_bottombutton slds-align_absolute-center activebackground" id="lc_startchatbuttonDisplay">
             Start Chatting
         </div>
 
@@ -81,20 +81,22 @@
 
         <!--LARGE HEADBAR-->
         <div class="lc_largeheaderbar slds-align_absolute-center defaultbackground">
-            <!--child:Small Header Icons--->
-            <img class="lc_smallHeaderImage" src="img/LiveChat_HeaderIcon_Black.png" />
+            <!--child:Small Header Icons-->
+            <img class="lc_smallHeaderImage" 
+            id="lc_headerGroup1"
+            src="img/LiveChat_HeaderIcon_Black.png" />
 
-            <!--child:Users Greeting Title--->
+            <!--child:Users Greeting Title-->
             <div class="slds-text-heading_large lc_headerGreetingTitle" id="lc_userGreetingTitleInput">
-                Hello <span name="lc_fnameDisplaySpan">John</span>!
+                Hello <span name="lc_fnameDisplaySpan">Lauren</span>!
             </div>
 
-            <!--child:Users Profile Image--->
+            <!--child:Users Profile Image-->
             <div class="lc_headerProfilePhoto">
-                <img src="img/salesforce-logo.png" name="lc_profilePhotoDisplay"/>
+                <img src="img/salesforce-logo.png" id="lc_agentImageDisplay"/>
             </div>
 
-            <!--child:Users Greeting Message--->
+            <!--child:Users Greeting Message-->
             <div class="slds-text-heading_large lc_headerGreetingMessage" id="lc_userGreetingMessageInput">
                 An agent is on the way.
             </div>
@@ -125,31 +127,29 @@
 
         <!--LARGE HEADER-->
         <div class="lc_largeheaderbar slds-align_absolute-center defaultbackground toFront">
-            <!--child:Header Group Image--->
-            <img class="lc_groupHeaderImage putfront" src="img/LiveChat_HeaderGroup_Black.png" />
+            <!--child:Header Group Image-->
+            <img class="lc_groupHeaderImage putfront" src="img/LiveChat_HeaderGroup_Black.png" id="lc_headerGroup2"/>
 
-            <!--child:Header Agent Name--->
+            <!--child:Header Agent Name-->
             <span class="lc_headerAgentName putfront" id="lc_headerAgentNameDisplay">Tim</span>
 
         </div>
 
         <!--CHAT START TIME-->
-        <div class="lc_chatStartMessage toFront">
-            Chat started at <span id="lc_chatStartTimeDisplay">9:00 AM</span>
-        </div>
+     
 
         <!--CHAT CONTAINER-->
         <div class="lc_chatContainer">
+                <div>
+                        Chat started at <span id="lc_chatStartTimeDisplay">9:00 AM</span>
+                    </div>
             <section role="log" class="slds-chat">
                 <ul class="slds-chat-list">
                     <li class="slds-chat-listitem slds-chat-listitem_inbound">
                         <div class="slds-chat-message">
-                            <span class="slds-avatar slds-avatar_circle slds-chat-avatar">
-                                <img src="img/salesforce-logo.png" name="lc_profilePhotoDisplay"/>
-                            </span>
                             <div class="slds-chat-message__body">
                                 <div class="slds-chat-message__text slds-chat-message__text_inbound">
-                                    <span>Hi, my Alexa onldfasfsd sfsfsf sdfsfsd sdfsfs fd sfch</span>
+                                    <span>Hi, my CloudWidget only speaks French</span>
                                 </div>
                             </div>
                         </div>
@@ -159,28 +159,36 @@
                         <div class="slds-chat-message">
                             <div class="slds-chat-message__body">
                                 <div class="slds-chat-message__text slds-chat-message__text_outbound">
-                                    <span>Hi Taylor, thank you for contacting Amazon Support. Can you please tell me what language you are trying to program on your Amazon Echo?
-              
+                                    <span>Hi Lauren, thank you for contacting Widget Support. Can you please tell me what language you are trying to program on your CloudWidget?
                                     </span>
                                 </div>
 
                             </div>
                         </div>
-                    </li>
+                    </li>  
                     
+                    <li class="slds-chat-listitem slds-chat-listitem_inbound">
+                        <div class="slds-chat-message">
+                            <div class="slds-chat-message__body">
+                                <div class="slds-chat-message__text slds-chat-message__text_inbound">
+                                    <span>I'm not trying to program any language</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
                     <li class="slds-chat-listitem slds-chat-listitem_outbound">
                         <div class="slds-chat-message">
                             <div class="slds-chat-message__body">
                                 <div class="slds-chat-message__text slds-chat-message__text_outbound">
-                                    <span>Hi Taylor, thank you for contacting Amazon Support. Can you please tell me what language you are trying to program on your Amazon Echo?
-              
+                                    <span>Sorry to hear that. Let me see what I can do about this.
                                     </span>
                                 </div>
 
                             </div>
                         </div>
-                    </li>
-                    
+                    </li> 
+
                 </ul>
             </section>
         </div>
@@ -201,6 +209,10 @@
         z-index:1;
     }
     
+    .slds-chat-message {
+        width:90%;
+    }
+
     img.lc_groupHeaderImage {
         width: 90%;
         position: absolute;
