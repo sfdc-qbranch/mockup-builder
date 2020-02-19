@@ -14,10 +14,10 @@
     <div class="lc_chatuserscreen slds-align_absolute-center">
 
         <!--SMALL HEADBAR-->
-        <div class="lc_smallheaderbar defaultbackground slds-align_absolute-center">
+        <div class="lc_smallheaderbar defaultBlackBg slds-align_absolute-center">
             <!--:Small Header Icons-->
-            <img class="lc_smallHeaderImage" src="img/LiveChat_HeaderIcon_Black.png" />
-            <span class="slds-text-heading_small">Live Chat</span>
+            <img class="lc_smallHeaderImage" src="img/LiveChat_HeaderIcon_White.png" />
+            <span id="smallHeaderBarText" class="slds-text-heading_small">Live Chat</span>
         </div>
 
         <!--USER INPUT GROUP-->
@@ -66,7 +66,7 @@
         </div>
 
         <!--START CHAT BUTTON-->
-        <div class="lc_bottombutton slds-align_absolute-center defaultbackground" id="lc_startchatbuttonDisplay">
+        <div class="lc_bottombutton slds-align_absolute-center activebackground" id="lc_startchatbuttonDisplay">
             Start Chatting
         </div>
 
@@ -136,12 +136,13 @@
         </div>
 
         <!--CHAT START TIME-->
-        <div class="lc_chatStartMessage toFront">
-            Chat started at <span id="lc_chatStartTimeDisplay">9:00 AM</span>
-        </div>
+     
 
         <!--CHAT CONTAINER-->
         <div class="lc_chatContainer">
+                <div>
+                        Chat started at <span id="lc_chatStartTimeDisplay">9:00 AM</span>
+                    </div>
             <section role="log" class="slds-chat">
                 <ul class="slds-chat-list">
                     <li class="slds-chat-listitem slds-chat-listitem_inbound">

@@ -3,28 +3,27 @@
 <title>mockup builder - notification</title>
 
 <div class="slds-grid">
-        <div class="slds-col slds-size_1-of-7">
-            <%- include('partials/navbar') %>
-        </div>
-        <div class="slds-col slds-size_6-of-7 ">
-            <%- include('partials/header') %>
-            <div class="slds-grid">
-                    <div class="slds-col slds-size_4-of-6 ">
-                        <div class="page-content">
-                                <div class="slds-align_absolute-center">
-                                        <%- include('displays/notificationDisplay') %>
-                                </div>
-                        </div>
+    <div class="slds-col slds-size_1-of-7">
+        <%- include('partials/navbar') %>
+    </div>
+    <div class="slds-col slds-size_6-of-7 ">
+        <%- include('partials/header') %>
+        <div class="slds-grid">
+            <div class="slds-col slds-size_4-of-6 ">
+                <div class="page-content">
+                    <div class="slds-align_absolute-center">
+                        <%- include('displays/notificationDisplay') %>
                     </div>
-                    <div class="slds-col slds-size_2-of-6 page-rightbar">
-                            <%- include('settings/notificationSettings') %>
-                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_2-of-6 page-rightbar">
+                <%- include('settings/notificationSettings') %>
             </div>
         </div>
     </div>
+</div>
 
 <style>
-
     #n_backGroundImage {
         width: inherit;
         height: inherit;
@@ -115,15 +114,11 @@
         font-size: 12px;
         font-weight: 400;
     }
-
-
-
-
 </style>
 
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
 
         //DISPLAY TODAYS DATE - USING HELPER FUNCTION
         $("#datedisplay").html(moment().format('dddd, DD MMMM'));
@@ -140,7 +135,7 @@
             dynamic: false,
             dropdown: true,
             scrollbar: true,
-            change: function() {
+            change: function () {
                 $('#timedisplay').html(this.val());
             },
         });
@@ -152,32 +147,38 @@
             autoclose: true
         });
 
-        $('input.datepicker').on('change', function() {
+        $('input.datepicker').on('change', function () {
             $("#datedisplay").html($('input.datepicker').val());
         });
 
         //SET APP NAME
-        $("#n_setAppName").on('keyup', function() {
+        $("#n_setAppName").on('keyup', function () {
             $("#notificationTitleSpan").html($("#n_setAppName").val());
         });
 
         //SET APP LOGO IMAGE
-        $("#n_setAppLogoImage").change(function() {
+        $("#n_setAppLogoImage").change(function () {
             readURL(this, $('#appLogo'));
         });
 
+        //SET APP LOGO IMAGE
+        $("#n_setScreenBackgroundImage").change(function () {
+            readURL(this, $('#n_backGroundImage'));
+        });
+
+
         //SET NOTIFICATION TIME AGO
-        $("#n_setTimeAgo").change(function() {
+        $("#n_setTimeAgo").change(function () {
             $('#notificationTimeSpan').html($("#n_setTimeAgo").val());
         });
 
         //SET NOTIFICATION MESSAGE
-        $("#n_setNotification").on('keyup', function() {
-            $("#notificationMessageSpan").html($("#n_setNotification").val().replace(/\r?\n/g, '<br/>'));
+        $("#n_setNotification").on('keyup', function () {
+            $("#notificationMessageSpan").html($("#n_setNotification").val().replace(/\r?\n/g,
+                '<br/>'));
         });
 
         download_mockup_active();
 
     });
-
 </script>
