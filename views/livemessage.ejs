@@ -185,13 +185,17 @@
         let messageDivNode = document.createElement("div");
         let inputElement = document.getElementById(inputElementId);
         let message = inputElement.value;
+        if (message == null || message.trim().length == 0) {
+            return;
+        }
 
         //Create Chat Message In Preview Panel
         messageDivNode.setAttribute("class", userClass);
         messageDivNode.style.fontSize = $('#lm_fontSize').val() + 'px';
         messageDivNode.style.lineHeight = $('#lm_fontSize').val() + 'px';
         messageDivNode.innerHTML = message;
-        console.log(message);
+        //console.log(message);
+
         document.getElementById("chatPanelPreview").appendChild(messageDivNode);
 
         //Clear the input textbox
@@ -212,7 +216,7 @@
 
         //FONTSIZE
         $('#lm_fontSize').change(function () {
-            console.log($(this).val());
+            // console.log($(this).val());
             $('#chatPanelPreview div').css({
                 'font-size': $(this).val() + 'px',
                 'line-height': $(this).val() + 'px'
