@@ -2,7 +2,7 @@
 
     <!--MOCKUP TEXT SETTING-->
     <%- include('../partials/designYourMockupText') %>
-    
+
     <!--TIME SETTING-->
     <div class="page-setting-element">
         <%- include('../helper/timeselector') %>
@@ -21,7 +21,7 @@
             <textarea id="lm_senderMessage" class="slds-textarea slds-m-bottom_xx-small" placeholder=""></textarea>
             <button id="addFromThem" class="slds-float_right slds-button slds-button_outline-brand">Add</button>
         </div>
-        
+
     </div>
 
     <!--MESSAGE FROM RECEIVER-->
@@ -33,10 +33,18 @@
         </div>
     </div>
 
+    <!--MESSAGE FONT SIZE-->
+    <div class="slds-form-element slds-m-bottom_xx-large">
+        <label class="slds-form-element__label" for="lm_receiverMessage">Font Size (px):</label>
+        <div class="slds-form-element__control">
+            <input id="lm_fontSize" type="number" class="slds-input" placeholder="" value="15" min="8"></input>
+        </div>
+    </div>
+
 
     <!--CHAT MESSAGE HELPER BUTTONS-->
 
-    <div class="lm_settings_helperbuttons slds-text-align--center" >
+    <div class="lm_settings_helperbuttons slds-text-align--center">
         <div class="slds-m-around_small">
             <button id="removeLast" class="slds-button slds-button_outline-brand">Remove Last Message</button>
         </div>

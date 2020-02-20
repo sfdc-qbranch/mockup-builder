@@ -154,30 +154,29 @@
 
     .lm_settings_helperbuttons button {
         width: 80%;
-    } 
-
+    }
 </style>
 
 <div class="slds-grid">
-        <div class="slds-col slds-size_1-of-7">
-            <%- include('partials/navbar') %>
-        </div>
-        <div class="slds-col slds-size_6-of-7 ">
-            <%- include('partials/header') %>
-            <div class="slds-grid">
-                    <div class="slds-col slds-size_4-of-6 ">
-                        <div class="page-content">
-                                <div class="slds-align_absolute-center">
-                                        <%- include('displays/livemessageDisplay') %>
-                                </div>
-                        </div>
+    <div class="slds-col slds-size_1-of-7">
+        <%- include('partials/navbar') %>
+    </div>
+    <div class="slds-col slds-size_6-of-7 ">
+        <%- include('partials/header') %>
+        <div class="slds-grid">
+            <div class="slds-col slds-size_4-of-6 ">
+                <div class="page-content">
+                    <div class="slds-align_absolute-center">
+                        <%- include('displays/livemessageDisplay') %>
                     </div>
-                    <div class="slds-col slds-size_2-of-6 page-rightbar">
-                            <%- include('settings/livemessageSettings') %>
-                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_2-of-6 page-rightbar">
+                <%- include('settings/livemessageSettings') %>
             </div>
         </div>
     </div>
+</div>
 
 
 <script>
@@ -198,24 +197,33 @@
     }
 
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         // FROM THEM ADD 
-        $('#addFromThem').on('click', function() {
+        $('#addFromThem').on('click', function () {
             addMessage('from-them', 'lm_senderMessage');
         });
 
         //FROM ME ADD
-        $('#addFromMe').on('click', function() {
+        $('#addFromMe').on('click', function () {
             addMessage('from-me', 'lm_receiverMessage');
         });
 
+        //FONTSIZE
+        $('#lm_fontSize').change(function () {
+            console.log($(this).val());
+            $('#chatPanelPreview div').css({
+                'font-size': $(this).val() + 'px',
+                'line-height': $(this).val() + 'px'
+            });
+        });
+
         //CLEAR
-        $('#clear').on('click', function() {
+        $('#clear').on('click', function () {
             $('#chatPanelPreview').empty();
         });
 
         //REMOVE LAST CHILD
-        $('#removeLast').on('click', function() {
+        $('#removeLast').on('click', function () {
             $('#chatPanelPreview div:last-child()').remove();
         });
 
@@ -230,14 +238,14 @@
             dynamic: false,
             dropdown: true,
             scrollbar: true,
-            change: function() {
+            change: function () {
                 $('#timedisplay').html(this.val());
             },
         });
 
 
         /*ADD CONTACT NAME*/
-        $('#lm_contactNameInput').keyup(function() {
+        $('#lm_contactNameInput').keyup(function () {
             var contactname = $('#lm_contactNameInput').val();
             $('#lm_contactNameDisplay').html(contactname);
             var matches = contactname.match(/\b(\w)/g);
@@ -250,5 +258,4 @@
 
 
     });
-
 </script>
