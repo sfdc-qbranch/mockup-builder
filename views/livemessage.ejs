@@ -188,6 +188,8 @@
 
         //Create Chat Message In Preview Panel
         messageDivNode.setAttribute("class", userClass);
+        messageDivNode.style.fontSize = $('#lm_fontSize').val() + 'px';
+        messageDivNode.style.lineHeight = $('#lm_fontSize').val() + 'px';
         messageDivNode.innerHTML = message;
         console.log(message);
         document.getElementById("chatPanelPreview").appendChild(messageDivNode);
