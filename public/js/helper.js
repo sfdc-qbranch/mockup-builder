@@ -81,22 +81,29 @@ function bind_setPost_displayPost_withHashTag(settingElementId, displayElementId
     var settingElement = $("#" + settingElementId);
     settingElement.on('keyup change', function () {
         var post = $(this).val();
-        console.log(post);
+        //console.log(post);
         var displayPostHtml = $("#" + displayElementId);
         displayPostHtml.empty();
         if (post && post.length != 0) {
-            var parts = post.trim().split(" ");
-            console.log(parts);
-            for (var i = 0; i < parts.length; i++) {
-                var part = parts[i];
-                if (part.indexOf("#") != 0) {
-                    displayPostHtml.append(part + " ");
-                } else {
-                    var a = `<a href="javaScript:void(0)">${part}</a>`;
-                    displayPostHtml.append(a);
-                    displayPostHtml.append(' ');
+            var lines = post.trim().split(/\r?\n/);
+            if (lines && lines.length != 0) {
+                for (var l = 0; l < lines.length; l++) {
+                    var parts = lines[l].trim().split(" ");
+                    //console.log(parts);
+                    for (var i = 0; i < parts.length; i++) {
+                        var part = parts[i];
+                        if (part.indexOf("#") != 0) {
+                            displayPostHtml.append(part + " ");
+                        } else {
+                            var a = `<a href="javaScript:void(0)">${part}</a>`;
+                            displayPostHtml.append(a);
+                            displayPostHtml.append(' ');
+                        }
+                    }
+                    displayPostHtml.append('<br>');
                 }
             }
+
             $("#" + displayElementId).append(displayPostHtml);
         }
     });
