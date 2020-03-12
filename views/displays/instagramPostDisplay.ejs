@@ -1,0 +1,127 @@
+<!--Screen Display-->
+<!--
+-->
+<style>
+    .page-screen {
+        background-color: white;
+    }
+
+
+    .igpost_getProfileName {
+        font-weight: 600;
+        font-size: 15px;
+    }
+
+
+    .ig_post-likebar {
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+
+    .ig_profileIcon {
+        width: 3rem;
+        height: 3rem;
+        display: inline;
+    }
+
+    .ig_icon12 {
+        width: 12px;
+    }
+
+    .ig_icon30 {
+        width: 30px;
+    }
+
+    .ig_icon25_inline {
+        width: 25px;
+        margin-right: 5px;
+        display: inline-block;
+    }
+
+    .igpost_font15 {
+        font-size: 15px;
+        line-height: 15px;
+    }
+
+    #igpost_getPostImage {
+        width: 100%;
+        max-height: 375px;
+        background-size: cover;
+    }
+
+    .inline,
+    .inline p {
+        display: inline;
+    }
+
+    .fontweight300 {
+        font-weight: 300;
+    }
+
+    .overflow_hidden {
+        overflow: hidden;
+    }
+
+    .rotate20 {
+        -webkit-transform: rotate(20deg);
+        -moz-transform: rotate(20deg);
+        -o-transform: rotate(20deg);
+        -ms-transform: rotate(20deg);
+        transform: rotate(20deg);
+    }
+
+    .round {
+        border-radius: 50%;
+        border: 1px solid #dadada;
+        padding: 1px;
+    }
+
+    .autoMargin {
+        margin: auto;
+    }
+</style>
+
+<div class="page-screen" id="capture">
+    <%- include('../partials/igAppHeader') %>
+    <div class="ig_post-content_container">
+        <div class="ig_post-topbar slds-p-around_x-small">
+            <div class="slds-grid">
+                <div class="slds-col slds-size_4-of-5">
+                    <img id="igpost_getProfileIcon" class="round ig_profileIcon" src="img/salesforce-logo.png" />
+                    <span id="igpost_getProfileName" class="igpost_getProfileName slds-p-left_x-small">saleforce</span>
+                    <span><img class="ig_icon12" id="igpost_getVerified" src="img/insta_icon_verified.png" /></span>
+                </div>
+                <div class="slds-col slds-size_1-of-5 slds-text-align_right autoMargin">
+                    <img class="ig_icon30" src="img/insta_icon_dotdotdot.png" />
+                </div>
+            </div>
+        </div>
+
+        <div id="igpost_getPostImage_container">
+            <img id="igpost_getPostImage" src="img/insta_img-placeholder_salesforcepost.jpg" />
+        </div>
+        <div class="ig_post-likebar slds-p-horizontal_x-small">
+            <div class="slds-grid">
+                <div class="slds-col slds-size_1-of-2">
+                    <img class="ig_icon25_inline" src="img/insta_icon_like_red.png" />
+                    <img class="ig_icon25_inline" src="img/insta_icon_message.png" />
+                    <img class="ig_icon25_inline rotate20" src="img/insta_icon_share.png" />
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-text-align_right">
+                    <img class="ig_icon25_inline" src="img/insta_icon_bookmark.png" />
+                </div>
+            </div>
+        </div>
+        <div class="igpost-post_postcontainer">
+            <div class="slds-p-horizontal_x-small igpost_font15 fontweight300">
+                <span id="igpost_getProfileNameOnPost" class="igpost_getProfileName inline">salesforce</span>
+                <div class="inline overflow_hidden">
+                    <p id="igpost_getPostText"></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <%- include('../partials/igAppFooter') %>
+</div>
+<!--End of lockscreen-->
