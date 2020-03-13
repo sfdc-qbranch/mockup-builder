@@ -1,107 +1,112 @@
 <!-- views/facebook.ejs -->
 <meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="css/main.css">
-<title>mockup builder - facebook</title>
+<%- include('partials/header') %>
 
-<div class="slds-grid">
+<title>mockup builder - facebook</title>
+<!-- Google Tag Manager (noscript) -->
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NK9RC64" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="slds-grid">
         <div class="slds-col slds-size_1-of-7">
             <%- include('partials/navbar') %>
         </div>
         <div class="slds-col slds-size_6-of-7 ">
-            <%- include('partials/header') %>
             <div class="slds-grid">
-                    <div class="slds-col slds-size_4-of-6 ">
-                        <div class="page-content">
-                                <div class="slds-align_absolute-center">
-                                    <%- include('displays/facebookDisplay') %>
-                                </div>
+                <div class="slds-col slds-size_4-of-6 ">
+                    <div class="page-content">
+                        <div class="slds-align_absolute-center">
+                            <%- include('displays/facebookDisplay') %>
                         </div>
                     </div>
-                    <div class="slds-col slds-size_2-of-6 page-rightbar">
-                        <%- include('settings/facebookSettings') %>
-                    </div>
+                </div>
+                <div class="slds-col slds-size_2-of-6 page-rightbar">
+                    <%- include('settings/facebookSettings') %>
+                </div>
             </div>
         </div>
     </div>
 
-<script>
+    <script>
+        $(document).ready(function () {
 
-    $(document).ready(function() {
+            //SET PAGE NAME
+            bindSettingAndDisplayTextField('fb-leadad-pagename', '#facebook_leadad-advertiserName');
 
-        //SET PAGE NAME
-        bindSettingAndDisplayTextField('fb-leadad-pagename','#facebook_leadad-advertiserName');
+            //SET POST TEXT
+            bindSettingAndDisplayTextField('fb-leadad-text', '#facebook_leadad_mobile-Ad-Text');
 
-        //SET POST TEXT
-        bindSettingAndDisplayTextField('fb-leadad-text','#facebook_leadad_mobile-Ad-Text');
+            //SET HEADLINE TEXT
+            bindSettingAndDisplayTextField('fb-leadad-headline', '#facebook_leadad_mobile-Ad-Headline');
 
-        //SET HEADLINE TEXT
-        bindSettingAndDisplayTextField('fb-leadad-headline','#facebook_leadad_mobile-Ad-Headline');
+            //SET LINK DESCRIPTION TEXT
+            bindSettingAndDisplayTextField('fb-leadad-linkdescription',
+                '#facebook_leadad_mobile-Ad-LinkDescription');
 
-        //SET LINK DESCRIPTION TEXT
-        bindSettingAndDisplayTextField('fb-leadad-linkdescription','#facebook_leadad_mobile-Ad-LinkDescription');
+            //SET CAPTION TEXT
+            bindSettingAndDisplayTextField('fb-leadad-caption', '#facebook_leadad_mobile-Ad-Caption');
 
-        //SET CAPTION TEXT
-        bindSettingAndDisplayTextField('fb-leadad-caption','#facebook_leadad_mobile-Ad-Caption');
-
-        //SET PAGE LOGO IMAGE
-        $("#fb_setPageLogoImage").change(function() {
+            //SET PAGE LOGO IMAGE
+            $("#fb_setPageLogoImage").change(function () {
                 readURL(this, $('#appLogo'));
-        });
+            });
 
-        //SET POST IMAGE
-        $("#fb_setPostImage").change(function() {
+            //SET POST IMAGE
+            $("#fb_setPostImage").change(function () {
                 readURL(this, $('#postImage'));
-        });
+            });
 
-        //SET CALL TO ACTION
-        $("#fb-leadad-cta").change(function() {
-            $("#fb_lead_ad-CTA-button").html($("#fb-leadad-cta").val());
-        });
+            //SET CALL TO ACTION
+            $("#fb-leadad-cta").change(function () {
+                $("#fb_lead_ad-CTA-button").html($("#fb-leadad-cta").val());
+            });
 
-        //SET NUMBER OF REACTIONS
-        bindSettingAndDisplayTextField('fb-leadad-numberofreactions','#fb-likes_number');
+            //SET NUMBER OF REACTIONS
+            bindSettingAndDisplayTextField('fb-leadad-numberofreactions', '#fb-likes_number');
 
-        //SET NUMBER OF COMMENTS
-        bindSettingAndDisplayTextField('fb-leadad-numberofcomments','#fb-comments_number');
+            //SET NUMBER OF COMMENTS
+            bindSettingAndDisplayTextField('fb-leadad-numberofcomments', '#fb-comments_number');
 
-        //SET NUMBER OF SHARES
-        bindSettingAndDisplayTextField('fb-leadad-numberofshares','#fb-shares_number');
+            //SET NUMBER OF SHARES
+            bindSettingAndDisplayTextField('fb-leadad-numberofshares', '#fb-shares_number');
 
-        
-        //SET CALL TO ACTION
-        $(".fb-likes_checkboxes").change(function() {
-            getCurrentSelectedReactions();
-        });
-        
-        download_mockup_active();
 
-        function getCurrentSelectedReactions(){
-            let i = 0;
-            const MAX_REACTION_NUMBERS = 3;
-            let reactionIterationNumbers = 0;
+            //SET CALL TO ACTION
+            $(".fb-likes_checkboxes").change(function () {
+                getCurrentSelectedReactions();
+            });
 
-            //GET SELECTED REACTION ICONS
-            var reactionIconsContainer =  $('#fb-likes_icons_container');
-            var selectedReactionsElements = $('.fb-likes_checkboxes:checked');
-            var selectedReactionsValues = [];
-            
-            for(i = 0; i < selectedReactionsElements.length; i++){
-                selectedReactionsValues.push(selectedReactionsElements[i].value);
+            download_mockup_active();
+
+            function getCurrentSelectedReactions() {
+                let i = 0;
+                const MAX_REACTION_NUMBERS = 3;
+                let reactionIterationNumbers = 0;
+
+                //GET SELECTED REACTION ICONS
+                var reactionIconsContainer = $('#fb-likes_icons_container');
+                var selectedReactionsElements = $('.fb-likes_checkboxes:checked');
+                var selectedReactionsValues = [];
+
+                for (i = 0; i < selectedReactionsElements.length; i++) {
+                    selectedReactionsValues.push(selectedReactionsElements[i].value);
+                }
+                if (selectedReactionsValues.length > MAX_REACTION_NUMBERS) {
+                    reactionIterationNumbers = MAX_REACTION_NUMBERS;
+                } else {
+                    reactionIterationNumbers = selectedReactionsValues.length;
+                }
+
+                // DISPLAY SELECTED REACTION ICONS
+                reactionIconsContainer.empty();
+                for (i = 0; i < reactionIterationNumbers; i++) {
+                    reactionIconsContainer.append('<img class="fb-likes_icons" src="img/' +
+                        selectedReactionsValues[
+                            i] + '.png"/>');
+                }
             }
-            if(selectedReactionsValues.length > MAX_REACTION_NUMBERS){
-                reactionIterationNumbers = MAX_REACTION_NUMBERS;
-            }else{
-                reactionIterationNumbers = selectedReactionsValues.length;
-            }
-
-            // DISPLAY SELECTED REACTION ICONS
-            reactionIconsContainer.empty();
-            for(i = 0; i < reactionIterationNumbers; i++){
-                reactionIconsContainer.append('<img class="fb-likes_icons" src="img/' + selectedReactionsValues[i] + '.png"/>');
-            }
-        }
-    });
-
-
-
-</script>
+        });
+    </script>
+</body>

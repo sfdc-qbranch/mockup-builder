@@ -1,152 +1,151 @@
 <!-- views/livechat.ejs -->
 
 
-<head>
-    <meta charset="utf-8">
-    <title>mockup builder - livechat</title>
-</head>
 
-<div class="slds-grid">
+<meta charset="utf-8">
+<%- include('partials/header') %>
+<title>mockup builder - livechat</title>
+
+<body>
+    <div class="slds-grid">
         <div class="slds-col slds-size_1-of-7">
             <%- include('partials/navbar') %>
         </div>
         <div class="slds-col slds-size_6-of-7 ">
-            <%- include('partials/header') %>
             <div class="slds-grid">
-                    <div class="slds-col slds-size_4-of-6 ">
-                        <div class="page-content">
-                                <div class="slds-align_absolute-center slds-grid">
-                                        <div class="slds-col slds-size--2-of-12" style="text-align:right;"> 
-                                                <i id="prevArrow"class="fas fa-arrow-left"></i>
-                                        </div>
-                                        <div class="slds-col slds-size--8-of-12">
-                                            <div class="slds-align_absolute-center">
-                                                <%- include('displays/livechatDisplay') %>
-                                            </div>
-                                        </div>
-                                        <div class="slds-col slds-size--2-of-12" sytle="text-align:left;">
-                                            <i id="nextArrow" class="fas fa-arrow-right" ></i>
-                                        </div>
-                                    </div>
+                <div class="slds-col slds-size_4-of-6 ">
+                    <div class="page-content">
+                        <div class="slds-align_absolute-center slds-grid">
+                            <div class="slds-col slds-size--2-of-12" style="text-align:right;">
+                                <i id="prevArrow" class="fas fa-arrow-left"></i>
+                            </div>
+                            <div class="slds-col slds-size--8-of-12">
+                                <div class="slds-align_absolute-center">
+                                    <%- include('displays/livechatDisplay') %>
+                                </div>
+                            </div>
+                            <div class="slds-col slds-size--2-of-12" sytle="text-align:left;">
+                                <i id="nextArrow" class="fas fa-arrow-right"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="slds-col slds-size_2-of-6 page-rightbar">
-                            <%- include('settings/livechatSettings') %>
-                    </div>
+                </div>
+                <div class="slds-col slds-size_2-of-6 page-rightbar">
+                    <%- include('settings/livechatSettings') %>
+                </div>
             </div>
         </div>
     </div>
-
+</body>
 
 
 
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
 
         const MAX_LIVECHAT_SCREENS = 4;
 
         /* Display the 1st Screen */
         $('[name="livechatDisplay"]').hide();
         $('[data="1"]').show(); // Screen 1
-        
+
         /* Setup the color picker */
-        $('#lc_colorInput').change(function(event){
+        $('#lc_colorInput').change(function (event) {
             console.log('>> Live Chat: lc_colorInput onchange handling..');
-            $('#lc_colorInputCode').attr('value',event.target.value);
-            changeActionColor('.lc_actionColorElement',event.target.value);
+            $('#lc_colorInputCode').attr('value', event.target.value);
+            changeActionColor('.lc_actionColorElement', event.target.value);
         });
-        $('#lc_colorInputCode').keyup(function(event){
+        $('#lc_colorInputCode').keyup(function (event) {
             console.log('>> Live Chat: lc_colorInputCode onchange handling..');
-            $('#lc_colorInput').attr('value',event.target.value);
-            changeActionColor('.lc_actionColorElement',event.target.value);
+            $('#lc_colorInput').attr('value', event.target.value);
+            changeActionColor('.lc_actionColorElement', event.target.value);
         });
 
 
         /*Input Binding Fields*/
         //SET CHAT BUTTON NAME (Screen1)
-        bindSettingAndDisplayTextField('lc_chatwithexpertInput','#lc_chatwithexpertDisplay');
+        bindSettingAndDisplayTextField('lc_chatwithexpertInput', '#lc_chatwithexpertDisplay');
 
         //SET CUSTOMER FIRSTNAME (Screen2)
-        bindSettingAndDisplayInputField('lc_fnameInput','#lc_fnameDisplay');
+        bindSettingAndDisplayInputField('lc_fnameInput', '#lc_fnameDisplay');
 
         //SET CUSTOMER LASTNAME (Screen2)
-        bindSettingAndDisplayInputField('lc_lnameInput','#lc_lnameDisplay');
+        bindSettingAndDisplayInputField('lc_lnameInput', '#lc_lnameDisplay');
 
         //SET CUSTOMER EMAIL (Screen2)
-        bindSettingAndDisplayInputField('lc_emailInput','#lc_emailDisplay');
+        bindSettingAndDisplayInputField('lc_emailInput', '#lc_emailDisplay');
 
         //SET CUSTOMER SUBJECT (Screen2)
-        bindSettingAndDisplayInputField('lc_subjectInput','#lc_subjectDisplay');
+        bindSettingAndDisplayInputField('lc_subjectInput', '#lc_subjectDisplay');
 
         //SET CUSTOMER START CHATTING BUTTON (Screen2)
-        bindSettingAndDisplayTextField('lc_startchatbtnInput','#lc_startchatbuttonDisplay');
+        bindSettingAndDisplayTextField('lc_startchatbtnInput', '#lc_startchatbuttonDisplay');
 
         //SET CUSTOMER FIRSTNAME (Screen3)
-        bindSettingAndDisplayTextField('lc_fnameInput','span[name="lc_fnameDisplaySpan"]');
+        bindSettingAndDisplayTextField('lc_fnameInput', 'span[name="lc_fnameDisplaySpan"]');
 
         //SET AGENT NAME (Screen4)
-        bindSettingAndDisplayTextField('lc_agentnameInput','#lc_headerAgentNameDisplay');
+        bindSettingAndDisplayTextField('lc_agentnameInput', '#lc_headerAgentNameDisplay');
 
 
-       //SET AGENT IMAGE
-        $("#lc_agentImageInput").change(function() {
+        //SET AGENT IMAGE
+        $("#lc_agentImageInput").change(function () {
             readURL(this, $('#lc_agentImageDisplay'));
         });
 
         //SET BACKGROUND IMAGE
-        $("#lc_headerbgimageInput").change(function() {
+        $("#lc_headerbgimageInput").change(function () {
             readURLAsBackground(this, $('.lc_largeheaderbar'));
         });
 
         //SET GENERAL THEME COLOR
-        
 
-        $('#nextArrow').click(function(){
+
+        $('#nextArrow').click(function () {
             var currentPageId = $('#capture').attr('data');
             var currentPageIdIdx = parseInt(currentPageId);
             var nextPageIdIdx = currentPageIdIdx + 1;
-            if(currentPageIdIdx === MAX_LIVECHAT_SCREENS){
+            if (currentPageIdIdx === MAX_LIVECHAT_SCREENS) {
                 nextPageIdIdx = 1;
             }
-            console.log( 'current page idx: ' + currentPageIdIdx + ' next page idx: ' + nextPageIdIdx );
+            console.log('current page idx: ' + currentPageIdIdx + ' next page idx: ' + nextPageIdIdx);
             showThisPage(nextPageIdIdx);
         });
 
-        $('#prevArrow').click(function(){
+        $('#prevArrow').click(function () {
             var currentPageId = $('#capture').attr('data');
             var currentPageIdIdx = parseInt(currentPageId);
             var prevPageIdIdx = currentPageIdIdx - 1;
-            if(currentPageIdIdx === 1){
+            if (currentPageIdIdx === 1) {
                 prevPageIdIdx = 4;
             }
-            console.log( 'current page idx: ' + currentPageIdIdx + ' prev page idx: ' + prevPageIdIdx );
+            console.log('current page idx: ' + currentPageIdIdx + ' prev page idx: ' + prevPageIdIdx);
             showThisPage(prevPageIdIdx);
         });
 
         download_mockup_active();
 
-        
-        function showThisPage(pageIdx){
-            for(var i = 1; i <= MAX_LIVECHAT_SCREENS; i++){
-                $('[data="'+i+'"]').attr("id","captureNotActive");
-                $('[data="'+i+'"]').hide();
+
+        function showThisPage(pageIdx) {
+            for (var i = 1; i <= MAX_LIVECHAT_SCREENS; i++) {
+                $('[data="' + i + '"]').attr("id", "captureNotActive");
+                $('[data="' + i + '"]').hide();
             }
-            $('[data="'+pageIdx+'"]').attr("id","capture");            
-            $('[data="'+pageIdx+'"]').show();
+            $('[data="' + pageIdx + '"]').attr("id", "capture");
+            $('[data="' + pageIdx + '"]').show();
         };
 
-        function changeActionColor(elementSelector, colorCode){
-           $(elementSelector).css('cssText','background:' + colorCode + ' !important');
+        function changeActionColor(elementSelector, colorCode) {
+            $(elementSelector).css('cssText', 'background:' + colorCode + ' !important');
         };
 
     });
-
 </script>
 
 <style>
     div.page-livechatscreen {
-        background:white;
+        background: white;
     }
 
     /**SMALL HEADER ICONS**/
@@ -203,9 +202,9 @@
         border-radius: 4px;
         font-size: .8125rem;
         font-weight: 400;
-        font-family: Lato,sans-serif;
+        font-family: Lato, sans-serif;
     }
-    
+
 
     /**SCREEN 1**/
 
@@ -216,9 +215,9 @@
         width: 64%;
         background: #85DDE8;
         border-radius: 10px 10px 0px 0px;
-        left:0;
-        right:0;
-        margin:auto;
+        left: 0;
+        right: 0;
+        margin: auto;
     }
 
     div.lc_chatbutton>span {
@@ -316,13 +315,9 @@
         left: 0%;
         border-radius: inherit;
     }
-    
+
     .screenholder {
-        min-width:560px;
-        overflow:hidden;
+        min-width: 560px;
+        overflow: hidden;
     }
-    
-
-
 </style>
-
