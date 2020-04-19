@@ -92,7 +92,7 @@ function bind_setPost_displayPost_withHashTag(settingElementId, displayElementId
                     //console.log(parts);
                     for (var i = 0; i < parts.length; i++) {
                         var part = parts[i];
-                        if (part.indexOf("#") != 0) {
+                        if (part.indexOf("#") != 0 && part.indexOf("@") != 0) {
                             displayPostHtml.append(part + " ");
                         } else {
                             var a = `<a href="javaScript:void(0)">${part}</a>`;
