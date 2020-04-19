@@ -57,11 +57,6 @@ app.get('/instagram-post', function (req, res) {
     res.render('instagramPost');
 });
 
-app.get('/instagram-profile', function (req, res) {
-    res.render('instagramProfile');
-});
-
-
 app.get('/email', function (req, res) {
     res.render('email');
 });
