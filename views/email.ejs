@@ -1,5 +1,6 @@
 <!-- views/email.ejs -->
 <%- include('partials/header') %>
+<title>mockup builder - email</title>
 
 <body>
     <div class="slds-grid">
@@ -9,15 +10,15 @@
         <div class="slds-col slds-size_6-of-7 ">
             <%- include('partials/headerbar') %>
             <div class="slds-grid">
-                <div class="slds-col slds-size_4-of-6 ">
+                <div class="slds-col slds-size_5-of-6 ">
                     <div class="page-content">
                         <div class="slds-align_absolute-center">
-                            <%- include('displays/facebookDisplay') %>
+                            <%- include('displays/emailDisplay') %>
                         </div>
                     </div>
                 </div>
-                <div class="slds-col slds-size_2-of-6 page-rightbar">
-                    <%- include('settings/facebookSettings') %>
+                <div class="slds-col slds-size_1-of-6 page-rightbar">
+                    <%- include('settings/emailSettings') %>
                 </div>
             </div>
         </div>
