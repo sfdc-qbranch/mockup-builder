@@ -1,0 +1,181 @@
+<!--Screen Display-->
+<!--
+    https://www.facebook.com/business/help/908491205873167
+    Facebook Lead Ad Specs
+    Text: 125 characters
+    Headline: 25 characters
+    Link description: 30 characters
+-->
+<style>
+    .fontsize75 {
+        font-size: 0.75rem;
+    }
+
+    .fbGrayTextColor {
+        color: #606770;
+    }
+
+    .fbHR {
+        color: #c9cbd0;
+        margin: auto;
+        width: 96%;
+    }
+
+    .fb_lead_ad-content_container {
+        width: 100%;
+        min-height: 330px;
+        line-height: 18px;
+        font-family: Helvetica Neue, arial, sans-serif;
+        font-size: 14px;
+        word-wrap: break-word;
+        position: relative;
+    }
+
+    .fb_lead_ad-topbar {
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        display: flex;
+        align-items: center;
+    }
+
+    .fb_lead_ad-topbar span {
+        display: block;
+    }
+
+    .fb_lead_ad-topbar #appLogo {
+        border-radius: 50%;
+    }
+
+    .fb_lead_ad-adcontent-adframe {
+        width: 100%;
+        position: relative;
+        word-wrap: break-word;
+        background: #fff;
+        display: block;
+    }
+
+    .fb_lead_ad-adcontent-adframe img {
+        min-height: 160px;
+    }
+
+    .fb_lead_ad-adcontent-content {
+        background: #f7f8f9;
+        border-bottom: 0.5px solid #dedee0;
+    }
+
+    .fb_lead_ad-adcontent-content p {
+        line-height: 1.2rem;
+        margin-bottom: 0px;
+    }
+
+    .page-facebookleadad-mobilescreen {
+        margin-top: 5rem;
+        width: 375px;
+        min-height: 394px;
+        background: white;
+        position: relative;
+    }
+
+    .custom-h2 {
+        font-size: 14px;
+        line-height: 17px;
+        font-weight: bold;
+        margin-bottom: 3px;
+        margin-top: 1px;
+    }
+
+    .fb-sponsored {
+        font-size: 12px;
+        line-height: 16px;
+        color: #9197a3;
+    }
+
+    .fb-sponsored img {
+        width: 11px;
+    }
+
+    /* <!--FB Lead Ad Spec Text (Max 90 Chars)--> */
+    #facebook_leadad_mobile-Ad-Text {
+        max-width: 125ch;
+    }
+
+    #facebook_leadad_mobile-Ad-Headline {
+        max-width: 25ch;
+        font-weight: 600;
+    }
+
+    #fb_lead_ad-CTA-button {
+        color: #050505;
+        text-transform: uppercase;
+        background: inherit;
+        font-weight: 500;
+        font-size: 10px;
+        border: 1px solid #65676a;
+        border-radius: 4px;
+    }
+
+    #fb-likes_container {
+        display: inline-flex;
+    }
+
+    .fb-likes_icons {
+        width: 16px;
+        height: 16px;
+    }
+
+    #fb_lead_ad-feedbackbar {
+        color: #767c8a;
+        font-size: 0.75rem;
+    }
+</style>
+
+<!--
+    https://www.facebook.com/business/help/908491205873167
+    Facebook Lead Ad Specs
+    Text: 125 characters
+    Headline: 25 characters
+    Link description: 30 characters
+-->
+
+<div class="page-facebookleadad-mobilescreen" id="capture">
+    <div class="fb_lead_ad-content_container">
+        <div class="fb_lead_ad-topbar slds-m-around_x-small">
+            <img src="img/logo-placeholder_square.png" id="appLogo" style="width:40px; height:40px; top:0" />
+            <div style="display: inline-block; padding-left:10px;">
+                <p class="custom-h2" id="facebook_leadad-advertiserName">Your Name Here</p>
+            </div>
+        </div>
+        <div class="fb_lead_ad-adcontent">
+            <p class="slds-m-vertical_xx-small slds-p-horizontal_x-small" id="facebook_leadad_mobile-Ad-Text">
+                <!--FB Lead Ad Spec Text (Max 90 Chars)-->
+                Your Post Here
+            </p>
+            <div class="fb_lead_ad-adcontent-adframe">
+                <img id="postImage" src="img/fb_postimage_placeholder.png" />
+            </div>
+        </div>
+
+        <div class="slds-grid slds-p-around_x-small" id="fb_lead_ad-feedbackbar">
+            <div class="slds-col slds-size_1-of-3" id="fb-likes_container">
+                <div id="fb-likes_icons_container">
+                    <img class="fb-likes_icons" src="img/fb_reaction_like.png" />
+                    <img class="fb-likes_icons" src="img/fb_reaction_love.png" />
+                </div>
+                <span id="fb-likes_number" class="slds-m-left_xx-small">67</span>
+            </div>
+
+            <div class="slds-col slds-size_2-of-3 slds-text-align_right">
+                <span id="fb-comments_number">22</span>
+                <span class="slds-m-right_x-small">Comments</span>
+                <span id="fb-shares_number">7</span>
+                <span>Shares</span>
+            </div>
+        </div>
+    </div>
+    <div class="fb_lead_ad-buttons_group">
+        <hr class="fbHR" />
+        <img src="img/fb_actionbar.png" />
+    </div>
+</div>
+<!--End of lockscreen-->

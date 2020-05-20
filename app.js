@@ -29,15 +29,15 @@ app.use(bodyParser.urlencoded({
 
 //Homepage
 app.get('/', function (req, res) {
-    res.render('livemessage');
+    res.render('notifications');
 });
 
 
 
 //testImage - test upload image, add text, save as png
-app.get('/livechat', function (req, res) {
-    res.render('livechat');
-});
+// app.get('/livechat', function (req, res) {
+//     res.render('livechat');
+// });
 
 app.get('/livemessage', function (req, res) {
     res.render('livemessage');
@@ -55,6 +55,10 @@ app.get('/facebook', function (req, res) {
 
 app.get('/instagram-post', function (req, res) {
     res.render('instagramPost');
+});
+
+app.get('/facebook-post', function (req, res) {
+    res.render('facebookPost');
 });
 
 app.get('/email', function (req, res) {
