@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({
 
 //Homepage
 app.get('/', function (req, res) {
-    res.render('notifications');
+    res.render('livemessage');
 });
 
 
