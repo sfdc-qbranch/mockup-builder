@@ -50,7 +50,7 @@
 <script>
     $(document).ready(function () {
         var page = window.location.href.split('/').slice(-1)[0];
-        if (page && page.length == 0) {
+        if (page != null && page.length == 0) {
             page = 'livemessage';
         }
         $("div.page-navbar li").removeClass("slds-is-active");
