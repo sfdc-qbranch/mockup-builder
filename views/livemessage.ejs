@@ -193,13 +193,20 @@
         messageDivNode.setAttribute("class", userClass);
         messageDivNode.style.fontSize = $('#lm_fontSize').val() + 'px';
         messageDivNode.style.lineHeight = $('#lm_fontSize').val() + 'px';
-        messageDivNode.innerHTML = message;
+        messageDivNode.innerHTML = urlify(message);
         //console.log(message);
 
         document.getElementById("chatPanelPreview").appendChild(messageDivNode);
 
         //Clear the input textbox
         inputElement.value = "";
+    }
+
+    function urlify(text) {
+        var urlRegex = /(https?:\/\/[^\s]+)/g;
+        return text.replace(urlRegex, function (url) {
+            return '<a href="' + url + '">' + url + '</a>';
+        })
     }
 
 
