@@ -39,7 +39,7 @@
     div.content {
         width: 70%;
         margin: auto;
-        padding-top: 15%;
+        padding-top: 18%;
     }
 
     div.title {
@@ -61,11 +61,26 @@
         font-family: SalesforceSans-Light;
     }
 
+    div.cta-button {
+        padding-top: 4rem;
+    }
+
     div.cta-button button {
         background: #00a1e0;
         border: 0px;
         padding: 1rem 4rem;
         border-radius: 60px 60px 60px 60px;
+        font-size: 1.5rem;
+    }
+
+    .triangle-right {
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-left: 12px solid #fff;
+        border-bottom: 10px solid transparent;
+        display: inline-block;
+        margin-left: 0.5rem;
     }
 </style>
 
@@ -88,7 +103,7 @@
                         messages, ads, and more!</p>
                 </div>
                 <div class="cta-button">
-                    <button>Get Started</button>
+                    <button>Get Started <div class="triangle-right"></div></button>
                 </div>
             </div>
         </div>
