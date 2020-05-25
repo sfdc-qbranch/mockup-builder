@@ -2,24 +2,99 @@
 <!-- Google Tag Manager (noscript) -->
 <%- include("partials/header") %>
 
+<style>
+    @font-face {
+        font-family: 'Gotham Bold';
+        src: url(assets/fonts/webfonts/Gotham-Bold.woff) format("woff");
+    }
+
+    @font-face {
+        font-family: 'SalesforceSans-Light';
+        src: url(assets/fonts/webfonts/SalesforceSans-Light.woff) format("woff");
+    }
+
+    div.homeBackground {
+        background-image: url('img/home_background.png');
+        height: 100vh;
+        width: 100vw;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+
+    div.title,
+    div.cta-button,
+    div.footer {
+        color: white;
+    }
+
+    div.footer {
+        font-size: 12px;
+        background: #011935;
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+    }
+
+    div.content {
+        width: 70%;
+        margin: auto;
+        padding-top: 15%;
+    }
+
+    div.title {
+        font-family: Gotham Bold, Arial, Helvetica, sans-serif;
+        line-height: 3.25rem;
+    }
+
+    div.title>span:first-child {
+        font-size: 6.75rem
+    }
+
+    div.title>span:nth-child(2) {
+        font-size: 5.25rem;
+    }
+
+    div.caption {
+        font-size: 1.725rem;
+        color: #ccc;
+        font-family: SalesforceSans-Light;
+    }
+
+    div.cta-button button {
+        background: #00a1e0;
+        border: 0px;
+        padding: 2rem 4rem;
+        border-radius: 15px 50px 30px 5px；
+    }
+</style>
+
 <body>
-    <div class="slds-grid">
-        <div class="slds-col slds-size_1-of-7">
-            <%- include("partials/navbar") %>
+
+
+    <div class="homeBackground">
+        <div>
+            <%- include("partials/navbarHorizontal") %>
         </div>
-        <div class="slds-col slds-size_6-of-7 ">
-            <%- include('partials/headerbar') %>
-            <div class="slds-grid">
-                <div class="slds-col slds-size_4-of-6 ">
-                    <div class="page-content">
-                        <div class="slds-align_absolute-center">
-                            <%- include("displays/facebookDisplay") %>
-                        </div>
-                    </div>
+
+        <div class="content">
+            <div class="slds-text-align_center">
+                <div class="title">
+                    <span>Create beautiful</span>
+                    <span>mockups in seconds.</span>
                 </div>
-                <div class="slds-col slds-size_2-of-6 page-rightbar">
-                    <%- include("settings/facebookSettings") %>
+                <div class="caption slds-p-horizontal_xx-large">
+                    <p class="slds-p-top_large">Q Builder lets you create inspirational visuals for social media,
+                        messages, ads, and more!</p>
                 </div>
+                <div class="cta-button">
+                    <button>Get Started</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="slds-text-align_center slds-p-vertical_small">
+                <span>Brought to you by Q</span>
             </div>
         </div>
         <%- include('partials/footer') %>

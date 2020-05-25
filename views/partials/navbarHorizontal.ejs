@@ -1,0 +1,78 @@
+<!-- views/partials/naver.ejs -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<style>
+    .page-navbar_horizontal {
+        height: 10%;
+        max-height: 120px;
+    }
+
+    .page-navbar_horizontal ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .page-navbar_horizontal li {
+        display: inline-block;
+        width: 15%;
+        text-align: center;
+    }
+
+    .page-navbar_horizontal li a:hover {
+        color: white;
+        transition: 0.5s;
+    }
+
+    .nav-horizontal_action {
+        color: #ccc;
+    }
+
+    .nav-horizontal_action.page-is-active {
+        color: #FFF;
+    }
+</style>
+
+<nav class="page-navbar_horizontal slds-p-horizontal_large">
+    <div class="slds-grid slds-grid--vertical-align-center">
+        <div class="slds-col slds-size_1-of-6 ">
+            <div class="slds-p-around_medium">
+                <img src="img/home_qbranchLogo.png" style="height:auto; max-width:60px;" />
+            </div>
+        </div>
+        <div class="slds-col slds-size_5-of-6">
+            <ul class="slds-text-align_right">
+                <li class="nav-item_horizontal" name="facebook">
+                    <a href="/facebook" class="nav-horizontal_action">Facebook Ad</a>
+                </li>
+                <li class="nav-item_horizontal" name="facebookpost">
+                    <a href="/facebook-post" class="nav-horizontal_action">Facebook Post</a>
+                </li>
+                <li class="nav-item_horizontal" name="instagram-post">
+                    <a href="/instagram-post" class="nav-horizontal_action">Instagram Post</a>
+                </li>
+                <li class="nav-item_horizontal" name="twitter-post">
+                    <a href="/twitter-post" class="nav-horizontal_action">Twitter Post</a>
+                </li>
+                <li class="nav-item_horizontal" name="livemessage">
+                    <a href="/livemessage" class="nav-horizontal_action" aria-current="page">Live Message</a>
+                </li>
+                <li class="nav-item_horizontal" name="notifications">
+                    <a href="/notifications" class="nav-horizontal_action">Push Notifications</a>
+                </li>
+
+
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<script>
+    $(document).ready(function () {
+        var page = window.location.href.split('/').slice(-1)[0];
+        $("div.page-navbar_horizontal li").removeClass("page-is-active");
+        $("div.page-navbar_horizontal li[name='" + page + "'").addClass("page-is-active");
+    });
+</script>
