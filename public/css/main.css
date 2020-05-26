@@ -1,8 +1,5 @@
 body {
     min-width: 1260px;
-}
-
-body {
     animation: fadein 0.5s;
     -moz-animation: fadein 0.5s;
     /* Firefox */
