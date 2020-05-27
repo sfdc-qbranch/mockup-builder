@@ -83,6 +83,7 @@ div.page-title>span {
     line-height: 4rem;
 }
 
+/* OLD START */
 div.page-downloadmockup {
     background: #ffffff;
     color: #333333;
@@ -92,17 +93,12 @@ div.page-downloadmockup {
     line-height: 2rem;
 }
 
-
-
-/*PAGE NAV BAR*/
-
 div.page-navbar {
     background: white;
     height: 100vh;
     overflow: auto;
     margin: auto;
     min-width: 180px !important;
-
 }
 
 div.page-navbar-logo {
@@ -110,11 +106,22 @@ div.page-navbar-logo {
     padding-bottom: 1rem;
 }
 
-/* a.nav-link {
+a.nav-link {
     font-size: 0.825rem;
     color: black;
     text-align: center;
-} */
+}
+
+/* OLD FINISH */
+
+div.page-downloadbutton {
+    background: #0777ff;
+    color: #FFF;
+    border-radius: 20px;
+    padding: 0rem 3rem;
+    line-height: 2rem;
+}
+
 
 /*PAGE RIGHT BAR*/
 
