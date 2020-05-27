@@ -92,6 +92,8 @@ div.page-downloadmockup {
     line-height: 2rem;
 }
 
+
+
 /*PAGE NAV BAR*/
 
 div.page-navbar {
@@ -108,26 +110,31 @@ div.page-navbar-logo {
     padding-bottom: 1rem;
 }
 
-a.nav-link {
+/* a.nav-link {
     font-size: 0.825rem;
     color: black;
     text-align: center;
-
-}
+} */
 
 /*PAGE RIGHT BAR*/
 
 div.page-rightbar {
     background: white;
     height: 100vh;
-    overflow-y: scroll;
     overflow-x: auto;
     min-width: 380px;
+}
 
+div.page-rightbar>.setting-container {
+    max-height: 700px;
+    overflow-y: scroll;
+}
+
+div.page-rightbar>.downloadButton-container {
+    margin: auto;
 }
 
 div.page-content {
-    /*box-shadow: inset 0 0 10px #0000008f;*/
     height: calc(100% - 4rem);
     background-color: #ecf0f1;
     min-height: 700px;
