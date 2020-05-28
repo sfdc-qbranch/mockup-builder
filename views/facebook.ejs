@@ -5,7 +5,7 @@
 
 <body>
     <%- include('partials/navbarHorizontal') %>
-    <div class="slds-grid">
+    <div class="pageLayoutContainer slds-grid">
         <div class="slds-col slds-size_3-of-5">
             <div class="page-content">
                 <div class="slds-align_absolute-center">
@@ -14,11 +14,14 @@
             </div>
         </div>
         <div class="slds-col slds-size_2-of-5 page-rightbar">
-            <div class="setting-container">
-                <%- include('settings/facebookSettings') %>
-            </div>
-            <div class="downloadButton-container">
-                <%- include('partials/downloadButton') %>
+            <div class="slds-p-horizontal_x-large" style="position: relative;">
+                <div class="setting-container">
+                    <%- include('settings/facebookSettings') %>
+                    <div class="downloadButton-container slds-p-top_small">
+                        <%- include('partials/downloadButton') %>
+                    </div>
+                </div>
+
             </div>
 
         </div>

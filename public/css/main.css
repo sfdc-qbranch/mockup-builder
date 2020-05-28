@@ -114,6 +114,42 @@ a.nav-link {
 
 /* OLD FINISH */
 
+/* PAGE LAYOUT */
+
+div.pageLayoutContainer {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*PAGE RIGHT BAR*/
+
+div.page-rightbar {
+    background: white;
+    overflow-x: auto;
+    min-width: 380px;
+}
+
+@media only screen and (max-height: 800px) {
+    div.page-rightbar .setting-container {
+        max-height: 85vh !important;
+    }
+}
+
+div.page-rightbar .setting-container {
+    max-height: 90vh;
+    overflow-y: scroll;
+}
+
+
+
+div.page-rightbar .downloadButton-container {
+    margin: auto;
+    width: 250px;
+}
+
+
 div.page-downloadbutton {
     background: #0777ff;
     color: #FFF;
@@ -122,24 +158,6 @@ div.page-downloadbutton {
     line-height: 2rem;
 }
 
-
-/*PAGE RIGHT BAR*/
-
-div.page-rightbar {
-    background: white;
-    height: 100vh;
-    overflow-x: auto;
-    min-width: 380px;
-}
-
-div.page-rightbar>.setting-container {
-    max-height: 700px;
-    overflow-y: scroll;
-}
-
-div.page-rightbar>.downloadButton-container {
-    margin: auto;
-}
 
 div.page-content {
     height: calc(100% - 4rem);
