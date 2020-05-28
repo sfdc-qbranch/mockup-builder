@@ -140,9 +140,9 @@ div.page-rightbar {
 div.page-rightbar .setting-container {
     max-height: 90vh;
     overflow-y: scroll;
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
-
-
 
 div.page-rightbar .downloadButton-container {
     margin: auto;
