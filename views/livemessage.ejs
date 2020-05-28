@@ -157,22 +157,20 @@
     }
 </style>
 
-<div class="slds-grid">
-    <div class="slds-col slds-size_1-of-7">
-        <%- include('partials/navbar') %>
-    </div>
-    <div class="slds-col slds-size_6-of-7 ">
-        <%- include('partials/headerbar') %>
-        <div class="slds-grid">
-            <div class="slds-col slds-size_4-of-6 ">
-                <div class="page-content">
-                    <div class="slds-align_absolute-center">
-                        <%- include('displays/livemessageDisplay') %>
-                    </div>
-                </div>
+<%- include('partials/navbarHorizontal') %>
+<div class="pageLayoutContainer slds-grid">
+    <div class="slds-col slds-size_3-of-5">
+        <div class="page-content">
+            <div class="slds-align_absolute-center">
+                <%- include('displays/livemessageDisplay') %>
             </div>
-            <div class="slds-col slds-size_2-of-6 page-rightbar">
-                <%- include('settings/livemessageSettings') %>
+        </div>
+    </div>
+    <div class="slds-col slds-size_2-of-5 page-rightbar">
+        <div class="setting-container">
+            <%- include('settings/livemessageSettings') %>
+            <div class="downloadButton-container slds-p-top_small">
+                <%- include('partials/downloadButton') %>
             </div>
         </div>
     </div>
