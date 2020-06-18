@@ -57,6 +57,10 @@ app.get('/instagram-post', function (req, res) {
     res.render('instagramPost');
 });
 
+app.get('/twitter-post', function (req, res) {
+    res.render('twitterPost');
+});
+
 app.get('/facebook-post', function (req, res) {
     res.render('facebookPost');
 });
@@ -70,22 +74,3 @@ app.get('/email', function (req, res) {
 app.listen(app.get('port'), function () {
     console.log('listen on port 8080');
 });
-
-var pages = {
-    'facebook': {
-        mainFile: 'facebook',
-        settingFile: 'settings/facebookSettings',
-        displayFile: 'displays/facebookDisplay'
-    }
-}
-
-var findPageByPagename = function (pagename, callback) {
-    // Perform database query that calls callback when it's done
-    // This is our fake database
-    if (!pages[pagename])
-        return callback(new Error(
-            'No page found ' +
-            pagename
-        ));
-    return callback(null, pages[pagename]);
-};

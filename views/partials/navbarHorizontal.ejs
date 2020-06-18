@@ -23,13 +23,14 @@
     .page-navbar_horizontal li a:hover {
         color: white;
         transition: 0.5s;
+        text-decoration: none;
     }
 
     .nav-horizontal_action {
         color: #ccc;
     }
 
-    .nav-horizontal_action.page-is-active {
+    li.page-is-active a {
         color: #FFF;
     }
 </style>
@@ -46,7 +47,7 @@
                 <li class="nav-item_horizontal" name="facebook">
                     <a href="/facebook" class="nav-horizontal_action">Facebook Ad</a>
                 </li>
-                <li class="nav-item_horizontal" name="facebookpost">
+                <li class="nav-item_horizontal" name="facebook-post">
                     <a href="/facebook-post" class="nav-horizontal_action">Facebook Post</a>
                 </li>
                 <li class="nav-item_horizontal" name="instagram-post">
@@ -73,7 +74,7 @@
 <script>
     $(document).ready(function () {
         var page = window.location.href.split('/').slice(-1)[0];
-        $("div.page-navbar_horizontal li").removeClass("page-is-active");
-        $("div.page-navbar_horizontal li[name='" + page + "'").addClass("page-is-active");
+        $("nav.page-navbar_horizontal li").removeClass("page-is-active");
+        $("nav.page-navbar_horizontal li[name='" + page + "'").addClass("page-is-active");
     });
 </script>
