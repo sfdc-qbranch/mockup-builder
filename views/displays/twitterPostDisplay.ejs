@@ -6,45 +6,60 @@
         background-color: white;
     }
 
+    .tw_name_container {
+        line-height: 15px;
+    }
 
-    .igpost_getProfileName {
+    .tw_post_getProfileName {
         font-weight: 600;
         font-size: 15px;
     }
 
-    .ig_profileIcon {
+    .tw_post_getHandlerName {
+        font-weight: 400;
+        color: rgb(101, 119, 134);
+        font-size: 15px;
+        line-height: 15px;
+    }
+
+    .tw_profileIcon {
         width: 3rem;
         height: 3rem;
         display: inline;
     }
 
-    .ig_icon12 {
+    .tw_icon12 {
         width: 12px;
     }
 
-    .ig_icon30 {
+    .tw_icon16 {
+        width: 16px;
+    }
+
+    .tw_icon30 {
         width: 30px;
     }
 
-    .ig_icon25_inline {
-        width: 25px;
+    .tw_icon25_inline {
+        width: 20px;
         margin-right: 5px;
         display: inline-block;
     }
 
-    .igpost_font15 {
+    .tw_post_font15 {
         font-size: 15px;
         line-height: 20px;
     }
 
-    #igpost_getPostImage_container {
-        height: 375px;
+    #tw_post_getPostImage_container {
+        height: 198px;
     }
 
-    #igpost_getPostImage {
+    #tw_post_getPostImage {
         width: 100%;
         height: 100%;
         background-size: cover;
+        border-radius: 20px 20px;
     }
 
     .inline,
@@ -62,7 +77,7 @@
 
     .round {
         border-radius: 50%;
-        border: 1px solid #dadada;
+        border: 1px solid #FBFBFB;
         padding: 1px;
     }
 
@@ -72,46 +87,54 @@
 </style>
 
 <div class="page-screen" id="capture">
-    <%- include('../partials/igAppHeader') %>
-    <div class="ig_post-content_container">
-        <div class="ig_post-topbar slds-p-around_x-small">
+    <div class="tw_post-content_container slds-p-around_x-small">
+        <div class="tw_post-topbar slds-p-vertical_x-small">
             <div class="slds-grid">
-                <div class="slds-col slds-size_4-of-5">
-                    <img id="igpost_getProfileIcon" class="round ig_profileIcon" src="img/salesforce-logo.png" />
-                    <span id="igpost_getProfileName" class="igpost_getProfileName slds-p-left_x-small">saleforce</span>
-                    <span><img class="ig_icon12" id="igpost_getVerified" src="img/insta_icon_verified.png" /></span>
+                <div class="slds-col slds-size_1-of-6 slds-text-align_center">
+                    <img id="igpost_getProfileIcon" class="round tw_profileIcon" src="img/salesforce-logo.png" />
                 </div>
-                <div class="slds-col slds-size_1-of-5 slds-text-align_right autoMargin">
-                    <img class="ig_icon30" src="img/insta_icon_dotdotdot.png" />
+                <div class="slds-col slds-size_2-of-3 tw_name_container autoMargin">
+                    <div><span id="tw_post_getProfileName"
+                            class="tw_post_getProfileName slds-p-left_x-small">Saleforce</span>
+                        <span><img class="tw_icon16" id="twpost_getVerified"
+                                src="img/twitter_icon_verified.png" /></span>
+                    </div>
+                    <div><span id="tw_post_getHandlerName"
+                            class="tw_post_getHandlerName slds-p-left_x-small">@saleforce</span></div>
+                </div>
+                <div class="slds-col slds-size_1-of-6 slds-text-align_right">
+                    <img class="tw_icon12" src="img/twitter_icon_expand.png" />
                 </div>
             </div>
         </div>
-
-        <div id="igpost_getPostImage_container">
-            <img id="igpost_getPostImage" src="img/insta_img-placeholder_salesforcepost.jpg" />
-        </div>
-        <div class="ig_post-likebar slds-p-around_x-small">
-            <div class="slds-grid">
-                <div class="slds-col slds-size_1-of-2">
-                    <img class="ig_icon25_inline" src="img/insta_icon_like_red.png" />
-                    <img class="ig_icon25_inline" src="img/insta_icon_message.png" />
-                    <img class="ig_icon25_inline " src="img/insta_icon_shareRotate20.png" />
-                </div>
-                <div class="slds-col slds-size_1-of-2 slds-text-align_right">
-                    <img class="ig_icon25_inline" src="img/insta_icon_bookmark.png" />
-                </div>
-            </div>
-        </div>
-        <div class="igpost-post_postcontainer">
-            <div class="slds-p-horizontal_x-small igpost_font15 fontweight300">
-                <span id="igpost_getProfileNameOnPost" class="igpost_getProfileName inline">salesforce</span>
+        <div class="tw_post-post_postcontainer">
+            <div class="slds-p-horizontal_x-small tw_post_font15 fontweight300">
                 <div class="inline overflow_hidden">
-                    <p id="igpost_getPostText"></p>
+
                 </div>
             </div>
         </div>
+        <div id="tw_post_getPostImage_container">
+            <img id="tw_post_getPostImage" src="img/insta_img-placeholder_salesforcepost.jpg" />
+        </div>
+        <div>
 
+        </div>
+        <div class="tw_post-likebar slds-p-around_x-small">
+            <div class="slds-grid slds-grid_align-space">
+                <div class="slds-col">
+                    <img class="tw_icon25_inline" src="img/twitter_icon_comment.png" />
+                </div>
+                <div class="slds-col">
+                    <img class="tw_icon25_inline" src="img/twitter_icon_retweet.png" />
+                </div>
+                <div class="slds-col">
+                    <img class="tw_icon25_inline" src="img/twitter_icon_like.png" />
+                </div>
+                <div class="slds-col">
+                    <img class="tw_icon25_inline" src="img/twitter_icon_share.png" />
+                </div>
+            </div>
+        </div>
     </div>
-    <%- include('../partials/igAppFooter') %>
-</div>
-<!--End of lockscreen-->
+    <!--End of lockscreen-->

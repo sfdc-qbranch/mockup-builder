@@ -31,18 +31,18 @@
             bindSettingAndDisplayTextField('twpost_setProfileName', '.igpost_getProfileName');
 
             //Verified 
-            bind_setCheckbox_showElement('igpost_setVerified', '#igpost_getVerified');
+            bind_setCheckbox_showElement('twpost_setVerified', '#igpost_getVerified');
 
             //Post
-            bind_setPost_displayPost_withHashTag('igpost_setPostText', 'igpost_getPostText')
+            bind_setPost_displayPost_withHashTag('twpost_setPostText', 'igpost_getPostText')
 
             //SET APP LOGO IMAGE
-            $("#igpost_setProfileIcon").change(function () {
-                readURL(this, $('#igpost_getProfileIcon'));
+            $("#twpost_setProfileIcon").change(function () {
+                readURL(this, $('#twpost_getProfileIcon'));
             });
 
-            $("#igpost_setPostimage").change(function () {
-                readURL(this, $('#igpost_getPostImage'));
+            $("#twpost_setPostimage").change(function () {
+                readURL(this, $('#twpost_getPostImage'));
             });
 
             download_mockup_active();
