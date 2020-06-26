@@ -1,26 +1,25 @@
-<label class="slds-form-element__label">Current Date:</label>
-<div class="datepicker-container border-round_small">
-    <input class="datepicker" ><i class="fas fa-calendar-alt"></i>
+<div class="slds-form-element">
+    <label class="slds-form-element__label">Current Date:</label>
+    <div class="datepicker-container">
+        <input class="datepicker slds-select" /><i class="fas fa-calendar-alt"></i>
+    </div>
 </div>
 
 <style>
     div.datepicker-container {
-        background:white;
-        width:auto;
+        background: white;
+        width: auto;
     }
-    
-    div.datepicker-container > input {
-        border:none;
-        width:85%;
-        margin-left:5%;
-        text-align:center;
+
+    div.datepicker-container>input {
+        width: 100%;
+        text-align: left;
+        padding-left: 1rem;
     }
-    
-    
 </style>
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('input.datepicker').val(moment().format('dddd, DD MMMM'));
     });
 </script>

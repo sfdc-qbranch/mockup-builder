@@ -1,6 +1,5 @@
 <div class="container page-settings">
 
-
     <!--ProfileName-->
     <%- include('../helper/inputtext', {id:'igpost_setProfileName', placeholder:'Your profile name here', label:'Profile Name'})%>
 
@@ -23,6 +22,7 @@
         </div>
     </div>
 
+    <hr class="settingDividendLine" />
 
     <!--POST IMAGE SETTING-->
     <div class="page-setting-element">
@@ -40,23 +40,14 @@
         </div>
     </div>
 
-    <div class="slds-m-top_xx-large slds-text-align--center">
+    <hr class="settingDividendLine" />
+
+    <div class="slds-m-top_medium slds-text-align--center">
         <div class="slds-m-around_small">
             <button id="igpost_reset" class="slds-button slds-button_outline-brand width80">Reset</button>
         </div>
     </div>
 
+    <hr class="settingDividendLine" />
+
 </div>
-
-<script>
-    $('#igpost_setVerified').prop('checked', true).change();
-
-
-    $("#igpost_reset").click(function () {
-        $('#igpost_setProfileName').val('salesforce').change();
-        $('#igpost_getProfileIcon').attr("src", "img/salesforce-logo.png");
-        $('#igpost_setVerified').prop('checked', true).change();
-        $('#igpost_getPostImage').attr("src", "img/insta_img-placeholder_salesforcepost.jpg");
-        $('#igpost_setPostText').val('').change();
-    });
-</script>

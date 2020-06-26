@@ -55,7 +55,30 @@ body {
     }
 }
 
+/* SLDS Override */
 
+.slds-form-element__label {
+    font-size: 15px;
+    color: #333;
+    font-weight: 500;
+}
+
+.slds-form-element .slds-input,
+.slds-form-element .slds-select,
+.slds-form-element .slds-textarea,
+.slds-file-selector .slds-file-selector__dropzone {
+    border-radius: 0.5rem;
+}
+
+.slds-file-selector,
+.slds-file-selector__dropzone {
+    width: 100%;
+}
+
+.slds-file-selector__text,
+.slds-form-element__control {
+    font-size: 15px;
+}
 
 /*PAGE HEADER*/
 
@@ -122,6 +145,11 @@ div.pageLayoutContainer {
     height: 100%;
 }
 
+hr.settingDividendLine {
+    color: #e6e6e6;
+    margin-bottom: 0.5rem;
+}
+
 
 /*PAGE RIGHT BAR*/
 
@@ -145,17 +173,18 @@ div.page-rightbar .setting-container {
 }
 
 div.page-rightbar .downloadButton-container {
-    margin: auto;
-    width: 250px;
+    width: 100%;
 }
 
 
 div.page-downloadbutton {
+    width: fit-content;
     background: #0777ff;
     color: #FFF;
     border-radius: 20px;
     padding: 0rem 3rem;
     line-height: 2rem;
+    float: right;
 }
 
 
