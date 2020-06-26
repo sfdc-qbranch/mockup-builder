@@ -57,9 +57,8 @@ body {
 
 /* SLDS Override */
 
-select {
-    /*text-align-last: center;*/
-    padding-left: 1rem;
+.slds-select {
+    padding-left: 1rem !important;
 }
 
 
@@ -188,8 +187,16 @@ div.page-rightbar .downloadButton-container {
     width: 100%;
 }
 
+a.page-downloadbutton .arrow-down {
+    display: inline-block;
+    padding-bottom: 4px;
+    margin-left: 4px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff;
+}
 
-div.page-downloadbutton {
+a.page-downloadbutton {
     width: fit-content;
     background: #0777ff;
     color: #FFF;
@@ -197,6 +204,12 @@ div.page-downloadbutton {
     padding: 0rem 3rem;
     line-height: 2rem;
     float: right;
+}
+
+a.page-downloadbutton:hover {
+    cursor: pointer !important;
+    text-decoration: unset;
+    color: white;
 }
 
 
@@ -209,7 +222,6 @@ div.page-content {
 /*PAGE SCREEN*/
 
 div.page-screen {
-    margin-top: 1rem;
     width: 375px;
     /** width: 750px; **/
     height: 667px;
