@@ -57,6 +57,12 @@ body {
 
 /* SLDS Override */
 
+select {
+    /*text-align-last: center;*/
+    padding-left: 1rem;
+}
+
+
 .slds-form-element__label {
     font-size: 15px;
     color: #333;
@@ -68,6 +74,7 @@ body {
 .slds-form-element .slds-textarea,
 .slds-file-selector .slds-file-selector__dropzone {
     border-radius: 0.5rem;
+    font-size: 15px;
 }
 
 .slds-file-selector,
@@ -75,9 +82,14 @@ body {
     width: 100%;
 }
 
+.slds-file-selector__dropzone {
+    padding: 0.625rem 0.75rem;
+}
+
 .slds-file-selector__text,
-.slds-form-element__control {
+.slds-file-selector__button {
     font-size: 15px;
+    font-weight: lighter;
 }
 
 /*PAGE HEADER*/
@@ -256,9 +268,7 @@ span.normal-inlineheight {
     width: 80%;
 }
 
-select {
-    text-align-last: center;
-}
+
 
 /*Work around for white left margin in html2canvas*/
 .hide-scrollbar {

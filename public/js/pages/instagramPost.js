@@ -12,7 +12,6 @@ $(document).ready(function () {
         $('#igpost_setPostText').val('').change();
     });
 
-
     //----------DISPLAYS------------//
 
     //Profile Name
@@ -34,8 +33,4 @@ $(document).ready(function () {
     });
 
     download_mockup_active();
-
-
-
-
 });

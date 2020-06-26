@@ -1,0 +1,122 @@
+/* -------------- DISPLAY ------------  */
+.fontsize75 {
+    font-size: 0.75rem;
+}
+
+.fbGrayTextColor {
+    color: #606770;
+}
+
+.fbHR {
+    color: #c9cbd0;
+    margin: auto;
+    width: 96%;
+}
+
+.fb_lead_ad-content_container {
+    width: 100%;
+    min-height: 330px;
+    line-height: 18px;
+    font-family: Helvetica Neue, arial, sans-serif;
+    font-size: 14px;
+    word-wrap: break-word;
+    position: relative;
+}
+
+.fb_lead_ad-topbar {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.fb_lead_ad-topbar span {
+    display: block;
+}
+
+.fb_lead_ad-topbar #appLogo {
+    border-radius: 50%;
+}
+
+.fb_lead_ad-adcontent-adframe {
+    width: 100%;
+    position: relative;
+    word-wrap: break-word;
+    background: #fff;
+    display: block;
+}
+
+.fb_lead_ad-adcontent-adframe img {
+    min-height: 160px;
+}
+
+.fb_lead_ad-adcontent-content {
+    background: #f7f8f9;
+    border-bottom: 0.5px solid #dedee0;
+}
+
+.fb_lead_ad-adcontent-content p {
+    line-height: 1.2rem;
+    margin-bottom: 0px;
+}
+
+.page-facebookleadad-mobilescreen {
+    margin-top: 3rem;
+    width: 375px;
+    min-height: 394px;
+    background: white;
+    position: relative;
+}
+
+.custom-h2 {
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: bold;
+    margin-bottom: 3px;
+    margin-top: 1px;
+}
+
+.fb-sponsored {
+    font-size: 12px;
+    line-height: 16px;
+    color: #9197a3;
+}
+
+.fb-sponsored img {
+    width: 11px;
+}
+
+/* <!--FB Lead Ad Spec Text (Max 90 Chars)--> */
+#facebook_leadad_mobile-Ad-Text {
+    max-width: 125ch;
+}
+
+#facebook_leadad_mobile-Ad-Headline {
+    max-width: 25ch;
+    font-weight: 600;
+}
+
+#fb_lead_ad-CTA-button {
+    color: #050505;
+    text-transform: uppercase;
+    background: inherit;
+    font-weight: 500;
+    font-size: 10px;
+    border: 1px solid #65676a;
+    border-radius: 4px;
+}
+
+#fb-likes_container {
+    display: inline-flex;
+}
+
+.fb-likes_icons {
+    width: 16px;
+    height: 16px;
+}
+
+#fb_lead_ad-feedbackbar {
+    color: #767c8a;
+    font-size: 0.75rem;
+}

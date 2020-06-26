@@ -1,12 +1,12 @@
 <div class="container page-settings">
 
-
     <!--AdvertiserName-->
     <%- include('../helper/inputtext', {id:'fb-leadad-pagename', placeholder:'Your Name Here', label:'Username'})%>
 
     <!--LOGO IMAGE SETTING-->
+
     <div class="page-setting-element">
-        <%- include('../helper/imagefileselector', {imageselectorlabel:'Profile Photo:',imgInputId:'fb_setPageLogoImage', helptext:'100 * 100 (.png .jpg .jpeg)'}) %>
+        <%- include('../helper/imagefileselector', {imageselectorlabel:'Profile Photo', imgInputId:'fb_setPageLogoImage', helptext: 'Image resolution: 100 x 100px (.png .jpg .jpeg)'}) %>
     </div>
 
     <hr class="settingDividendLine" />
@@ -21,7 +21,7 @@
 
     <!--POST IMAGE SETTING-->
     <div class="page-setting-element">
-        <%- include('../helper/imagefileselector', {imageselectorlabel:'Post Image:',imgInputId:'fb_setPostImage', helptext:'800 * 800 (.png .jpg .jpeg)'}) %>
+        <%- include('../helper/imagefileselector', {imageselectorlabel:'Post Image', imgInputId:'fb_setPostImage', helptext: 'Image resolution: 800 x 800px (.png .jpg .jpeg)'}) %>
     </div>
 
     <hr class="settingDividendLine" />
