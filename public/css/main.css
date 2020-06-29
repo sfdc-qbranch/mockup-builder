@@ -160,7 +160,8 @@ div.pageLayoutContainer {
 
 hr.settingDividendLine {
     color: #e6e6e6;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
 }
 
 
@@ -185,7 +186,10 @@ div.page-rightbar .setting-container {
     padding-right: 3rem;
 }
 
-.page-actionbuttonContainer {}
+.page-actionbuttonContainer {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
 
 .page-actionbutton {
     margin-left: auto;

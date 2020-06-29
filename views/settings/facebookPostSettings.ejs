@@ -1,8 +1,9 @@
 <div class="container page-settings">
 
     <!--AdvertiserName-->
-    <%- include('../helper/inputtext', {id:'fb-leadad-pagename', placeholder:'Your Name Here', label:'Username'})%>
-
+    <div class="page-setting-element">
+        <%- include('../helper/inputtext', {id:'fb-leadad-pagename', placeholder:'Your Name Here', label:'Username'})%>
+    </div>
     <!--LOGO IMAGE SETTING-->
 
     <div class="page-setting-element">
@@ -12,10 +13,12 @@
     <hr class="settingDividendLine" />
 
     <!--Ad Text-->
-    <div class="slds-form-element">
-        <label class="slds-form-element__label" for="fb-leadad-text">Post</label>
-        <div class="slds-form-element__control">
-            <textarea id="fb-leadad-text" class="slds-textarea" placeholder="Your Post Here"></textarea>
+    <div class="page-setting-element">
+        <div class="slds-form-element">
+            <label class="slds-form-element__label" for="fb-leadad-text">Post</label>
+            <div class="slds-form-element__control">
+                <textarea id="fb-leadad-text" class="slds-textarea" placeholder="Your Post Here"></textarea>
+            </div>
         </div>
     </div>
 
@@ -27,100 +30,108 @@
     <hr class="settingDividendLine" />
 
     <!--Reaction Number-->
-    <div class="slds-form-element">
-        <label class="slds-form-element__label" for="fb-leadad-numberofreactions">Number of Reactions</label>
-        <div class="slds-form-element__control">
-            <input type="number" id="fb-leadad-numberofreactions" class="slds-input" placeholder="" />
+    <div class="page-setting-element">
+        <div class="slds-form-element">
+            <label class="slds-form-element__label" for="fb-leadad-numberofreactions">Number of Reactions</label>
+            <div class="slds-form-element__control">
+                <input type="number" id="fb-leadad-numberofreactions" class="slds-input" placeholder="" />
+            </div>
         </div>
     </div>
 
     <!--Comments Number-->
-    <div class="slds-form-element">
-        <label class="slds-form-element__label" for="fb-leadad-numberofcomments">Number of Comments</label>
-        <div class="slds-form-element__control">
-            <input type="number" id="fb-leadad-numberofcomments" class="slds-input" placeholder="" />
+    <div class="page-setting-element">
+        <div class="slds-form-element">
+            <label class="slds-form-element__label" for="fb-leadad-numberofcomments">Number of Comments</label>
+            <div class="slds-form-element__control">
+                <input type="number" id="fb-leadad-numberofcomments" class="slds-input" placeholder="" />
+            </div>
         </div>
     </div>
 
     <!--Shares Number-->
-    <div class="slds-form-element">
-        <label class="slds-form-element__label" for="fb-leadad-numberofshares">Number of Shares</label>
-        <div class="slds-form-element__control">
-            <input type="number" id="fb-leadad-numberofshares" class="slds-input" placeholder="" />
+    <div class="page-setting-element">
+        <div class="slds-form-element">
+            <label class="slds-form-element__label" for="fb-leadad-numberofshares">Number of Shares</label>
+            <div class="slds-form-element__control">
+                <input type="number" id="fb-leadad-numberofshares" class="slds-input" placeholder="" />
+            </div>
         </div>
     </div>
 
     <!--Likes-->
-    <fieldset class="slds-form-element">
-        <legend class="slds-form-element__legend slds-form-element__label">Reactions</legend>
-        <div class="slds-form-element__control">
-            <div class="slds-grid">
-                <div class="slds-col">
-                    <span class="slds-checkbox">
-                        <input type="checkbox" name="options" class="fb-likes_checkboxes" id="checkbox-likes-1"
-                            value="fb_reaction_like" checked />
-                        <label class="slds-checkbox__label" for="checkbox-likes-1">
-                            <span class="slds-checkbox_faux"></span>
-                            <span class="slds-form-element__label"><img class="fb-likes_icons"
-                                    src="img/fb_reaction_like.png" /></span>
-                        </label>
-                    </span>
-                    <span class="slds-checkbox">
-                        <input type="checkbox" name="options" class="fb-likes_checkboxes" id="checkbox-likes-2"
-                            value="fb_reaction_haha" />
-                        <label class="slds-checkbox__label" for="checkbox-likes-2">
-                            <span class="slds-checkbox_faux"></span>
-                            <span class="slds-form-element__label"><img class="fb-likes_icons"
-                                    src="img/fb_reaction_haha.png" /></span>
-                        </label>
-                    </span>
+    <div class="page-setting-element">
+        <fieldset class="slds-form-element">
+            <legend class="slds-form-element__legend slds-form-element__label">Reactions</legend>
+            <div class="slds-form-element__control">
+                <div class="slds-grid">
+                    <div class="slds-col">
+                        <span class="slds-checkbox">
+                            <input type="checkbox" name="options" class="fb-likes_checkboxes" id="checkbox-likes-1"
+                                value="fb_reaction_like" checked />
+                            <label class="slds-checkbox__label" for="checkbox-likes-1">
+                                <span class="slds-checkbox_faux"></span>
+                                <span class="slds-form-element__label"><img class="fb-likes_icons"
+                                        src="img/fb_reaction_like.png" /></span>
+                            </label>
+                        </span>
+                        <span class="slds-checkbox">
+                            <input type="checkbox" name="options" class="fb-likes_checkboxes" id="checkbox-likes-2"
+                                value="fb_reaction_haha" />
+                            <label class="slds-checkbox__label" for="checkbox-likes-2">
+                                <span class="slds-checkbox_faux"></span>
+                                <span class="slds-form-element__label"><img class="fb-likes_icons"
+                                        src="img/fb_reaction_haha.png" /></span>
+                            </label>
+                        </span>
 
-                </div>
+                    </div>
 
-                <div class="slds-col">
-                    <span class="slds-checkbox">
-                        <input type="checkbox" name="options" class="fb-likes_checkboxes" id="checkbox-likes-3"
-                            value="fb_reaction_love" checked />
-                        <label class="slds-checkbox__label" for="checkbox-likes-3">
-                            <span class="slds-checkbox_faux"></span>
-                            <span class="slds-form-element__label"><img class="fb-likes_icons"
-                                    src="img/fb_reaction_love.png" /></span>
-                        </label>
-                    </span>
-                    <span class="slds-checkbox">
-                        <input type="checkbox" name="options" class="fb-likes_checkboxes" id="checkbox-likes-4"
-                            value="fb_reaction_sad" />
-                        <label class="slds-checkbox__label" for="checkbox-likes-4">
-                            <span class="slds-checkbox_faux"></span>
-                            <span class="slds-form-element__label"><img class="fb-likes_icons"
-                                    src="img/fb_reaction_sad.png" /></span>
-                        </label>
-                    </span>
+                    <div class="slds-col">
+                        <span class="slds-checkbox">
+                            <input type="checkbox" name="options" class="fb-likes_checkboxes" id="checkbox-likes-3"
+                                value="fb_reaction_love" checked />
+                            <label class="slds-checkbox__label" for="checkbox-likes-3">
+                                <span class="slds-checkbox_faux"></span>
+                                <span class="slds-form-element__label"><img class="fb-likes_icons"
+                                        src="img/fb_reaction_love.png" /></span>
+                            </label>
+                        </span>
+                        <span class="slds-checkbox">
+                            <input type="checkbox" name="options" class="fb-likes_checkboxes" id="checkbox-likes-4"
+                                value="fb_reaction_sad" />
+                            <label class="slds-checkbox__label" for="checkbox-likes-4">
+                                <span class="slds-checkbox_faux"></span>
+                                <span class="slds-form-element__label"><img class="fb-likes_icons"
+                                        src="img/fb_reaction_sad.png" /></span>
+                            </label>
+                        </span>
 
-                </div>
+                    </div>
 
-                <div class="slds-col">
-                    <span class="slds-checkbox">
-                        <input type="checkbox" name="options" class="fb-likes_checkboxes" id="checkbox-likes-5"
-                            value="fb_reaction_wow" />
-                        <label class="slds-checkbox__label" for="checkbox-likes-5">
-                            <span class="slds-checkbox_faux"></span>
-                            <span class="slds-form-element__label"><img class="fb-likes_icons"
-                                    src="img/fb_reaction_wow.png" /></span>
-                        </label>
-                    </span>
-                    <span class="slds-checkbox">
-                        <input type="checkbox" name="options" class="fb-likes_checkboxes" id="checkbox-likes-6"
-                            value="fb_reaction_angry" />
-                        <label class="slds-checkbox__label" for="checkbox-likes-6">
-                            <span class="slds-checkbox_faux"></span>
-                            <span class="slds-form-element__label"><img class="fb-likes_icons"
-                                    src="img/fb_reaction_angry.png" /></span>
-                        </label>
-                    </span>
+                    <div class="slds-col">
+                        <span class="slds-checkbox">
+                            <input type="checkbox" name="options" class="fb-likes_checkboxes" id="checkbox-likes-5"
+                                value="fb_reaction_wow" />
+                            <label class="slds-checkbox__label" for="checkbox-likes-5">
+                                <span class="slds-checkbox_faux"></span>
+                                <span class="slds-form-element__label"><img class="fb-likes_icons"
+                                        src="img/fb_reaction_wow.png" /></span>
+                            </label>
+                        </span>
+                        <span class="slds-checkbox">
+                            <input type="checkbox" name="options" class="fb-likes_checkboxes" id="checkbox-likes-6"
+                                value="fb_reaction_angry" />
+                            <label class="slds-checkbox__label" for="checkbox-likes-6">
+                                <span class="slds-checkbox_faux"></span>
+                                <span class="slds-form-element__label"><img class="fb-likes_icons"
+                                        src="img/fb_reaction_angry.png" /></span>
+                            </label>
+                        </span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </fieldset>
+        </fieldset>
+    </div>
     <hr class="settingDividendLine" />
 </div>
