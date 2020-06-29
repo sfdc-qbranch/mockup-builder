@@ -73,6 +73,8 @@ body {
 .slds-form-element .slds-textarea,
 .slds-file-selector .slds-file-selector__dropzone {
     border-radius: 0.5rem;
+    border-color: #cfd4d9;
+    border-width: 1.5px;
     font-size: 15px;
 }
 
@@ -158,7 +160,7 @@ div.pageLayoutContainer {
 
 hr.settingDividendLine {
     color: #e6e6e6;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
 }
 
 
@@ -183,8 +185,37 @@ div.page-rightbar .setting-container {
     padding-right: 3rem;
 }
 
-div.page-rightbar .downloadButton-container {
-    width: 100%;
+.page-actionbuttonContainer {}
+
+.page-actionbutton {
+    margin-left: auto;
+    margin-right: 0;
+    width: 190px;
+    border-radius: 20px;
+    padding: 0rem 3rem;
+    line-height: 2rem;
+    display: block;
+    text-align: center;
+    cursor: pointer !important;
+}
+
+.page-actionbutton:hover {
+    text-decoration: unset;
+}
+
+.page-actionbutton.brand:hover {
+    color: white;
+}
+
+.page-actionbutton.outline-brand {
+    border: 1.5px solid #0777FF;
+    color: #0777FF;
+    background: #fff;
+}
+
+.page-actionbutton.brand {
+    background: #0777ff;
+    color: #FFF;
 }
 
 a.page-downloadbutton .arrow-down {
@@ -194,22 +225,6 @@ a.page-downloadbutton .arrow-down {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-top: 5px solid #fff;
-}
-
-a.page-downloadbutton {
-    width: fit-content;
-    background: #0777ff;
-    color: #FFF;
-    border-radius: 20px;
-    padding: 0rem 3rem;
-    line-height: 2rem;
-    float: right;
-}
-
-a.page-downloadbutton:hover {
-    cursor: pointer !important;
-    text-decoration: unset;
-    color: white;
 }
 
 
