@@ -1,0 +1,51 @@
+<!-- views/instagramPost.ejs -->
+<%- include('partials/header') %>
+<title>mockup builder - instagram post</title>
+
+<body>
+    <%- include('partials/navbarHorizontal') %>
+    <div class="pageLayoutContainer slds-grid">
+        <div class="slds-col slds-size_3-of-5">
+            <div class="page-content">
+                <div class="slds-align_absolute-center">
+                    <%- include('displays/instagramPostDisplay') %>
+                </div>
+            </div>
+        </div>
+        <div class="slds-col slds-size_2-of-5 page-rightbar">
+            <div class="setting-container">
+                <%- include('settings/instagramPostSettings') %>
+                <div class="downloadButton-container slds-p-top_small">
+                    <%- include('partials/downloadButton') %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('partials/footer') %>
+
+
+    <script>
+        $(document).ready(function () {
+
+            //Profile Name
+            bindSettingAndDisplayTextField('igpost_setProfileName', '.igpost_getProfileName');
+
+            //Verified 
+            bind_setCheckbox_showElement('igpost_setVerified', '#igpost_getVerified');
+
+            //Post
+            bind_setPost_displayPost_withHashTag('igpost_setPostText', 'igpost_getPostText')
+
+            //SET APP LOGO IMAGE
+            $("#igpost_setProfileIcon").change(function () {
+                readURL(this, $('#igpost_getProfileIcon'));
+            });
+
+            $("#igpost_setPostimage").change(function () {
+                readURL(this, $('#igpost_getPostImage'));
+            });
+
+            download_mockup_active();
+        });
+    </script>
+</body>
