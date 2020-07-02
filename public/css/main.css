@@ -212,6 +212,10 @@ div.page-rightbar .setting-container {
     text-decoration: unset;
 }
 
+.page-actionbutton a:hover {
+    text-decoration: unset;
+}
+
 .page-actionbutton.brand:hover {
     color: white;
 }

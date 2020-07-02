@@ -150,3 +150,9 @@
     .lm_settings_helperbuttons button {
         width: 80%;
     }
+
+    .lm_settings_helperbuttons div.page-actionbuttonContainer {}
+
+    .lm_settings_helperbuttons div.page-actionbuttonContainer a {
+        width: 265px !important;
+    }
