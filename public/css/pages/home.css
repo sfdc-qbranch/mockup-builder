@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'Gotham Bold';
-    src: url(assets/fonts/webfonts/Gotham-Bold.woff) format("woff");
+    src: url(/assets/fonts/webfonts/Gotham-Bold.woff) format("woff");
 }
 
 @font-face {
     font-family: 'SalesforceSans-Light';
-    src: url(assets/fonts/webfonts/SalesforceSans-Light.woff) format("woff");
+    src: url(/assets/fonts/webfonts/SalesforceSans-Light.woff) format("woff");
 }
 
 div.homeBackground {
