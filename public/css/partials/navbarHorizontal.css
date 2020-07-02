@@ -2,6 +2,7 @@
     height: 10%;
     max-height: 85px;
     background-color: #070c20;
+    opacity: 0;
 }
 
 .page-navbar_horizontal ul {

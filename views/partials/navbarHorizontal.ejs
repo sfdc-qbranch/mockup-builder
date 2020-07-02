@@ -1,5 +1,6 @@
 <!-- views/partials/naver.ejs -->
 
+<script src="js/partials/navbarHorizontal.js"></script>
 <link rel="stylesheet" type="text/css" href="css/partials/navbarHorizontal.css">
 
 <nav class="page-navbar_horizontal slds-p-horizontal_large">
@@ -29,19 +30,7 @@
                 <li class="nav-item_horizontal" name="notifications">
                     <a href="/notifications" class="nav-horizontal_action">Push Notifications</a>
                 </li>
-
-
-
             </ul>
         </div>
     </div>
 </nav>
-
-
-<script>
-    $(document).ready(function () {
-        var page = window.location.href.split('/').slice(-1)[0];
-        $("nav.page-navbar_horizontal li").removeClass("page-is-active");
-        $("nav.page-navbar_horizontal li[name='" + page + "'").addClass("page-is-active");
-    });
-</script>
