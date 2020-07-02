@@ -154,5 +154,5 @@
     .lm_settings_helperbuttons div.page-actionbuttonContainer {}
 
     .lm_settings_helperbuttons div.page-actionbuttonContainer a {
-        width: 265px !important;
+        width: 100% !important;
     }
