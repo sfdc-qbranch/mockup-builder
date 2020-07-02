@@ -46,13 +46,13 @@ $(document).ready(function () {
     }
 
     $('#btn-openModal').click(function () {
-        $('#qMB_IntroVideo').show();
+        $('#qMB_IntroVideo').fadeIn();
     });
 
     $('#btn-closeModal').click(function () {
         $('.youtubevideo').each(function () {
             this.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*')
         });
-        $('#qMB_IntroVideo').hide();
+        $('#qMB_IntroVideo').fadeOut();
     });
 })
