@@ -1,25 +1,62 @@
 <!-- views/home.ejs -->
 <!-- Google Tag Manager (noscript) -->
 <%- include("partials/header") %>
+<title>Mockup Builder By Q</title>
+<script src="js/pages/home.js"></script>
+<link rel="stylesheet" type="text/css" href="css/pages/home.css">
 
 <body>
-    <div class="slds-grid">
-        <div class="slds-col slds-size_1-of-7">
-            <%- include("partials/navbar") %>
+    <div class="homeBackground">
+        <div>
+            <%- include("partials/navbarHorizontal") %>
         </div>
-        <div class="slds-col slds-size_6-of-7 ">
-            <%- include('partials/headerbar') %>
-            <div class="slds-grid">
-                <div class="slds-col slds-size_4-of-6 ">
-                    <div class="page-content">
-                        <div class="slds-align_absolute-center">
-                            <%- include("displays/facebookDisplay") %>
+        <div class="slds-align_absolute-center" style="height:90%">
+            <div id="qMB_IntroVideo">
+                <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_large"
+                    aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+                    <div class="slds-modal__container">
+                        <header class="slds-modal__header">
+                            <button id="btn-closeModal"
+                                class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                                title="Close">
+                                <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                                </svg>
+                                <span class="slds-assistive-text">Close</span>
+                            </button>
+                        </header>
+                        <div class="slds-modal__content" id="modal-content-id-1">
+                            <div class="videoIframeContainer">
+                                <iframe id="youtube-iframe" class="youtubevideo"
+                                    src="https://www.youtube.com/embed/mEiP4rs9TEQ?enablejsapi=1" frameborder="0"
+                                    style="border: unset" allowfullscreen></iframe>
+                            </div>
                         </div>
                     </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </div>
+            <div class="content">
+                <div class="slds-text-align_center">
+                    <div class="title">
+                        <p>Create beautiful</p>
+                        <p>mockups in seconds.</p>
+                    </div>
+                    <div class="caption">
+                        <p class="slds-p-top_large">Q Mockup Builder lets you create inspirational visuals for social
+                            media,
+                            messages, ads, and more!</p>
+                    </div>
+                    <div class="cta-button">
+                        <button id="btn-openModal">Watch Video <span class="triangle-right"></span>
+                        </button>
+                    </div>
                 </div>
-                <div class="slds-col slds-size_2-of-6 page-rightbar">
-                    <%- include("settings/facebookSettings") %>
-                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="slds-text-align_center slds-p-vertical_small">
+                <span>Built by Q <span class="slds-p-horizontal_small">|</span> Copyright © 2020 Q Branch</span>
             </div>
         </div>
         <%- include('partials/footer') %>

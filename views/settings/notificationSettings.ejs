@@ -1,9 +1,6 @@
 <div class="container page-settings">
 
 
-    <!--MOCKUP TEXT SETTING-->
-    <!-- <%- include('../partials/designYourMockupText') %> -->
-
     <!--TIME SETTING-->
     <div class="page-setting-element">
         <%- include('../helper/timeselector') %>
@@ -14,45 +11,56 @@
         <%- include('../helper/dateselector') %>
     </div>
 
+    <hr class="settingDividendLine" />
 
     <!--APP LOGO IMAGE SETTING-->
     <div class="page-setting-element">
-        <%- include('../helper/imagefileselector', {imageselectorlabel:'Push Notification Icon:',imgInputId:'n_setAppLogoImage', helptext:'100 * 100 (.png .jpg .jpeg)'}) %>
+        <%- include('../helper/imagefileselector', {imageselectorlabel:'Push Notification Icon',imgInputId:'n_setAppLogoImage', helptext:'Image resolution: 100 x 100px (.png .jpg .jpeg)'}) %>
     </div>
 
     <div class="page-setting-element">
-        <%- include('../helper/imagefileselector', {imageselectorlabel:'Background Image:',imgInputId:'n_setScreenBackgroundImage', helptext:'375 * 667 (.png .jpg .jpeg)'}) %>
+        <%- include('../helper/imagefileselector', {imageselectorlabel:'Background Image',imgInputId:'n_setScreenBackgroundImage', helptext:'Image resolution: 750 x 1334px (.png .jpg .jpeg)'}) %>
     </div>
 
     <!--APP NAME SETTING-->
     <div class="page-setting-element">
-        <%- include('../helper/inputtext', {id:'n_setAppName', placeholder:'Please input...', label:'App Name:'})%>
+        <%- include('../helper/inputtext', {id:'n_setAppName', placeholder:'Please input...', label:'App Name'})%>
     </div>
 
+    <hr class="settingDividendLine" />
 
     <!--NOTIFICATION TIME SETTING-->
+
     <div class="page-setting-element">
-        <label class="slds-form-element__label" for="n_setTimeAgo">Notification Time Received:</label>
-        <select class="slds-select" id="n_setTimeAgo">
-            <option selected="selected">now</option>
-            <% for(var min=5; min<60; min+=5) {%>
-            <option><%= min %>m ago</option>
-            <% } %>
-            <% for(var hr=1; hr<12; hr+=1) {%>
-            <option><%= hr %>h ago</option>
-            <% } %>
-        </select>
+        <div class="slds-form-element">
+            <label class="slds-form-element__label" for="n_setTimeAgo">Notification Time Received</label>
+            <div>
+                <div class="slds-select_container">
+                    <select class="slds-select" id="n_setTimeAgo">
+                        <option selected="selected">now</option>
+                        <% for(var min=5; min<60; min+=5) {%>
+                        <option><%= min %>m ago</option>
+                        <% } %>
+                        <% for(var hr=1; hr<12; hr+=1) {%>
+                        <option><%= hr %>h ago</option>
+                        <% } %>
+                    </select>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!--NOTIFICATION MESSAGE SETTING-->
     <div class="page-setting-element">
         <div class="slds-form-element">
-            <label class="slds-form-element__label" for="n_setNotification">Notification:</label>
+            <label class="slds-form-element__label" for="n_setNotification">Notification</label>
             <div class="slds-form-element__control">
                 <textarea id="n_setNotification" class="slds-textarea" placeholder="Please input..."></textarea>
             </div>
         </div>
     </div>
+
+    <hr class="settingDividendLine" />
 
 
 </div>

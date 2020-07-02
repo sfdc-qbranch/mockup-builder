@@ -118,6 +118,34 @@ function bind_setCheckbox_showElement(settingElementId, displayElementSelector) 
     });
 }
 
+function getCurrentSelectedReactions() {
+    let i = 0;
+    const MAX_REACTION_NUMBERS = 3;
+    let reactionIterationNumbers = 0;
+
+    //GET SELECTED REACTION ICONS
+    var reactionIconsContainer = $('#fb-likes_icons_container');
+    var selectedReactionsElements = $('.fb-likes_checkboxes:checked');
+    var selectedReactionsValues = [];
+
+    for (i = 0; i < selectedReactionsElements.length; i++) {
+        selectedReactionsValues.push(selectedReactionsElements[i].value);
+    }
+    if (selectedReactionsValues.length > MAX_REACTION_NUMBERS) {
+        reactionIterationNumbers = MAX_REACTION_NUMBERS;
+    } else {
+        reactionIterationNumbers = selectedReactionsValues.length;
+    }
+
+    // DISPLAY SELECTED REACTION ICONS
+    reactionIconsContainer.empty();
+    for (i = 0; i < reactionIterationNumbers; i++) {
+        reactionIconsContainer.append('<img class="fb-likes_icons" src="img/' +
+            selectedReactionsValues[
+                i] + '.png"/>');
+    }
+}
+
 
 function bindSettingAndDisplayInputField(settingElementId, displayElementSelector) {
 
@@ -161,7 +189,34 @@ function getInvertColor(hex, bw) {
 }
 
 
+function addMessage(userClass, inputElementId) {
+    //Get Message From Input Text Box
+    let messageDivNode = document.createElement("div");
+    let inputElement = document.getElementById(inputElementId);
+    let message = inputElement.value;
+    if (message == null || message.trim().length == 0) {
+        return;
+    }
 
+    //Create Chat Message In Preview Panel
+    messageDivNode.setAttribute("class", userClass);
+    messageDivNode.style.fontSize = $('#lm_fontSize').val() + 'px';
+    messageDivNode.style.lineHeight = $('#lm_fontSize').val() + 'px';
+    messageDivNode.innerHTML = urlify(message);
+    //console.log(message);
+
+    document.getElementById("chatPanelPreview").appendChild(messageDivNode);
+
+    //Clear the input textbox
+    inputElement.value = "";
+}
+
+function urlify(text) {
+    var urlRegex = /(https?:\/\/[^\s]+)/g;
+    return text.replace(urlRegex, function (url) {
+        return '<a href="' + url + '">' + url + '</a>';
+    })
+}
 
 /*Valid File Type*/
 

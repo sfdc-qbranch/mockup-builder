@@ -1,0 +1,158 @@
+    /*TIME DISPLAY*/
+
+    div.lm_timedisplay {
+        color: black;
+        position: relative;
+        top: 0.5%;
+        font-size: 13px;
+        line-height: 13px;
+        letter-spacing: 0.03rem;
+    }
+
+    /*CONTACT INITIALS*/
+
+    div.lm_initials {
+        color: white;
+        position: relative;
+        top: 2.5%;
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    /*CONTACT NAME*/
+
+    div.lm_contactNameDisplay {
+        color: black;
+        position: relative;
+        top: 4.4%;
+        font-size: 13px;
+        line-height: 13px;
+        font-weight: 300;
+    }
+
+
+    /*LIVE MESSAGE BACKGROUND IMAGE*/
+
+    #lm_backGroundImage {
+        position: absolute;
+        height: inherit;
+        width: inherit;
+    }
+
+    /*LIVE MESSAGE CHAT MESSAGE CONTAINER*/
+
+    div.lm_chat-sectioncontainer {
+        position: relative;
+        top: 1%;
+        z-index: 999;
+        max-height: inherit;
+    }
+
+    section {
+        max-width: 90%;
+        margin: 50px auto;
+    }
+
+    /*LIVE MESSAGE CHAT MESSAGE INDIVIDUAL DIV*/
+
+    /* .from-me, .from-them */
+
+    section div {
+        max-width: 70%;
+        word-wrap: break-word;
+        margin-bottom: 10px;
+        line-height: 15px;
+        font-size: 15px;
+        clear: both;
+    }
+
+
+    .from-me {
+        position: relative;
+        padding: 10px 20px;
+        color: white;
+        background: #0B93F6;
+        border-radius: 25px;
+        float: right;
+    }
+
+    .from-me:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        bottom: -2px;
+        right: -7px;
+        height: 20px;
+        border-right: 20px solid #0B93F6;
+        border-bottom-left-radius: 16px 14px;
+        -webkit-transform: translate(0, -2px);
+    }
+
+    .from-me:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        bottom: -2px;
+        right: -48px;
+        width: 19px;
+        height: 30px;
+        background: white;
+        border-bottom-left-radius: 10px;
+        -webkit-transform: translate(-30px, -2px);
+    }
+
+
+    .from-them {
+        position: relative;
+        padding: 10px 20px;
+        background: #E5E5EA;
+        border-radius: 25px;
+        color: black;
+        float: left;
+    }
+
+    .from-them:before {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        bottom: -2px;
+        left: -7px;
+        height: 20px;
+        border-left: 20px solid #E5E5EA;
+        border-bottom-right-radius: 16px 14px;
+        -webkit-transform: translate(0, -2px);
+    }
+
+    .from-them:after {
+        content: "";
+        position: absolute;
+        z-index: 3;
+        bottom: -2px;
+        left: 12px;
+        width: 18px;
+        height: 20px;
+        background: white;
+        border-bottom-right-radius: 10px;
+        -webkit-transform: translate(-30px, -2px);
+    }
+
+    /*LIVE MESSAGE SETTING BUTTONS*/
+
+    .page-setting-element-message button {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .slds-textarea {
+        min-height: 100px;
+    }
+
+    .lm_settings_helperbuttons button {
+        width: 80%;
+    }
+
+    .lm_settings_helperbuttons div.page-actionbuttonContainer {}
+
+    .lm_settings_helperbuttons div.page-actionbuttonContainer a {
+        width: 100% !important;
+    }

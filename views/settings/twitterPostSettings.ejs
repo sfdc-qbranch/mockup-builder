@@ -1,13 +1,12 @@
 <div class="container page-settings">
 
+
     <!--ProfileName-->
-    <div class="page-setting-element">
-        <%- include('../helper/inputtext', {id:'igpost_setProfileName', placeholder:'Your profile name here', label:'Profile Name'})%>
-    </div>
+    <%- include('../helper/inputtext', {id:'igpost_setProfileName', placeholder:'Your profile name here', label:'Profile Name'})%>
 
     <!--LOGO IMAGE SETTING-->
     <div class="page-setting-element">
-        <%- include('../helper/imagefileselector', {imageselectorlabel:'Profile Logo',imgInputId:'igpost_setProfileIcon', helptext:'Image resolution: 100 x 100px (.png .jpg .jpeg)'}) %>
+        <%- include('../helper/imagefileselector', {imageselectorlabel:'Profile Logo:',imgInputId:'igpost_setProfileIcon', helptext:'100 * 100 (.png .jpg .jpeg)'}) %>
     </div>
 
     <div class="page-setting-element">
@@ -24,11 +23,10 @@
         </div>
     </div>
 
-    <hr class="settingDividendLine" />
 
     <!--POST IMAGE SETTING-->
     <div class="page-setting-element">
-        <%- include('../helper/imagefileselector', {imageselectorlabel:'Post Image',imgInputId:'igpost_setPostimage', helptext:'Image resolution: 800 x 800px (.png .jpg .jpeg)'}) %>
+        <%- include('../helper/imagefileselector', {imageselectorlabel:'Post Image:',imgInputId:'igpost_setPostimage', helptext:'800 * 800 (.png .jpg .jpeg)'}) %>
     </div>
 
     <!--IG Post Text-->
@@ -42,8 +40,23 @@
         </div>
     </div>
 
-    <hr class="settingDividendLine" />
-    <div class="page-actionbuttonContainer"><a href="javascript:void(0)" id="igpost_reset"
-            class="page-actionbutton outline-brand">Reset</a></div>
+    <div class="slds-m-top_xx-large slds-text-align--center">
+        <div class="slds-m-around_small">
+            <button id="igpost_reset" class="slds-button slds-button_outline-brand width80">Reset</button>
+        </div>
+    </div>
 
 </div>
+
+<script>
+    $('#igpost_setVerified').prop('checked', true).change();
+
+
+    $("#igpost_reset").click(function () {
+        $('#igpost_setProfileName').val('salesforce').change();
+        $('#igpost_getProfileIcon').attr("src", "img/salesforce-logo.png");
+        $('#igpost_setVerified').prop('checked', true).change();
+        $('#igpost_getPostImage').attr("src", "img/insta_img-placeholder_salesforcepost.jpg");
+        $('#igpost_setPostText').val('').change();
+    });
+</script>

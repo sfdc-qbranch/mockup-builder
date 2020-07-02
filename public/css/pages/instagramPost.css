@@ -1,0 +1,67 @@
+.page-screen {
+    background-color: white;
+}
+
+
+.igpost_getProfileName {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.ig_profileIcon {
+    width: 3rem;
+    height: 3rem;
+    display: inline;
+}
+
+.ig_icon12 {
+    width: 12px;
+}
+
+.ig_icon30 {
+    width: 30px;
+}
+
+.ig_icon25_inline {
+    width: 25px;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.igpost_font15 {
+    font-size: 15px;
+    line-height: 20px;
+}
+
+#igpost_getPostImage_container {
+    height: 375px;
+}
+
+#igpost_getPostImage {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.inline,
+.inline p {
+    display: inline;
+}
+
+.fontweight300 {
+    font-weight: 300;
+}
+
+.overflow_hidden {
+    overflow: hidden;
+}
+
+.round {
+    border-radius: 50%;
+    border: 1px solid #dadada;
+    padding: 1px;
+}
+
+.autoMargin {
+    margin: auto;
+}

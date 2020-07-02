@@ -1,24 +1,23 @@
-
-<label class="slds-form-element__label">Current Time:</label>
-<div class="timepicker-container border-round">
-    <input class="timepicker"><i class="far fa-clock"></i>
+<div class="slds-form-element">
+    <label class="slds-form-element__label">Current Time</label>
+    <div class="timepicker-container">
+        <input class="timepicker slds-select" /><i class="far fa-clock"></i>
+    </div>
 </div>
 
 <style>
     div.timepicker-container {
-        background:white;
-        width:auto;
+        background: white;
+        width: auto;
     }
-    
-    div.timepicker-container > input {
-        border:none;
-        width:85%;
-        margin-left:5%;
-        text-align:center;
+
+    div.timepicker-container>input {
+        width: 100%;
+        text-align: left;
+        padding-left: 1rem;
     }
-    
+
     .ui-timepicker-standard {
-        font-size:0.8125rem;
+        font-size: 0.8125rem;
     }
-    
 </style>

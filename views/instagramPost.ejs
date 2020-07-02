@@ -1,51 +1,28 @@
 <!-- views/instagramPost.ejs -->
 <%- include('partials/header') %>
-<title>mockup builder - instagram post</title>
+<title>Instagram Post | Mockup Builder</title>
+<script src="js/pages/instagramPost.js"></script>
+<link rel="stylesheet" type="text/css" href="css/pages/instagramPost.css">
 
 <body>
-    <div class="slds-grid">
-        <div class="slds-col slds-size_1-of-7">
-            <%- include('partials/navbar') %>
-        </div>
-        <div class="slds-col slds-size_6-of-7 ">
-            <%- include('partials/headerbar') %>
-            <div class="slds-grid">
-                <div class="slds-col slds-size_4-of-6 ">
-                    <div class="page-content">
-                        <div class="slds-align_absolute-center">
-                            <%- include('displays/instagramPostDisplay') %>
-                        </div>
-                    </div>
+    <%- include('partials/navbarHorizontal') %>
+    <div class="pageLayoutContainer slds-grid">
+        <div class="slds-col slds-size_3-of-5">
+            <div class="page-content slds-align_absolute-center">
+                <div>
+                    <%- include('displays/instagramPostDisplay') %>
                 </div>
-                <div class="slds-col slds-size_2-of-6 page-rightbar">
-                    <%- include('settings/instagramPostSettings') %>
+            </div>
+        </div>
+        <div class="slds-col slds-size_2-of-5 page-rightbar">
+            <div class="setting-container">
+                <%- include('settings/instagramPostSettings') %>
+                <div>
+                    <%- include('partials/downloadButton') %>
                 </div>
             </div>
         </div>
     </div>
     <%- include('partials/footer') %>
-    <script>
-        $(document).ready(function () {
 
-            //Profile Name
-            bindSettingAndDisplayTextField('igpost_setProfileName', '.igpost_getProfileName');
-
-            //Verified 
-            bind_setCheckbox_showElement('igpost_setVerified', '#igpost_getVerified');
-
-            //Post
-            bind_setPost_displayPost_withHashTag('igpost_setPostText', 'igpost_getPostText')
-
-            //SET APP LOGO IMAGE
-            $("#igpost_setProfileIcon").change(function () {
-                readURL(this, $('#igpost_getProfileIcon'));
-            });
-
-            $("#igpost_setPostimage").change(function () {
-                readURL(this, $('#igpost_getPostImage'));
-            });
-
-            download_mockup_active();
-        });
-    </script>
 </body>
