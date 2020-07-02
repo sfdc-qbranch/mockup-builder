@@ -74,13 +74,9 @@ div.cta-button button {
     font-size: 1.5rem;
 }
 
-div.cta-button a {
-    color: white;
-}
 
-div.cta-button a:hover {
-    color: white;
-    text-decoration: unset;
+div.cta-button button:focus {
+    outline: unset;
 }
 
 .triangle-right {
@@ -89,5 +85,44 @@ div.cta-button a:hover {
     border-top: 10px solid transparent;
     border-left: 12px solid #fff;
     border-bottom: 10px solid transparent;
-    display: inline-block;
-    m
+    display: inline-table;
+    margin-left: 2px;
+}
+
+/** SLDS Modal CSS Override**/
+
+
+.slds-modal__content {
+    width: 100%;
+    height: fit-content;
+}
+
+.slds-modal__header {
+    border-bottom: unset !important;
+    padding: unset !important;
+}
+
+@media (min-width: 48em) {
+    .slds-modal_large .slds-modal__container {
+        width: 80% !important;
+    }
+}
+
+.videoIframeContainer {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+
+#youtube-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#qMB_IntroVideo {
+    display: none;
+}
