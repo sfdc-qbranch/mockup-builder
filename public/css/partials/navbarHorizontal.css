@@ -1,0 +1,34 @@
+.page-navbar_horizontal {
+    height: 10%;
+    max-height: 85px;
+    background-color: #070c20;
+}
+
+.page-navbar_horizontal ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.page-navbar_horizontal li {
+    display: inline-block;
+    width: 15%;
+    text-align: center;
+}
+
+.page-navbar_horizontal li a:hover,
+.page-navbar_horizontal li a:focus,
+.page-navbar_horizontal li a:focus-within,
+.page-navbar_horizontal li a:active {
+    color: white;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+.nav-horizontal_action {
+    color: #ccc;
+}
+
+li.page-is-active a {
+    color: #FFF;
+}
