@@ -95,6 +95,7 @@ div.cta-button button:focus {
 .slds-modal__content {
     width: 100%;
     height: fit-content;
+    background: transparent;
 }
 
 .slds-modal__header {
