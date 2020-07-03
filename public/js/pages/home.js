@@ -1,9 +1,5 @@
 $(document).ready(function () {
 
-    $("body").css({
-        "opacity": "1"
-    });
-
     var tag = document.createElement('script');
     tag.id = 'iframe-demo';
     tag.src = 'https://www.youtube.com/iframe_api';

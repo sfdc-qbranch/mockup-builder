@@ -8,10 +8,6 @@
     src: url(/assets/fonts/webfonts/SalesforceSans-Light.woff) format("woff");
 }
 
-body {
-    opacity: 0;
-}
-
 div.homeBackground {
     background-color: #07041F;
     height: 100vh;
