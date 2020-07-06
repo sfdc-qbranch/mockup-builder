@@ -57,17 +57,20 @@ app.get('/instagram-post', function (req, res) {
     res.render('instagramPost');
 });
 
-app.get('/twitter-post', function (req, res) {
-    res.render('twitterPost');
-});
+// app.get('/twitter-post', function (req, res) {
+//     res.render('twitterPost');
+// });
 
 app.get('/facebook-post', function (req, res) {
     res.render('facebookPost');
 });
 
-app.get('/email', function (req, res) {
-    res.render('email');
+app.get('/maintenance', function (req, res) {
+    res.render('maintenance');
 });
+// app.get('/email', function (req, res) {
+//     res.render('email');
+// });
 
 
 
