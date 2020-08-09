@@ -20,7 +20,7 @@
                     <a href="/notifications" class="slds-nav-vertical__action" aria-describedby="entity-header">Push
                         Notifications</a>
                 </li>
-                <li class="slds-nav-vertical__item" name="facebookpost">
+                <li class="slds-nav-vertical__item" name="facebook-post">
                     <a href="/facebook-post" class="slds-nav-vertical__action" aria-describedby="entity-header">Facebook
                         Post</a>
                 </li>
@@ -50,6 +50,9 @@
 <script>
     $(document).ready(function () {
         var page = window.location.href.split('/').slice(-1)[0];
+        if (page != null && page.length == 0) {
+            page = 'livemessage';
+        }
         $("div.page-navbar li").removeClass("slds-is-active");
         $("div.page-navbar li[name='" + page + "'").addClass("slds-is-active");
 

@@ -39,7 +39,7 @@ app.get('/', function (req, res) {
 //     res.render('livechat');
 // });
 
-app.get('/livemessage', function (req, res) {
+app.get('/messaging-sms', function (req, res) {
     res.render('livemessage');
 });
 
@@ -65,9 +65,13 @@ app.get('/facebook-post', function (req, res) {
     res.render('facebookPost');
 });
 
-app.get('/maintenance', function (req, res) {
-    res.render('maintenance');
+app.get('/maintanence', function (req, res) {
+    res.render('maintanence');
 });
+// app.get('/email', function (req, res) {
+//     res.render('email');
+// });
+
 // app.get('/email', function (req, res) {
 //     res.render('email');
 // });
