@@ -11,28 +11,20 @@ var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var app = express();
 
-
-
 app.use(morgan('dev'));
 app.set('view engine', 'ejs');
 app.set("views", path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('port', process.env.PORT || 8080);
 
-
-
 app.use(bodyParser.urlencoded({
     extended: false
 }));
-
-
 
 //Homepage
 app.get('/', function (req, res) {
     res.render('home');
 });
-
-
 
 //testImage - test upload image, add text, save as png
 // app.get('/livechat', function (req, res) {
@@ -75,8 +67,6 @@ app.get('/maintanence', function (req, res) {
 // app.get('/email', function (req, res) {
 //     res.render('email');
 // });
-
-
 
 app.listen(app.get('port'), function () {
     console.log('listen on port 8080');
